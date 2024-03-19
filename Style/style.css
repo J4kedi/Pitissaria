@@ -17,6 +17,10 @@ a {
     color: #6c757d;
 }
 
+.btn-link {
+    color: #6c757d;
+}
+
 .form-check-input:checked {
     background-color: #6c757d;
     border-color: #6c757d;
