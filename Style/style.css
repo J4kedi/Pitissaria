@@ -1,0 +1,23 @@
+main.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+a#tab-login {
+    background-color: #6c757d;
+}
+
+a#tab-register {
+    color: #6c757d;
+}
+
+a {
+    color: #6c757d;
+}
+
+.form-check-input:checked {
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
