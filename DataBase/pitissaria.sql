@@ -87,3 +87,8 @@ CREATE TABLE pizzas(
   ingredientes text
 );  
 
+
+CREATE TABLE pedido(
+  id_pedido INT,
+  
+);
