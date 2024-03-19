@@ -9,7 +9,6 @@
 </head>
 
 <body>
-
     <?php
     session_start(); // informa ao PHP que iremos trabalhar com sessão
     require 'pitissariabd';

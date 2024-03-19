@@ -1,0 +1,14 @@
+header{
+    background-color: #341923;
+}
+
+a.navbar-brand, a.nav-link{
+    color: #D08938;
+}
+
+.btn-outline-success{
+    color: #D08938;
+    background-color: #341923;
+    border-color: #D08938;
+    border-radius: 10%;
+}
