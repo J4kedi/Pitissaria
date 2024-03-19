@@ -5,6 +5,15 @@ main.container {
     flex-direction: column;
 }
 
+a#registercadastro{
+    background-color: #6c757d;
+    color: white;
+}
+a#cadastro-login{
+    color: #6c757d;
+    
+}
+
 a#tab-login {
     background-color: #6c757d;
 }
