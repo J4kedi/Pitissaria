@@ -1,1 +1,0 @@
-const bootsTrap = require("bootstrap")
