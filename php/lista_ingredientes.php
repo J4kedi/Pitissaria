@@ -34,7 +34,7 @@
     ?>
 
     numero de registros <?php echo $result->num_rows ?><br><br>
-    + Adicionar Ingrediente<br><br>
+    <a href="cadastro_ingredientes.php">+ Adicionar Ingrediente</a><br><br>
     <table>
         <tr>
             <th>ID</th>
