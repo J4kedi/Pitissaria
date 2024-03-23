@@ -27,9 +27,9 @@
 
 <body>
     <?php
-    include("../connection.php");
+    include("connection.php");
 
-    $sql =  "SELECT id_ingrediente, nome_ingrediente, dt_validade, quantidade_ingrediente FROM ingredientes";
+    $sql =  "SELECT id, nome_ingrediente, dt_validade, quantidade_ingrediente FROM ingredientes";
     $result = $conn->query($sql);
     ?>
 
@@ -49,7 +49,11 @@
             while ($row = $result->fetch_assoc()) {
         ?>
                 <tr>
-                    <td><?php echo $row["id_ingrediente"] ?></td>
+                    <td>
+                        <a href="ingredientes_ingrediente.php?id=<?php echo $row["id"]?>">
+                        <?php echo $row["id"] ?>
+                        </a>
+                    </td>
                     <td><?php echo $row["nome_ingrediente"] ?></td>
                     <td><?php echo $row["dt_validade"] ?></td>
                     <td><?php echo $row["quantidade_ingrediente"] ?></td>
