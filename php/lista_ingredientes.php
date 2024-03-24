@@ -62,7 +62,10 @@
                         Editar
                     </a>
                     </td>
-                    <td>Excluir</td>
+                    <td>
+                    <a href="delet_ingredientes_php.php?id=<?php echo $row['id']?>">Excluir</a>
+                    </a>
+                    </td>
                 </tr>
         <?php
             }
