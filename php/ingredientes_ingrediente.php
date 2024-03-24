@@ -17,7 +17,7 @@
         $id = $_GET['id'];
 
         // Consulta SQL para selecionar os detalhes do ingrediente com o ID fornecido
-        $sql = "SELECT id, nome_ingrediente, dt_validade, quantidade_ingrediente FROM ingredientes WHERE id = $id";
+        $sql = "SELECT id, nome_ingrediente, dt_validade, quantidade_ingrediente, condicao_armazem, preco_compra FROM ingredientes WHERE id = $id";
 
         // Executar a consulta SQL
         $result = $conn->query($sql);
@@ -30,6 +30,8 @@
                 echo "Ingrediente: {$row['nome_ingrediente']}<br>";
                 echo "Data de validade: {$row['dt_validade']}<br>";
                 echo "Quantidade: {$row['quantidade_ingrediente']}<br>";
+                echo "Condicação de armazenamento: {$row['condicao_armazem']}<br>";
+                echo "Preço da compra: {$row['preco_compra']}<br>";
             }
         } else {
             echo "Nenhum ingrediente encontrado com o ID fornecido.";

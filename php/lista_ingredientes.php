@@ -57,7 +57,11 @@
                     <td><?php echo $row["nome_ingrediente"] ?></td>
                     <td><?php echo $row["dt_validade"] ?></td>
                     <td><?php echo $row["quantidade_ingrediente"] ?></td>
-                    <td>Editar</td>
+                    <td>
+                    <a href="ingredientes_edit.php?id=<?php echo $row["id"]?>">
+                        Editar
+                    </a>
+                    </td>
                     <td>Excluir</td>
                 </tr>
         <?php
