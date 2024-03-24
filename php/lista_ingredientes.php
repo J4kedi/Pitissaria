@@ -58,7 +58,7 @@
                     <td><?php echo $row["dt_validade"] ?></td>
                     <td><?php echo $row["quantidade_ingrediente"] ?></td>
                     <td>
-                    <a href="ingredientes_edit.php?id=<?php echo $row["id"]?>">
+                    <a href="edit_ingredientes.php?id=<?php echo $row["id"]?>">
                         Editar
                     </a>
                     </td>
