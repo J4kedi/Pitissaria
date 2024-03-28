@@ -17,14 +17,16 @@
         <label for="validade">Data de Validade:</label><br>
         <input type="date" id="dt_validade" name="dt_validade" required><br><br>
 
-        <label for="quantidade">Quantidade:</label><br><br>
-        <input type="number" id="quantidade_ingrediente" name="quantidade_ingrediente" required><br><br>
+        <label for="quantidade">Quantidade em KG:</label><br><br>
+        <input type="text" id="quantidade_ingrediente" name="quantidade_ingrediente" required oninput="validarNumero(this)">
+        <label for="">Kg</label><br><br>
 
         <label for="preco_compra">Preço da compra: </label><br><br>
-        <input type="number" id="preco_compra" name="preco_compra" required><br><br>
+        <input type="float" id="preco_compra" name="preco_compra" required oninput="validarNumero(this)><br><br>
 
         <input type="submit" value="Cadastrar Ingrediente">
     </form>
     
+    <script src="../../Js/Js_ingredientes/cadastro_ingredientes.js"></script>
 </body>
 </html>

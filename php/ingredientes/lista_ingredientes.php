@@ -55,7 +55,7 @@
                         </a>
                     </td>
                     <td><?php echo $row["nome_ingrediente"] ?></td>
-                    <td><?php echo $row["dt_validade"] ?></td>
+                    <td><?php echo date("d/m/Y", strtotime($row["dt_validade"])) ?></td>
                     <td><?php echo $row["quantidade_ingrediente"] ?></td>
                     <td>
                     <a href="edit_ingredientes.php?id=<?php echo $row["id"]?>">

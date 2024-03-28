@@ -21,16 +21,18 @@
 
         // Executar a consulta SQL
         $result = $conn->query($sql);
-
+        ?>
+        <a href="lista_ingredientes.php"><h3>Voltar a Listagem</h3></a><br>
+        <?php
         // Verificar se há resultados
         if ($result && $result->num_rows > 0) {
             // Exibir os detalhes do ingrediente
             while ($row = $result->fetch_assoc()) {
                 echo "ID: {$row['id']}<br>";
                 echo "Ingrediente: {$row['nome_ingrediente']}<br>";
-                echo "Data de validade: {$row['dt_validade']}<br>";
-                echo "Quantidade: {$row['quantidade_ingrediente']}<br>";
-                echo "Preço da compra: {$row['preco_compra']}<br>";
+                echo "Data de validade: " . date("d/m/Y", strtotime($row["dt_validade"])) . "<br>";
+                echo "Quantidade: {$row['quantidade_ingrediente']} Kg<br>";
+                echo "Preço da compra: R$ {$row['preco_compra']}<br>";
             }
         } else {
             echo "Nenhum ingrediente encontrado com o ID fornecido.";
