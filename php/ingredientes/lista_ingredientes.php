@@ -40,7 +40,7 @@
             <th>ID</th>
             <th>Ingrediente</th>
             <th>Data de validade</th>
-            <th>Quantidade</th>
+            <th>Quantidade em Kg</th>
             <th colspan="2">Ações</th>
         </tr>
 
