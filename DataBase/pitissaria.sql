@@ -16,7 +16,7 @@ CREATE TABLE pizzaiolo (
   carga_horaria int
   entrada_saida TIMESTAMP
 );
-
+ 
 ---- Criando a tabela administrador ---
 CREATE TABLE administrador (
   id_adm INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
