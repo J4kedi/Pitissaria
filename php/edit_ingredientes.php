@@ -36,9 +36,6 @@
         <label for="quantidade">Quantidade:</label><br><br>
         <input type="number" id="quantidade_ingrediente" name="quantidade_ingrediente" value="<?php echo $quantidade_ingrediente?>" required><br><br>
 
-        <label for="condicao_armazem">Condicão de armazenamento:</label><br><br>
-        <input type="text" id="condicao_amarzem" name="condicao_armazem" value="<?php echo $condicao_armazem?>" required><br><br>
-
         <label for="preco_compra">Preço da compra: </label><br><br>
         <input type="number" id="preco_compra" name="preco_compra" value="<?php echo $preco_compra?>" required><br><br>
 

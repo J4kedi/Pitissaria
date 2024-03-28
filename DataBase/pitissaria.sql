@@ -28,50 +28,15 @@ CREATE TABLE user(
 );
 
 ---- Criando a tabela de estoque ----
-CREATE TABLE estoque(
-	farinha FLOAT,
-	sal FLOAT,
-	fermento FLOAT,
-	acucar FLOAT,
-	ovo FLOAT,
-	oleo FLOAT,
-	tomate FLOAT,
-	molho_de_tomate FLOAT,	
-	queijo_mussarela FLOAT,
-	queijo_parmesao FLOAT,
-	presunto FLOAT,
-	calabresa FLOAT,
-	bacon FLOAT,
-	champignon FLOAT,
-	cebola FLOAT,
-	pimentao FLOAT,
-	azeitona FLOAT,
-	milho FLOAT,
-	ervilha FLOAT,
-	palmito FLOAT,
-	alho FLOAT,
-	oregano FLOAT,
-	manjericao FLOAT,
-	requeijao_cremoso FLOAT,
-	queijo_provolone FLOAT,
-	queijo_gorgonzola FLOAT,
-	queijo_cheddar FLOAT,
-	frango FLOAT,
-	carne_bovina FLOAT,
-	linguica FLOAT,
-	camarao FLOAT,
-	atum FLOAT,
-	salmao FLOAT,
-	anchova FLOAT,
-	alcaparra FLOAT,
-	banana FLOAT,
-	abacaxi FLOAT,
-	morango FLOAT,
-	chocolate FLOAT,
-	creme_de_leite FLOAT,
-	leite_condensado FLOAT,
-	batata_palha FLOAT
-)
+CREATE TABLE `ingredientes` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `nome_ingrediente` varchar(100) NOT NULL,
+  `dt_validade` date NOT NULL,
+  `quantidade_ingrediente` float NOT NULL,
+  `preco_compra` decimal(20,0) NOT NULL 
+);
+
+
 
 --- Criando uma tabela para pizzas ja criadas anteriormente ----
 CREATE TABLE montadas_cliente(
