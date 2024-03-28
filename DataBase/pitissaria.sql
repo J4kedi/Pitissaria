@@ -10,14 +10,17 @@ USE pitissariadb;
 CREATE TABLE pizzaiolo (
   id_pizzaiolo INT AUTO_INCREMENT NOT NULL,
   Nome varchar(100) NOT NULL,
-  senha varchar(50)
+  senha varchar(50),
+  cpf varchar(20),
+  email VARCHAR(50)
 );
 
 ---- Criando a tabela administrador ---
 CREATE TABLE administrador (
   id_adm INT AUTO_INCREMENT NOT NULL,
   Nome varchar(100) NOT NULL,
-  senha varchar(50)
+  senha varchar(50),
+  email VARCHAR(50)
 );
 
 ---- Criando a tabela de usuario ---
@@ -25,6 +28,13 @@ CREATE TABLE user(
 	id_user int AUTO_INCREMENT NOT NULL,
   nome varchar(100),
   senha varchar(50)
+  cpf varchar(20),
+  email VARCHAR(50),
+  dt_nasc DATE,
+  nome_rua Varchar(100),
+  cep varchar(20),
+  num_res varchar(20)
+  num_telefone varchar(20),
 );
 
 ---- Criando a tabela de estoque ----
