@@ -12,7 +12,9 @@ CREATE TABLE pizzaiolo (
   Nome varchar(100) NOT NULL,
   senha varchar(50),
   cpf varchar(20),
-  email VARCHAR(50)
+  email VARCHAR(50),
+  carga_horaria int
+  entrada_saida TIMESTAMP
 );
 
 ---- Criando a tabela administrador ---
