@@ -39,11 +39,12 @@ CREATE TABLE user(
 
 ---- Criando a tabela de estoque ----
 CREATE TABLE `ingredientes` (
-  `id` int NOT NULL AUTO_INCREMENT,
+  `id` int NOT NULL,
+  `id_ingrediente` int NOT NULL,
   `nome_ingrediente` varchar(100) NOT NULL,
   `dt_validade` date NOT NULL,
   `quantidade_ingrediente` float NOT NULL,
-  `preco_compra` decimal(20,0) NOT NULL 
+  `preco_compra` decimal(20,2) NOT NULL 
 );
 
 

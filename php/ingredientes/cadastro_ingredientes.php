@@ -6,9 +6,11 @@
     <title>Cadastro de Ingredientes</title>
 </head>
 <body>
+
     <a href="lista_ingredientes.php"><h2>Voltar a listagem</h2></a>
     <h2>Cadastro de Ingredientes</h2>
     <form action="cadastro_ingredientes_php.php" id="form1" method="POST">
+
         <label for="nome">Nome do Ingrediente:</label><br>
         <input type="text" id="nome_ingrediente" name="nome_ingrediente" required><br><br>
 
@@ -23,5 +25,6 @@
 
         <input type="submit" value="Cadastrar Ingrediente">
     </form>
+    
 </body>
 </html>

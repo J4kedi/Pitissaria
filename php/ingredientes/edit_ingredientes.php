@@ -10,7 +10,7 @@
     include("connection.php");
 
     $id = $_GET["id"];
-    $sql =  "SELECT nome_ingrediente, dt_validade, quantidade_ingrediente, condicao_armazem, preco_compra FROM ingredientes WHERE id=$id";
+    $sql =  "SELECT  nome_ingrediente, dt_validade, quantidade_ingrediente, preco_compra FROM ingredientes WHERE id=$id";
     $result = $conn->query($sql);
 
     if ($result->num_rows>0){
@@ -18,7 +18,6 @@
             $nome_ingrediente = $row["nome_ingrediente"];
             $dt_validade = $row["dt_validade"];
             $quantidade_ingrediente = $row["quantidade_ingrediente"];
-            $condicao_armazem = $row["condicao_armazem"];
             $preco_compra = $row["preco_compra"];
         }
     }
@@ -27,6 +26,8 @@
     <a href="lista_ingredientes.php"><h2>Voltar a listagem</h2></a>
     <h2>Cadastro de Ingredientes</h2>
     <form action="edit_ingredientes_php.php" id="form1" method="POST">
+
+
         <label for="nome">Nome do Ingrediente:</label><br>
         <input type="text" id="nome_ingrediente" name="nome_ingrediente" value="<?php echo $nome_ingrediente?>" required><br><br>
 
