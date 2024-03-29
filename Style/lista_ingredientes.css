@@ -1,0 +1,41 @@
+table {
+    border: #000 2px solid;
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+}
+
+th,
+tr,
+td {
+    border: #000 2px solid;
+    padding: 8px; /* Adicionando algum espaçamento interno para melhorar a aparência */
+}
+
+table td {
+    text-align: center;
+}
+
+
+body{
+    background-color: #202D40;
+}
+
+.add_ingrediente {
+    background-color: #E68A00;
+    display: inline-flex;
+    justify-content: center; /* Isso centraliza horizontalmente */
+    align-items: center; /* Isso centraliza verticalmente */
+    height: 50px; /* Ajuste conforme necessário */
+    width: 200px;
+    border-radius: 10px;
+}
+
+a{
+    text-decoration: none;
+    color: black
+}
+
+.id_css{
+    
+}
