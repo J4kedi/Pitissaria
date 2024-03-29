@@ -1,0 +1,29 @@
+:root{
+    --azul:#202D40;
+    --vermelho: #80002D;
+    --laranja: #E68A00;
+}
+
+body{
+    color: white;
+    background-color: var(--azul);
+    text-align: center;
+
+}
+
+div{
+    display: inline-block;
+    background-color: var(--vermelho);
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    width: 400px;
+    height: 400px;
+}
+
+a{
+    text-align: left;
+    text-decoration: none;
+    color: white;
+}
