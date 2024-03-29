@@ -8,7 +8,9 @@ table {
     
 }
 
-th,
+table th{
+    text-align: left;
+}
 tr,
 td {
     padding: 8px; /* Adicionando algum espaçamento interno para melhorar a aparência */
@@ -17,7 +19,8 @@ td {
 }
 
 table td {
-    text-align: center;
+    text-align: left;
+    color: #ff9900;
     
 }
 
@@ -26,7 +29,7 @@ body{
     background-color: #202D40;
 }
 
-.add_ingrediente {
+.voltar_listagem{
     background-color: #ff9900;
     display: inline-flex;
     justify-content: center; /* Isso centraliza horizontalmente */
@@ -41,49 +44,7 @@ body{
     color: #80002D;
 }
 
-.add_ingrediente:hover{
+.voltar_listagem:hover{
     background-color:#80002D;
     color: white;
-}
-
-
-a{
-    text-decoration: none;
-    color: black
-}
-
-.num_registro{
-    background-color: #ff9900;
-    display: inline-flex;
-    height: 50px;
-    width: 250px;
-    align-items: center;
-    border-radius: 10px;
-    border-radius: 115px 0px 114px 55px;
-    -webkit-border-radius: 115px 0px 114px 55px;
-    -moz-border-radius: 115px 0px 114px 55px;
-    border: 7px solid #0D1219;
-    color: #0D1219;
-}
-
-.texto_registro{
-    margin-left: 10px;
-}
-
-
-
-td.id_css:hover {
-    background-color: #E68A00; /* Cor de fundo que deseja aplicar ao passar o mouse */
-}
-
-td.edit_css:hover{
-    background-color: #E68A00;
-}
-
-td.delet_css:hover{
-    background-color: #E68A00;
-}
-
-.opcao_css{
-    background-color: #E68A00;
 }

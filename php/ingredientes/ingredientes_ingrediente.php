@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalhes do Ingrediente</title>
+    <link rel="stylesheet" href="../../Style/ingredientes_ingredientes.css">
 </head>
 <body>
     <?php
@@ -11,7 +12,7 @@
     require_once "connection.php";
      // Substitua "conexao.php" pelo caminho correto do arquivo
 
-    // ele está verificar se o id_ingrediente foi passado na URL
+    // Verificar se o id_ingrediente foi passado na URL
     if (isset($_GET['id'])) {
         // Obter o id do ingrediente da URL
         $id = $_GET['id'];
@@ -22,18 +23,22 @@
         // Executar a consulta SQL
         $result = $conn->query($sql);
         ?>
-        <a href="lista_ingredientes.php"><h3>Voltar a Listagem</h3></a><br>
+        <div>
+            <a href="lista_ingredientes.php"><h3 class="voltar_listagem">Voltar a Listagem</h3></a><br>
+        </div>
         <?php
         // Verificar se há resultados
         if ($result && $result->num_rows > 0) {
-            // Exibir os detalhes do ingrediente
+            // Exibir os detalhes do ingrediente em uma tabela
+            echo "<table>";
             while ($row = $result->fetch_assoc()) {
-                echo "ID: {$row['id']}<br>";
-                echo "Ingrediente: {$row['nome_ingrediente']}<br>";
-                echo "Data de validade: " . date("d/m/Y", strtotime($row["dt_validade"])) . "<br>";
-                echo "Quantidade: {$row['quantidade_ingrediente']} Kg<br>";
-                echo "Preço da compra: R$ {$row['preco_compra']}<br>";
+                echo "<tr><th>ID</th><td>{$row['id']}</td></tr>";
+                echo "<tr><th>Ingrediente</th><td>{$row['nome_ingrediente']}</td></tr>";
+                echo "<tr><th>Data de Validade</th><td>" . date("d/m/Y", strtotime($row["dt_validade"])) . "</td></tr>";
+                echo "<tr><th>Quantidade</th><td>{$row['quantidade_ingrediente']} Kg</td></tr>";
+                echo "<tr><th>Preço da Compra</th><td>R$ {$row['preco_compra']}</td></tr>";
             }
+            echo "</table>";
         } else {
             echo "Nenhum ingrediente encontrado com o ID fornecido.";
         }
@@ -46,3 +51,4 @@
     ?>
 </body>
 </html>
+
