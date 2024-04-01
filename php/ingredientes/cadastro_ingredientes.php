@@ -7,32 +7,27 @@
     <link rel="stylesheet" href="../../Style/cad_ingredientes.css">
 </head>
 <body>
+    <a href="lista_ingredientes.php">Voltar a listagem</a>
+    <main>
+        <h1>Cadastro de Ingredientes</h1>
+        <div class="container">
+            <form action="cadastro_ingredientes_php.php" id="form1" method="POST">
+                <label for="nome_ingrediente">Nome do Ingrediente:</label><br>
+                <input type="text" id="nome_ingrediente" name="nome_ingrediente" required><br><br>
 
-    <a href="lista_ingredientes.php"><h3>Voltar a listagem</h3></a>
-    
-    <div>
-        <h2>Cadastro de Ingredientes</h2>
-        <form action="cadastro_ingredientes_php.php" id="form1" method="POST">
+                <label for="dt_validade">Data de Validade:</label><br>
+                <input type="date" id="dt_validade" name="dt_validade" required><br><br>
 
-            <label for="nome">Nome do Ingrediente:</label><br>
-            <input type="text" id="nome_ingrediente" name="nome_ingrediente" required><br><br>
+                <label for="quantidade_ingrediente">Quantidade:</label><br>
+                <input type="text" id="quantidade_ingrediente" name="quantidade_ingrediente" required oninput="validarNumero(this)" placeholder="Quantidade em KG"><br><br>
 
-            <label for="validade">Data de Validade:</label><br>
-            <input type="date" id="dt_validade" name="dt_validade" required><br><br>
+                <label for="preco_compra">Preço da compra:</label><br>
+                <input type="text" id="preco_compra" name="preco_compra" required oninput="validarNumero(this)"><br><br>
 
-            <label for="quantidade">Quantidade:</label><br><br>
-            <input type="text" id="quantidade_ingrediente" name="quantidade_ingrediente" required oninput="validarNumero(this)" placeholder = "Quantidade em KG">
-            <br><br>
-
-            <label for="preco_compra">Preço da compra: </label><br><br>
-            <input type="float" id="preco_compra" name="preco_compra" required oninput="validarNumero(this)>
-            <br><br>
-            
-            
-        </form>
-    </div>
-
-            <script src="../../Js/Js_ingredientes/cadastro_ingredientes.js"></script>
-
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </main>
+    <script src="../../Js/Js_ingredientes/cadastro_ingredientes.js"></script>
 </body>
 </html>

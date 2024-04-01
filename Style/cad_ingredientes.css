@@ -4,14 +4,36 @@
     --laranja: #E68A00;
 }
 
+* {
+    padding: 0;
+    margin: 0;
+}
+
 body{
     color: white;
     background-color: var(--azul);
     text-align: center;
-
 }
 
-div{
+a {
+    position: absolute;
+    left: 0;
+    bottom: 10;
+    background-color: #80002D;
+    border-radius: 5px;
+    width: 200px;
+    padding: 10px;
+    text-decoration: none;
+    color: #D08938;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+a:hover {
+    color: antiquewhite;
+}
+
+.container {
     display: inline-block;
     background-color: var(--vermelho);
     align-items: center;
@@ -20,10 +42,4 @@ div{
     align-self: center;
     width: 400px;
     height: 400px;
-}
-
-a{
-    text-align: left;
-    text-decoration: none;
-    color: white;
 }
