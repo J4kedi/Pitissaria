@@ -1,9 +1,9 @@
 ---- Criando o database pitissatiaDB ----
 
-CREATE DATABASE pitissaria;
+CREATE DATABASE pitissariadb;
 
 ---- Usar o DB ----
-USE pitissaria;
+USE pitissariadb;
 
 
 ---- Criando a tabela pizzaiolo ---
@@ -13,7 +13,7 @@ CREATE TABLE pizzaiolo (
   senha varchar(50),
   cpf varchar(20),
   email VARCHAR(50),
-  carga_horaria int,
+  carga_horaria int
   entrada_saida TIMESTAMP
 );
  
@@ -27,22 +27,26 @@ CREATE TABLE administrador (
 
 ---- Criando a tabela de usuario ---
 CREATE TABLE user(
-	id_user int PRIMARY KEY AUTO_INCREMENT NOT NULL,
+  id_user int PRIMARY KEY AUTO_INCREMENT NOT NULL,
   nome varchar(100),
   senha varchar(50)
   cpf varchar(20),
   email VARCHAR(50),
   dt_nasc DATE,
-  endereco Varchar(100),
+  nome_rua Varchar(100),
   cep varchar(20),
+  num_res varchar(20)
   num_telefone varchar(20),
 );
 
-CREATE TABLE ingredientes (
-  id_ingrediente INT PRIMARY KEY AUTO_INCREMENT,
-  nome_ingrediente VARCHAR(100) NOT NULL,
-  dt_validade DATE NOT NULL,
-  preco_compra DECIMAL(20, 2) NOT NULL
+---- Criando a tabela de estoque ----
+CREATE TABLE `ingredientes` (
+  `id` int PRIMARY KEY NOT NULL,
+  `id_ingrediente` int NOT NULL,
+  `nome_ingrediente` varchar(100) NOT NULL,
+  `dt_validade` date NOT NULL,
+  `quantidade_ingrediente` float NOT NULL,
+  `preco_compra` decimal(20,2) NOT NULL
 );
 
 CREATE TABLE estoque (
@@ -59,6 +63,12 @@ CREATE TABLE montadas_cliente (
   data_montagem DATE,
   FOREIGN KEY (id_pizza) REFERENCES montadas_cliente(id_pizza)
 );
+
+--- Criando uma tabela para pizzas ja criadas anteriormente ----
+CREATE TABLE montadas_cliente(
+  id_pizza INT PRIMARY KEY,
+  nome varchar(50),
+  ingredientes text
 
 CREATE TABLE ingredientes_pizza (
   id_ingrediente_pizza INT PRIMARY KEY AUTO_INCREMENT,
