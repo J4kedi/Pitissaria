@@ -1,3 +1,8 @@
+:root{
+    --vermelho: #5b2c3c;
+}
+
+
 table {
     border: #000 2px solid;
     width: 100%;
@@ -26,7 +31,7 @@ table td {
 
 
 body{
-    background-color: #ffffff;
+    background-color: var(--vermelho);
 }
 
 .voltar_listagem{
