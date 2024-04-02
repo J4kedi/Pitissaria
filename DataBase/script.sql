@@ -2,7 +2,7 @@
 CREATE DATABASE IF NOT EXISTS pitissaria;
 
 -- Usar o DB
-USE pitissaria;
+USE pitissariadb;
 
 -- Criando a tabela pizzaiolo
 CREATE TABLE IF NOT EXISTS pizzaiolo (

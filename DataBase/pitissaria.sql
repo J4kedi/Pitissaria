@@ -1,6 +1,6 @@
 ---- Criando o database pitissatiaDB ----
 
-CREATE DATABASE pitissariadb;
+CREATE DATABASE pitissaria;
 
 ---- Usar o DB ----
 USE pitissariadb;

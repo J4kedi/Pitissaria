@@ -24,7 +24,7 @@
                 <label for="preco_compra">Preço da compra:</label><br>
                 <input type="text" id="preco_compra" name="preco_compra" required oninput="validarNumero(this)"><br><br>
 
-                <button type="submit">Enviar</button>
+                <button type="submit" id="submit">Enviar</button>
             </form>
         </div>
     </main>
