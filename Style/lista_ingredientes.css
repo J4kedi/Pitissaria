@@ -12,7 +12,7 @@ th,
 tr,
 td {
     padding: 8px; /* Adicionando algum espaçamento interno para melhorar a aparência */
-    border: 5px solid #80002D;
+    border: 5px solid #aaaaaa;
 
 }
 
@@ -27,23 +27,14 @@ body{
 }
 
 .add_ingrediente {
-    background-color: #ff9900;
+    background-color: #a4a4a4;
     display: inline-flex;
     justify-content: center; /* Isso centraliza horizontalmente */
     align-items: center; /* Isso centraliza verticalmente */
     height: 50px; /* Ajuste conforme necessário */
     width: 250px;
-    border-radius: 10px;
-    border-radius: 115px 0px 114px 55px;
-    -webkit-border-radius: 115px 0px 114px 55px;
-    -moz-border-radius: 115px 0px 114px 55px;
-    border: 7px solid #0D1219;
-    color: #80002D;
-}
-
-.add_ingrediente:hover{
-    background-color:#80002D;
-    color: white;
+    border: 1px solid #0D1219;
+    color: #000000;
 }
 
 
@@ -53,16 +44,12 @@ a{
 }
 
 .num_registro{
-    background-color: #ff9900;
+    background-color: #a4a4a4;
     display: inline-flex;
     height: 50px;
     width: 250px;
     align-items: center;
-    border-radius: 10px;
-    border-radius: 115px 0px 114px 55px;
-    -webkit-border-radius: 115px 0px 114px 55px;
-    -moz-border-radius: 115px 0px 114px 55px;
-    border: 7px solid #0D1219;
+    border: 1px solid #0D1219;
     color: #0D1219;
 }
 
@@ -72,18 +59,3 @@ a{
 
 
 
-td.id_css:hover {
-    background-color: #E68A00; /* Cor de fundo que deseja aplicar ao passar o mouse */
-}
-
-td.edit_css:hover{
-    background-color: #E68A00;
-}
-
-td.delet_css:hover{
-    background-color: #E68A00;
-}
-
-.opcao_css{
-    background-color: #E68A00;
-}

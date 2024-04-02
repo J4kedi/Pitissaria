@@ -14,13 +14,13 @@ table th{
 tr,
 td {
     padding: 8px; /* Adicionando algum espaçamento interno para melhorar a aparência */
-    border: 5px solid #80002D;
+    border: 5px solid #aaa;
 
 }
 
 table td {
     text-align: left;
-    color: #ff9900;
+    color: #000000;
     
 }
 
@@ -30,21 +30,14 @@ body{
 }
 
 .voltar_listagem{
-    background-color: #ff9900;
+    background-color: #aaa;
     display: inline-flex;
     justify-content: center; /* Isso centraliza horizontalmente */
     align-items: center; /* Isso centraliza verticalmente */
     height: 50px; /* Ajuste conforme necessário */
     width: 250px;
-    border-radius: 10px;
-    border-radius: 115px 0px 114px 55px;
-    -webkit-border-radius: 115px 0px 114px 55px;
-    -moz-border-radius: 115px 0px 114px 55px;
-    border: 7px solid #0D1219;
-    color: #80002D;
 }
 
-.voltar_listagem:hover{
-    background-color:#80002D;
-    color: white;
+.voltar_listagem{
+    color: #000;
 }
