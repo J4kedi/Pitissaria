@@ -12,6 +12,7 @@ CREATE TABLE IF NOT EXISTS pizzaiolo (
   senha varchar(32) NOT NULL,
   cpf varchar(14) UNIQUE,
   email VARCHAR(50) UNIQUE NOT NULL,
+  num_telefone VARCHAR(14),
   carga_horaria int,
   entrada_saida TIMESTAMP
 );
@@ -34,7 +35,7 @@ CREATE TABLE IF NOT EXISTS user (
   email VARCHAR(50) UNIQUE NOT NULL,
   senha VARCHAR(32) NOT NULL,
   dt_nascimento DATE,
-  num_telefone VARCHAR(20),
+  num_telefone VARCHAR(14),
   tipo_usuario ENUM('cliente', 'pizzaiolo') DEFAULT 'cliente',
   CONSTRAINT ck_tipo_usuario CHECK (tipo_usuario IN ('cliente', 'pizzaiolo'))
 );
