@@ -9,8 +9,8 @@
 <body>
     <a href="lista_ingredientes.php">Voltar a listagem</a>
     <main>
-        <h1>Cadastro de Ingredientes</h1>
         <div class="container">
+            <h1>Cadastro de Ingredientes</h1>
             <form action="cadastro_ingredientes_php.php" id="form1" method="POST">
                 <label for="nome_ingrediente">Nome do Ingrediente:</label><br>
                 <input type="text" id="nome_ingrediente" name="nome_ingrediente" required><br><br>
