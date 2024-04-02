@@ -1,6 +1,6 @@
 <?php
   $username = "root";
-  $password = "0000";
+  $password = "PUC@1234";
   $database = "pitissariadb"; 
   $server = "localhost";
 
