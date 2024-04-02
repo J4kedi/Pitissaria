@@ -13,8 +13,6 @@ a.navbar-brand, a.nav-link{
     border-radius: 10%;
 }
 
-div#sobre{
-    display: inline;    
+.sobre{
     width: 800px;
-
 }
