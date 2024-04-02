@@ -7,10 +7,11 @@ USE pitissariadb;
 -- Criando a tabela pizzaiolo
 CREATE TABLE IF NOT EXISTS pizzaiolo (
   id_pizzaiolo INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-  Nome varchar(100) NOT NULL,
-  senha varchar(50),
-  cpf varchar(20),
-  email VARCHAR(50),
+  nome varchar(100) NOT NULL,
+  usuario varchar(50) UNIQUE NOT NULL,
+  senha varchar(32) NOT NULL,
+  cpf varchar(14) UNIQUE,
+  email VARCHAR(50) UNIQUE NOT NULL,
   carga_horaria int,
   entrada_saida TIMESTAMP
 );
@@ -18,17 +19,20 @@ CREATE TABLE IF NOT EXISTS pizzaiolo (
 -- Criando a tabela administrador
 CREATE TABLE IF NOT EXISTS administrador (
   id_adm INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-  Nome varchar(100) NOT NULL,
-  senha varchar(50),
-  email VARCHAR(50)
+  nome varchar(100) NOT NULL,
+  usuario varchar(50) UNIQUE NOT NULL,
+  senha varchar(32) NOT NULL,
+  email VARCHAR(50) UNIQUE NOT NULL
 );
 
 -- Criando a tabela de usuario
 CREATE TABLE IF NOT EXISTS user (
   id_cliente INT PRIMARY KEY AUTO_INCREMENT,
   nome VARCHAR(100) NOT NULL,
-  cpf VARCHAR(20) UNIQUE NOT NULL,
+  usuario VARCHAR(50) UNIQUE NOT NULL,
+  cpf VARCHAR(14) UNIQUE,
   email VARCHAR(50) UNIQUE NOT NULL,
+  senha VARCHAR(32) NOT NULL,
   dt_nascimento DATE,
   num_telefone VARCHAR(20),
   tipo_usuario ENUM('cliente', 'pizzaiolo') DEFAULT 'cliente',
