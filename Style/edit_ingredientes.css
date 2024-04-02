@@ -1,17 +1,13 @@
 :root{
     --azul:#202D40;
-    --vermelho: #80002D;
+    --vermelho: #5b2c3c;
     --laranja: #E68A00;
 }
 
-html{
-    background-color: var(--azul);
-}
-
 body{
-    color: white;
-    background-color: var(--azul);
+    background-color: white;
     text-align: center;
+    background-color: var(--vermelho);
 
 }
 main{
@@ -19,18 +15,20 @@ main{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+
 }
 
 a {
     position: absolute;
     left: 0;
     bottom: 10;
-    background-color: #80002D;
     border-radius: 5px;
-    width: 200px;
-    padding: 10px;
+    width: 300px;
+    padding: 5px;
+    margin-left: 5px;
     text-decoration: none;
-    color: #D08938;
+    color: black;
+    background-color: #aaa;
     text-transform: uppercase;
     font-weight: bold;
 }
@@ -41,7 +39,7 @@ a:hover {
 
 .container {
     display: inline-block;
-    background-color: var(--vermelho);
+    background-color: #aaa; 
     align-items: center;
     justify-content: center;
     align-items: center;
@@ -49,17 +47,17 @@ a:hover {
     text-align: center;
     width: 400px;
     height: 400px;
+    color: black;
 }
+
 input#submit{
     color: white;
-    background-color: #ff9900;
+    background-color: #5f5d5d;
     display: inline-flex;
     justify-content: center; /* Isso centraliza horizontalmente */
     align-items: center; /* Isso centraliza verticalmente */
     height: 50px;
     width: 240px;
     border-radius: 10px;
-    border-radius: 115px 0px 114px 55px;
-    border: 7px solid #0D1219;
-    color: #80002D;
+    border: 5px 10px solid #0D1219;
 }

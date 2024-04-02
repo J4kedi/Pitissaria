@@ -30,7 +30,7 @@
                 </ul>
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
+                    <button class="btn btn-outline-success" type="submit">Buscar</button>
                 </form>
                 </div>
             </div>
@@ -38,7 +38,7 @@
     </header>
 
     <main class="container">
-        <!-- Pills navs -->
+        <!-- navegação login e cadastro -->
         <ul class="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
             <li class="nav-item" role="presentation">
             <a class="nav-link" id="tab-login" data-mdb-toggle="pill" href="../HTML/login.html" role="tab"
@@ -46,10 +46,10 @@
             </li>
             <li class="nav-item" role="presentation">
             <a class="nav-link active" id="tab-register" data-mdb-toggle="pill" href="../HTML/cadastro.html" role="tab"
-                aria-controls="pills-register" aria-selected="true">Register</a>
+                aria-controls="pills-register" aria-selected="true">Cadastrar</a>
             </li>
         </ul>
-        <!-- Pills navs -->
+        <!-- navegação login e cadastro-->
         
         <!-- Pills content -->
         <div class="tab-content">
@@ -58,9 +58,9 @@
                 <!-- Você pode adicionar conteúdo para a página de login aqui, se necessário -->
             </div>
             <div class="tab-pane fade show active" id="pills-register" role="tabpanel" aria-labelledby="tab-register">
-                <form action=".//cadastro.php" id="form1" method="POST">
+                <form action="../php/ingredientes/cadastro.php" id="form1" method="POST">
                     <div class="text-center mb-3">
-                        <p>Sign up with:</p>
+                        <p>Entre com:</p>
                         <button type="button" class="btn btn-link btn-floating mx-1">
                             <i class="fab fa-facebook-f"></i>
                         </button>
@@ -78,7 +78,7 @@
                         </button>
                     </div>
             
-                    <p class="text-center">or:</p>
+                    <p class="text-center">Ou:</p>
             
                     <!-- Name input -->
                     <div class="form-outline mb-4">
@@ -134,7 +134,7 @@
                         <label class="form-label" for="registerPhoneNumber">Número de Telefone</label>
                     </div>
             
-                    <!-- Checkbox -->
+                    <!-- Checkbox  de termos -->
                     <div class="form-check d-flex justify-content-center mb-4">
                         <input class="form-check-input me-2" type="checkbox" value="" id="registerCheck" checked
                             aria-describedby="registerCheckHelpText" />

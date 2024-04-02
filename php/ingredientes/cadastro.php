@@ -1,5 +1,5 @@
 <?php
-    include("cadastro_connection.php");
+    include("connection.php");
 
     // Função para limpar e validar dados do formulário
     function validarDados($conn, $input) {
