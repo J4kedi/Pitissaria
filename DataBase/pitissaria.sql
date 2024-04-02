@@ -3,7 +3,7 @@
 CREATE DATABASE pitissaria;
 
 ---- Usar o DB ----
-USE pitissariadb;
+USE pitissaria;
 
 
 ---- Criando a tabela pizzaiolo ---
@@ -13,7 +13,7 @@ CREATE TABLE pizzaiolo (
   senha varchar(50),
   cpf varchar(20),
   email VARCHAR(50),
-  carga_horaria int
+  carga_horaria int,
   entrada_saida TIMESTAMP
 );
  
