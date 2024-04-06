@@ -27,6 +27,7 @@
 
                 <button type="submit" id="submit">Enviar</button>
             </form>
+            
         </div>
     </main>
     <script src="../../Js/Js_ingredientes/cadastro_ingredientes.js"></script>
