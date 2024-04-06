@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BANCO DE DADOS INGREDIENTES</title>
     <link rel="stylesheet" href="../../Style/lista_ingredientes.css">
-
+    <link rel="shortcut icon" href="../../imagens/icone/pizza.ico" type="image/x-icon">
 </head>
 
 <body>
