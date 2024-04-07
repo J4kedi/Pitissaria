@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../Style/cad_ingredientes.css">
+</head>
+<body>
 <?php
     include("connection.php");
 
@@ -11,14 +20,14 @@
     $result =  $conn->query($sql);
 
     if ($result === TRUE) {
-?>
-    <script>
-        alert("Dados alterados com sucesso");
-        location.href = "lista_ingredientes.php";
-    </script>
-<?php
+        echo "<h1>Dados alterados com sucesso.</h1>";
+        echo '<script>setTimeout(function() { window.location.href = "lista_ingredientes.php"; }, 3000);</script>'; // Redireciona para lista_ingredientes.php após 3 segundos 
     }   
     else{
         echo "Erro ao cadastrar ingrediente: " . $conn->error;
     }
 ?>
+
+</body>
+</html>
+
