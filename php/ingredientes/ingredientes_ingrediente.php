@@ -9,9 +9,8 @@
 </head>
 <body>
     <?php
-    // Incluir ou definir a conexão com o banco de dados
+    //definir a conexão com o banco de dados
     require_once "connection.php";
-     // Substitua "conexao.php" pelo caminho correto do arquivo
 
     // Verificar se o id_ingrediente foi passado na URL
     if (isset($_GET['id'])) {
