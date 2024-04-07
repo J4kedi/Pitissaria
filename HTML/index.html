@@ -7,19 +7,21 @@
     <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
     <link rel="stylesheet" href="../Style/index.css">
     <title>Pitissaria</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="shortcut icon" href="../../imagens/icone/pizza.ico" type="image/x-icon">
+    
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <nav class="navbar navbar-expand-md bg-red-900 navbar-warning">
             <div class="container-fluid">
-              <a class="navbar-brand" href="index.html">Pitissaria</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+              <a class="navbar-brand" href="index.html"><h2 class="m-0"><img class= "d-block" src="../ASSETS/logo-inicio (1).png" width="150"alt="logo"></h2></a>
+              <button class="navbar-toggler navbar-warning" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon navbar-warning"></span>
               </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <div class="collapse navbar-collapse navbar-warning" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto navbar-warning">
                   <li class="nav-item">
                     <a class="nav-link" href="../HTML/login.html">LOGIN</a>
                   </li>
@@ -29,7 +31,7 @@
                 </ul>
                 <form class="d-flex" role="search">
                   <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn-outline-success" type="submit">Buscar</button>
+                  <button class="btn btn-outline-warning" type="submit">Buscar</button>
                 </form>
               </div>
             </div>
@@ -42,7 +44,9 @@
           </div>
           <div class="carousel-inner">
             <div class="carousel-item active">             
-              <img src="../imagens/imagen3.jpg" width="1400" height="400">
+              <img class= "img-fluid d-md-none" src="../ASSETS/imagemTelaDeInicio-Mobile.png" alt="Imagem de pizza indo para o forno">
+              <img class= "img-fluid d-none d-md-block d-xl-none" src="..\ASSETS\imagemTelaDeInicio-Tablet.png" alt="Imagem de pizza indo para o forno">
+              <img class= "img-fluid d-none d-xl-block" src="..\ASSETS\imagemTelaDeInicio-Desktop.png" alt="Imagem de pizza indo para o forno">
               <div class="carousel-caption d-none d-md-block">
                 <h5>A pizza, com sua massa crocante, molho de tomate e uma variedade de coberturas suculentas.</h5>
               </div>
@@ -76,10 +80,10 @@
         </div>
       </header>
 
-    <main>
+    <main class = "text-center">
         <h1>Pitissaria</h1>
 
-        <div class="sobre">
+        <div class="sobre-expand-md">
           <h2>Sobre nós</h2>
           <p>
               Bem-vindo à Pitissaria, onde cada fatia é uma experiência!
@@ -104,10 +108,42 @@
 
     </aside>
 
-    <footer>
-        <p>@Tsuruba</p>
-    </footer>
+    <section class="pb-4">
 
+    <h2 class="text-center">Facilidades que oferecemos</h2>
+
+      <div class = "d-flex flex-column align-items-center gap-3">
+        <div class="section-facilidades d-flex">
+          <div><i class="bi bi-cash-coin fs-1"></i></div>
+          <div>
+          <div class="texto-section-maior ms-3">PAGAMENTO FACILITADO</div>
+          <div class="texto-section-menor ms-3">Aceitamos todos os cartões, pix e dinheiro.</div>
+        </div>
+      </div>
+
+        <div class="section-facilidades d-flex">
+          <div><i class="bi bi-truck fs-1"></i></div>
+          <div>
+          <div class="texto-section-maior ms-3">ONDE VOCÊ ESTIVER</div>
+          <div class="texto-section-menor ms-3">Graças a nossa exclusividade como delivery,
+            você pode escolher pela forma de entrega ou retirada no local.</div>
+        </div>
+      </div>
+
+        <div class="section-facilidades d-flex">
+          <div><i class="bi bi-egg-fried fs-1"></i></div>
+          <div>
+          <div class="texto-section-maior ms-3">MONTE SUA PIZZA</div>
+          <div class="texto-section-menor ms-3">Nossa equipe de cozinha prepara cada pizza com 
+          ingredientes selecionados de acordo com a sua preferência.</div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <footer class="text-center bg-dark">
+      <p>2024 <i class="bi bi-c-circle"></i> Desenvolvido por Tsurubas</p>
+    </footer>
     <script src="../JavaScript/index.js"></script>
 </body>
 </html>

@@ -4,6 +4,10 @@ main.container {
     justify-content: center;
     flex-direction: column;
 }
+header{
+    background-color: #341923;
+    font-family: 'Roboto', sans-serif;
+}
 
 a#registercadastro{
     background-color: #6c757d;
