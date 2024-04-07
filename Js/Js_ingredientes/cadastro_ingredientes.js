@@ -20,3 +20,7 @@ function validarNumero(input) {
     // Remover caracteres que não sejam números (0-9)
     input.value = input.value.replace(/[^\d]/g, '');
 }
+
+
+
+
