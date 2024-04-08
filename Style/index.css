@@ -20,6 +20,11 @@ a.navbar-brand, a.nav-link{
     width: 800px;
 }
 
+.navbar-warning{
+    background-color: #341923;
+    color: #dc9d55;
+}
+
 section{
     background-color:#202D40;
     color:#dc9d55; 
