@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 session_start();
                 // Define variáveis de sessão para indicar que o usuário está logado e seu papel
                 $_SESSION["logged_in"] = true;
-                $_SESSION["role"] = $role;
+                $_SESSION["tp_user"] = $role;
                 // Redireciona para a página adequada após o login bem-sucedido
                 if ($role == "gerente") {
                     header("Location: ../ingredientes/lista_ingredientes.php");
