@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
+  <link rel="stylesheet" href="../Style/padrao.css">
   <link rel="stylesheet" href="../Style/index.css">
   <title>Pitissaria</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -15,33 +16,9 @@
 </head>
 
 <body>
-  <header>
-    <nav class="navbar navbar-expand-md navbar-warning">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">
-          <h2 class="m-0"><img class="d-block" src="../ASSETS/logo-inicio (1).png" width="150" alt="logo"></h2>
-        </a>
-        <button class="navbar-toggler navbar-warning" type="button" data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-          aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon navbar-warning"></span>
-        </button>
-        <div class="collapse navbar-collapse navbar-warning" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto navbar-warning">
-            <li class="nav-item">
-              <a class="nav-link" href="../HTML/login.html">LOGIN</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="../HTML/cadastro.html">CADASTRO</a>
-            </li>
-          </ul>
-          <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-warning" type="submit">Buscar</button>
-          </form>
-        </div>
-      </div>
-    </nav>
+  <?php include '../geral/header.php' ?>
+
+  <main class="text-center">
     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
@@ -64,7 +41,6 @@
           </div>
         </div>
         <div class="carousel-item">
-
           <img class="img-fluid d-md-none" src="../ASSETS/pizzaSegundaImagem-Mobile.jpg" alt="Imagem de pizza">
           <img class="img-fluid d-none d-md-block d-xl-none" src="../ASSETS/pizzaSegundaImagem-Tablet.jpg"alt="Imagem de pizza">
           <img class="img-fluid d-none d-xl-block" src="../ASSETS/pizzaSegundaImagem-Desktop.jpg"alt="Imagem de pizza">
@@ -97,9 +73,7 @@
         <span class="visually-hidden">Next</span>
       </button>
     </div>
-  </header>
 
-  <main class="text-center">
     <h1>Pitissaria</h1>
 
     <div class="sobre-expand-md">
@@ -123,46 +97,7 @@
 
   </main>
 
-  <aside>
-
-  </aside>
-
-  <section class="pb-4">
-
-    <h2 class="text-center">Facilidades que oferecemos</h2>
-
-    <div class="d-flex flex-column align-items-center gap-3">
-      <div class="section-facilidades d-flex">
-        <div><i class="bi bi-cash-coin fs-1"></i></div>
-        <div>
-          <div class="texto-section-maior ms-3">PAGAMENTO FACILITADO</div>
-          <div class="texto-section-menor ms-3">Aceitamos todos os cartões, pix e dinheiro.</div>
-        </div>
-      </div>
-
-      <div class="section-facilidades d-flex">
-        <div><i class="bi bi-truck fs-1"></i></div>
-        <div>
-          <div class="texto-section-maior ms-3">ONDE VOCÊ ESTIVER</div>
-          <div class="texto-section-menor ms-3">Graças a nossa exclusividade como delivery,
-            você pode escolher pela forma de entrega ou retirada no local.</div>
-        </div>
-      </div>
-
-      <div class="section-facilidades d-flex">
-        <div><i class="bi bi-egg-fried fs-1"></i></div>
-        <div>
-          <div class="texto-section-maior ms-3">MONTE SUA PIZZA</div>
-          <div class="texto-section-menor ms-3">Nossa equipe de cozinha prepara cada pizza com
-            ingredientes selecionados de acordo com a sua preferência.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer class="text-center bg-dark">
-    <p>2024 <i class="bi bi-c-circle"></i> Desenvolvido por Tsurubas</p>
-  </footer>
+  <?php include '../geral/footer.php'?>
   <script src="../JavaScript/index.js"></script>
 </body>
 

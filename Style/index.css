@@ -1,57 +1,17 @@
 /* Corpo do site e HEADER */
 @import url(https://fonts.googleapis.com/css2?family=Roboto&display=swap);
 
-body {
-    background-color: #5b2c3c;
-    color: antiquewhite;
-    font-family:'Roboto', sans-serif;
-}
-
-header{
-    background-color: #341923;
-    font-family: 'Roboto', sans-serif;
-}
-
-a.navbar-brand, a.nav-link{
-    color: #dc9d55;
-}
-
 .sobre { 
     width: 800px;
 }
 
-.navbar-warning{
-    background-color: #341923;
-    color: #dc9d55;
-}
-
-section{
-    background-color:#202D40;
-    color:#dc9d55; 
-    font-family: 'Roboto', sans-serif;
-}
-
-.texto-section-menor{
-    font-size: 13px;
-}
-
-.section-facilidades{
-    width: 325px;
-}
-
 /* Login e Registro */
-
-header{
-    background-color: #341923;
-    font-family: 'Roboto', sans-serif;
-}
 
 main.container {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    font-family: 'Roboto', sans-serif;
 }
 
 a#registercadastro{
