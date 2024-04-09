@@ -12,10 +12,13 @@
         <div class="collapse navbar-collapse navbar-warning" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto navbar-warning">
                 <li class="nav-item">
-                <a class="nav-link" href="../HTML/login.php">LOGIN</a>
+                    <a class="nav-link" href="../HTML/index.php">INICIO</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="../HTML/cadastro.php">CADASTRO</a>
+                    <a class="nav-link" href="../HTML/login.php">LOGIN</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../HTML/cadastro.php">CADASTRO</a>
                 </li>
             </ul>
         </div>
