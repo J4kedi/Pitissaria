@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BANCO DE DADOS INGREDIENTES</title>
+    <title>Ingredientes</title>
     <link rel="stylesheet" href="../../Style/lista_ingredientes.css">
     <link rel="shortcut icon" href="../../imagens/icone/pizza.ico" type="image/x-icon">
 </head>
@@ -12,6 +12,7 @@
 <body>
     <?php
     include("connection.php");
+    require 'HTML\menu.php'
 
     $sql =  "SELECT id, nome_ingrediente, dt_validade, quantidade_ingrediente FROM ingredientes";
     $result = $conn->query($sql);
