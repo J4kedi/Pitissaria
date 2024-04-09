@@ -16,7 +16,7 @@
 </head>
 
 <body>
-  <?php include '../geral/header.php' ?>
+  <?php include '..\geral\header.php' ?>
 
   <main class="text-center">
     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">

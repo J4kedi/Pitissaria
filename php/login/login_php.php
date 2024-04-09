@@ -9,7 +9,7 @@ if ($conn->connect_error) {
 $username = $conn->real_escape_string($_POST['login']);
 $senha = $conn->real_escape_string($_POST['senha']);
 
-$sql = "SELECT id_user, nome FROM user WHERE login = '$username' AND senha = md5('$senha')";
+$sql = "SELECT id_user, nome FROM user WHERE login = '$username' AND senha = '$senha'";
 
 if ($result = $conn->query($sql)){
     echo("erro SQL");
