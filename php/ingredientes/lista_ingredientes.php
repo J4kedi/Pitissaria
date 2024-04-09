@@ -10,8 +10,6 @@
 </head>
 
 <body>
-    <?php include '../geral/header.php'?>
-
     <?php
     include("connection.php");
     require 'HTML\menu.php';
@@ -67,8 +65,7 @@
         ?>
 
     </table>
-    
-    <?php include '../geral/footer.php'?>
+
 </body>
 
 </html>
