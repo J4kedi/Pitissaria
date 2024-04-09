@@ -8,6 +8,8 @@
     <link rel="shortcut icon" href="../../imagens/icone/pizza.ico" type="image/x-icon">
 </head>
 <body>
+    <?php include '../geral/header.php'?>
+
     <a href="lista_ingredientes.php">Voltar a listagem</a>
     <main>
         <div class="container">
@@ -29,6 +31,8 @@
             </form>
         </div>
     </main>
+
+    <?php include '../geral/footer.php'?>
     <script src="../../Js/Js_ingredientes/cadastro_ingredientes.js"></script>
 </body>
 </html>
