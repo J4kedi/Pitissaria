@@ -15,10 +15,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $password = $_POST["senha"];
         $role = $_POST["tp_user"];
 
-        // Prepara a consulta SQL para buscar o usuário com o username e a função fornecidos
-        $sql = "SELECT id_user, nome, senha, tp_user FROM user WHERE nome = $username AND tp_user = $role";
-
-        // Prepara e executa a declaração
+        // Prepara a consulta SQL usando prepared statements
+        $sql = "SELECT id_user, nome, senha, tp_user FROM user WHERE nome = ? AND tp_user = ?";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("ss", $username, $role);
         $stmt->execute();
@@ -37,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 // Redireciona para a página adequada após o login bem-sucedido
                 if ($role == "gerente") {
                     header("Location: ../ingredientes/lista_ingredientes.php");
-                } elseif ($role != "gerente") {
+                } else {
                     header("Location: pagina_admin.php");
                 }
                 exit();
