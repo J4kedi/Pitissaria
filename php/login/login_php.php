@@ -1,6 +1,6 @@
 <?php 
     session_start();
-    require_once "connection.php";
+    require_once "../ingredientes/connection.php";
 
     if ($conn->connect_error) {
         die("<strong> Falha de conexão: </strong>" . $conn->connect_error);
