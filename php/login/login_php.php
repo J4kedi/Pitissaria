@@ -20,7 +20,7 @@
             unset($_SESSION['nao_autenticado']);
             if ($_SESSION['tp_user'] == 'gerente'){
                 $conn->close();
-                header('location: /php/ingredientes/lista_ingredientes.php')
+                header('location:php\ingredientes\lista_ingredientes.php')
                 exit()
             }
         }

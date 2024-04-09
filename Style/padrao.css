@@ -1,0 +1,46 @@
+@import url(https://fonts.googleapis.com/css2?family=Roboto&display=swap);
+
+:root {
+    --cor-fundo: #5b2c3c;
+    --cor-header: #341923;
+    --cor-texto: antiquewhite;
+    --cor-texto-header: #dc9d55;
+    --cor-footer: #202D40;
+    --fonte-texto: 'Roboto', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    font-family:var(--fonte-texto);
+    height: 100vh;
+}
+
+/* Header */
+header{
+    background-color: var(--cor-header);
+}
+
+a.navbar-brand, a.nav-link{
+    color: var(--cor-texto-header);
+}
+
+/* Footer */
+
+section{
+    background-color: var(--cor-footer);
+    color: var(--cor-texto-header); 
+}
+
+.texto-section-menor{
+    font-size: 13px;
+}
+
+.section-facilidades{
+    width: 325px;
+}
