@@ -87,10 +87,10 @@ CREATE TABLE IF NOT EXISTS ingredientes_pizza (
 );
 
 -- Criando a tabela de pizzas já existentes
-CREATE TABLE IF NOT EXISTS pizzas (
+CREATE TABLE IF NOT EXISTS pizza (
   id_pizza INT PRIMARY KEY,
   nome varchar(100),
-  ingredientes text
+  ingrediente text
 );
 
 -- Criando a tabela de logs de consultas de estoque

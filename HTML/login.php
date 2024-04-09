@@ -36,7 +36,7 @@
         <!-- login com  redes diferentes -->
         <div class="tab-content">
             <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
-                <form action="..\php\login\login_php.php">
+                <form action="..\php\login\login_php.php" method = "POST">
                     <div class="text-center mb-3">
                         <p>Entre com:</p>
                         <button type="button" class="btn btn-link btn-floating mx-1">
@@ -60,7 +60,7 @@
 
                     <!-- Email input -->
                     <div class="form-outline mb-4">
-                        <input type="email" id="loginName" class="form-control" />
+                        <input type="text" id="loginName" class="form-control" />
                         <label class="form-label" for="loginName">Email Ou username</label>
                     </div>
 
