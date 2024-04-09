@@ -12,7 +12,7 @@
 <body>
     <?php
     include("connection.php");
-    require 'HTML\menu.php'
+    require 'HTML\menu.php';
 
     $sql =  "SELECT id, nome_ingrediente, dt_validade, quantidade_ingrediente FROM ingredientes";
     $result = $conn->query($sql);
