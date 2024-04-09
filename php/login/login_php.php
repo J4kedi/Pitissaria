@@ -1,28 +1,54 @@
-<?php 
-    session_start();
-    require_once "../ingredientes/connection.php";
+<?php
+// Verifica se o formulário foi submetido
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Verifica se os campos de usuário, senha e função foram preenchidos
+    if (isset($_POST["nome"]) && isset($_POST["senha"]) && isset($_POST["tp_user"])) {
+        // Conecta ao banco de dados
+        $conn = new mysqli("localhost", "root", "0000", "teste1");
 
-    if ($conn->connect_error) {
-        die("<strong> Falha de conexão: </strong>" . $conn->connect_error);
-    }
-
-    $username = $conn->real_escape_string($_POST['login']); // prepara a string recebida para ser utilizada em comando SQL
-    $senha   = $conn->real_escape_string($_POST['senha']); // prepara a string recebida para ser utilizada em comando SQL
-
-    $sql = "SELECT id_user, nome, FROM user WHERE tp_user = id_user AND login = '$username' AND senha = md5('$senha')";
-
-    if ($result = $conn->query($sql)){
-        if ($result->num_rows==1){
-            $row = $result->fetch_assoc();
-            $_SESSION['login'] = $username;
-            $_SESSION['id_user'] = $row['id_usuario'];
-            $_SESSION['nome'] = $row['nome'];
-            unset($_SESSION['nao_autenticado']);
-            if ($_SESSION['tp_user'] == 'gerente'){
-                $conn->close();
-                header('location:ingredientes/lista_ingredientes.php')
-                exit()
-            }
+        // Verifica se houve algum erro na conexão
+        if ($conn->connect_error) {
+            die("Erro de conexão: " . $conn->connect_error);
         }
+
+        $username = $_POST["nome"];
+        $password = $_POST["senha"];
+        $role = $_POST["tp_user"];
+
+        // Prepara a consulta SQL usando prepared statements
+        $sql = "SELECT id_user, nome, senha, tp_user FROM user WHERE nome = ? AND tp_user = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("ss", $username, $role);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        // Verifica se o usuário foi encontrado
+        if ($result->num_rows == 1) {
+            $row = $result->fetch_assoc();
+            // Verifica se a senha fornecida corresponde à senha no banco de dados
+            if (password_verify($password, $row["senha"])) {
+                // Inicia a sessão
+                session_start();
+                // Define variáveis de sessão para indicar que o usuário está logado e seu papel
+                $_SESSION["logged_in"] = true;
+                $_SESSION["tp_user"] = $role;
+                // Redireciona para a página adequada após o login bem-sucedido
+                if ($role == "gerente") {
+                    header("Location: ../ingredientes/lista_ingredientes.php");
+                } else {
+                    header("Location: pagina_admin.php");
+                }
+                exit();
+            } else {
+                echo "Credenciais inválidas. Por favor, tente novamente.";
+            }
+        } else {
+            echo "Credenciais inválidas. Por favor, tente novamente.";
+        }
+
+        // Fecha a conexão com o banco de dados
+        $stmt->close();
+        $conn->close();
     }
+}
 ?>
