@@ -10,18 +10,14 @@
         <span class="navbar-toggler-icon navbar-warning"></span>
         </button>
         <div class="collapse navbar-collapse navbar-warning" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto navbar-warning">
-            <li class="nav-item">
-            <a class="nav-link" href="../HTML/login.php">LOGIN</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link" href="../HTML/cadastro.php">CADASTRO</a>
-            </li>
-        </ul>
-        <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-warning" type="submit">Buscar</button>
-        </form>
+            <ul class="navbar-nav me-auto navbar-warning">
+                <li class="nav-item">
+                <a class="nav-link" href="../HTML/login.php">LOGIN</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="../HTML/cadastro.php">CADASTRO</a>
+                </li>
+            </ul>
         </div>
     </div>
     </nav>
