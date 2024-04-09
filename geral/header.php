@@ -20,6 +20,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="../HTML/cadastro.php">CADASTRO</a>
                 </li>
+                <li class="nav-item">
+                    <a href="../php/ingredientes/lista_ingredientes.php">Ingredientes</a>
+                </li>
             </ul>
         </div>
     </div>

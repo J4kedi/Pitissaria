@@ -11,8 +11,9 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
     <title>Login</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="shortcut icon" href="../../imagens/icone/pizza.ico" type="image/x-icon">
+
+
 </head>
 
 <body>
@@ -63,7 +64,7 @@
         <!-- login com  redes diferentes -->
         <div class="tab-content">
             <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
-                <form action="../php/login_php.php" method="POST">
+                <form id="loginForm" action="login_php.php" method="POST">
                     <div class="text-center mb-3">
                         <p>Entre com:</p>
                         <button type="button" class="btn btn-link btn-floating mx-1">
@@ -87,13 +88,17 @@
 
                     <!-- Email input -->
                     <div class="form-outline mb-4">
+<<<<<<< Updated upstream
                         <input type="text" id="loginName" class="form-control" />
+=======
+                        <input type="email" id="loginName" class="form-control" name="loginName">
+>>>>>>> Stashed changes
                         <label class="form-label" for="loginName">Email Ou username</label>
                     </div>
 
                     <!-- senha input -->
                     <div class="form-outline mb-4">
-                        <input type="password" id="loginPassword" class="form-control" />
+                        <input type="password" id="loginPassword" class="form-control" name="loginPassword">
                         <label class="form-label" for="loginPassword">Senha</label>
                     </div>
 
@@ -120,13 +125,13 @@
                     <div class="text-center">
                         <p>Não e cadastrado? <a href="#!">Cadastrar</a></p>
                     </div>
+                </form>
             </div>
         </div>
         <!-- Pills content -->
-    </main>
+
+
 </body>
-<footer class="text-center">
-    <p>2024 <i class="bi bi-c-circle"></i> Desenvolvido por Tsurubas</p>
-</footer>
 
 </html>
+
