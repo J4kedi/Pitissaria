@@ -12,6 +12,8 @@ $senha = $conn->real_escape_string($_POST['senha']);
 $sql = "SELECT id_user, nome FROM user WHERE login = '$username' AND senha = md5('$senha')";
 
 if ($result = $conn->query($sql)){
+    echo("erro SQL");
+        exit();
     if ($result->num_rows == 1){
         $row = $result->fetch_assoc();
         $_SESSION['login'] = $username;

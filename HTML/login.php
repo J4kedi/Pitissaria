@@ -36,7 +36,7 @@
         <!-- login com  redes diferentes -->
         <div class="tab-content">
             <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
-                <form action="login.php">
+                <form action="..\php\login\login_php.php">
                     <div class="text-center mb-3">
                         <p>Entre com:</p>
                         <button type="button" class="btn btn-link btn-floating mx-1">
