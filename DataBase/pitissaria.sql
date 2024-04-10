@@ -28,6 +28,7 @@ CREATE TABLE administrador (
 -- -- Criando a tabela de usuario ---
 CREATE TABLE user(
   id_user int PRIMARY KEY AUTO_INCREMENT NOT NULL,
+  tp_user varchar(100),
   nome varchar(100),
   senha varchar(50),
   cpf varchar(20),
