@@ -20,9 +20,20 @@
                 <li class="nav-item">
                     <a class="nav-link" href="../HTML/cadastro.php">CADASTRO</a>
                 </li>
-                <li class="nav-item">
-                    <a href="../php/ingredientes/lista_ingredientes.php">Ingredientes</a>
-                </li>
+
+                
+                <?php
+                    session_start(); // Inicia a sessão
+
+                    // Verifica se a variável de sessão tp_user está definida e é igual a "gerente"
+                    if(isset($_SESSION['tp_user']) && $_SESSION['tp_user'] === 'gerente') {
+                        // Se o usuário for um gerente, exibe a tag <li>
+                        echo '<li class="nav-item">';
+                        echo '<a href="../php/ingredientes/lista_ingredientes.php">Ingredientes</a>';
+                        echo '</li>';
+                    }
+                ?>
+
             </ul>
         </div>
     </div>
