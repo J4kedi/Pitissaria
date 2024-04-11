@@ -27,7 +27,7 @@ if ($result->num_rows > 0) {
     echo '<h1>usuario já cadastrado. Por favor cadastre outro .</h1>'; //aqui ele mostra a pagina com o texto em H1
     echo '<script>setTimeout(function() { history.back(); }, 5000);</script>'; // Atraso de 5 segundos 
 } else {
-    // O insumo não existe, inserir no banco de dados 
+    // O usuario não existe, inserir no banco de dados 
     $sql_insert = "INSERT INTO user(nome, senha, cpf, email, dt_nasc, cep, num_res, num_telefone) VALUES('$nome', '$senha','$cpf','$email', '$dt_nasc', '$cep', '$num_res', '$num_telefone')";
     
     if ($conn->query($sql_insert) === TRUE) {
