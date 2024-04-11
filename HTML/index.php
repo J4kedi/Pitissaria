@@ -16,7 +16,17 @@
 </head>
 
 <body>
-  <?php include '..\geral\header.php' ?>
+<?php include '..\geral\header.php' ?>
+
+<div class="overlay"></div>
+
+<div id="modalSuccess" class="modal">
+    <div class="modal-content">
+        <p>Login bem-sucedido!</p>
+        <p>Bem-vindo!</p>
+    </div>
+
+</div>
 
   <main class="text-center">
     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
@@ -97,8 +107,50 @@
 
   </main>
 
-  <?php include '../geral/footer.php'?>
-  <script src="../JavaScript/index.js"></script>
-</body>
+  
+  <?php
+session_start();
 
+// Verifica se o usuário está logado
+if(isset($_SESSION['logged_in']) && $_SESSION['logged_in']) {
+    // Define a mensagem padrão do modal
+    $modal_message = "<p>Login bem-sucedido!</p>";
+
+    // Define a mensagem específica para cada tipo de usuário
+    if($_SESSION['tp_user'] === 'gerente') {
+        $modal_message .= "<p>Gerente logado</p>";
+    } elseif ($_SESSION['tp_user'] === 'cliente') {
+        $modal_message .= "<p>Seja bem vindo cliente</p>";
+    } elseif ($_SESSION['tp_user'] === 'pizzaiolo') {
+        $modal_message .= "<p>pizzaiolo logado</p>";
+    }
+
+    // Exibe o modal de sucesso com a mensagem adequada
+    echo "<script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const modalSuccess = document.getElementById('modalSuccess');
+                const overlay = document.querySelector('.overlay');
+                const messageContainer = modalSuccess.querySelector('.modal-content');
+
+
+                messageContainer.innerHTML = '{$modal_message}';
+                modalSuccess.style.display = 'block';
+                overlay.style.display = 'block';
+
+
+
+
+                // Configura um temporizador para fechar o modal após 2 segundos
+                setTimeout(function() {
+                    modalSuccess.style.display = 'none';
+                    overlay.style.display = 'none';
+                }, 5000); // 2000 milissegundos = 2 segundos
+
+                overlay.style.pointerEvents = 'auto';
+            });
+        </script>";
+}
+?>
+
+</body>
 </html>

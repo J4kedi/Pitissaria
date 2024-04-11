@@ -87,13 +87,13 @@
 
                     <!-- Email input -->
                     <div class="form-outline mb-4">
-                        <input type="text" id="loginName" class="form-control" />
+                        <input type="text" id="nome" name="nome" class="form-control" />
                         <label class="form-label" for="loginName">Email Ou username</label>
                     </div>
 
                     <!-- senha input -->
                     <div class="form-outline mb-4">
-                        <input type="password" id="loginPassword" class="form-control" />
+                        <input type="password" id="senha" name="senha" class="form-control" />
                         <label class="form-label" for="loginPassword">Senha</label>
                     </div>
 
@@ -123,6 +123,7 @@
             </div>
         </div>
         <!-- Pills content -->
+        
     </main>
 </body>
 <footer class="text-center">
