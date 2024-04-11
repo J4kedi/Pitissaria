@@ -14,6 +14,7 @@ $senha = $_POST["senha"];
 $cpf = $_POST["cpf"];
 $email = $_POST["email"];
 $dt_nasc = $_POST["dt_nasc"];
+$nome_rua = $_POST["nome_rua"]
 $cep = $_POST["cep"];
 $num_res = $_POST["num_res"];
 $num_telefone = $_POST["num_telefone"];
