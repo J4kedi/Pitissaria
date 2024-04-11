@@ -1,0 +1,104 @@
+/* Pitissaria_logico: */
+
+CREATE TABLE administrador_pizzaiolo_user_endereco_user (
+    id_adm INT,
+    id_pizzaiolo INT,
+    carga_horaria INT,
+    entrada_saida VARCHAR(100),
+    nome VARCHAR(100),
+    tp_user VARCHAR(100),
+    username VARCHAR(100),
+    cpf VARCHAR(15),
+    email VARCHAR(100),
+    senha VARCHAR(100),
+    dt_nasc DATE,
+    id_user INT,
+    num_telefone VARCHAR(15),
+    estado VARCHAR(100),
+    cep VARCHAR(15),
+    id_endereco INT,
+    cidade VARCHAR(50),
+    rua VARCHAR(100),
+    PRIMARY KEY (id_adm, id_pizzaiolo, id_user, id_endereco)
+);
+
+CREATE TABLE ingrediente (
+    id_ingrediente INT PRIMARY KEY,
+    nome_ingrediente VARCHAR(100),
+    dt_validade DATE,
+    preco_compra INT,
+    fk_estoque_id_estoque INT
+);
+
+CREATE TABLE estoque (
+    id_estoque INT PRIMARY KEY,
+    quantidade_minima INT,
+    quantidade_ingrediente INT
+);
+
+CREATE TABLE pizza (
+    id_pizza INT PRIMARY KEY,
+    nome VARCHAR(100)
+);
+
+CREATE TABLE pizza_montada (
+    nome VARCHAR(100),
+    data_montagem DATE,
+    id_pizza_montada INT PRIMARY KEY
+);
+
+CREATE TABLE possui (
+    fk_ingrediente_id_ingrediente INT,
+    fk_pizza_id_pizza INT
+);
+
+CREATE TABLE feita (
+    fk_pizza_id_pizza INT,
+    fk_administrador_pizzaiolo_user_endereco_user_id_adm INT,
+    fk_administrador_pizzaiolo_user_endereco_user_id_pizzaiolo INT,
+    fk_administrador_pizzaiolo_user_endereco_user_id_user INT,
+    fk_administrador_pizzaiolo_user_endereco_user_id_endereco INT
+);
+
+CREATE TABLE monta (
+    fk_administrador_pizzaiolo_user_endereco_user_id_adm INT,
+    fk_administrador_pizzaiolo_user_endereco_user_id_pizzaiolo INT,
+    fk_administrador_pizzaiolo_user_endereco_user_id_user INT,
+    fk_administrador_pizzaiolo_user_endereco_user_id_endereco INT,
+    fk_pizza_montada_id_pizza_montada INT
+);
+ 
+ALTER TABLE ingrediente ADD CONSTRAINT FK_ingrediente_2
+    FOREIGN KEY (fk_estoque_id_estoque)
+    REFERENCES estoque (id_estoque)
+    ON DELETE CASCADE;
+ 
+ALTER TABLE possui ADD CONSTRAINT FK_possui_1
+    FOREIGN KEY (fk_ingrediente_id_ingrediente)
+    REFERENCES ingrediente (id_ingrediente)
+    ON DELETE RESTRICT;
+ 
+ALTER TABLE possui ADD CONSTRAINT FK_possui_2
+    FOREIGN KEY (fk_pizza_id_pizza)
+    REFERENCES pizza (id_pizza)
+    ON DELETE RESTRICT;
+ 
+ALTER TABLE feita ADD CONSTRAINT FK_feita_1
+    FOREIGN KEY (fk_pizza_id_pizza)
+    REFERENCES pizza (id_pizza)
+    ON DELETE RESTRICT;
+ 
+ALTER TABLE feita ADD CONSTRAINT FK_feita_2
+    FOREIGN KEY (fk_administrador_pizzaiolo_user_endereco_user_id_adm, fk_administrador_pizzaiolo_user_endereco_user_id_pizzaiolo, fk_administrador_pizzaiolo_user_endereco_user_id_user, fk_administrador_pizzaiolo_user_endereco_user_id_endereco)
+    REFERENCES administrador_pizzaiolo_user_endereco_user (id_adm, id_pizzaiolo, id_user, id_endereco)
+    ON DELETE RESTRICT;
+ 
+ALTER TABLE monta ADD CONSTRAINT FK_monta_1
+    FOREIGN KEY (fk_administrador_pizzaiolo_user_endereco_user_id_adm, fk_administrador_pizzaiolo_user_endereco_user_id_pizzaiolo, fk_administrador_pizzaiolo_user_endereco_user_id_user, fk_administrador_pizzaiolo_user_endereco_user_id_endereco)
+    REFERENCES administrador_pizzaiolo_user_endereco_user (id_adm, id_pizzaiolo, id_user, id_endereco)
+    ON DELETE SET NULL;
+ 
+ALTER TABLE monta ADD CONSTRAINT FK_monta_2
+    FOREIGN KEY (fk_pizza_montada_id_pizza_montada)
+    REFERENCES pizza_montada (id_pizza_montada)
+    ON DELETE SET NULL;
