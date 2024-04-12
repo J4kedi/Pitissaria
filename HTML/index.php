@@ -109,8 +109,8 @@
 
   
   <?php
-session_start();
 
+session_start();
 // Verifica se o usuário está logado
 if(isset($_SESSION['logged_in']) && $_SESSION['logged_in']) {
     // Define a mensagem padrão do modal
@@ -144,7 +144,7 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in']) {
                 setTimeout(function() {
                     modalSuccess.style.display = 'none';
                     overlay.style.display = 'none';
-                }, 5000); // 2000 milissegundos = 2 segundos
+                }, 1000); // 2000 milissegundos = 2 segundos
 
                 overlay.style.pointerEvents = 'auto';
             });

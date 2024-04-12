@@ -7,7 +7,7 @@
 </head>
 <body>
 <?php
-include("connection.php");
+include("../ingredientes/connection.php");
 
 $nome = $_POST["nome"];
 $senha = $_POST["senha"];

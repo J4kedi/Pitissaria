@@ -40,7 +40,7 @@
                 <!-- Você pode adicionar conteúdo para a página de login aqui, se necessário -->
             </div>
             <div class="tab-pane fade show active" id="pills-register" role="tabpanel" aria-labelledby="tab-register">
-                <form action="../" id="form1" method="POST">
+                <form action="../php/cadastro/cadastro.php" id="form1" method="POST">
                     <div class="text-center mb-3">
                         <p>Entre com:</p>
                         <button type="button" class="btn btn-link btn-floating mx-1">
