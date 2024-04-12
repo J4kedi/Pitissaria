@@ -40,7 +40,7 @@
                 <!-- Você pode adicionar conteúdo para a página de login aqui, se necessário -->
             </div>
             <div class="tab-pane fade show active" id="pills-register" role="tabpanel" aria-labelledby="tab-register">
-                <form action="../php/ingredientes/cadastro.php" id="form1" method="POST">
+                <form action="../php/cadastro/cadastro.php" id="form1" method="POST">
                     <div class="text-center mb-3">
                         <p>Entre com:</p>
                         <button type="button" class="btn btn-link btn-floating mx-1">
@@ -64,56 +64,50 @@
 
                     <!-- Name input -->
                     <div class="form-outline mb-4">
-                        <input type="text" id="registerName" class="form-control" />
-                        <label class="form-label" for="registerName">Nome</label>
+                        <input type="text" id="nome" class="form-control" />
+                        <label class="form-label" for="nome">Nome</label>
                     </div>
 
                     <!-- senha input -->
                     <div class="form-outline mb-4">
-                        <input type="password" id="registerPassword" class="form-control" />
-                        <label class="form-label" for="registerPassword">Senha</label>
+                        <input type="password" id="senha" class="form-control" />
+                        <label class="form-label" for="senha">Senha</label>
                     </div>
 
                     <!-- CPF input -->
                     <div class="form-outline mb-4">
-                        <input type="text" id="registerCPF" class="form-control" />
-                        <label class="form-label" for="registerCPF">CPF</label>
+                        <input type="text" id="cpf" class="form-control" />
+                        <label class="form-label" for="cpf">CPF</label>
                     </div>
 
                     <!-- Email input -->
                     <div class="form-outline mb-4">
-                        <input type="email" id="registerEmail" class="form-control" />
-                        <label class="form-label" for="registerEmail">Email</label>
-                    </div>
-
-                    <!-- Data de nascimento input -->
-                    <div class="form-outline mb-4">
-                        <input type="date" id="registerDOB" class="form-control" />
-                        <label class="form-label" for="registerDOB">Data de Nascimento</label>
+                        <input type="email" id="email" class="form-control" />
+                        <label class="form-label" for="email">Email</label>
                     </div>
 
                     <!-- Nome da rua input -->
                     <div class="form-outline mb-4">
-                        <input type="text" id="registerStreet" class="form-control" />
-                        <label class="form-label" for="registerStreet">Nome da Rua</label>
+                        <input type="text" id="nome_rua" class="form-control" />
+                        <label class="form-label" for="nome_rua">Nome da Rua</label>
                     </div>
 
                     <!-- CEP input -->
                     <div class="form-outline mb-4">
-                        <input type="number" id="registerCEP" class="form-control" />
-                        <label class="form-label" for="registerCEP">CEP</label>
+                        <input type="number" id="cep" class="form-control" />
+                        <label class="form-label" for="cep">CEP</label>
                     </div>
 
                     <!-- Número da residência input -->
                     <div class="form-outline mb-4">
-                        <input type="number" id="registerHouseNumber" class="form-control" />
-                        <label class="form-label" for="registerHouseNumber">Número da Residência</label>
+                        <input type="number" id="num_res" class="form-control" />
+                        <label class="form-label" for="num_res">Número da Residência</label>
                     </div>
 
                     <!-- Número de telefone input -->
                     <div class="form-outline mb-4">
-                        <input type="number" id="registerPhoneNumber" class="form-control" />
-                        <label class="form-label" for="registerPhoneNumber">Número de Telefone</label>
+                        <input type="number" id="num_telefone" class="form-control" />
+                        <label class="form-label" for="num_telefone">Número de Telefone</label>
                     </div>
 
                     <!-- Checkbox  de termos -->
