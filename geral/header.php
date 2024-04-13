@@ -32,12 +32,18 @@
                             echo '<li class="nav-item">';
                             echo '<a class="nav-link" href="logout.php">LOGOUT</a>';
                             echo '</li>';
+                            echo '<li class="nav-item">';
+                            echo '</h3 class="nav-link" >Gerente<h3>'; //precisa de CSS
+                            echo '</li>';
                             
                         }
                         // Se o usuário for um cliente, exibe os links de login e cadastro
                         else if($_SESSION['tp_user'] === 'cliente') {
                             echo '<li class="nav-item">';
                             echo '<a class="nav-link" href="logout.php">LOGOUT</a>';
+                            echo '</li>';
+                            echo '<li class="nav-item">';
+                            echo '</h3 class="nav-link" >Cliente<h3>'; //precisa de CSS
                             echo '</li>';
                         }
                     } else {
