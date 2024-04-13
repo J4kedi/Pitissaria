@@ -17,35 +17,39 @@
                 
                 
                 <?php
-    session_start(); // Inicia a sessão
+                    session_start(); // Inicia a sessão
 
-    // Verifica se a variável de sessão tp_user está definida
-    if(isset($_SESSION['tp_user'])) {
-        // Se o usuário for um gerente, exibe o link de ingredientes
-        if($_SESSION['tp_user'] === 'gerente') {
-            echo '<li class="nav-item">';
-            echo '<a class="nav-link" href="../HTML/login.php">LOGIN</a>';
-            echo '</li>';
-            echo '<li class="nav-item">';
-            echo '<a href="../php/ingredientes/lista_ingredientes.php">Ingredientes</a>';
-            echo '</li>';
-        }
-        // Se o usuário for um cliente, exibe os links de login e cadastro
-        else if($_SESSION['tp_user'] === 'cliente') {
-            echo '<li class="nav-item">';
-            echo '<a class="nav-link" href="../HTML/login.php">LOGIN</a>';
-            echo '</li>';
-        }
-    } else {
-        // Se a variável de sessão tp_user não estiver definida, exibe apenas o link de login
-        echo '<li class="nav-item">';
-        echo '<a class="nav-link" href="../HTML/login.php">LOGIN</a>';
-        echo '</li>';
-        echo '<li class="nav-item">';
-        echo '<a class="nav-link" href="../HTML/cadastro.php">CADASTRO</a>';
-        echo '</li>';
-    }
-?>
+                    // Verifica se a variável de sessão tp_user está definida
+                    if(isset($_SESSION['tp_user'])) {
+                        // Se o usuário for um gerente, exibe o link de ingredientes
+                        if($_SESSION['tp_user'] === 'gerente') {
+                            echo '<li class="nav-item">';
+                            echo '<a class="nav-link" href="../HTML/login.php">LOGIN</a>';
+                            echo '</li>';
+                            echo '<li class="nav-item">';
+                            echo '<a class="nav-link" href="../php/ingredientes/lista_ingredientes.php">INGREDIENTES</a>';
+                            echo '</li>';
+                            echo '<li class="nav-item">';
+                            echo '<a class="nav-link" href="logout.php">LOGOUT</a>';
+                            echo '</li>';
+                            
+                        }
+                        // Se o usuário for um cliente, exibe os links de login e cadastro
+                        else if($_SESSION['tp_user'] === 'cliente') {
+                            echo '<li class="nav-item">';
+                            echo '<a class="nav-link" href="logout.php">LOGOUT</a>';
+                            echo '</li>';
+                        }
+                    } else {
+                        // Se a variável de sessão tp_user não estiver definida, exibe apenas o link de login
+                        echo '<li class="nav-item">';
+                        echo '<a class="nav-link" href="../HTML/login.php">LOGIN</a>';
+                        echo '</li>';
+                        echo '<li class="nav-item">';
+                        echo '<a class="nav-link" href="../HTML/cadastro.php">CADASTRO</a>';
+                        echo '</li>';
+                    }
+                ?>
 
 
             </ul>
