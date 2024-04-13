@@ -143,6 +143,7 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in']) {
                     }, 2000); // 2000 milissegundos = 2 segundos
 
                     // Define que o modal foi exibido
+                    " . $_SESSION['modal_exibido'] = true . ";
                 });
             </script>";
     }

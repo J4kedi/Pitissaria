@@ -23,7 +23,10 @@ $result = $conn->query($sql);
 </head>
 
 <body>
-
+    <div class="add_ingrediente">
+        <a href="http:../../HTML/index.php"><h3>Inicio</h3></a>
+    </div>
+    <br><br>
     <div class="num_registro">
         <h3 class="texto_registro">Ingredientes cadastrados: <?php echo $result->num_rows ?></h3>
     </div>
