@@ -10,6 +10,10 @@
 <?php
 include("connection.php");
 
+include("validacao_acesso_php.php");
+validar_acesso();
+
+
 $nome = $_POST["nome_ingrediente"];
 $validade = $_POST["dt_validade"];
 $quantidade = $_POST["quantidade_ingrediente"];

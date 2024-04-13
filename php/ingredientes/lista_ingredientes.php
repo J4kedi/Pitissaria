@@ -1,3 +1,16 @@
+<?php
+
+
+// Incluir o arquivo de conexão com o banco de dados
+include("connection.php");
+include("validacao_acesso_php.php");
+validar_acesso();
+
+// Consulta SQL para selecionar os ingredientes
+$sql =  "SELECT id, nome_ingrediente, dt_validade, quantidade_ingrediente FROM ingredientes";
+$result = $conn->query($sql);
+?>
+
 <!DOCTYPE html>
 <html lang="Pt-Br">
 
@@ -10,12 +23,6 @@
 </head>
 
 <body>
-    <?php
-    include("connection.php");
-
-    $sql =  "SELECT id, nome_ingrediente, dt_validade, quantidade_ingrediente FROM ingredientes";
-    $result = $conn->query($sql);
-    ?>
 
     <div class="num_registro">
         <h3 class="texto_registro">Ingredientes cadastrados: <?php echo $result->num_rows ?></h3>

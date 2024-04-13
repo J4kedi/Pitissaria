@@ -8,7 +8,10 @@
     <link rel="shortcut icon" href="../../imagens/icone/pizza.ico" type="image/x-icon">
 </head>
 <body>
-    <?php include '../geral/header.php'?>
+<?php
+include("validacao_acesso_php.php");
+validar_acesso();
+?>
 
     <a href="lista_ingredientes.php">Voltar a listagem</a>
     <main>
@@ -31,8 +34,6 @@
             </form>
         </div>
     </main>
-
-    <?php include '../geral/footer.php'?>
     <script src="../../Js/Js_ingredientes/cadastro_ingredientes.js"></script>
 </body>
 </html>
