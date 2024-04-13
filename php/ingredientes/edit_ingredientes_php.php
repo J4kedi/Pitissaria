@@ -9,21 +9,9 @@
 <body>
 <?php
     include("connection.php");
-    session_start();
+    include("validacao_acesso_php.php");
+    validar_acesso();
 
-    // Verificar se o usuário está logado
-    if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
-        // Verificar o tipo de usuário
-        if($_SESSION['tp_user'] !== 'gerente') {
-            // Se o usuário não for um gerente, redirecionar para outra página ou mostrar uma mensagem de acesso negado
-            header("Location: ../../HTML\index.php");
-            exit();
-        }
-    } else {
-        // O usuário não está logado, redirecioná-lo para a página de login
-        header("Location: login.php");
-        exit();
-    }
     $id = $_POST["id"];
     $nome = $_POST["nome_ingrediente"];
     $validade = $_POST["dt_validade"];

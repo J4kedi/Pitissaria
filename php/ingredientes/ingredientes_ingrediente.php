@@ -11,6 +11,8 @@
     <?php
     //definir a conexão com o banco de dados
     require_once "connection.php";
+    include("validacao_acesso_php.php");
+    validar_acesso();
 
     // Verificar se o id_ingrediente foi passado na URL
     if (isset($_GET['id'])) {
