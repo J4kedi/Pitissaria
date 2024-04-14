@@ -64,37 +64,48 @@
 
                     <!-- Name input -->
                     <div class="form-outline mb-4">
-                        <input type="text" id="nome" class="form-control" />
+                        <input type="text" id="nome" name="nome" class="form-control" />
                         <label class="form-label" for="nome">Nome</label>
                     </div>
 
                     <!-- senha input -->
                     <div class="form-outline mb-4">
-                        <input type="password" id="senha" class="form-control" />
+                        <input type="password" id="senha" name="senha" class="form-control" />
                         <label class="form-label" for="senha">Senha</label>
+                    </div>
+                    
+                    <!-- username input -->
+                    <div class="form-outline mb-4">
+                        <input type="text" id="username" name="username" class="form-control" />
+                        <label class="form-label" for="username">Username</label>
                     </div>
 
                     <!-- CPF input -->
                     <div class="form-outline mb-4">
-                        <input type="text" id="cpf" class="form-control" />
+                        <input type="text" id="cpf" name="cpf" class="form-control" />
                         <label class="form-label" for="cpf">CPF</label>
                     </div>
 
                     <!-- Email input -->
                     <div class="form-outline mb-4">
-                        <input type="email" id="email" class="form-control" />
+                        <input type="email" id="email" name="email" class="form-control" />
                         <label class="form-label" for="email">Email</label>
+                    </div>
+
+                    <div class="form-outline mb-4">
+                        <input type="date" id="dt_nasc" name="dt_nasc" class="form-control" />
+                        <label class="form-label" for="dt_nasc">Data de Nascimento</label>
                     </div>
 
                     <!-- Nome da rua input -->
                     <div class="form-outline mb-4">
-                        <input type="text" id="nome_rua" class="form-control" />
+                        <input type="text" id="nome_rua" name="nome_rua" class="form-control" />
                         <label class="form-label" for="nome_rua">Nome da Rua</label>
                     </div>
 
                     <!-- CEP input -->
                     <div class="form-outline mb-4">
-                        <input type="number" id="cep" class="form-control" />
+                        <input type="number" id="cep" name="cep" class="form-control" />
                         <label class="form-label" for="cep">CEP</label>
                     </div>
 
@@ -106,8 +117,28 @@
 
                     <!-- Número de telefone input -->
                     <div class="form-outline mb-4">
-                        <input type="number" id="num_telefone" class="form-control" />
+                        <input type="number" id="num_telefone" name="num_telefone" class="form-control" />
                         <label class="form-label" for="num_telefone">Número de Telefone</label>
+                    </div>
+
+                    <div class="form-outline mb-4">
+                        <input type="text" id="estado" name="estado" class="form-control" />
+                        <label class="form-label" for="estado">Estado</label>
+                    </div>
+
+                    <div class="form-outline mb-4">
+                        <input type="text" id="cidade" name="cidade" class="form-control" />
+                        <label class="form-label" for="cidade">Cidade</label>
+                    </div>
+
+                    <div class="form-outline mb-4">
+                        <input type="text" id="id_endereco" name="id_endereco" class="form-control" />
+                        <label class="form-label" for="id_endereco">Numero da casa</label>
+                    </div>
+
+                    <div class="form-outline mb-4">
+                        <input type="text" id="rua" name="rua" class="form-control" />
+                        <label class="form-label" for="rua">Rua</label>
                     </div>
 
                     <!-- Checkbox  de termos -->

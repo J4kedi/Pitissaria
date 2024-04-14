@@ -11,12 +11,15 @@ include("../connection.php");
 
 $nome = $_POST["nome"];
 $senha = $_POST["senha"];
+$username = $_POST["username"];
 $cpf = $_POST["cpf"];
 $email = $_POST["email"];
 $dt_nasc = $_POST["dt_nasc"];
-$nome_rua = $_POST["nome_rua"]
+$rua = $_POST["rua"];
 $cep = $_POST["cep"];
-$num_res = $_POST["num_res"];
+$estado = $_POST["estado"];
+$cidade = $_POST["cidade"];
+$id_endereco = $_POST["id_endereco"];
 $num_telefone = $_POST["num_telefone"];
 
 $sql = "SELECT * FROM user_endereco_user WHERE cpf = '$cpf'";
@@ -28,11 +31,11 @@ if ($result->num_rows > 0) {
     echo '<script>setTimeout(function() { history.back(); }, 5000);</script>'; // Atraso de 5 segundos 
 } else {
     // O usuario não existe, inserir no banco de dados 
-    $sql_insert = "INSERT INTO user(nome, senha, cpf, email, dt_nasc, cep, num_res, num_telefone) VALUES('$nome', '$senha','$cpf','$email', '$dt_nasc', '$cep', '$num_res', '$num_telefone')";
+    $sql_insert = "INSERT INTO user_endereco_user(nome, senha, username, cpf, email, dt_nasc, rua, cep, estado, cidade, id_endereco, num_telefone) VALUES('$nome', '$senha','$username','$cpf','$email', '$dt_nasc', '$rua', '$cep', '$estado', '$cidade',  '$id_endereco', '$num_telefone')";
     
     if ($conn->query($sql_insert) === TRUE) {
         echo "<h1>Usuario cadastrado com sucesso.</h1>";
-        echo '<script>setTimeout(function() { window.location.href = "index.php"; }, 5000);</script>'; // Redireciona para index.php após 5 segundos 
+        echo '<script>setTimeout(function() { window.location.href = "../../HTML/index.php"; }, 5000);</script>'; // Redireciona para index.php após 5 segundos 
     } else {
         echo "Erro ao cadastrar o usuario: " . $conn->error;
     }
