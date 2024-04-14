@@ -10,17 +10,17 @@
 <body>
     <?php
     //definir a conexão com o banco de dados
-    require_once "connection.php";
+    require_once "../connection.php";
     include("validacao_acesso_php.php");
     validar_acesso();
 
     // Verificar se o id_ingrediente foi passado na URL
-    if (isset($_GET['id'])) {
+    if (isset($_GET['id_ingrediente'])) {
         // Obter o id do ingrediente da URL
-        $id = $_GET['id'];
+        $id = $_GET['id_ingrediente'];
 
         // Consulta SQL para selecionar os detalhes do ingrediente com o ID fornecido
-        $sql = "SELECT id, nome_ingrediente, dt_validade, quantidade_ingrediente, preco_compra FROM ingredientes WHERE id = $id";
+        $sql = "SELECT id_ingrediente, nome_ingrediente, dt_validade, quantidade_ingrediente, preco_compra FROM ingrediente WHERE id_ingrediente = $id";
 
         // Executar a consulta SQL
         $result = $conn->query($sql);
@@ -34,7 +34,7 @@
             // Exibir os detalhes do ingrediente em uma tabela
             echo "<table>";
             while ($row = $result->fetch_assoc()) {
-                echo "<tr><th>ID</th><td>{$row['id']}</td></tr>";
+                echo "<tr><th>ID</th><td>{$row['id_ingrediente']}</td></tr>";
                 echo "<tr><th>Ingrediente</th><td>{$row['nome_ingrediente']}</td></tr>";
                 echo "<tr><th>Data de Validade</th><td>" . date("d/m/Y", strtotime($row["dt_validade"])) . "</td></tr>";
                 echo "<tr><th>Quantidade</th><td>{$row['quantidade_ingrediente']} Kg</td></tr>";

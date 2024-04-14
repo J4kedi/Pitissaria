@@ -8,7 +8,7 @@
 </head>
 <body>
 <?php
-include("connection.php");
+include("../connection.php");
 
 include("validacao_acesso_php.php");
 validar_acesso();
@@ -19,7 +19,7 @@ $validade = $_POST["dt_validade"];
 $quantidade = $_POST["quantidade_ingrediente"];
 $preco_compra = $_POST["preco_compra"];
 
-$sql = "SELECT * FROM ingredientes WHERE nome_ingrediente = '$nome'";
+$sql = "SELECT * FROM ingrediente WHERE nome_ingrediente = '$nome'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -28,7 +28,7 @@ if ($result->num_rows > 0) {
     echo '<script>setTimeout(function() { history.back(); }, 5000);</script>'; // Atraso de 5 segundos 
 } else {
     // O insumo não existe, inserir no banco de dados 
-    $sql_insert = "INSERT INTO ingredientes(nome_ingrediente, dt_validade, quantidade_ingrediente, preco_compra) VALUES('$nome', '$validade','$quantidade','$preco_compra')";
+    $sql_insert = "INSERT INTO ingrediente(nome_ingrediente, dt_validade, quantidade_ingrediente, preco_compra) VALUES('$nome', '$validade','$quantidade','$preco_compra')";
     
     if ($conn->query($sql_insert) === TRUE) {
         echo "<h1>Insumo cadastrado com sucesso.</h1>";

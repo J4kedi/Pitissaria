@@ -9,12 +9,12 @@
 </head>
 <body>
 <?php
-    include("connection.php");
+    include("../connection.php");
     include("validacao_acesso_php.php");
     validar_acesso();
 
     $id = $_GET["id"];
-    $sql =  "SELECT  nome_ingrediente, dt_validade, quantidade_ingrediente, preco_compra FROM ingredientes WHERE id=$id";
+    $sql =  "SELECT  nome_ingrediente, dt_validade, quantidade_ingrediente, preco_compra FROM ingrediente WHERE id_ingrediente = $id";
     $result = $conn->query($sql);
 
     if ($result->num_rows>0){

@@ -7,7 +7,7 @@
 </head>
 <body>
 <?php
-include("../ingredientes/connection.php");
+include("../connection.php");
 
 $nome = $_POST["nome"];
 $senha = $_POST["senha"];
@@ -19,7 +19,7 @@ $cep = $_POST["cep"];
 $num_res = $_POST["num_res"];
 $num_telefone = $_POST["num_telefone"];
 
-$sql = "SELECT * FROM user WHERE cpf = '$cpf'";
+$sql = "SELECT * FROM user_endereco_user WHERE cpf = '$cpf'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {

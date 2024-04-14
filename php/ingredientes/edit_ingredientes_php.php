@@ -8,7 +8,7 @@
 </head>
 <body>
 <?php
-    include("connection.php");
+    include("../connection.php");
     include("validacao_acesso_php.php");
     validar_acesso();
 
@@ -18,7 +18,7 @@
     $quantidade = $_POST["quantidade_ingrediente"];
     $preco_compra = $_POST["preco_compra"];
 
-    $sql = "UPDATE ingredientes SET nome_ingrediente = '$nome', dt_validade = '$validade', quantidade_ingrediente = '$quantidade', preco_compra = '$preco_compra' WHERE id = $id";
+    $sql = "UPDATE ingrediente SET nome_ingrediente = '$nome', dt_validade = '$validade', quantidade_ingrediente = '$quantidade', preco_compra = '$preco_compra' WHERE id_ingrediente = $id";
     $result =  $conn->query($sql);
 
     if ($result === TRUE) {
