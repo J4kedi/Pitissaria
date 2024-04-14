@@ -26,6 +26,7 @@ CREATE TABLE ingrediente (
     id_ingrediente INT AUTO_INCREMENT PRIMARY KEY,
     nome_ingrediente VARCHAR(100),
     dt_validade DATE,
+    quantidade_ingrediente VARCHAR(100),
     preco_compra VARCHAR(100),
     fk_estoque_id_estoque INT
 );
