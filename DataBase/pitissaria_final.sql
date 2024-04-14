@@ -99,3 +99,15 @@ ALTER TABLE pede ADD CONSTRAINT FK_pede_2
     FOREIGN KEY (fk_pizza_id_pizza)
     REFERENCES pizza (id_pizza)
     ON DELETE SET NULL;
+
+
+-- Criando Gerente
+INSERT INTO user_endereco_user(nome, tp_user, username, cpf, email, senha, dt_nasc, num_telefone, estado, cep, cidade, rua) VALUES ("Arthur", "gerente","Arthur", "07571839998", "arthurfhermes@gmail.com", "123", "2005/03/13","41995664344", "Parana","81940210", "Curitiba", "Bortolo Pelanda");
+
+
+-- Criando Pizzaiolo
+INSERT INTO user_endereco_user(nome, tp_user, username, cpf, email, senha, dt_nasc, num_telefone, estado, cep, cidade, rua) VALUES ("Ricardo", "pizzaiolo","Ricardo", "01661628930", "rapedreira@gmail.com", "123", "2002/05/12","41478666784", "Parana","81510220", "Curitiba", "Agostinho Brusamolin");
+
+
+-- Select em todos os usuarios
+SELECT * FROM user_endereco_user;
