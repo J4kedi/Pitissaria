@@ -33,7 +33,7 @@
                             echo '<a class="nav-link" href="logout.php">LOGOUT</a>';
                             echo '</li>';
                             echo '<li class="nav-item">';
-                            echo '</h3 class="nav-link" >Gerente<h3>'; //precisa de CSS
+                            echo '</h3 class="nav-link" >Gerente ou pizzaiolo<h3>'; //precisa de CSS
                             echo '</li>';
                             
                         }
