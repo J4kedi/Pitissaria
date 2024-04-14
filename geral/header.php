@@ -22,7 +22,7 @@
                     // Verifica se a variável de sessão tp_user está definida
                     if(isset($_SESSION['tp_user'])) {
                         // Se o usuário for um gerente, exibe o link de ingredientes
-                        if($_SESSION['tp_user'] === 'gerente') {
+                        if($_SESSION['tp_user'] === 'gerente' || $_SESSION['tp_user']==='pizzaiolo') {
                             echo '<li class="nav-item">';
                             echo '<a class="nav-link" href="../HTML/login.php">LOGIN</a>';
                             echo '</li>';
