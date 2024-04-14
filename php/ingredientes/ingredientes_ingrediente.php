@@ -15,7 +15,6 @@
     validar_acesso();
 
     // Verificar se o id_ingrediente foi passado na URL
-    if (isset($_GET['id_ingrediente'])) {
         // Obter o id do ingrediente da URL
         $id = $_GET["id_ingrediente"];
 
@@ -44,9 +43,7 @@
         } else {
             echo "Nenhum ingrediente encontrado com o ID fornecido.";
         }
-    } else {
-        echo "ID do ingrediente não foi fornecido.";
-    }
+    
 
     // Fechar a conexão com o banco de dados
     $conn->close();

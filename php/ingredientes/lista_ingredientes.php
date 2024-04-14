@@ -1,6 +1,5 @@
 <?php
 
-
 // Incluir o arquivo de conexão com o banco de dados
 include("../connection.php");
 include("validacao_acesso_php.php");
@@ -24,7 +23,7 @@ $result = $conn->query($sql);
 
 <body>
     <div class="add_ingrediente">
-        <a href="http:../../HTML/index.php"><h3>Inicio</h3></a>
+        <a href="../../HTML/index.php"><h3>Inicio</h3></a>
     </div>
     <br><br>
     <div class="num_registro">
@@ -50,20 +49,17 @@ $result = $conn->query($sql);
             while ($row = $result->fetch_assoc()) {
         ?>  
                 <tr>
-                    <td class="id_css" onclick="window.location='ingredientes_ingrediente.php?id_ingrediente = <?php echo $row["id_ingrediente"]?>';" style = "cursor: pointer;">
+                    <td class="id_css" onclick="window.location='ingredientes_ingrediente.php?id_ingrediente=<?php echo $row["id_ingrediente"]?>';" style = "cursor: pointer;">
                         <?php echo $row["id_ingrediente"] ?>
                     </td>
                     <td><?php echo $row["nome_ingrediente"] ?></td>
                     <td><?php echo date("d/m/Y", strtotime($row["dt_validade"])) ?></td>
                     <td><?php echo $row["quantidade_ingrediente"] ?></td>
-                    <td class="edit_css"  style="cursor: pointer;" onclick="window.location='edit_ingredientes?=<?php echo $row['id_ingrediente']?>">
-                    <a href="edit_ingredientes.php?id=<?php echo $row["id_ingrediente"]?>">
-                        Editar
-                    </a>
+                    <td class="edit_css"  style="cursor: pointer;" onclick="window.location='edit_ingredientes.php?id=<?php echo $row['id_ingrediente']?>'">
+                        <a href="edit_ingredientes.php?id=<?php echo $row["id_ingrediente"]?>">Editar</a>
                     </td>
-                    <td class="delet_css" style="cursor: pointer;" onclick="window.location='delet_ingredientes_php?=<?php echo $row['id_ingrediente']?>">
-                    <a href="delet_ingredientes_php.php?id=<?php echo $row['id_ingrediente']?>">Excluir</a>
-                    </a>
+                    <td class="delet_css" style="cursor: pointer;" onclick="window.location='delet_ingredientes_php.php?id=<?php echo $row['id_ingrediente']?>'">
+                        <a href="delet_ingredientes_php.php?id=<?php echo $row['id_ingrediente']?>">Excluir</a>
                     </td>
                 </tr>
         <?php
