@@ -1,0 +1,109 @@
+header {
+    height: 40%;
+    background: url(https://images.pexels.com/photos/1878346/pexels-photo-1878346.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1) center no-repeat;
+    background-size: cover;
+}
+
+.menu-image {
+    height: 82%;
+    position: relative;
+    overflow: hidden;
+    /* Image Credit: Unsplash.me */
+    box-shadow: rgba(172, 166, 149, 0.2) 0px 8px 24px;
+}
+
+.menu-image .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+.menu-image h1,
+.menu-image h2 {
+    margin: 0;
+}
+
+.menu-image h2 {
+    text-transform: uppercase;
+    margin-top: -.5em;
+}
+
+.menu-image hgroup {
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: var(--cor-texto-header);
+    border: 5px solid var(--cor-texto-header);
+    padding: .5em 3em;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 2;
+}
+
+.menu-image .overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: var(--cor-header) center no-repeat;
+    background-size: cover;
+    z-index: 0;
+    opacity: 0;
+    filter: blur(4px);
+}
+
+.logo {
+    margin-right:20px
+}
+
+.menu {
+    width: 100%;
+    height: 65px;
+    background-color: var(--cor-header);
+    font-size: 1.2em;
+}
+
+.menu nav {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.links {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    color: var(--cor-texto-header);
+    text-decoration: none;
+}
+
+.autenticacao {
+    position: absolute;
+    right: 0;
+}
+
+.links:hover {
+    color: var(--cor-texto-header);
+}
+
+.lover:hover {
+    background: var(--cor-hover);
+    color: var(--cor-texto);
+}
+
+#logo-inicio {
+    display: flex;
+    justify-content: center;
+    width: 120px;
+    height: auto;
+}

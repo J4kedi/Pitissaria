@@ -8,10 +8,10 @@
     <link rel="shortcut icon" href="../../imagens/icone/pizza.ico" type="image/x-icon">
 </head>
 <body>
-<?php
-include("validacao_acesso_php.php");
-validar_acesso();
-?>
+    <?php
+    include("validacao_acesso_php.php");
+    validar_acesso();
+    ?>
 
     <a href="lista_ingredientes.php">Voltar a listagem</a>
     <main>
