@@ -1,11 +1,11 @@
 header {
-    height: 50%;
+    height: 70%;
     background: url(https://images.pexels.com/photos/1878346/pexels-photo-1878346.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1) center no-repeat;
     background-size: cover;
 }
 
 .menu-image {
-    height: 75%;
+    height: 85%;
     position: relative;
     overflow: hidden;
     box-shadow: rgba(172, 166, 149, 0.2) 0px 8px 24px;
