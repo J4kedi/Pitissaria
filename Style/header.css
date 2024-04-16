@@ -5,7 +5,7 @@ header {
 }
 
 .menu-image {
-    height: 85%;
+    height: calc(100% - 65px);
     position: relative;
     overflow: hidden;
     box-shadow: rgba(172, 166, 149, 0.2) 0px 8px 24px;
