@@ -9,12 +9,8 @@
 </head>
 <body>
     <?php
-         if (!isset($_SESSION['usuario']) || $_SESSION['usuario']['tipo'] === 'gerente') {
-            // Redirecionar para uma página de erro ou página de login
-            header("Location: ../../HTML/index.php"); // Altere para a página que deseja redirecionar
-            exit(); // Encerrar o script
-        }
-       
+    include("validacao_acesso_php.php");
+    validar_acesso();
     ?>
 
     <a href="../../HTML/index.php">Voltar para pagina principal</a>
