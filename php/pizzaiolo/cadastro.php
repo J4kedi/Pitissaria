@@ -9,8 +9,9 @@
 </head>
 <body>
     <?php
-    include("validacao_acesso_php.php");
-    validar_acesso();
+    include("../validacao_acesso_php.php");
+    verificar_acesso_gerente();
+    verificarAcessoGerente();
     ?>
 
     <a href="../../HTML/index.php">Voltar para pagina principal</a>

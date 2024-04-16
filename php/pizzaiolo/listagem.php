@@ -2,8 +2,9 @@
 
 // Incluir o arquivo de conexão com o banco de dados
 include("../connection.php");
-include("validacao_acesso_php.php");
-validar_acesso();
+include("../validacao_acesso_php.php");
+verificar_acesso_gerente();
+verificarAcessoGerente();
 
 // Consulta SQL para selecionar os ingredientes
 $sql =  "SELECT id_ingrediente, nome_ingrediente, dt_validade, quantidade_ingrediente FROM ingrediente";

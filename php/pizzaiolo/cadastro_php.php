@@ -9,7 +9,9 @@
 <body>
     <?php
     include("../connection.php");
-    include("../ingredientes/validacao_acesso_php.php");
+    include("../validacao_acesso_php.php");
+    verificar_acesso_gerente();
+    verificarAcessoGerente();
 
     $nome = $_POST["nome"];
     $tp_user = "pizzaiolo";
