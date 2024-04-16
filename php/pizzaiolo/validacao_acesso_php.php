@@ -5,7 +5,7 @@ session_start();
 function verificar_acesso() {
     if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
         // Verifica se é gerente ou pizzaiolo
-        if($_SESSION['tp_user'] === 'pizzaiolo') {
+        if($_SESSION['tp_user'] === 'gerente') {
             return true;
         }
     }
