@@ -3,7 +3,7 @@ include("../php/connection.php");
 session_start(); // Inicia a sessão
 
 $login = $_POST["nome"]; // Alterado para corresponder ao nome do campo no formulário
-$password = $_POST["senha"]; // Alterado para corresponder ao nome do campo no formulário
+$password = md5($_POST["senha"]); // Alterado para corresponder ao nome do campo no formulário
 
 $sql = "SELECT nome, senha, tp_user FROM user_endereco_user WHERE nome = '$login'"; // Ajustado para corresponder aos nomes das colunas na tabela
 
