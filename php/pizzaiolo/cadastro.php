@@ -44,13 +44,13 @@
                 <label for="estado">Estado:</label>
                 <input type="text" name="estado" id="estado">
                 <br>
-                <label for="cep">CEel>
+                <label for="cep">CEP:</label>
                 <input type="password" name="senha" id="senha">
                 <br>
                 <label for="dt_nasc">Data de Nascimento:</label>
                 <input type="date" name="td_nasc" id="dt_nasc">
                 <br>
-                <label for="num_telefone">TeP:</label>
+                <label for="num_telefone">Telefone:</label>
                 <input type="text" name="cep" id="cep">
                 <br>
                 <label for="cidade">Cidade:</label>
