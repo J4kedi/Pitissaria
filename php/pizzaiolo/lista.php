@@ -27,7 +27,7 @@
         $result = $conn->query($sql);
         ?>
         <div>
-            <a href="lista_ingredientes.php"><h3 class="voltar_listagem">Voltar a Listagem</h3></a><br>
+            <a href="listagem.php"><h3 class="voltar_listagem">Voltar a Listagem</h3></a><br>
         </div>
         <?php
         // Verificar se há resultados
