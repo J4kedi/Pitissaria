@@ -1,14 +1,13 @@
 header {
-    height: 40%;
+    height: 50%;
     background: url(https://images.pexels.com/photos/1878346/pexels-photo-1878346.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1) center no-repeat;
     background-size: cover;
 }
 
 .menu-image {
-    height: 82%;
+    height: 75%;
     position: relative;
     overflow: hidden;
-    /* Image Credit: Unsplash.me */
     box-shadow: rgba(172, 166, 149, 0.2) 0px 8px 24px;
 }
 
@@ -43,6 +42,7 @@ header {
     position: absolute;
     top: 50%;
     left: 50%;
+    width: 30%;
     color: var(--cor-texto-header);
     border: 5px solid var(--cor-texto-header);
     padding: .5em 3em;
