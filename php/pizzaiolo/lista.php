@@ -16,9 +16,7 @@
     verificar_acesso_pizzaiolo();
     verificarAcessoGerenteEPizzaiolo();
     
-    // Verificar se o id_ingrediente foi passado na URL
-        // Obter o tp_user do ingrediente da URL
-        $tp_user = $_GET["tp_user"];
+
 
         // Consulta SQL para selecionar os detalhes do pizzaiolo com o ID fornecido
         $sql = "SELECT id_user, nome, tp_user, username, dt_nasc, cpf, email, senha, dt_nasc, num_telefone, estado, cep, cidade, rua FROM user_endereco_user";
