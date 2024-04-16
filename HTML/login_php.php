@@ -11,7 +11,6 @@ $result = $conn->query($sql);
 
 if($result->num_rows > 0){
     while($row = $result->fetch_assoc()){
-        echo $row["senha"];
         if($row["senha"]== $password){
             session_start();
             $_SESSION['tp_user'] = $row['tp_user']; // Armazena o valor de tp_user na sessão
@@ -19,14 +18,9 @@ if($result->num_rows > 0){
             $_SESSION['id_user'] = $row['id_user'];
             header("location: index.php?login_success=1"); // Redireciona para a página principal com um parâmetro indicando login bem-sucedido
             exit(); // Adicionado para garantir que o script pare de ser executado após o redirecionamento
-        }else{
-            
+        }else {
+            header("location: login.php"); // Redireciona para a página principal com um parâmetro indicando login bem-sucedido
         }
-        
     }
-}
-else{
-    echo "Erro ao logar";
-    header("location: login.php ");
 }
 ?>
