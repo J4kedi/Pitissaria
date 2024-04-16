@@ -136,11 +136,6 @@
                         <label class="form-label" for="id_endereco">Numero da casa</label>
                     </div>
 
-                    <div class="form-outline mb-4">
-                        <input type="text" id="rua" name="rua" required class="form-control" />
-                        <label class="form-label" for="rua">Rua</label>
-                    </div>
-
                     <!-- Checkbox  de termos -->
                     <div class="form-check d-flex justify-content-center mb-4">
                         <input class="form-check-input me-2" type="checkbox" value="" id="registerCheck" checked

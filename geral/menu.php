@@ -1,9 +1,9 @@
-<header>
-    <link rel="stylesheet" href="../Style/header.css">
+<div>
+<link rel="stylesheet" href="../Style/header.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <div class="menu">
       <nav>
-        <a href="index.php"><img id="logo-inicio" src="../ASSETS/logo-inicio (1).png" alt="Logo Pitissaria"></a>
+        <a href="index.php"><img id="logo-inicio" src="../ASSETS/logo-inicio (1).png" alt="Logo Pitissasria"></a>
         <a href="index.php" class="links lover">inicio</a>
         <div class="autenticacao">
             <?php
@@ -30,14 +30,4 @@
         </div>
       </nav>
     </div>
-    <section class="menu-image">
-        <div class="content">
-          <hgroup>
-            <img class="logo" src="../ASSETS/logo-inicio (1).png" alt="Logo Pitissasria">
-            <i>A pizza do seu jeito</i>
-          </hgroup>
-        </div>
-        <div class="overlay"></div>
-    </section>
-    <script src="../js/geral/header.js"></script>
-</header>
+</div>
