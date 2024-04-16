@@ -12,7 +12,7 @@
                 if(isset($_SESSION['tp_user'])) {
                     // Se o usuário for um gerente, exibe o link de ingredientes
                     if($_SESSION['tp_user'] === 'gerente') {
-                        echo '<a href = "../php/pizzaiolo/cadastro.php" class="links lover">pizzaiolo</a>';
+                        echo '<a href = "../php/pizzaiolo/listagem.php" class="links lover">pizzaiolo</a>';
                         echo '<a href="../php/ingredientes/lista_ingredientes.php" class="links lover">ingredientes</a>';
                         echo '<a href="logout.php" class="links lover">logout</a>';
                         echo '<a class="links">gerente</a>';
