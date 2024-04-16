@@ -18,10 +18,8 @@ CREATE TABLE user_endereco_user (
     num_telefone VARCHAR(20),
     estado VARCHAR(100),
     cep VARCHAR(15),
-    id_endereco INT,
     cidade VARCHAR(100),
-    rua VARCHAR(100),
-    PRIMARY KEY (id_user, id_endereco)
+    rua VARCHAR(100)
 );
 
 CREATE TABLE ingrediente (
