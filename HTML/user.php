@@ -14,10 +14,10 @@
     <main> 
     <?php
         include("../php/connection.php");
-            $nome = $_SESSION['nome'];
+            $id = $_SESSION['id_user'];
 
             // Consulta apenas os dados do usuário logado
-            $sql = "SELECT nome, username, cpf, email, senha, dt_nasc, num_telefone, estado, cep, cidade, rua FROM user_endereco_user WHERE nome = '$nome'";
+            $sql = "SELECT nome, username, cpf, email, senha, dt_nasc, num_telefone, estado, cep, cidade, rua, id_user FROM user_endereco_user WHERE id_user = '$id'";
             $result = $conn->query($sql);
 
             if ($result->num_rows > 0) {
