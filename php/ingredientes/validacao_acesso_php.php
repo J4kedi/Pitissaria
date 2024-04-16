@@ -16,7 +16,7 @@ function verificar_acesso() {
 // Verificar o acesso
 function validar_acesso() {
     if(!verificar_acesso()) {
-        header("Location: ../../HTML\index.php");
+        header("Location: ../../HTML/index.php");
         exit();
     }
 }
