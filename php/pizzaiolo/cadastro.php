@@ -23,10 +23,39 @@
             <h1>Cadastro de Ingredientes</h1>
             <form action="cadastro_php.php" id="form1" method="POST">
 
-            
+                <label for="nome">Nome:</label>
+                <input type="text" name="nome" id="nome" required>
+                <br>
                 <label for="tp_user">Tipo de Usuario:</label>
-                <input type="text" name="tp_user" id="tp_user" default = "pizzaiolo">
-        
+                <input type="text" name="tp_user" id="tp_user" default = "pizzaiolo" required>
+                <br>
+                <label for="username">Username:</label>
+                <input type="text" name="username" id="username" required>
+                <br>
+                <label for="cpf">CPF:</label>
+                <input type="text" name="cpf" id="cpf" required>
+                <br>
+                <label for="email">Email:</label>
+                <input type="text" name="email" id="email" required>
+                <br>
+                <label for="senha">Senha:</label>
+                <input type="password" name="senha" id="senha">
+                <br>
+                <label for="dt_nasc">Data de Nascimento:</label>
+                <input type="date" name="td_nasc" id="dt_nasc">
+                <br>
+                <label for="num_telefone">Telefone:</label>
+                <input type="text" name="num_telefone" id="num_telefone">
+                <br>
+                <label for="estado">Estado:</label>
+                <input type="text" name="estado" id="estado">
+                <br>
+                <label for="cep">CEP:</label>
+                input
+                <label for="cidade">Cidade:</label>
+                <label for="rua">Rua:</label>
+
+
 
                 <button type="submit" id="submit">Enviar</button>
             </form>
