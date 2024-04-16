@@ -44,18 +44,12 @@ $result = $conn->query($sql);
             <th>Tipo de Usuario</th>
             <th>Username</th>
             <th>CPF</th>
-            <th>Email</th>
-            <th>Senha</th>
-
-            
-
-            <th>Data de Nascimento</th>
             <th>Telefone</th>
-            <th>Estado</th>
-            <th>CEP</th>
-            <th>Estado</th>
-            <th>Cidade</th>
-            <th>Rua</th>
+            <th>Data de Nascimento</th>
+
+
+
+
             <th colspan="2">Ações</th>
             
         </tr>
@@ -76,21 +70,9 @@ $result = $conn->query($sql);
 
                     <td><?php echo $row["cpf"] ?></td>
 
-                    <td><?php echo $row["email"] ?></td>
-
-                    <td><?php echo $row["senha"] ?></td>
-                
-                    <td><?php echo date("d/m/Y", strtotime($row["dt_nasc"])) ?></td>
-
                     <td><?php echo $row["num_telefone"] ?></td>
 
-                    <td><?php echo $row["estado"] ?></td>
-
-                    <td><?php echo $row["cep"] ?></td>
-
-                    <td><?php echo $row["cidade"] ?></td>
-
-                    <td><?php echo $row["rua"] ?></td>
+                    <td><?php echo date("d/m/Y", strtotime($row["dt_nasc"])) ?></td>
 
                     <td class="edit_css"  style="cursor: pointer;" onclick="window.location='edit.php?id=<?php echo $row['id_user']?>'">
                         <a href="edit.php?id=<?php echo $row["id_user"]?>">Editar</a>
