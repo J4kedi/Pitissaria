@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Executar a query SQL
     if ($conn->query($sql) === TRUE) {
         // Redirecionar o usuário de volta para a página de edição com uma mensagem de sucesso
-        header("Location: ../HTML/editar.php?id=$id&success=true");
+        header("Location: ../HTML/editar_usuario.php?id=$id&success=true");
         exit();
     } else {
         // Se ocorrer algum erro, exibir uma mensagem de erro
