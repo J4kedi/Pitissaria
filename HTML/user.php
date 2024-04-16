@@ -37,7 +37,6 @@
                 $table .= '<td>Cidade</td>';
                 $table .= '<td>Nome da Rua</td>';
                 $table .= '<td>Editar</td>';
-                $table .= '<td>Excluir</td>';
                 $table .= '</tr>';
                 $table .= '</thead>';
                 $table .= '<tbody>';
@@ -57,7 +56,6 @@
                     $table .= "<td>{$row['cidade']}</td>";
                     $table .= "<td>{$row['rua']}</td>";
                     $table .= "<td><a class='btn btn-info' href='client/edit/{$row['nome']}'>Editar</a></td>";
-                    $table .= "<td><a class='btn btn-info' href='client/delete/{$row['nome']}'>Excluir</a></td>";
                     $table .= '</tr>';
                 }
                 $table .= '</tbody>';
