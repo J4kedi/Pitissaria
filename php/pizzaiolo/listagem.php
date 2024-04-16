@@ -47,9 +47,6 @@ $result = $conn->query($sql);
             <th>Telefone</th>
             <th>Data de Nascimento</th>
 
-
-
-
             <th colspan="2">Ações</th>
             
         </tr>
