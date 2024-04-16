@@ -95,7 +95,7 @@ $result = $conn->query($sql);
                     <td class="edit_css"  style="cursor: pointer;" onclick="window.location='edit.php?id=<?php echo $row['id_user']?>'">
                         <a href="edit.php?id=<?php echo $row["id_user"]?>">Editar</a>
                     </td>
-                    <td class="delet_css" style="cursor: pointer;" onclick="window.location='delet.php?id=<?php echo $row['id_user']?>'">
+                    <td class="delet_css" style="cursor: pointer;" onclick="window.location='delete.php?id=<?php echo $row['id_user']?>'">
                         <a href="delete.php?id=<?php echo $row['id_user']?>">Excluir</a>
                     </td>
                 </tr>
