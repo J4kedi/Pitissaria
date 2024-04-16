@@ -17,7 +17,7 @@
 </head>
 
 <body>
-    <?php include '../geral/header.php'?>
+    <?php include '../geral/novoheader.php'?>
 
     <main class="container">
         <!-- navegação login e cadastro -->

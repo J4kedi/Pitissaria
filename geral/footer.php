@@ -1,8 +1,8 @@
 <footer class="text-center bg-dark">
-    <section class="pb-4">
+    <section>
       <h2 class="text-center">Facilidades que oferecemos</h2>
     
-      <div class="d-flex flex-column align-items-center gap-3">
+      <div class="d-flex align-items-center gap-3 footer">
         <div class="section-facilidades d-flex">
           <div><i class="bi bi-cash-coin fs-1"></i></div>
           <div>
@@ -30,5 +30,5 @@
         </div>
       </div>
     </section>
-    <p>2024 <i class="bi bi-c-circle"></i> Desenvolvido por Tsurubas</p>
+    <p id="desenvolvido">2024 <i class="bi bi-c-circle"></i> Desenvolvido por Tsurubas</p>
 </footer>

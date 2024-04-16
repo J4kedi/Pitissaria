@@ -10,7 +10,7 @@
 include("../connection.php");
 
 $nome = $_POST["nome"];
-$senha = $_POST["senha"];
+$senha = md5($_POST["senha"]);
 $username = $_POST["username"];
 $cpf = $_POST["cpf"];
 $email = $_POST["email"];

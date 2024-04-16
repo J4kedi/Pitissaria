@@ -14,8 +14,6 @@
                 <li class="nav-item">
                     <a class="nav-link" href="../HTML/index.php">INICIO</a>
                 </li>
-                
-                
                 <?php
                     session_start(); // Inicia a sessão
 
@@ -56,8 +54,6 @@
                         echo '</li>';
                     }
                 ?>
-
-
             </ul>
         </div>
     </div>
