@@ -9,13 +9,7 @@
 <body>
     <?php
     include("../connection.php");
-    if (!isset($_SESSION['usuario']) || $_SESSION['usuario']['tipo'] === 'gerente') {
-        // Redirecionar para uma página de erro ou página de login
-        header("Location: lista_ingredientes.php"); // Altere para a página que deseja redirecionar
-        exit(); // Encerrar o script
-    }
-
-
+    include("../ingredientes/validacao_acesso_php.php");
 
     $nome = $_POST["nome"];
     $tp_user = "pizzaiolo";

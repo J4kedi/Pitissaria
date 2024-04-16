@@ -11,7 +11,7 @@
     <?php
          if (!isset($_SESSION['usuario']) || $_SESSION['usuario']['tipo'] === 'gerente') {
             // Redirecionar para uma página de erro ou página de login
-            header("Location: lista_ingredientes.php"); // Altere para a página que deseja redirecionar
+            header("Location: ../../HTML/index.php"); // Altere para a página que deseja redirecionar
             exit(); // Encerrar o script
         }
        
@@ -38,25 +38,27 @@
                 <label for="email">Email:</label>
                 <input type="text" name="email" id="email" required>
                 <br>
-                <label for="senha">Senha:</label>
-                <input type="password" name="senha" id="senha">
-                <br>
-                <label for="dt_nasc">Data de Nascimento:</label>
-                <input type="date" name="td_nasc" id="dt_nasc">
-                <br>
-                <label for="num_telefone">Telefone:</label>
+                <label for="senha">Senha:</lablefone:</label>
                 <input type="text" name="num_telefone" id="num_telefone">
                 <br>
                 <label for="estado">Estado:</label>
                 <input type="text" name="estado" id="estado">
                 <br>
-                <label for="cep">CEP:</label>
-                input
+                <label for="cep">CEel>
+                <input type="password" name="senha" id="senha">
+                <br>
+                <label for="dt_nasc">Data de Nascimento:</label>
+                <input type="date" name="td_nasc" id="dt_nasc">
+                <br>
+                <label for="num_telefone">TeP:</label>
+                <input type="text" name="cep" id="cep">
+                <br>
                 <label for="cidade">Cidade:</label>
+                <input type="text" name="cidade" id="cidade">
+                <br>
                 <label for="rua">Rua:</label>
-
-
-
+                <input type="text" name="rua" id="rua">
+                <br>
                 <button type="submit" id="submit">Enviar</button>
             </form>
         </div>
