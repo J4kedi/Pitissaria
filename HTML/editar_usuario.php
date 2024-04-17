@@ -42,7 +42,7 @@ include '../php/connection.php';
         // Se ocorrer algum erro, exibir uma mensagem de erro
         echo "Erro ao cadastrar ingrediente: " . $conn->error;
     }
-}
+
 
 // Fechar a conexão com o banco de dados
 $conn->close();
