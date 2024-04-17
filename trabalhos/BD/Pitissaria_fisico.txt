@@ -8,7 +8,7 @@ USE pitissariadb;
 
 
 CREATE TABLE user_endereco_user (
-    id_user INT AUTO_INCREMENT,
+    id_user INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(100),
     tp_user VARCHAR(100) DEFAULT "cliente",
     username VARCHAR(100),
@@ -19,7 +19,7 @@ CREATE TABLE user_endereco_user (
     num_telefone VARCHAR(20),
     estado VARCHAR(100),
     cep VARCHAR(15),
-    id_endereco INT auto_increment,
+    id_endereco INT AUTO_INCREMENT,
     cidade VARCHAR(100),
     rua VARCHAR(100)
 );
