@@ -2,11 +2,12 @@
 
 // Incluir o arquivo de conexão com o banco de dados
 include("../connection.php");
-include("validacao_acesso_php.php");
-validar_acesso();
+include("../validacao_acesso_php.php");
+verificar_acesso_gerente();
+verificarAcessoGerente();
 
 // Consulta SQL para selecionar os ingredientes
-$sql =  "SELECT id_ingrediente, nome_ingrediente, dt_validade, quantidade_ingrediente FROM ingrediente";
+$sql =  "SELECT id_user, nome, tp_user, username, dt_nasc, cpf, email, senha, dt_nasc, num_telefone, estado, cep, cidade, rua FROM user_endereco_user WHERE tp_user = 'pizzaiolo'";
 $result = $conn->query($sql);
 ?>
 
@@ -37,19 +38,17 @@ $result = $conn->query($sql);
     
     <table>
         <tr class="opcao_css">
+
             <th>ID</th>
             <th>Nome</th>
+            <th>Tipo de Usuario</th>
             <th>Username</th>
             <th>CPF</th>
-            <th>Email</th>
-            <th>Senha</th>
-            <th>Estado</th>
-            <th>CEP</th>
+            <th>Telefone</th>
             <th>Data de Nascimento</th>
-            <th>Numero Telefone</th>
-            <th>Cidade</th>
-            <th>Rua</th>
+
             <th colspan="2">Ações</th>
+            
         </tr>
 
         <?php
@@ -57,17 +56,26 @@ $result = $conn->query($sql);
             while ($row = $result->fetch_assoc()) {
         ?>  
                 <tr>
-                    <td class="id_css" onclick="window.location='ingredientes_ingrediente.php?id_ingrediente=<?php echo $row["id_ingrediente"]?>';" style = "cursor: pointer;">
-                        <?php echo $row["id_ingrediente"] ?>
+                    <td class="id_css" onclick="window.location='lista.php?id_user=<?php echo $row["id_user"]?>';" style = "cursor: pointer;">
+                        <?php echo $row["id_user"] ?>
                     </td>
-                    <td><?php echo $row["nome_ingrediente"] ?></td>
-                    <td><?php echo date("d/m/Y", strtotime($row["dt_validade"])) ?></td>
-                    <td><?php echo $row["quantidade_ingrediente"] ?></td>
-                    <td class="edit_css"  style="cursor: pointer;" onclick="window.location='edit_ingredientes.php?id=<?php echo $row['id_ingrediente']?>'">
-                        <a href="edit_ingredientes.php?id=<?php echo $row["id_ingrediente"]?>">Editar</a>
+                    <td><?php echo $row["nome"] ?></td>
+
+                    <td><?php echo $row["tp_user"]?></td>
+
+                    <td><?php echo $row["username"] ?></td>
+
+                    <td><?php echo $row["cpf"] ?></td>
+
+                    <td><?php echo $row["num_telefone"] ?></td>
+
+                    <td><?php echo date("d/m/Y", strtotime($row["dt_nasc"])) ?></td>
+
+                    <td class="edit_css"  style="cursor: pointer;" onclick="window.location='edit.php?id=<?php echo $row['id_user']?>'">
+                        <a href="edit.php?id=<?php echo $row["id_user"]?>">Editar</a>
                     </td>
-                    <td class="delet_css" style="cursor: pointer;" onclick="window.location='delet_ingredientes_php.php?id=<?php echo $row['id_ingrediente']?>'">
-                        <a href="delet_ingredientes_php.php?id=<?php echo $row['id_ingrediente']?>">Excluir</a>
+                    <td class="delet_css" style="cursor: pointer;" onclick="window.location='delete.php?id=<?php echo $row['id_user']?>'">
+                        <a href="delete.php?id=<?php echo $row['id_user']?>">Excluir</a>
                     </td>
                 </tr>
         <?php

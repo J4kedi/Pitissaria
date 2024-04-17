@@ -1,8 +1,8 @@
 <?php
     include("../connection.php");
-    include("validacao_acesso_php.php");
-    validar_acesso();
-
+    include("../validacao_acesso_php.php");
+    verificar_acesso_gerente();
+    verificarAcessoGerente();
     $id = $_GET["id"];
 
     $sql = "DELETE FROM ingrediente WHERE id_ingrediente = $id";

@@ -1,8 +1,8 @@
 <?php
     include("../connection.php");
-    include("../ingredientes/validacao_acesso_php.php");
-    validar_acesso();
-
+    include("../validacao_acesso_php.php");
+    verificar_acesso_gerente();
+    verificarAcessoGerente();
     $id = $_GET["id_user"];
 
     $sql = "DELETE FROM user_endereco_user WHERE id_user = $id";

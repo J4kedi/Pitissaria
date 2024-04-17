@@ -55,7 +55,7 @@
                     $table .= "<td>{$row['cep']}</td>";
                     $table .= "<td>{$row['cidade']}</td>";
                     $table .= "<td>{$row['rua']}</td>";
-                    $table .= "<td><a class='btn btn-info' href='client/edit/{$row['nome']}'>Editar</a></td>";
+                    $table .= "<td><a class='btn btn-info' href='../html/useratualizar.php'client/edit/{$row['nome']}'>Editar</a></td>";
                     $table .= '</tr>';
                 }
                 $table .= '</tbody>';
