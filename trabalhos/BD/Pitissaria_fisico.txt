@@ -1,35 +1,26 @@
-/* Pitissaria_logico: */
-
--- Criando o Banco De Dados
-CREATE DATABASE pitissariadb;
-
--- Utilizando o Banco de Dados
-USE pitissariadb;	
-
+/* Lógico_1: */
 
 CREATE TABLE user_endereco_user (
-    id_user INT AUTO_INCREMENT,
+    id_user INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100),
-    tp_user VARCHAR(100) DEFAULT "cliente",
+    tp_user VARCHAR(100),
     username VARCHAR(100),
-    cpf VARCHAR(15) UNIQUE,
+    cpf VARCHAR(15),
     email VARCHAR(100),
-    senha VARCHAR(100),
+    senha VARCHAR(50),
     dt_nasc DATE,
-    num_telefone VARCHAR(20),
+    num_telefone VARCHAR(15),
     estado VARCHAR(100),
     cep VARCHAR(15),
     cidade VARCHAR(100),
-    rua VARCHAR(100),
-    PRIMARY KEY (id_user, id_endereco)
+    rua VARCHAR(100)
 );
 
 CREATE TABLE ingrediente (
     id_ingrediente INT AUTO_INCREMENT PRIMARY KEY,
     nome_ingrediente VARCHAR(100),
     dt_validade DATE,
-    preco_compra VARCHAR(100),
-	quantidade_ingrediente FLOAT
+    preco_compra VARCHAR(50)
 );
 
 CREATE TABLE pizza (
@@ -50,16 +41,14 @@ CREATE TABLE possui (
 
 CREATE TABLE monta (
     fk_user_endereco_user_id_user INT,
-    fk_user_endereco_user_id_endereco INT,
     fk_pizza_montada_id_pizza_montada INT
 );
 
 CREATE TABLE pede (
     fk_user_endereco_user_id_user INT,
-    fk_user_endereco_user_id_endereco INT,
     fk_pizza_id_pizza INT
 );
-
+ 
 ALTER TABLE possui ADD CONSTRAINT FK_possui_1
     FOREIGN KEY (fk_ingrediente_id_ingrediente)
     REFERENCES ingrediente (id_ingrediente)
@@ -71,8 +60,8 @@ ALTER TABLE possui ADD CONSTRAINT FK_possui_2
     ON DELETE RESTRICT;
  
 ALTER TABLE monta ADD CONSTRAINT FK_monta_1
-    FOREIGN KEY (fk_user_endereco_user_id_user, fk_user_endereco_user_id_endereco)
-    REFERENCES user_endereco_user (id_user, id_endereco)
+    FOREIGN KEY (fk_user_endereco_user_id_user)
+    REFERENCES user_endereco_user (id_user)
     ON DELETE SET NULL;
  
 ALTER TABLE monta ADD CONSTRAINT FK_monta_2
@@ -80,17 +69,12 @@ ALTER TABLE monta ADD CONSTRAINT FK_monta_2
     REFERENCES pizza_montada (id_pizza_montada)
     ON DELETE SET NULL;
  
-ALTER TABLE pede ADD CONSTRAINT FK_pede_1	
-    FOREIGN KEY (fk_user_endereco_user_id_user, fk_user_endereco_user_id_endereco)
-    REFERENCES user_endereco_user (id_user, id_endereco)
+ALTER TABLE pede ADD CONSTRAINT FK_pede_1
+    FOREIGN KEY (fk_user_endereco_user_id_user)
+    REFERENCES user_endereco_user (id_user)
     ON DELETE SET NULL;
  
 ALTER TABLE pede ADD CONSTRAINT FK_pede_2
     FOREIGN KEY (fk_pizza_id_pizza)
     REFERENCES pizza (id_pizza)
     ON DELETE SET NULL;
-    
-   
--- Criando Gerente
-INSERT INTO user_endereco_user(nome, tp_user, username, cpf, email, senha, dt_nasc, num_telefone, estado, cep, cidade, rua) VALUES ("Arthur", "gerente","Arthur", "07571839998", "arthurfhermes@gmail.com", "123", "2005/03/13","41995664344", "Parana","81940210", "Curitiba", "Bortolo Pelanda");
-SELECT * FROM user_endereco_user;

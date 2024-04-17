@@ -1,38 +1,35 @@
 <?php
 include '../php/connection.php';
 
-// Verificar se os dados do formulário foram enviados via método POST
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
     // Receber os dados do formulário
-    $id = $_POST["id"];
+    $id = $_POST["id_user"];
     $nome = $_POST["nome"];
     $senha = $_POST["senha"];
     $username = $_POST["username"];
     $cpf = $_POST["cpf"];
     $email = $_POST["email"];
     $dt_nasc = $_POST["dt_nasc"];
-    $nome_rua = $_POST["nome_rua"];
+    $rua = $_POST["rua"];
     $cep = $_POST["cep"];
-    $num_res = $_POST["num_res"];
     $num_telefone = $_POST["num_telefone"];
     $estado = $_POST["estado"];
     $cidade = $_POST["cidade"];
 
     // Montar a query SQL para atualizar os dados do usuário
-    $sql = "UPDATE usuarios SET 
-            nome = '$nome', 
-            senha = '$senha', 
-            username = '$username', 
-            cpf = '$cpf', 
-            email = '$email', 
-            dt_nasc = '$dt_nasc', 
-            nome_rua = '$nome_rua', 
-            cep = '$cep', 
-            num_res = '$num_res', 
-            num_telefone = '$num_telefone', 
-            estado = '$estado', 
-            cidade = '$cidade' 
-            WHERE id = $id";
+    $sql = "UPDATE user_endereco_user SET 
+            nome = '$nome',
+            username = '$username',
+            cpf = '$cpf',
+            email = '$email',
+            senha = '$senha',
+            dt_nasc = '$dt_nasc',
+            num_telefone = '$num_telefone',
+            cep = '$cep',
+            estado = '$estado',
+            cidade = '$cidade'
+            nome_rua = '$rua',
+            WHERE id_user = $id";
 
     // Executar a query SQL
     if ($conn->query($sql) === TRUE) {

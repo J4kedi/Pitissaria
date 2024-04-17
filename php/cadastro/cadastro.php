@@ -19,7 +19,6 @@ $rua = $_POST["rua"];
 $cep = $_POST["cep"];
 $estado = $_POST["estado"];
 $cidade = $_POST["cidade"];
-$id_endereco = $_POST["id_endereco"];
 $num_telefone = $_POST["num_telefone"];
 
 $sql = "SELECT * FROM user_endereco_user WHERE cpf = '$cpf'";
