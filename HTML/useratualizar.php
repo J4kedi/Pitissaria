@@ -8,7 +8,7 @@
 <body>
     <?php 
         include '../geral/menu.php';
-        include '../connection.php';
+        include '../php/connection.php';
         
         // Verifique se um ID de usuário foi enviado através da solicitação GET
         if(isset($_GET['id_user'])) {

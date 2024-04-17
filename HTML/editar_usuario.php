@@ -1,5 +1,5 @@
 <?php
-include '../connection.php';
+include '../php/connection.php';
 
 
     // Receber os dados do formulário
