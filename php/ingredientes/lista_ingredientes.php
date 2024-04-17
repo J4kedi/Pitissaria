@@ -2,8 +2,7 @@
 
 // Incluir o arquivo de conexão com o banco de dados
 include("../connection.php");
-include("validacao_acesso_php.php");
-validar_acesso();
+
 
 // Consulta SQL para selecionar os ingredientes
 $sql =  "SELECT id_ingrediente, nome_ingrediente, dt_validade, quantidade_ingrediente FROM ingrediente";
@@ -18,21 +17,26 @@ $result = $conn->query($sql);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ingredientes</title>
     <link rel="stylesheet" href="../../Style/lista_ingredientes.css">
+    <link rel="stylesheet" href="../../Style/header.css">
+    <link rel="stylesheet" href="../../Style/padrao.css">
     <link rel="shortcut icon" href="../../imagens/icone/pizza.ico" type="image/x-icon">
+
 </head>
 
 <body>
-    <div class="add_ingrediente">
-        <a href="../../HTML/index.php"><h3>Inicio</h3></a>
-    </div>
-    <br><br>
+
+    <?php include '../../geral/menu.php'?>
+
     <div class="num_registro">
-        <h3 class="texto_registro">Ingredientes cadastrados: <?php echo $result->num_rows ?></h3>
+        <p class="texto_registro">Ingredientes cadastrados: <?php echo $result->num_rows ?></p>
     </div>
     <br><br>
-    <div class="add_ingrediente" style="cursor: pointer;" onclick="window.location='cadastro_ingredientes.php'">
-        <a href="cadastro_ingredientes.php"><h3 class="add_ingrediente">+ Adicionar Ingrediente</h3></a><br><br>
+
+    <div class="add_ingrediente">
+    <a href="cadastro_ingredientes.php" class="button-style">+ Adicionar Ingrediente</a>
+    <br><br>
     </div>
+
     <br><br>
     
     <table>

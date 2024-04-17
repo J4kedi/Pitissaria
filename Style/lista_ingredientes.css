@@ -1,61 +1,71 @@
 table {
-    border: #000 2px solid;
+    border: #aaaaaa 2px solid;
     width: 100%;
     border-collapse: collapse;
-    background-color: #ffffff;
+    background-color: #202D40;
     border-radius: 20px;
     font-size: 20px;
-    
 }
 
-th,
-tr,
-td {
-    padding: 8px; /* Adicionando algum espaçamento interno para melhorar a aparência */
-    border: 5px solid #aaaaaa;
-
+th, tr, td {
+    padding: 8px;
+    border: 5px solid #dc9d55;
+    color:  rgb(255, 231, 200);
 }
 
 table td {
     text-align: center;
-    
 }
-
 
 body{
     background-color: #5b2c3c;
 }
-
-.add_ingrediente {
-    background-color: #a4a4a4;
-    display: inline-flex;
-    justify-content: center; /* Isso centraliza horizontalmente */
-    align-items: center; /* Isso centraliza verticalmente */
-    height: 50px; /* Ajuste conforme necessário */
-    width: 250px;
-    border: 1px solid #0D1219;
-    color: #000000;
-}
-
 
 a{
     text-decoration: none;
     color: black
 }
 
-.num_registro{
-    background-color: #a4a4a4;
+.num_registro {
     display: inline-flex;
-    height: 50px;
-    width: 250px;
     align-items: center;
-    border: 1px solid #0D1219;
-    color: #0D1219;
+    padding: 8px 15px;
+    height: 40px;
+    width: 250px;
+    background-color: #202D40;
+    color:  rgb(255, 231, 200);
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-left: 5px;
+    border: none;
 }
 
-.texto_registro{
-    margin-left: 10px;
+.texto_registro {
+    font-size: 16px;
+    margin: 0;
+    width: 100%;
+    text-align: center;
 }
 
+.button-style {
+    display: inline-block;
+    padding: 8px 15px;
+    height: 40px;
+    width: 250px;
+    background-color: #202D40;
+    color: rgb(255, 231, 200);
+    text-align: center;
+    border-radius: 5px;
+    font-size: 16px;
+    line-height: 24px;
+    border: none;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.button-style:hover {
+    background-color: #aaaaaa;
+    color: #202D40;
+}
 
 
