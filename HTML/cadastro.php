@@ -17,7 +17,7 @@
 </head>
 
 <body>
-    <?php include '../../geral/menu.php'?>
+    <?php include '../geral/menu.php'?>
 
     <main class="container">
         <!-- navegação login e cadastro -->
