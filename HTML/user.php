@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Style/user.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../Style/padrao.css">
@@ -10,65 +11,46 @@
 </head>
 <body>
     <?php include '../geral/menu.php'?> 
-
+    
     <main> 
+
     <?php
         include("../php/connection.php");
-        include("../validacao_acesso_php.php");
-        verificar_acesso_gerente();
-        verificarAcessoGerente();
+
             $id = $_SESSION['id_user'];
 
             // Consulta apenas os dados do usuário logado
             $sql = "SELECT nome, username, cpf, email, senha, dt_nasc, num_telefone, estado, cep, cidade, rua, id_user FROM user_endereco_user WHERE id_user = '$id'";
             $result = $conn->query($sql);
+            // Verificar se há resultados
+            if ($result && $result->num_rows > 0) {
+                // Exibir os detalhes do ingrediente em uma tabela
+                echo "<table>";
+                while ($row = $result->fetch_assoc()) {
+                    echo "<a href='useratualizar.php?id={$row['id_user']}' style='text-decoration: none; color: black;'>Editar</a>";
+                    echo "<tr><th>Nome: </th><td>{$row['nome']}</td></tr>";
+                    echo "<tr><th>Username: </th><td>{$row['username']}</td></tr>";
+                    echo "<tr><th>CPF: </th><td>{$row['cpf']}</td></tr>";
+                    echo "<tr><th>Email: </th><td>{$row['email']}</td></tr>";
+                    echo "<tr><th>Senha: </th><td>{$row['senha']}</td></tr>";
+                    echo "<tr><th>Data nascimento: </th><td>{$row['dt_nasc']}</td></tr>";
+                    echo "<tr><th>Numero de telefone: </th><td>{$row['num_telefone']}</td></tr>";
+                    echo "<tr><th>Estado: </th><td>{$row['estado']}</td></tr>";
+                    echo "<tr><th>CEP: </th><td>{$row['cep']}</td></tr>";
+                    echo "<tr><th>Cidade: </th><td>{$row['cidade']}</td></tr>";
+                    echo "<tr><th>Rua: </th><td>{$row['rua']}</td></tr>";
 
-            if ($result->num_rows > 0) {
-                $table  = '<table>';
-                $table .= '<thead>';
-                $table .= '<tr>';
-                $table .= '<td>Selecionar Cliente</td>';
-                $table .= '<td>Nome</td>';
-                $table .= '<td>Usuario</td>';
-                $table .= '<td>Cpf</td>';
-                $table .= '<td>Email</td>';
-                $table .= '<td>Senha</td>';
-                $table .= '<td>Data de Nascimento</td>';
-                $table .= '<td>Telefone</td>';
-                $table .= '<td>Estado</td>';
-                $table .= '<td>Cep</td>';
-                $table .= '<td>Cidade</td>';
-                $table .= '<td>Nome da Rua</td>';
-                $table .= '<td>Editar</td>';
-                $table .= '</tr>';
-                $table .= '</thead>';
-                $table .= '<tbody>';
 
-                while($row = $result->fetch_assoc()){
-                    $table .= '<tr>';
-                    $table .= "<td><input type='checkbox' value='{$row['nome']}'></td>";
-                    $table .= "<td>{$row['nome']}</td>";
-                    $table .= "<td>{$row['username']}</td>";
-                    $table .= "<td>{$row['cpf']}</td>";
-                    $table .= "<td>{$row['email']}</td>";
-                    $table .= "<td>{$row['senha']}</td>";
-                    $table .= "<td>{$row['dt_nasc']}</td>";
-                    $table .= "<td>{$row['num_telefone']}</td>";
-                    $table .= "<td>{$row['estado']}</td>";
-                    $table .= "<td>{$row['cep']}</td>";
-                    $table .= "<td>{$row['cidade']}</td>";
-                    $table .= "<td>{$row['rua']}</td>";
-                    $table .= "<td><a class='btn btn-info' href='../html/useratualizar.php'client/edit/{$row['nome']}'>Editar</a></td>";
-                    $table .= '</tr>';
                 }
-                $table .= '</tbody>';
-                $table .= '</table>';
-                echo $table;
+                echo "</table>";
             } else {
-                echo "Nenhum registro encontrado.";
+                echo "Nenhum ingrediente encontrado com o ID fornecido.";
             }
-
-    ?>
+        
+    
+        // Fechar a conexão com o banco de dados
+        $conn->close();
+        ?>
     </main>
 
     <?php include '../geral/footer.php'?>

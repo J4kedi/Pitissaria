@@ -20,7 +20,7 @@
                     // Se o usuário for um cliente, exibe os links de login e cadastro
                     else if($_SESSION['tp_user'] === 'cliente') {
                         echo '<a class="links lover" href="../HTML/logout.php">logout</a>';
-                        echo '<a class="links lover" href="">cliente</a>';
+                        echo '<a class="links lover" href="../HTML/user.php"">cliente</a>';
                     }
 
                     else if($_SESSION['tp_user'] === 'pizzaiolo') {
