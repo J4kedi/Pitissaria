@@ -20,14 +20,13 @@
             $id = $_SESSION['id_user'];
 
             // Consulta apenas os dados do usuário logado
-            $sql = "SELECT nome, username, cpf, email, senha, dt_nasc, num_telefone, estado, cep, cidade, rua, id_user FROM user_endereco_user WHERE id_user = '$id'";
+            $sql = "SELECT id_user, nome, username, cpf, email, senha, dt_nasc, num_telefone, estado, cep, cidade, rua, id_user FROM user_endereco_user WHERE id_user = '$id'";
             $result = $conn->query($sql);
             // Verificar se há resultados
             if ($result && $result->num_rows > 0) {
                 // Exibir os detalhes do ingrediente em uma tabela
                 echo "<table>";
                 while ($row = $result->fetch_assoc()) {
-                    echo "<a href='useratualizar.php?id={$row['id_user']}' style='text-decoration: none; color: black;'>Editar</a>";
                     echo "<tr><th>Nome: </th><td>{$row['nome']}</td></tr>";
                     echo "<tr><th>Username: </th><td>{$row['username']}</td></tr>";
                     echo "<tr><th>CPF: </th><td>{$row['cpf']}</td></tr>";
@@ -39,7 +38,12 @@
                     echo "<tr><th>CEP: </th><td>{$row['cep']}</td></tr>";
                     echo "<tr><th>Cidade: </th><td>{$row['cidade']}</td></tr>";
                     echo "<tr><th>Rua: </th><td>{$row['rua']}</td></tr>";
-
+                    echo "<tr><th>Rua: </th><td>{$row['id_user']}</td></tr>";
+                    ?>
+                    <td class="edit_css"  style="cursor: pointer;" onclick="window.location='useratualizar.php?id=<?php echo $row['id_user']?>'">
+                    <a href="useratualizar.php?id=<?php echo $row["id_user"]?>">Editar</a>
+                    </td>
+                    <?php
 
                 }
                 echo "</table>";

@@ -51,7 +51,7 @@
     <main class = "container">
         <h2>Editar informações</h2>
         <form action="cadastro_php.php" id="form1" method="POST">
-
+            
             <label for="nome">Nome:</label>
             <input type="text" name="nome" id="nome" value ="<?php echo $nome?>" required>
             <br>

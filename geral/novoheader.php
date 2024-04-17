@@ -33,6 +33,7 @@
                     // Se a variável de sessão tp_user não estiver definida, exibe apenas o link de login
                     echo '<a class="links lover" href="../HTML/login.php">login</a>';
                     echo '<a class="links lover" href="../HTML/cadastro.php">cadastro</a>';
+                    
                 }
             ?>
         </div>
