@@ -23,7 +23,7 @@
         <!-- navegação login e cadastro -->
         <ul class="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
             <li class="nav-item" role="presentation">
-                <a class="nav-link" id="tab-login" data-mdb-toggle="pill" href="../HTML/login.php" role="tab"
+                <a class="nav-link" id="tab-login" data-mdb-toggle="pill" href="../../HTML/login.php" role="tab"
                     aria-controls="pills-login" aria-selected="false">Login</a>
             </li>
             <li class="nav-item" role="presentation">
@@ -99,8 +99,8 @@
 
                     <!-- Nome da rua input -->
                     <div class="form-outline mb-4">
-                        <input type="text" id="nome_rua" name="nome_rua" required class="form-control" />
-                        <label class="form-label" for="nome_rua">Nome da Rua</label>
+                        <input type="text" id="rua" name="rua" required class="form-control" />
+                        <label class="form-label" for="rua">Rua</label>
                     </div>
 
                     <!-- CEP input -->
