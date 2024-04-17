@@ -35,7 +35,7 @@
                 <input type="text" name="email" id="email" required>
                 <br>
                 <label for="senha">Senha:</lablefone:</label>
-                <input type="text" name="num_telefone" id="num_telefone">
+                <input type="text" name="num_telefone" id="num_telefone" min = 8>
                 <br>
                 <label for="estado">Estado:</label>
                 <input type="text" name="estado" id="estado">
@@ -44,7 +44,7 @@
                 <input type="password" name="senha" id="senha">
                 <br>
                 <label for="dt_nasc">Data de Nascimento:</label>
-                <input type="date" name="td_nasc" id="dt_nasc">
+                <input type="date" name="td_nasc" id="dt_nasc" max = "2006-01-01" max ="1940-12-31">
                 <br>
                 <label for="num_telefone">Telefone:</label>
                 <input type="text" name="cep" id="cep">
