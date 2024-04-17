@@ -17,7 +17,7 @@
 </head>
 
 <body>
-    <?php include '../geral/menu.php'?>
+    <?php include '../../geral/menu.php'?>
 
     <main class="container">
         <!-- navegação login e cadastro -->
@@ -27,7 +27,7 @@
                     aria-controls="pills-login" aria-selected="false">Login</a>
             </li>
             <li class="nav-item" role="presentation">
-                <a class="nav-link active" id="tab-register" data-mdb-toggle="pill" href="../HTML/cadastro.php"
+                <a class="nav-link active" id="tab-register" data-mdb-toggle="pill" href="../php/cadastro.php"
                     role="tab" aria-controls="pills-register" aria-selected="true">Cadastrar</a>
             </li>
         </ul>
