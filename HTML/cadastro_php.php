@@ -7,7 +7,7 @@
 </head>
 <body>
 <?php
-include("../connection.php");
+include("../php/connection.php");
 
 $nome = $_POST["nome"];
 $senha = md5($_POST["senha"]);
@@ -34,7 +34,7 @@ if ($result->num_rows > 0) {
     
     if ($conn->query($sql_insert) === TRUE) {
         echo "<h1>Usuario cadastrado com sucesso.</h1>";
-        echo '<script>setTimeout(function() { window.location.href = "../../HTML/index.php"; }, 1000);</script>'; // Redireciona para index.php após 5 segundos 
+        echo '<script>setTimeout(function() { window.location.href = "index.php"; }, 1000);</script>'; // Redireciona para index.php após 5 segundos 
     } else {
         echo "Erro ao cadastrar o usuario: " . $conn->error;
     }

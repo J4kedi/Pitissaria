@@ -13,11 +13,11 @@
     <title>Cadastro</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="shortcut icon" href="../../imagens/icone/pizza.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../imagens/icone/pizza.ico" type="image/x-icon">
 </head>
 
 <body>
-    <?php include '../geral/menu.php'?>
+    <?php include '../../geral/menu.php'?>
 
     <main class="container">
         <!-- navegação login e cadastro -->

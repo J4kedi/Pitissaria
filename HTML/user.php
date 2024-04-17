@@ -13,7 +13,7 @@
 
     <main> 
     <?php
-        include("../connection.php");
+        include("../php/connection.php");
         include("../validacao_acesso_php.php");
         verificar_acesso_gerente();
         verificarAcessoGerente();
