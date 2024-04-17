@@ -77,10 +77,7 @@
         </form>
     </main>
     <?php 
-            } else {
-                echo "<p>Usuário não encontrado.</p>";
-            }
-        } else {
+        }else {
             echo "<p>ID do usuário não fornecido.</p>";
         }
         

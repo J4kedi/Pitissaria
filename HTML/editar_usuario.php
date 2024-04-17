@@ -37,7 +37,7 @@ include '../php/connection.php';
     if ($conn->query($sql) === TRUE) {
         // Redirecionar o usuário de volta para a página de edição com uma mensagem de sucesso
         echo "<h1>Dados alterados com sucesso.</h1>";
-        echo '<script>setTimeout(function() { window.location.href = "index.php"; }, 2000);</script>'; // Redireciona para lista_ingredientes.php após 2 segundos 
+        echo '<script>setTimeout(function() { window.location.href = "user.php"; }, 2000);</script>'; // Redireciona para lista_ingredientes.php após 2 segundos 
     } else {
         // Se ocorrer algum erro, exibir uma mensagem de erro
         echo "Erro ao cadastrar ingrediente: " . $conn->error;
