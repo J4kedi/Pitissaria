@@ -11,11 +11,11 @@
         include '../php/connection.php';
         
         // Verifique se um ID de usuário foi enviado através da solicitação GET
-        if(isset($_GET['id'])) {
-            $id = $_GET['id'];
+        if(isset($_GET['id_user'])) {
+            $id = $_GET['id_user'];
             
             // Execute uma consulta para recuperar as informações do usuário com base no ID
-            $sql = "SELECT * FROM usuarios WHERE id = $id";
+            $sql = "SELECT * FROM user_endereco_user WHERE id_user = $id";
             $result = $conn->query($sql);
             
             // Verifique se a consulta foi bem-sucedida e exiba o formulário de edição
@@ -26,7 +26,7 @@
         <h1>Editar Usuário</h1>
         <form action="../php/editar_usuario.php" method="POST">
             <!-- Inclua os campos do formulário pré-preenchidos com as informações do usuário -->
-            <input type="hidden" name="id" value="<?php echo $usuario['id']; ?>">
+            <input type="hidden" name="id" value="<?php echo $usuario['id_user']; ?>">
             <div class="form-group">
                 <label for="nome">Nome:</label>
                 <input type="text" id="nome" name="nome" value="<?php echo $usuario['nome']; ?>" required>

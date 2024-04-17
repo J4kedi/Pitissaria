@@ -4,7 +4,7 @@ include '../php/connection.php';
 // Verificar se os dados do formulário foram enviados via método POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Receber os dados do formulário
-    $id = $_POST["id"];
+    $id = $_POST["id_user"];
     $nome = $_POST["nome"];
     $senha = $_POST["senha"];
     $username = $_POST["username"];
@@ -17,9 +17,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $num_telefone = $_POST["num_telefone"];
     $estado = $_POST["estado"];
     $cidade = $_POST["cidade"];
+    $rua = $_POST["rua"];
 
     // Montar a query SQL para atualizar os dados do usuário
-    $sql = "UPDATE usuarios SET 
+    $sql = "UPDATE user_endereco_user SET 
             nome = '$nome', 
             senha = '$senha', 
             username = '$username', 
@@ -32,12 +33,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             num_telefone = '$num_telefone', 
             estado = '$estado', 
             cidade = '$cidade' 
-            WHERE id = $id";
+            WHERE id_user = $id";
 
     // Executar a query SQL
     if ($conn->query($sql) === TRUE) {
         // Redirecionar o usuário de volta para a página de edição com uma mensagem de sucesso
-        header("Location: ../HTML/editar_usuario.php?id=$id&success=true");
+        header("Location: ../HTML/editar_usuario.php?id_user=$id&success=true");
         exit();
     } else {
         // Se ocorrer algum erro, exibir uma mensagem de erro
