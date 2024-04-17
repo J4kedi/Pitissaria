@@ -78,3 +78,6 @@ ALTER TABLE pede ADD CONSTRAINT FK_pede_2
     FOREIGN KEY (fk_pizza_id_pizza)
     REFERENCES pizza (id_pizza)
     ON DELETE SET NULL;
+    
+    
+  
