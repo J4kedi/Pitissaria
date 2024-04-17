@@ -18,13 +18,10 @@
             $sql = "SELECT * FROM user_endereco_user WHERE id_user = $id";
             $result = $conn->query($sql);
             
-            // Verifique se a consulta foi bem-sucedida e exiba o formulário de edição
-            if($result && $result->num_rows > 0) {
-                $usuario = $result->fetch_assoc();
     ?>
     <main class="container">
         <h1>Editar Usuário</h1>
-        <form action="../php/editar_usuario.php" method="POST">
+        <form action="editar_usuario.php" method="POST">
             <!-- Inclua os campos do formulário pré-preenchidos com as informações do usuário -->
             <input type="hidden" name="id" value="<?php echo $usuario['id_user']; ?>">
             <div class="form-group">
