@@ -13,7 +13,10 @@
 
     <main> 
     <?php
-        include("../php/connection.php");
+        include("../connection.php");
+        include("../validacao_acesso_php.php");
+        verificar_acesso_gerente();
+        verificarAcessoGerente();
             $id = $_SESSION['id_user'];
 
             // Consulta apenas os dados do usuário logado
