@@ -2,10 +2,13 @@
 
 // Incluir o arquivo de conexão com o banco de dados
 include("../connection.php");
+<<<<<<< HEAD
+=======
 include("../validacao_acesso_php.php");
 verificar_acesso_gerente();
 verificar_acesso_pizzaiolo();
 verificarAcessoGerenteEPizzaiolo();
+>>>>>>> 4f89e32f739c7fd44980d2d94025cf47dac5d55e
 
 
 // Consulta SQL para selecionar os ingredientes
@@ -20,21 +23,30 @@ $result = $conn->query($sql);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ingredientes</title>
     <link rel="stylesheet" href="../../Style/lista_ingredientes.css">
+    <link rel="stylesheet" href="../../Style/header.css">
+    <link rel="stylesheet" href="../../Style/padrao.css">
     <link rel="shortcut icon" href="../../imagens/icone/pizza.ico" type="image/x-icon">
+
 </head>
 
 <body>
-    <div class="add_ingrediente">
-        <a href="../../HTML/index.php"><h3>Inicio</h3></a>
-    </div>
-    <br><br>
+
+    <?php include '../../geral/menu.php'?>
+
     <div class="num_registro">
+<<<<<<< HEAD
+        <p class="texto_registro">Ingredientes cadastrados: <?php echo $result->num_rows ?></p>
+=======
         <h3 class="texto_registro">Ingredientes cadastrados: <?php echo $result->num_rows?></h3>
+>>>>>>> 4f89e32f739c7fd44980d2d94025cf47dac5d55e
     </div>
     <br><br>
-    <div class="add_ingrediente" style="cursor: pointer;" onclick="window.location='cadastro_ingredientes.php'">
-        <a href="cadastro_ingredientes.php"><h3 class="add_ingrediente">+ Adicionar Ingrediente</h3></a><br><br>
+
+    <div class="add_ingrediente">
+    <a href="cadastro_ingredientes.php" class="button-style">+ Adicionar Ingrediente</a>
+    <br><br>
     </div>
+
     <br><br>
     
     <table>
