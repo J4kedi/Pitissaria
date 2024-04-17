@@ -16,7 +16,7 @@
                         echo '<a href = "../php/pizzaiolo/listagem.php" class="links lover">pizzaiolo</a>';
                         echo '<a href="../php/ingredientes/lista_ingredientes.php" class="links lover">ingredientes</a>';
                         echo '<a href="logout.php" class="links lover">logout</a>';
-                        echo '<a class="links">gerente</a>';
+                        echo '<a class="links lover" href="../HTML/user.php"">Gerente</a>';
                     }
                     // Se o usuário for um cliente, exibe os links de login e cadastro
                     else if($_SESSION['tp_user'] === 'cliente') {
