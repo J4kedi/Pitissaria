@@ -15,26 +15,28 @@ include '../php/connection.php';
     $num_telefone = $_POST["num_telefone"];
     $estado = $_POST["estado"];
     $cidade = $_POST["cidade"];
+    $rua = $_POST["rua"];
 
     // Montar a query SQL para atualizar os dados do usuário
-    $sql = "UPDATE user_endereco_user SET 
-            nome = '$nome',
-            username = '$username',
-            cpf = '$cpf',
-            email = '$email',
-            senha = '$senha',
-            dt_nasc = '$dt_nasc',
-            num_telefone = '$num_telefone',
-            cep = '$cep',
-            estado = '$estado',
-            cidade = '$cidade'
-            nome_rua = '$rua',
-            WHERE id_user = $id";
+    $sql = "UPDATE usuarios SET 
+            nome = '$nome', 
+            senha = '$senha', 
+            username = '$username', 
+            cpf = '$cpf', 
+            email = '$email', 
+            dt_nasc = '$dt_nasc', 
+            nome_rua = '$nome_rua', 
+            cep = '$cep', 
+            num_res = '$num_res', 
+            num_telefone = '$num_telefone', 
+            estado = '$estado', 
+            cidade = '$cidade' 
+            WHERE id = $id";
 
     // Executar a query SQL
     if ($conn->query($sql) === TRUE) {
         // Redirecionar o usuário de volta para a página de edição com uma mensagem de sucesso
-        header("Location: ../HTML/editar_usuario.php?id=$id&success=true");
+        header("Location: ../HTML/editar_usuario.php?id_user=$id&success=true");
         exit();
     } else {
         // Se ocorrer algum erro, exibir uma mensagem de erro
