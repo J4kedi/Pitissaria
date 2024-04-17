@@ -17,17 +17,17 @@
 </head>
 
 <body>
-    <?php include '../geral/novoheader.php'?>
+    <?php include '../geral/menu.php'?>
     
     <main class="container">
         <!-- navegação login e cadastro -->
         <ul class="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
             <li class="nav-item" role="presentation">
-                <a class="nav-link" id="tab-login" data-mdb-toggle="pill" href="../../HTML/login.php" role="tab"
+                <a class="nav-link" id="tab-login" data-mdb-toggle="pill" href="../HTML/login.php" role="tab"
                     aria-controls="pills-login" aria-selected="false">Login</a>
             </li>
             <li class="nav-item" role="presentation">
-                <a class="nav-link active" id="tab-register" data-mdb-toggle="pill" href="../php/cadastro.php"
+                <a class="nav-link active" id="tab-register" data-mdb-toggle="pill" href="../HTML/cadastro.php"
                     role="tab" aria-controls="pills-register" aria-selected="true">Cadastrar</a>
             </li>
         </ul>
