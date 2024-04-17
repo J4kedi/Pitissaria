@@ -17,8 +17,8 @@
 </head>
 
 <body>
-    <?php include '../../geral/menu.php'?>
-
+    <?php include '../../geral/novoheader.php'?>
+    
     <main class="container">
         <!-- navegação login e cadastro -->
         <ul class="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
