@@ -5,5 +5,5 @@
     // Esconder o modal após 5 segundos
     setTimeout(function () {
       $('#loginModal').modal('hide');
-    }, 5000);
+    }, 2000);
   };
