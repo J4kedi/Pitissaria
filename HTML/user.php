@@ -38,12 +38,8 @@
                     echo "<tr><th>CEP: </th><td>{$row['cep']}</td></tr>";
                     echo "<tr><th>Cidade: </th><td>{$row['cidade']}</td></tr>";
                     echo "<tr><th>Rua: </th><td>{$row['rua']}</td></tr>";
-                    echo "<tr><th>Rua: </th><td>{$row['id_user']}</td></tr>";
-                    ?>
-                    <td class="edit_css"  style="cursor: pointer;" onclick="window.location='useratualizar.php?id=<?php echo $row['id_user']?>'">
-                    <a href="useratualizar.php?id=<?php echo $row["id_user"]?>">Editar</a>
-                    </td>
-                    <?php
+                    echo "<tr><th><a href='useratualizar.php?id={$row['id_user']}' style= 'color:white; text-decoration:none;'>Editar</a></th></tr>";
+
 
                 }
                 echo "</table>";

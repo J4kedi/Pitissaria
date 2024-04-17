@@ -11,52 +11,50 @@
 <?php
     include("../php/connection.php");
 
-    
-    $sql = "SELECT id_user, nome, tp_user, username, dt_nasc, cpf, email, senha, dt_nasc, num_telefone, estado, cep, cidade, rua FROM user_endereco_user";
-    $result = $conn->query($sql);
+    // Supondo que você tenha uma sessão iniciada e armazenando o ID do usuário nela
+    // Vou presumir que você está usando a superglobal $_SESSION para armazenar o ID do usuário logado
+    session_start();
 
-    if ($result->num_rows>0){
-        while($row = $result->fetch_assoc()){
+    // Verificando se o usuário está logado antes de acessar seus dados
+    if(isset($_SESSION['id_user'])) {
+        $id_user = $_SESSION['id_user'];
 
-            $id_user = $row["id_user"];
+        $sql = "SELECT id_user, nome, tp_user, username, dt_nasc, cpf, email, senha, dt_nasc, num_telefone, estado, cep, cidade, rua FROM user_endereco_user WHERE id_user = $id_user";
+        $result = $conn->query($sql);
 
-            $nome = $row["nome"];
-
-            $tp_user = $row["tp_user"];
-
-            $username = $row["username"];
-
-            $cpf = $row["cpf"];
-
-            $email = $row["email"];
-
-            $senha = $row["senha"];
-
-            $dt_nasc = $row["dt_nasc"];
-
-            $num_telefone = $row["num_telefone"];
-
-            $estado = $row["estado"];
-
-            $cep = $row["cep"];
-
-            $cidade = $row["cidade"];
-
-            $rua = $row["rua"];
-
+        if ($result->num_rows > 0) {
+            while($row = $result->fetch_assoc()) {
+                $nome = $row["nome"];
+                $tp_user = $row["tp_user"];
+                $username = $row["username"];
+                $cpf = $row["cpf"];
+                $email = $row["email"];
+                $senha = $row["senha"];
+                $dt_nasc = $row["dt_nasc"];
+                $num_telefone = $row["num_telefone"];
+                $estado = $row["estado"];
+                $cep = $row["cep"];
+                $cidade = $row["cidade"];
+                $rua = $row["rua"];
+            }
+        } else {
+            echo "Nenhum usuário encontrado.";
         }
+    } else {
+        echo "Usuário não logado.";
     }
 ?>
+
     <a href="user.php"><h3>Voltar a listagem</h3></a>
     <main class = "container">
         <h2>Editar informações</h2>
         <form action="cadastro_php.php" id="form1" method="POST">
-            
+
             <label for="nome">Nome:</label>
             <input type="text" name="nome" id="nome" value ="<?php echo $nome?>" required>
             <br>
             <label for="tp_user">Tipo de Usuario:</label>
-            <input type="text" name="tp_user" id="tp_user" value ="<?php echo $tp_user?>" default = "pizzaiolo" required>
+            <input type="text" name="tp_user" id="tp_user" value ="<?php echo $tp_user?>" default = "cliente" required>
             <br>
             <label for="username">Username:</label>
             <input type="text" name="username" id="username" value ="<?php echo $username?>" required>
