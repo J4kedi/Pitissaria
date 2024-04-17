@@ -9,8 +9,10 @@
 </head>
 <body>
     <?php
-    include("validacao_acesso_php.php");
-    validar_acesso();
+    include("../validacao_acesso_php.php");
+    verificar_acesso_gerente();
+    verificarAcessoGerente();
+
     ?>
 
     <a href="lista_ingredientes.php">Voltar a listagem</a>

@@ -17,7 +17,7 @@
 </head>
 
 <body>
-    <?php include '../geral/novoheader.php'?>
+    <?php include '../geral/menu.php'?>
 
     <main class="container">
         <!-- navegação login e cadastro -->
@@ -40,7 +40,7 @@
                 <!-- Você pode adicionar conteúdo para a página de login aqui, se necessário -->
             </div>
             <div class="tab-pane fade show active" id="pills-register" role="tabpanel" aria-labelledby="tab-register">
-                <form action="../php/cadastro/cadastro.php" id="form1" method="POST">
+                <form action="cadastro_php.php" id="form1" method="POST">
                     <div class="text-center mb-3">
                         <p>Entre com:</p>
                         <button type="button" class="btn btn-link btn-floating mx-1">
@@ -99,8 +99,8 @@
 
                     <!-- Nome da rua input -->
                     <div class="form-outline mb-4">
-                        <input type="text" id="nome_rua" name="nome_rua" required class="form-control" />
-                        <label class="form-label" for="nome_rua">Nome da Rua</label>
+                        <input type="text" id="rua" name="rua" required class="form-control" />
+                        <label class="form-label" for="rua">Rua</label>
                     </div>
 
                     <!-- CEP input -->
@@ -134,11 +134,6 @@
                     <div class="form-outline mb-4">
                         <input type="text" id="id_endereco" name="id_endereco" required class="form-control" />
                         <label class="form-label" for="id_endereco">Numero da casa</label>
-                    </div>
-
-                    <div class="form-outline mb-4">
-                        <input type="text" id="rua" name="rua" required class="form-control" />
-                        <label class="form-label" for="rua">Rua</label>
                     </div>
 
                     <!-- Checkbox  de termos -->

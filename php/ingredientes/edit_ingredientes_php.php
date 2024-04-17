@@ -9,9 +9,12 @@
 <body>
 <?php
     include("../connection.php");
-    include("validacao_acesso_php.php");
-    validar_acesso();
-
+    include("../validacao_acesso_php.php");
+    verificar_acesso_gerente();
+    verificar_acesso_pizzaiolo();
+    verificarAcessoGerenteEPizzaiolo();
+    
+    
     $id = $_POST["id"];
     $nome = $_POST["nome_ingrediente"];
     $validade = $_POST["dt_validade"];

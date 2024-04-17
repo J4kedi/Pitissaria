@@ -8,7 +8,7 @@ USE pitissariadb;
 
 
 CREATE TABLE user_endereco_user (
-    id_user INT AUTO_INCREMENT,
+    id_user INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(100),
     tp_user VARCHAR(100) DEFAULT "cliente",
     username VARCHAR(100),
@@ -19,9 +19,9 @@ CREATE TABLE user_endereco_user (
     num_telefone VARCHAR(20),
     estado VARCHAR(100),
     cep VARCHAR(15),
+    id_endereco INT AUTO_INCREMENT,
     cidade VARCHAR(100),
-    rua VARCHAR(100),
-    PRIMARY KEY (id_user, id_endereco)
+    rua VARCHAR(100)
 );
 
 CREATE TABLE ingrediente (
@@ -92,5 +92,13 @@ ALTER TABLE pede ADD CONSTRAINT FK_pede_2
     
    
 -- Criando Gerente
-INSERT INTO user_endereco_user(nome, tp_user, username, cpf, email, senha, dt_nasc, num_telefone, estado, cep, cidade, rua) VALUES ("Arthur", "gerente","Arthur", "07571839998", "arthurfhermes@gmail.com", "123", "2005/03/13","41995664344", "Parana","81940210", "Curitiba", "Bortolo Pelanda");
+INSERT INTO user_endereco_user(nome, tp_user, username, cpf, email, senha, dt_nasc, num_telefone, estado, cep, cidade, rua) VALUES ("Arthur", "gerente","Arthur", "07571839998", "arthurfhermes@gmail.com", md5("123"), "2005/03/13","41995664344", "Parana","81940210", "Curitiba", "Bortolo Pelanda");
+
+-- Criando Pizzaiolo
+INSERT INTO user_endereco_user(nome, tp_user, username, cpf, email, senha, dt_nasc, num_telefone, estado, cep, cidade, rua) VALUES ("Ricardo", "pizzaiolo","Ricardo", "01661628930", "rapedreira@gmail.com", md5("123"), "2002/05/12","41478666784", "Parana","81510220", "Curitiba", "Agostinho Brusamolin");
+
+INSERT INTO user_endereco_user(nome, tp_user, username, cpf, email, senha, dt_nasc, num_telefone, estado, cep, cidade, rua) VALUES ("Teste", "cliente","Teste", "01660628930", "rapedreira@gmail.com", md5("123"), "2002/05/12","41478666784", "Parana","81510220", "Curitiba", "Agostinho Brusamolin");
+
+
+-- Select em todos os usuarios
 SELECT * FROM user_endereco_user;

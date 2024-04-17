@@ -1,0 +1,47 @@
+:root{
+    --vermelho: #5b2c3c;
+}
+
+
+table {
+    border: #000 2px solid;
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 20px;
+    font-size: 20px;
+    
+}
+
+table th{
+    text-align: left;
+}
+tr,
+td {
+    padding: 8px; /* Adicionando algum espaçamento interno para melhorar a aparência */
+    border: 5px solid #aaa;
+
+}
+
+table td {
+    text-align: left;
+    color: #000000;
+    
+}
+
+
+body{
+    background-color: var(--vermelho);
+}
+
+.voltar_listagem{
+    background-color: #aaa;
+    display: inline-flex;
+    justify-content: center; /* Isso centraliza horizontalmente */
+    align-items: center; /* Isso centraliza verticalmente */
+    height: 50px; /* Ajuste conforme necessário */
+    width: 250px;
+}
+
+.voltar_listagem{
+    color: #000;
+}

@@ -2,6 +2,13 @@
 
 // Incluir o arquivo de conexão com o banco de dados
 include("../connection.php");
+<<<<<<< HEAD
+=======
+include("../validacao_acesso_php.php");
+verificar_acesso_gerente();
+verificar_acesso_pizzaiolo();
+verificarAcessoGerenteEPizzaiolo();
+>>>>>>> 4f89e32f739c7fd44980d2d94025cf47dac5d55e
 
 
 // Consulta SQL para selecionar os ingredientes
@@ -11,7 +18,6 @@ $result = $conn->query($sql);
 
 <!DOCTYPE html>
 <html lang="Pt-Br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,7 +34,11 @@ $result = $conn->query($sql);
     <?php include '../../geral/menu.php'?>
 
     <div class="num_registro">
+<<<<<<< HEAD
         <p class="texto_registro">Ingredientes cadastrados: <?php echo $result->num_rows ?></p>
+=======
+        <h3 class="texto_registro">Ingredientes cadastrados: <?php echo $result->num_rows?></h3>
+>>>>>>> 4f89e32f739c7fd44980d2d94025cf47dac5d55e
     </div>
     <br><br>
 
@@ -62,8 +72,14 @@ $result = $conn->query($sql);
                     <td class="edit_css"  style="cursor: pointer;" onclick="window.location='edit_ingredientes.php?id=<?php echo $row['id_ingrediente']?>'">
                         <a href="edit_ingredientes.php?id=<?php echo $row["id_ingrediente"]?>">Editar</a>
                     </td>
-                    <td class="delet_css" style="cursor: pointer;" onclick="window.location='delet_ingredientes_php.php?id=<?php echo $row['id_ingrediente']?>'">
-                        <a href="delet_ingredientes_php.php?id=<?php echo $row['id_ingrediente']?>">Excluir</a>
+                    <!-- Nessa parte do codigo ele está verificando se o usuairo é o gerente  -->
+                    <td class="delet_css"> 
+                        <?php if($_SESSION['tp_user'] == 'gerente'): ?>
+                            <a href="delet_ingredientes_php.php?id=<?php echo $row['id_ingrediente']?>">Excluir</a>
+                            <!-- logo apos caso ele não seja gerente ele deixa bloqueado o botão de excluir  -->
+                        <?php else: ?>
+                            <span style="color: gray; cursor: not-allowed;">Excluir</span>
+                        <?php endif; ?>
                     </td>
                 </tr>
         <?php

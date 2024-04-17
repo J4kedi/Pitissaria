@@ -11,9 +11,11 @@
     <?php
     //definir a conexão com o banco de dados
     require_once "../connection.php";
-    include("validacao_acesso_php.php");
-    validar_acesso();
-
+    include("../validacao_acesso_php.php");
+    verificar_acesso_gerente();
+    verificar_acesso_pizzaiolo();
+    verificarAcessoGerenteEPizzaiolo();
+    
     // Verificar se o id_ingrediente foi passado na URL
         // Obter o id do ingrediente da URL
         $id = $_GET["id_ingrediente"];

@@ -1,5 +1,5 @@
 <div>
-<link rel="stylesheet" href="../Style/header.css">
+    <link rel="stylesheet" href="../Style/header.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <div class="menu">
       <nav>
@@ -18,8 +18,8 @@
                     }
                     // Se o usuário for um cliente, exibe os links de login e cadastro
                     else if($_SESSION['tp_user'] === 'cliente') {
-                        echo '<a class="links lover" href="logout.php">logout</a>';
-                        echo '<a class="links lover" href="user.php">cliente</a>';
+                        echo '<a class="links lover" href="../HTML/logout.php">logout</a>';
+                        echo '<a class="links lover" href="../HTML/user.php">cliente</a>';
                     }
                 } else {
                     // Se a variável de sessão tp_user não estiver definida, exibe apenas o link de login
