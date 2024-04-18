@@ -11,9 +11,7 @@
 </head>
 <body>
     <?php include '../geral/menu.php'?> 
-    
     <main> 
-
     <?php
         include("../php/connection.php");
 
@@ -44,7 +42,7 @@
                 }
                 echo "</table>";
             } else {
-                echo "Nenhum ingrediente encontrado com o ID fornecido.";
+                echo "Nenhum usuario encontrado !. ";
             }
         
     

@@ -59,7 +59,7 @@
                     <!-- Email input -->
                     <div class="form-outline mb-4">
                         <input type="text" id="nome" name="nome" class="form-control" />
-                        <label class="form-label" for="loginName">Email Ou username</label>
+                        <label class="form-label" for="loginName">Email ou Username</label>
                     </div>
 
                     <!-- senha input -->
