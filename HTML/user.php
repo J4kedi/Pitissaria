@@ -42,7 +42,7 @@
                 }
                 echo "</table>";
             } else {
-                echo "Nenhum ingrediente encontrado com o ID fornecido.";
+                echo "Nenhum usuario encontrado !. ";
             }
         
     
