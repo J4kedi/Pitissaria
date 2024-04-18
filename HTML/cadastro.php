@@ -82,7 +82,7 @@
 
                     <!-- CPF input -->
                     <div class="form-outline mb-4">
-                        <input type="text" id="cpf" name="cpf" required class="form-control" />
+                        <input type="text" id="cpf" name="cpf" required class="form-control" onblur="validarCampo(this.id)"/>
                         <label class="form-label" for="cpf">CPF</label>
                     </div>
 
@@ -152,7 +152,7 @@
         </div>
         <!-- Pills content -->
     </main>
-
+    <script src="../Js/validacao/cadastro.js"></script>
     <?php include '../geral/footer.php'?>
 </body>
 </html>

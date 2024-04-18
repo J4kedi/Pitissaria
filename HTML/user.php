@@ -11,9 +11,7 @@
 </head>
 <body>
     <?php include '../geral/menu.php'?> 
-    
     <main> 
-
     <?php
         include("../php/connection.php");
 
