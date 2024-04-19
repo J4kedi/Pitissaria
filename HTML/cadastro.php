@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
-    <link rel="stylesheet" href="../Style/style.css">
     <link rel="stylesheet" href="../Style/index.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -24,10 +23,6 @@
 
         <!-- Pills content -->
         <div class="tab-content">
-            <div class="tab-pane fade" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
-                <!-- Conteúdo de Login -->
-                <!-- Você pode adicionar conteúdo para a página de login aqui, se necessário -->
-            </div>
             <div class="tab-pane fade show active" id="pills-register" role="tabpanel" aria-labelledby="tab-register">
                 <form action="cadastro_php.php" id="form1" method="POST">
                     <!-- Name input -->
@@ -40,9 +35,6 @@
                     <div class="form-outline mb-4">
                         <label class="form-label" for="senha">Senha</label>
                         <input type="password" id="senha" name="senha" required class="form-control" maxlength="20"/>
-                        <span>A senha precisa ter de 8 a 20 caracteres</span> <br>
-                        <span>Precisa conter, pelo menos uma maíuscula</span> <br>
-                        <span>Precisa conter um caractere especial</span>
                     </div>
                     
                     <!-- username input -->

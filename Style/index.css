@@ -1,4 +1,4 @@
-/* Corpo do site e HEADER */
+/* Sobre */
 .sobre { 
     width: 800px;
 }
@@ -41,6 +41,7 @@ a.nav-link {
     background-color: #341923;
     border-color: #341923;
 }
+
 /* CSS para o overlay */
 .overlay-i {
     position: fixed;
@@ -75,5 +76,5 @@ a.nav-link {
 
 /* CSS para o conteúdo do modal */
 /* .modal-content {
-
+    
 } */
