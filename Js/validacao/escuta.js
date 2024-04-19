@@ -7,8 +7,15 @@ const campoTel = document.getElementById('num_telefone');
 const campoCep = document.getElementById('cep');
 const campoNumRes = document.getElementById('num_res');
 
-campoCpf.addEventListener('input', numero);
-campoCpf.addEventListener('blur', cpf);
 
+// adiciona evenento de escuta para cada digito 
+campoCpf.addEventListener('input', numero);
+// lógica para verificar o erro em validar campo
+campoCpf.addEventListener('blur', validarCampo);
+
+// adiciona evenento de escuta para cada digito
 campoTel.addEventListener('input', numero);
+// adiciona evenento de escuta para cada digito
 campoCep.addEventListener('input', numero);
+// adiciona evenento de escuta para cada digito
+campoNumRes.addEventListener('input', numero);

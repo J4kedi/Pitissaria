@@ -1,26 +1,38 @@
-function validarCampo(idCampo) {
-    const campo = document.getElementById(idCampo);
-    const valor = campo.value.trim(); // Remover espaços em branco do início e do fim
+function validarCampo(input) {
+    const campo = input.target;
+    const nomeCampo = campo.name
+    const valor = campo.value; // Remover espaços em branco do início e do fim
 
-    console.log("passou")
-    
     // Adicione a lógica de validação específica para cada campo conforme necessário
-    switch (idCampo) {
+    switch (nomeCampo) {
+        case 'Senha':
+            verificarSenhaForte(valor);
+            break
         case 'cpf':
-            console.log("passou")
-            verifcaCpf(campo, valor)
+            verifcaCpf(campo, valor);
             break;
-            // Adicione mais cases para outros campos que precisam de validação em tempo real
+
     }
 }
 
-
 function verifcaCpf(campo, valor) {
-    const cpfRegex = /^[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}$/;
-    if (!cpfRegex.test(valor)) {
-        campo.setCustomValidity('CPF inválido. Informe no formato 000.000.000-00.');
-        console.log("passou")
+    const verdade = testaCpf(String(valor));
+
+    if (verdade) {
+        removeErro(campo);
+        return true;
     } else {
-        campo.setCustomValidity('');
+        exibiErro(campo);
+    }
+}
+
+function verificarSenhaForte(senha) {
+    const regexSenhaForte = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    const mensagemSenha = document.getElementById('mensagemSenha');
+
+    if (!regexSenhaForte.test(senha)) {
+        mensagemSenha.textContent = 'A senha deve conter letras maiúsculas, minúsculas, números e caracteres especiais.';
+    } else {
+        mensagemSenha.textContent = '';
     }
 }

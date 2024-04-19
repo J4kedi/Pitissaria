@@ -8,11 +8,11 @@
     <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
     <link rel="stylesheet" href="../Style/style.css">
     <link rel="stylesheet" href="../Style/index.css">
-    <link rel="stylesheet" href="../Style/padrao.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
-    <title>Cadastro</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="../Style/padrao.css">
+    <title>Cadastro</title>
     <link rel="shortcut icon" href="../imagens/icone/pizza.ico" type="image/x-icon">
 </head>
 
@@ -40,6 +40,9 @@
                     <div class="form-outline mb-4">
                         <label class="form-label" for="senha">Senha</label>
                         <input type="password" id="senha" name="senha" required class="form-control" maxlength="20"/>
+                        <span>A senha precisa ter de 8 a 20 caracteres</span> <br>
+                        <span>Precisa conter, pelo menos uma maíuscula</span> <br>
+                        <span>Precisa conter um caractere especial</span>
                     </div>
                     
                     <!-- username input -->
@@ -115,10 +118,11 @@
         </div>
         <!-- Pills content -->
     </main>
-    <script src="../Js/validacao/cpf.js"></script>
+    <script src="../Js/validacao/erro.js"></script>
     <script src="../Js/validacao/apenasNumeros.js"></script>
-    <script src="../Js/validacao/escuta.js"></script>
+    <script src="../Js/validacao/cpf.js"></script>
     <script src="../Js/validacao/cadastro.js"></script>
+    <script src="../Js/validacao/escuta.js"></script>
     <?php include '../geral/footer.php'?>
 </body>
 </html>

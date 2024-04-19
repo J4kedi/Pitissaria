@@ -1,6 +1,8 @@
 function numero(input) {
     // carrega campo com o input
     const campo = input.target
+    // limpa o erro
+    removeErro();
     // carrega o valor que está no input, novo valor colocado pelo usuario
     const valor = campo.value;
     // regex que permite apenas números

@@ -72,3 +72,13 @@ footer section {
         font-size: 0.7em;
     }
 }
+
+/* Erro */
+
+.input-erro {
+    border: 1px solid red;
+}
+
+.erro {
+    color: red;
+}
