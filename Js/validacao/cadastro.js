@@ -68,10 +68,9 @@ function verificaSenhaForte(campo, senha) {
         campo.classList.remove('input-erro');
     }
 
-}
-
-function adicionarMensagem(mensagem) {
-    const span = document.createElement('span');
-    span.textContent = mensagem;
-    divSenha.appendChild(span);
+    function adicionarMensagem(mensagem) {
+        const span = document.createElement('span');
+        span.textContent = mensagem;
+        divSenha.appendChild(span);
+    }
 }

@@ -22,6 +22,9 @@ function removeErro() {
 
     if(elemento !== null) {
         elemento.remove();
+    }
+
+    if(elementoInput !== null) {
         elementoInput.classList.remove('input-erro');
     }
 }
