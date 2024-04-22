@@ -1,5 +1,6 @@
 function exibiErro(campo) {
-    const elemento = document.querySelector('.erro');
+    const elemento = campo.querySelector('.erro');
+    var ultimaLetra = 'o';
 
     if(elemento !== null) {
         return;
@@ -7,8 +8,13 @@ function exibiErro(campo) {
 
     const spanErro = document.createElement('span');
 
-    spanErro.textContent = `${campo.name} inválido!`;
+    if(campo.name.slice(-1) === 'a') {
+        ultimaLetra = 'a';
+    }
+
+    spanErro.textContent = `Formato de ${campo.name} inválid${ultimaLetra}!`;
     spanErro.classList.add("erro");
+    spanErro.classList.add("mensagem");
     campo.classList.add("input-erro");
 
     const divPai = campo.parentNode;
@@ -16,9 +22,11 @@ function exibiErro(campo) {
     divPai.appendChild(spanErro);
 }
 
-function removeErro() {
-    const elemento = document.querySelector('.erro');
-    const elementoInput = document.querySelector('.input-erro');
+function removeErro(campo) {
+    const divPai = campo.parentNode;
+
+    const elemento = divPai.querySelector('.erro');
+    const elementoInput = divPai.querySelector('.input-erro');
 
     if(elemento !== null) {
         elemento.remove();

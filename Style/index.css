@@ -78,3 +78,23 @@ a.nav-link {
 /* .modal-content {
     
 } */
+
+.form-container {
+    display: flex;
+    width: 100%;
+}
+
+.divisao { 
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.divisao input {
+    width: 300px;
+}
+
+.mensagem {
+    white-space: pre-line;
+    font-size: 16px;
+}

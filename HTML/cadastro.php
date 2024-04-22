@@ -1,6 +1,3 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,73 +22,81 @@
         <div class="tab-content">
             <div class="tab-pane fade show active" id="pills-register" role="tabpanel" aria-labelledby="tab-register">
                 <form action="cadastro_php.php" id="form1" method="POST">
-                    <!-- Name input -->
-                    <div class="form-outline mb-4">
-                        <label class="form-label" for="nome">Nome</label>
-                        <input type="text" id="nome" name="nome" required class="form-control" maxlength="100"/>
-                    </div>
+                    <div class="form-container">
+                        <div class="divisao">
+                            <!-- Email input -->
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="email">Email</label>
+                                <input type="email" id="email" name="email" required class="form-control" maxlength="30"/>
+                            </div>
+                            
+                            <!-- username input -->
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="username">Username</label>
+                                <input type="text" id="username" name="username" required class="form-control" maxlength="15"/>
+                            </div>
 
-                    <!-- senha input -->
-                    <div class="form-outline mb-4">
-                        <label class="form-label" for="senha">Senha</label>
-                        <input type="password" id="senha" name="senha" required class="form-control" maxlength="20"/>
-                    </div>
-                    
-                    <!-- username input -->
-                    <div class="form-outline mb-4">
-                        <label class="form-label" for="username">Username</label>
-                        <input type="text" id="username" name="username" required class="form-control" maxlength="15"/>
-                    </div>
+                            <!-- senha input -->
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="senha">Senha</label>
+                                <input type="password" id="senha" name="senha" required class="form-control" maxlength="20"/>
+                            </div>
 
-                    <!-- CPF input -->
-                    <div class="form-outline mb-4">
-                        <label class="form-label" for="cpf">CPF</label>
-                        <input type="text" id="cpf" name="cpf" required class="form-control" maxlength="11"/>
-                    </div>
+                            <!-- Name input -->
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="nome">Nome</label>
+                                <input type="text" id="nome" name="nome" required class="form-control" maxlength="30"/>
+                            </div>
 
-                    <!-- Email input -->
-                    <div class="form-outline mb-4">
-                        <label class="form-label" for="email">Email</label>
-                        <input type="email" id="email" name="email" required class="form-control" maxlength="30"/>
-                    </div>
+                            <!-- CPF input -->
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="cpf">CPF</label>
+                                <input type="text" id="cpf" name="cpf" required class="form-control" maxlength="11"/>
+                            </div>
+                            
+                            <!-- Data de nascimento input -->
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="dt_nasc">Data de Nascimento</label>
+                                <input type="date" id="dt_nasc" name="data de nascimento" required class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="divisao">
+                            <!-- Número de telefone input -->
+                            <div class="form-outline mb-4">
+                                   <label class="form-label" for="num_telefone">Telefone</label>
+                                   <input id="num_telefone" required class="form-control"  name="telefone" maxlength="11"/>
+                           </div>
 
-                    <div class="form-outline mb-4">
-                        <label class="form-label" for="dt_nasc">Data de Nascimento</label>
-                        <input type="date" id="dt_nasc" name="data de nascimento" required class="form-control"/>
-                    </div>
+                            <!-- CEP input -->
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="cep">CEP</label>
+                                <input id="cep" name="cep" required class="form-control" maxlength="8"/>
+                            </div>
 
-                    <!-- Nome da rua input -->
-                    <div class="form-outline mb-4">
-                        <label class="form-label" for="rua">Rua</label>
-                        <input type="text" id="rua" name="rua" required class="form-control" maxlength="40"/>
-                    </div>
+                            <!-- Nome da rua input -->
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="rua">Rua</label>
+                                <input type="text" id="rua" name="rua" required class="form-control" maxlength="40" disabled/>
+                            </div>
 
-                    <!-- CEP input -->
-                    <div class="form-outline mb-4">
-                        <label class="form-label" for="cep">CEP</label>
-                        <input type="number" id="cep" name="cep" required class="form-control" maxlength="8"/>
-                    </div>
+                            <!-- Nome do estado -->
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="estado">Estado</label>
+                                <input type="text" id="estado" name="estado" required class="form-control" maxlength="3" disabled/>
+                            </div>
+                        
+                            <!-- Nome da cidade  -->
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="cidade">Cidade</label>
+                                <input type="text" id="cidade" name="cidade" required class="form-control" maxlength="25" disabled/>
+                            </div>
 
-                    <!-- Número da residência input -->
-                    <div class="form-outline mb-4">
-                        <label class="form-label" for="num_res">Número da Residência</label>
-                        <input type="number" id="num_res" required class="form-control" name="número" maxlength="4"/>
-                    </div>
-
-                    <!-- Número de telefone input -->
-                    <div class="form-outline mb-4">
-                        <label class="form-label" for="num_telefone">Telefone</label>
-                        <input type="number" id="num_telefone" name="num_telefone" required class="form-control" maxlength="11" name="telefone"/>
-                    </div>
-
-                    <div class="form-outline mb-4">
-                        <label class="form-label" for="estado">Estado</label>
-                        <input type="text" id="estado" name="estado" required class="form-control" maxlength="25"/>
-                    </div>
-
-                    <div class="form-outline mb-4">
-                        <label class="form-label" for="cidade">Cidade</label>
-                        <input type="text" id="cidade" name="cidade" required class="form-control" maxlength="25"/>
+                            <!-- Número da residência input -->
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="num_res">Número da Residência</label>
+                                <input id="num_res" required class="form-control" name="num_res" maxlength="5"/>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- Checkbox  de termos -->
@@ -114,6 +119,7 @@
     <script src="../Js/validacao/apenasNumeros.js"></script>
     <script src="../Js/validacao/cpf.js"></script>
     <script src="../Js/validacao/cadastro.js"></script>
+    <script src="../Js/validacao/viaCep.js"></script>
     <script src="../Js/validacao/escuta.js"></script>
     <?php include '../geral/footer.php'?>
 </body>
