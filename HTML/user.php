@@ -18,7 +18,7 @@
             $id = $_SESSION['id_user'];
 
             // Consulta apenas os dados do usuário logado
-            $sql = "SELECT id_user, nome, username, cpf, email, senha, dt_nasc, num_telefone, estado, cep, cidade, rua, id_user FROM user_endereco_user WHERE id_user = '$id'";
+            $sql = "SELECT id_user, nome, username, cpf, email, dt_nasc, num_telefone, estado, cep, cidade, rua, id_user FROM user_endereco_user WHERE id_user = '$id'";
             $result = $conn->query($sql);
             // Verificar se há resultados
             if ($result && $result->num_rows > 0) {
@@ -29,7 +29,6 @@
                     echo "<tr><th>Username: </th><td>{$row['username']}</td></tr>";
                     echo "<tr><th>CPF: </th><td>{$row['cpf']}</td></tr>";
                     echo "<tr><th>Email: </th><td>{$row['email']}</td></tr>";
-                    echo "<tr><th>Senha: </th><td>{$row['senha']}</td></tr>";
                     echo "<tr><th>Data nascimento: </th><td>{$row['dt_nasc']}</td></tr>";
                     echo "<tr><th>Numero de telefone: </th><td>{$row['num_telefone']}</td></tr>";
                     echo "<tr><th>Estado: </th><td>{$row['estado']}</td></tr>";

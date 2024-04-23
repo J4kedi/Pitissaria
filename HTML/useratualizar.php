@@ -48,7 +48,7 @@
     <a href="user.php"><h3>Voltar a listagem</h3></a>
     <main class = "container">
         <h2>Editar informações</h2>
-        <form action="cadastro_php.php" id="form1" method="POST">
+        <form action="editar_usuario.php" id="form1" method="POST">
 
             <label for="nome">Nome:</label>
             <input type="text" name="nome" id="nome" value ="<?php echo $nome?>" required>
@@ -66,7 +66,7 @@
             <input type="password" name="senha" id="senha" value ="<?php echo $senha?>">
             <br>
             <label for="num_telefone">Numero de telefone</label>
-            <input type="text" name="num_telefone" id="num_telefone" value ="<?php echo $num_telefone?>" required>
+            <input type="text" name="telefone" id="num_telefone" value ="<?php echo $num_telefone?>" required>
             <br>
             <label for="estado">Estado:</label>
             <input type="text" name="estado" id="estado" value ="<?php echo $estado?>" required>
@@ -75,7 +75,7 @@
             <input type="text" name="cep" id="cep" value ="<?php echo $cep?>" required>
             <br>
             <label for="dt_nasc">Data de Nascimento:</label>
-            <input type="date" name="td_nasc" id="dt_nasc" value ="<?php echo $dt_nasc?>" required>
+            <input type="date" name="dt_nasc" id="dt_nasc" value ="<?php echo $dt_nasc?>" required>
             <br>
             <label for="num_telefone">Telefone:</label>
             <input type="text" name="num_telefone" id="num_telefone" value ="<?php echo $num_telefone?>" required>

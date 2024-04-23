@@ -17,7 +17,7 @@
     <a href="../../HTML/index.php">Voltar para pagina principal</a>
     <main>
         <div class="container">
-            <h1>Cadastro de Ingredientes</h1>
+            <h1>Cadastro de pizzaiolo</h1>
             <form action="cadastro_php.php" id="form1" method="POST">
 
                 <label for="nome">Nome:</label>
