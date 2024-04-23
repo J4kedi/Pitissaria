@@ -83,8 +83,13 @@ function verficaData(campo, valor) {
     const idade = hoje.getFullYear() - valor.getFullYear();
     
     const divPai = campo.parentNode;
+    const spanErro = divPai.querySelector('.erro');
 
     var erro = false;
+
+    if(spanErro !== null) {
+        spanErro.remove();
+    }
 
     if (idade < 14) {
         adicionarMensagem('data inválida', divPai);
