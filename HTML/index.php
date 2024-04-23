@@ -25,11 +25,6 @@
   </div>
 
   <main class="text-center container">
-        <div class="">
-            <h1>Menu</h1>
-            <img src="../ASSETS/pizzaSegundaImagem-Desktop.jpg" alt="">
-        </div>
-
 
     <div class="sobre-expand-md">
       <h1>Pitissaria</h1>
@@ -92,7 +87,7 @@
     }
   }
   ?>
-
+  <br>
   <?php include '../geral/footer.php'?>
 </body>
 </html>
