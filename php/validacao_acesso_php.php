@@ -31,7 +31,6 @@ function verificarAcessoGerente() {
     }
 }
 
-
 function verificarAcessoGerenteEPizzaiolo() {
     if($_SESSION['tp_user'] != 'gerente' && $_SESSION['tp_user'] != 'pizzaiolo') {
         header("Location: ../../HTML/index.php");

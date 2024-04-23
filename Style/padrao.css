@@ -82,6 +82,12 @@ footer section {
     background-color: black;
 }
 
+/* input-forms */
+.form-control {
+    background-color: rgb(235, 208, 227);
+}
+
+
 /* Senha */
 
 .senha {

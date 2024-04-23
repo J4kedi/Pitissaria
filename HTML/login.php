@@ -21,9 +21,9 @@
             <h1>Login</h1>
             <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
                 <form action="login_php.php" method="POST">
-                    <!-- Email input -->
+                    <!-- Username input -->
                     <div class="form-outline mb-4">
-                        <input type="text" id="nome" name="nome" class="form-control" />
+                        <input type="text" id="username" name="username" class="form-control" />
                         <label class="form-label" for="loginName">Username</label>
                     </div>
 
