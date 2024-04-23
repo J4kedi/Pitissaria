@@ -54,7 +54,7 @@
 
                     <!-- Botão de registro -->
                     <div class="text-center">
-                        <p>Não e cadastrado? <a href="#!">Cadastrar</a></p>
+                        <p>Não e cadastrado? <a href="cadastro.php">Cadastrar</a></p>
                     </div>
             </div>
         </div>
