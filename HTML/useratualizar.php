@@ -53,9 +53,6 @@
             <label for="nome">Nome:</label>
             <input type="text" name="nome" id="nome" value ="<?php echo $nome?>" required>
             <br>
-            <label for="tp_user">Tipo de Usuario:</label>
-            <input type="text" name="tp_user" id="tp_user" value ="<?php echo $tp_user?>" default = "cliente" required>
-            <br>
             <label for="username">Username:</label>
             <input type="text" name="username" id="username" value ="<?php echo $username?>" required>
             <br>
@@ -92,7 +89,7 @@
 
             <input type="hidden" name="id" value="<?php echo $id_user?>" required>
 
-            <input type="submit" value="Atualizar Ingrediente" id = "submit">
+            <input type="submit" value="Atualizar Informações" id = "submit">
         </form>
         
         
