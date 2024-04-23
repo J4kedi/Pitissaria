@@ -3,21 +3,43 @@ function validaCampo(input) {
     const nomeCampo = campo.name
     const valor = campo.value;
 
+    var erro = false;
+
     switch (nomeCampo) {
-        case 'senha':
-            verificaSenhaForte(campo, valor);
-            break
-        case 'cpf':
-            verifcaCpf(campo, valor);
-            break;
         case 'email':
-            verificaEmail(campo, valor);
+            erro = verificaEmail(campo, valor);
             break;
-        case 'data de nascimento':
-            verficaData(campo, valor);
+        case 'username':
+            erro = verificaCampoVazio(input);
+            break;
+        case 'senha':
+            erro = verificaSenhaForte(campo, valor);
+            break;
+        case 'nome':
+            erro = verificaCampoVazio(input);
+            break;
+        case 'cpf':
+            erro = verifcaCpf(campo, valor);
+            break;
+        case 'dt_nasc':
+            erro = verficaData(campo, valor);
             break;
         case 'telefone':
-            verificaTelefone(campo, valor);
+            erro = verificaTelefone(campo, valor);
+            break;
+        case 'cep':
+            erro = verificaCampoVazio(input);
+            break;
+        case 'num_res':
+            erro = verificaCampoVazio(input);
+            break;
+        case 'rua':
+            erro = verificaCampoVazio(input);
+            break;
+        case 'form1':
+            if(erro) {
+                input.preventDefault();
+            }
             break;
     }
 }
@@ -32,6 +54,8 @@ function verificaTelefone(campo, valor) {
 
     if(valor.length < 11) {
         adicionarMensagem('Telefone precisa conter 11 dígitos', divPai);
+    } else {
+        return true;
     }
 }
 
@@ -48,6 +72,8 @@ function verificaCampoVazio(input) {
         adicionarMensagem('Preencha o campo!', divPai);
     } else if ((campo.name == 'username' || campo.name == 'nome') && campo.value.length < 4) {
         adicionarMensagem(`Deve conter mais que 4 caracteres!`, divPai)
+    } else {
+        return true;
     }
 }
 
@@ -82,9 +108,8 @@ function verificaEmail(campo, valor) {
         exibiErro(campo)
     } else {
         removeErro(campo)
+        return true;
     }
-
-    return;
 }
 
 function verifcaCpf(campo, valor) {
@@ -141,8 +166,13 @@ function adicionarMensagem(mensagem, campo) {
     div.classList.add('senha');
     
     if (input !== null) {    
-        input.classList.add('input-erro');
+        if ((input.classList).contains('input-erro')) {
+            input.classList.remove('input-erro');
+        } else {
+            input.classList.add('input-erro');
+        }
     }
+
 
     span.textContent = mensagem;
     span.classList.add('erro');

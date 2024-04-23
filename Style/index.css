@@ -29,6 +29,14 @@ a#tab-register {
     color: #a7818f;
 }
 
+a {
+    color: #6c757d;
+}
+
+a:hover {
+    color: #341923;
+}
+
 a.nav-link {
     color: #a7818f;
 }

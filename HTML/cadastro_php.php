@@ -3,23 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="../../Style/cad_ingredientes.css">
+<link rel="stylesheet" href="../Style/cad_ingredientes.css">
 </head>
 <body>
 <?php
 include("../php/connection.php");
 
-$nome = $_POST["nome"];
-$senha = md5($_POST["senha"]);
-$username = $_POST["username"];
-$cpf = $_POST["cpf"];
 $email = $_POST["email"];
+$username = $_POST["username"];
+$senha = md5($_POST["senha"]);
+$nome = $_POST["nome"];
+$cpf = $_POST["cpf"];
 $dt_nasc = $_POST["dt_nasc"];
-$rua = $_POST["rua"];
+$num_telefone = $_POST["telefone"];
 $cep = $_POST["cep"];
+$rua = $_POST["rua"];
 $estado = $_POST["estado"];
 $cidade = $_POST["cidade"];
-$num_telefone = $_POST["num_telefone"];
 
 $sql = "SELECT * FROM user_endereco_user WHERE cpf = '$cpf'";
 $result = $conn->query($sql);
@@ -27,14 +27,14 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     // O usuario já existe, exibir uma mensagem de erro em outra pagina
     echo '<h1>usuario já cadastrado. Por favor cadastre outro .</h1>'; //aqui ele mostra a pagina com o texto em H1
-    echo '<script>setTimeout(function() { history.back(); }, 1000);</script>'; // Atraso de 5 segundos 
+    echo '<script>setTimeout(function() { history.back(); }, 1);</script>'; // Atraso de 1 ms 
 } else {
     // O usuario não existe, inserir no banco de dados 
     $sql_insert = "INSERT INTO user_endereco_user(nome, senha, username, cpf, email, dt_nasc, rua, cep, estado, cidade, num_telefone) VALUES('$nome', '$senha','$username','$cpf','$email', '$dt_nasc', '$rua', '$cep', '$estado', '$cidade', '$num_telefone')";
     
     if ($conn->query($sql_insert) === TRUE) {
         echo "<h1>Usuario cadastrado com sucesso.</h1>";
-        echo '<script>setTimeout(function() { window.location.href = "index.php"; }, 1000);</script>'; // Redireciona para index.php após 5 segundos 
+        echo '<script>setTimeout(function() { window.location.href = "index.php"; }, 1);</script>'; // Redireciona para index.php após 1 ms 
     } else {
         echo "Erro ao cadastrar o usuario: " . $conn->error;
     }

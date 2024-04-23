@@ -1,27 +1,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../imagens/icone/pizza.ico" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
-    <link rel="stylesheet" href="../Style/index.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="../Style/index.css">
     <link rel="stylesheet" href="../Style/padrao.css">
     <title>Cadastro</title>
-    <link rel="shortcut icon" href="../imagens/icone/pizza.ico" type="image/x-icon">
 </head>
 
 <body>
     <?php include '../geral/menu.php'?>
 
     <main class="container">
-        <h1>Cadastro</h1>
-
+        
         <!-- Pills content -->
         <div class="tab-content">
+            <h1>Cadastro</h1>
             <div class="tab-pane fade show active" id="pills-register" role="tabpanel" aria-labelledby="tab-register">
-                <form action="cadastro_php.php" id="form1" method="POST">
+                <form action="cadastro_php.php" id="form1" name = "form1" method="POST">
                     <div class="form-container">
                         <div class="divisao">
                             <!-- Email input -->
@@ -57,7 +54,7 @@
                             <!-- Data de nascimento input -->
                             <div class="form-outline mb-4">
                                 <label class="form-label" for="dt_nasc">Data de Nascimento</label>
-                                <input type="date" id="dt_nasc" name="data de nascimento" required class="form-control"/>
+                                <input type="date" id="dt_nasc" name="dt_nasc" required class="form-control"/>
                             </div>
                         </div>
                         <div class="divisao">
@@ -76,19 +73,19 @@
                             <!-- Nome da rua input -->
                             <div class="form-outline mb-4">
                                 <label class="form-label" for="rua">Rua</label>
-                                <input type="text" id="rua" name="rua" required class="form-control" maxlength="40" disabled/>
+                                <input type="text" id="rua" name = "rua" required class="form-control" maxlength="40"/>
                             </div>
 
                             <!-- Nome do estado -->
                             <div class="form-outline mb-4">
                                 <label class="form-label" for="estado">Estado</label>
-                                <input type="text" id="estado" name="estado" required class="form-control" maxlength="3" disabled/>
+                                <input type="text" id="estado" name = "estado" required class="form-control" maxlength="3"/>
                             </div>
                         
                             <!-- Nome da cidade  -->
                             <div class="form-outline mb-4">
                                 <label class="form-label" for="cidade">Cidade</label>
-                                <input type="text" id="cidade" name="cidade" required class="form-control" maxlength="25" disabled/>
+                                <input type="text" id="cidade" name = "cidade" required class="form-control" maxlength="25"/>
                             </div>
 
                             <!-- Número da residência input -->
