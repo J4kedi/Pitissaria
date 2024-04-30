@@ -3,6 +3,7 @@
 // Incluir o arquivo de conexão com o banco de dados
 include("../connection.php");
 include("../validacao_acesso_php.php");
+include("../../geral/menu.php");
 verificar_acesso_gerente();
 verificar_acesso_pizzaiolo();
 verificarAcessoGerenteEPizzaiolo();

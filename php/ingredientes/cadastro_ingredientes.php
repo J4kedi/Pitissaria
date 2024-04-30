@@ -10,6 +10,7 @@
 <body>
     <?php
     include("../validacao_acesso_php.php");
+    include("../../geral/menu.php");
     verificar_acesso_gerente();
     verificarAcessoGerente();
 

@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 
 // Verificar se o usuário está logado e é um gerente
 function verificar_acesso_gerente() {
