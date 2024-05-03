@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Ingredientes</title>
-    <link rel="stylesheet" href="../../Style/edit_pizzaiolo.css">
-    <link rel="shortcut icon" href="../../imagens/icone/pizza.ico" type="image/x-icon">
+    <title>Editar Pizzaiolo</title>
+    <link rel="stylesheet" href="../Style/edit_pizzaiolo.css">
+    <link rel="stylesheet" href="../Style/padrao.css">
+    <link rel="shortcut icon" href="../imagens/icone/pizza.ico" type="image/x-icon">
 </head>
 <body>
 <?php
-    include("../connection.php");
-    include("../validacao_acesso_php.php");
-    include("../../geral/menu.php");
+    include("connection.php");
+    include("validacao_acesso_php.php");
+    include("../geral/menu.php");
     verificar_acesso_gerente();
     verificar_acesso_pizzaiolo();
     verificarAcessoGerenteEPizzaiolo();

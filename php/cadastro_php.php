@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../Style/cad_ingredientes.css">
+    <link rel="stylesheet" href="../Style/cad_ingredientes.css">
+    <link rel="stylesheet" href="../Style/padrao.css">
     <title>Cadastro pizzaiolo</title>
 </head>
 <body>
     <?php
-    include("../connection.php");
-    include("../validacao_acesso_php.php");
-    verificar_acesso_gerente();
-    verificarAcessoGerente();
+    include("connection.php");
+    include("../geral/menu.php");
+    include("validacao_acesso_php.php");
 
     $nome = $_POST["nome"];
     $tp_user = "pizzaiolo";

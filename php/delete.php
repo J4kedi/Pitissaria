@@ -1,8 +1,6 @@
 <?php
-    include("../connection.php");
-    include("../validacao_acesso_php.php");
-    verificar_acesso_gerente();
-    verificarAcessoGerente();
+    include("connection.php");
+    include("validacao_acesso_php.php");
     $id = $_GET["id_user"];
 
     $sql = "DELETE FROM user_endereco_user WHERE id_user = $id";
@@ -17,6 +15,4 @@
 </script>
 <?php
     }
-
-
 ?>

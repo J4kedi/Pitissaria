@@ -1,11 +1,9 @@
 <?php
 
 // Incluir o arquivo de conexão com o banco de dados
-include("../connection.php");
-include("../validacao_acesso_php.php");
-include("../../geral/menu.php");
-verificar_acesso_gerente();
-verificarAcessoGerente();
+include("connection.php");
+include("validacao_acesso_php.php");
+include("../geral/menu.php");
 
 // Consulta SQL para selecionar os ingredientes
 $sql =  "SELECT id_user, nome, tp_user, username, dt_nasc, cpf, email, senha, dt_nasc, num_telefone, estado, cep, cidade, rua FROM user_endereco_user WHERE tp_user = 'pizzaiolo'";
@@ -19,8 +17,9 @@ $result = $conn->query($sql);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ingredientes</title>
-    <link rel="stylesheet" href="../../Style/lista_ingredientes.css">
-    <link rel="shortcut icon" href="../../imagens/icone/pizza.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../Style/edit_pizzaiolo.css">
+    <link rel="stylesheet" href="../Style/padrao.css">
+    <link rel="shortcut icon" href="../imagens/icone/pizza.ico" type="image/x-icon">
 </head>
 
 <body>
