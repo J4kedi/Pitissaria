@@ -1,0 +1,375 @@
+/*
+Pagina  criada por: Arthur Hermes, Kauan Pardini, Ricardo Amaro Pedreira, Valdemar Alonso Arndt.
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --main-color: #FF862F;
+    --font-color: #FBFF99;
+    --secundary-color: #FFA92E;
+    --background-color: rgba(182, 255, 237, 0.350);
+    --font-logo: 'Catamaran', sans-serif;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: var(--background-color); 
+    font-family: var(--font-logo);
+}
+
+.cabecalho {
+    height: 35vh;
+    background: linear-gradient(to bottom, var(--main-color) 99%, rgb(182, 255, 237));
+    font-family: var(--font-logo);
+}
+
+.Menus {
+    position: absolute;
+    top: 1.6rem;
+    display: flex;
+    width: 70vw;
+    justify-content:space-around;
+    right: 5%;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+.button {
+    width: 150px;
+    text-align: center;
+    margin: 15px;
+    padding: 10px;
+    font-size: 1.5vw;
+    font-weight: 800;
+    letter-spacing: 1px;
+    border: 3px solid var(--secundary-color);
+    border-radius: 5px;
+    list-style: none;
+}
+
+.button:hover {
+    transition: ease-in-out 0.3s;
+    box-shadow: inset 0 -100px 0 0 var(--background-color);
+}
+
+.button:active {
+    transform: scale(0.9);
+}
+
+.menu {
+    margin: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.logo {
+    color: white;
+    font-size: 7.5vw;
+    font-weight: 900;
+    text-shadow: 4px 4px 8px rgb(168, 47, 114);
+}
+
+#menu {
+    font-size: 1.6vw;
+    width: 90%;
+    text-shadow: 4px 4px 8px rgb(168, 47, 114);
+    color: white;
+}
+
+#caixa-menu {
+    position: relative;
+    top: 12vh;
+    text-align: center;
+}
+
+#login {
+    margin-left: auto;
+    color: rgb(128, 121, 121);
+    text-decoration: none;
+    list-style-type: none;
+}
+
+#Pata-Branca {
+    position: absolute;
+    top: 1rem;
+    left: -3rem;
+    width: 14vw;
+    transform-origin: center;
+}
+
+.ativo {
+    animation: pulse 0.8s ease-in-out;
+}
+
+.ativo-menu {
+    animation: pulse2 0.8s ease-in-out;
+}
+
+.gato-pequeno {
+    position: relative;
+    left: 49%;
+}
+
+#segundo {
+    position: absolute;
+    left: 39%;
+    padding: 20px;
+    font-size: 40px;
+}
+
+#container--inicio {
+    width: 80%;
+    display: grid;
+    gap: 6%;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 40px auto; 
+    text-align: center;
+    justify-items: center;
+}
+
+.card--inicio {
+    width: 400px;
+    height: 400px;
+    position: relative;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+h3 {
+    font-size: 25px;
+}
+
+.card-img--pizzas {
+    width: 60%;
+    height: 45%;
+    border-radius: 35px;
+}
+
+.whatsapp {
+    width: 50px;
+}
+
+.email {
+    width: 50px;
+}
+
+.telefone {
+    width: 50px;
+}
+
+#rodape {
+    background-color: var(--main-color);
+}
+
+#rodape h2 {
+    text-align: center;
+    padding: 2% 0 1% 0;
+}
+
+.container--rodape {
+    display: flex;
+    position: relative;
+    left: -1.2%;
+    justify-content: space-around;
+    padding: 20px 20px 50px 20px;
+    margin: 2% 0 0 0;
+}
+
+.card--rodape {
+    text-align: center;
+}
+
+/* Loja  ----------------------------------------------------*/
+.loja-linhas {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 50px;
+}
+
+.square{
+    width: 250px;
+    height: 325px;
+    border: 2px solid black;
+}
+
+.image{
+    width: 250px;
+    height: 325px;
+}
+
+.loja-txt{
+    text-align: center;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.8);
+    }
+}
+
+@keyframes pulse2 {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.9);
+    }
+}
+
+/* sobre  ----------------------------------------------------*/
+
+.container2 {
+    text-align: center;
+    width: 800px;
+    margin: auto;
+}
+
+.sobre-h2, .sobre-p {
+    margin: 10px;
+
+}
+
+.carousel {
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-bottom: 10px;
+}
+
+ul.slides {
+    display: block;
+    position: relative;
+    height: 600px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    list-style: none;
+}
+
+.slides * {
+    user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+}
+
+.slides input {
+    display: none; 
+}
+
+
+.slide-container { 
+    display: block; 
+}
+
+.slide-image {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    opacity: 0;
+    transition: all .7s ease-in-out;
+    background-color: white;
+    font-size: 2em;
+}   
+
+.slide-image img {
+    width: auto;
+    min-width: 100%;
+    height: 100%;
+}
+
+.carousel-controls {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    font-size: 100px;
+    line-height: 600px;
+    color: #fff;
+}
+
+.carousel-controls label {
+    display: none;
+    position: absolute;
+    padding: 0 20px;
+    opacity: 0;
+    transition: opacity .2s;
+    cursor: pointer;
+}
+
+.slide-image:hover + .carousel-controls label{
+    opacity: 0.5;
+}
+
+.carousel-controls label:hover {
+    opacity: 1;
+}
+
+.carousel-controls .prev-slide {
+    width: 49%;
+    text-align: left;
+    left: 0;
+}
+
+.carousel-controls .next-slide {
+    width: 49%;
+    text-align: right;
+    right: 0;
+}
+
+.carousel-dots {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 20px;
+    z-index: 999;
+    text-align: center;
+}
+
+.carousel-dots .carousel-dot {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #fff;
+    opacity: 0.5;
+    margin: 10px;
+}
+
+input:checked + .slide-container .slide-image {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 1s ease-in-out;
+}
+
+input:checked + .slide-container .carousel-controls label {
+     display: block; 
+}
+
+input#img-1:checked ~ .carousel-dots label#img-dot-1,
+input#img-2:checked ~ .carousel-dots label#img-dot-2,
+input#img-3:checked ~ .carousel-dots label#img-dot-3,
+input#img-4:checked ~ .carousel-dots label#img-dot-4,
+input#img-5:checked ~ .carousel-dots label#img-dot-5,
+input#img-6:checked ~ .carousel-dots label#img-dot-6 {
+	opacity: 1;
+}
+
+
+input:checked + .slide-container .nav label { display: block; }

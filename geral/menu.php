@@ -15,6 +15,7 @@
                         echo '<a href = "../php/listagem.php" class="links lover">pizzaiolo</a>';
                         echo '<a href="../php/ingredientes/lista_ingredientes.php" class="links lover">ingredientes</a>';
                         echo '<a href="logout.php" class="links lover">logout</a>';
+                        echo '<a href="carrinho_teste.php" class="links lover">Carrinho</a>';
                         echo '<a class="links">Gerente</a>';
                     }
                     // Se o usuário for um cliente, exibe os links de login e cadastro
