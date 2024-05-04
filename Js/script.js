@@ -1,8 +1,8 @@
 
 
 const pizzas = [
-    { nome: "Calabresa", imagem: "../imagens/pizza_calabresa.jpg", texto: "Calabresa, queijo, azeitona" },
-    { nome: "Pepperoni", imagem: "../imagens/portuguesa.jpg", texto: "Calabresa" },
+    { id: 2, nome: "Calabresa", imagem: "../imagens/pizza_calabresa.jpg", texto: "Calabresa, queijo, azeitona", id_ingredientes: [5,10] },
+    { id: 1, nome: "Pepperoni", imagem: "../imagens/portuguesa.jpg", texto: "Calabresa", id_ingredientes: [2]},
     
 ];
 
@@ -41,12 +41,23 @@ function criarCard(pizza) {
     return card;
 }
 
+
+
 function adicionarEventoClick(pizza) {
     const overlay = document.getElementById(pizza.nome);
 
     overlay.addEventListener("click", () => {
         criarPaginaEspecifica(pizza);
     });
+}
+async function removerIngredientes(id_ingredientes,id){
+    const response = await fetch("http://localhost/GitHub/CrazyCats/Pitissaria/php/remover_e_comprar_ingrediente.php", {
+        method: "PATCH", 
+        body: JSON.stringify({
+            id_ingredientes,id
+        }) 
+    });
+    console.log(await response.json());
 }
 
 function criarPaginaEspecifica(pizza) {
@@ -71,9 +82,9 @@ function criarPaginaEspecifica(pizza) {
     `;
 
     document.getElementById("grid-container").innerHTML = pizzaEspec;
+    document.getElementById("adicionar").addEventListener("click",()=>removerIngredientes(pizza.id_ingredientes, pizza.id));
   
     btnVoltar();
-    btnAdicionar();
 }
 
 function btnVoltar() {
@@ -85,13 +96,5 @@ function btnVoltar() {
     });
 }
 
-function btnAdicionar() {
-    const btnVoltar = document.getElementById("adicionar")
-
-    btnVoltar.addEventListener("click", () => {
-        document.getElementById("grid-container").innerHTML = "";
-        criarCardsDePizza();
-    });
-}
 
 
