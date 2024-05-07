@@ -13,7 +13,18 @@
 
     <main class="container">
         <h1>Monte sua pizza aqui</h1>
+        <label for="Pequena">Pizza Pequena</label>
+        <input type="checkbox" name="tamanho" id="pequena"><br>
+        <label for="Pequena">Pizza Média</label>
+        <input type="checkbox" name="tamanho" id="media"><br>
+        <label for="Pequena">Pizza Grande</label>
+        <input type="checkbox" name="tamanho" id="grande"><br>
+        <label for="queijo">Queijo</label>
+        <input type="checkbox" name="Queijo" id="queijo"><br>
+        <label for="tomate">Tomate</label>
+        <input type="checkbox" name="tomate" id="tomate">
     </main>
+
 
     <?php include('../geral/footer.php')?>
 </body>
