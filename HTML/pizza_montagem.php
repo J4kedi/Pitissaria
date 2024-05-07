@@ -29,8 +29,8 @@
         <input type="checkbox" name="queijo" id="queijo"><br>
         <label for="tomate">Tomate</label>
         <input type="checkbox" name="tomate" id="tomate"><br>
-        <button id="calcular-total">Calcular Total</button>
-        <button id="finalizar-pedido">Fazer Pedido</button>
+        <button id="calcular-total" class="btn btn-primary">Calcular Total</button>
+        <a href="../HTML/login.php" class="btn btn-primary">Finalizar</a>
         <p id="total"></p>
     </main>
 
