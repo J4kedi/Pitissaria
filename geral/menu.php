@@ -3,8 +3,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <div class="menu">
       <nav>
-        <a href="index.php"><img id="logo-inicio" src="../ASSETS/logo-inicio (1).png" alt="Logo Pitissasria"></a>
-        <a href="index.php" class="links lover">inicio</a>
+        <a href="../HTML/index.php"><img id="logo-inicio" src="../ASSETS/logo-inicio (1).png" alt="Logo Pitissasria"></a>
+        <a href="../HTML/index.php" class="links lover">inicio</a>
         <div class="autenticacao">
             <?php
                 session_start(); // Inicia a sessão
