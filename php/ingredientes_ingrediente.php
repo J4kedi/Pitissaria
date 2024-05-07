@@ -12,6 +12,8 @@
     //definir a conexão com o banco de dados
     require_once "connection.php";
     include("../geral/menu.php");
+    include("validacao_acesso_php.php");
+    verificarAcessoGerenteEPizzaiolo();
 
     
     // Verificar se o id_ingrediente foi passado na URL

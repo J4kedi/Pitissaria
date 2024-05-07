@@ -3,6 +3,8 @@
 // Incluir o arquivo de conexão com o banco de dados
 include("connection.php");
 include("../geral/menu.php");
+include("validacao_acesso_php.php");
+verificarAcessoGerenteEPizzaiolo();
 
 
 // Consulta SQL para selecionar os ingredientes

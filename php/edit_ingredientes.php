@@ -14,7 +14,8 @@
 <?php
     include("connection.php");
     include("../geral/menu.php");
-
+    include("validacao_acesso_php.php");
+    verificarAcessoGerenteEPizzaiolo();
     
     $id = $_GET["id"];
     $sql =  "SELECT  nome_ingrediente, dt_validade, quantidade_ingrediente, preco_compra FROM ingrediente WHERE id_ingrediente = $id";
