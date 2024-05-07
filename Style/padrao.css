@@ -115,3 +115,8 @@ footer section {
         font-size: 0.7em;
     }
 }
+/* Estilo adicional para a imagem da montagem de pizza */
+.tamanho-img {
+    width: 100px; /* temenho da imagen */
+    margin-right: 20px; /* Espaçamento entre a imagem e o texto */
+}
