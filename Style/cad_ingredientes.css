@@ -6,49 +6,27 @@
 
 
 
-body{
-    color: white;
-    background-color: var(--vermelho);
-    text-align: center;
-}
-
 main{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-a {
-    position: absolute;
-    left: 0;
-    bottom: 10;
-    background-color: #aaa;
-    border-radius: 5px;
-    width: 300px;
-    padding: 10px;
-    margin: 5px;
-    text-decoration: none;
-    color: black;
-    text-transform: uppercase;
-    font-weight: bold;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
 }
 
-a:hover {
-    color: antiquewhite;
-}
-
-.container {
+.containera {
     display: inline-block;
-    background-color: #aaa;
+    background-color: var(--cor-header);
     align-items: center;
     justify-content: center;
     align-items: center;
     align-self: center;
+    padding: 20px;
+    border-radius: 6px;
     text-align: center;
-    width: 400px;
-    height: 400px;
-    color: black;
+    color: var(--laranja);
 }
+
 button#submit{
     color: white;
     background-color: #5f5d5d;
@@ -59,6 +37,4 @@ button#submit{
     width: 240px;
     border-radius: 10px;
     border: 5px 10px solid #0D1219;
-
 }
-

@@ -1,6 +1,6 @@
 <?php
     include("connection.php");
-    include("validacao_acesso_php.php");
+    
     $id = $_GET["id_user"];
 
     $sql = "DELETE FROM user_endereco_user WHERE id_user = $id";

@@ -9,6 +9,8 @@
 <body>
 <?php
 include("connection.php");   
+include("validacao_acesso_php.php");
+verificarAcessoGerenteEPizzaiolo();
 
 $nome = $_POST["nome_ingrediente"];
 $validade = $_POST["dt_validade"];
