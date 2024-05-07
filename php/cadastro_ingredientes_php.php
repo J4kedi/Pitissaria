@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="../Style/cad_ingredientes.css">
 <title>Vericação de Insumos</title>
+<link rel="shortcut icon" href="../imagens/icone/pizza.ico" type="image/x-icon">
 </head>
 <body>
 <?php
