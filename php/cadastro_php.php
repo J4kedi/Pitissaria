@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"> 
     <link rel="stylesheet" href="../Style/cad_ingredientes.css">
     <link rel="stylesheet" href="../Style/padrao.css">
+    <link rel="shortcut icon" href="../imagens/icone/pizza.ico" type="image/x-icon">
     <title>Cadastro pizzaiolo</title>
 </head>
 <body>
