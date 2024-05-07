@@ -15,13 +15,16 @@
                         echo '<a href = "../php/listagem.php" class="links lover">pizzaiolo</a>';
                         echo '<a href="../php/lista_ingredientes.php" class="links lover">ingredientes</a>';
                         echo '<a href="../HTML/logout.php" class="links lover">logout</a>';
-                        echo '<a href="carrinho_teste.php" class="links lover">Carrinho</a>';
+                        echo '<a class="links lover" href="../HTML/pizzas_prontas.php">pizzas prontas</a>';
+                        echo '<a class="links lover" href="../HTML/carrinho_teste.php">carrinho</a>';
                         echo '<a class="links">Gerente</a>';
                     }
                     // Se o usuário for um cliente, exibe os links de login e cadastro
                     else if($_SESSION['tp_user'] === 'cliente') {
                         echo '<a class="links lover" href="../HTML/logout.php">logout</a>';
                         echo '<a class="links lover" href="../HTML/user.php">cliente</a>';
+                        echo '<a class="links lover" href="../HTML/pizzas_prontas.php">pizzas prontas</a>';
+                        echo '<a class="links lover" href="../HTML/carrinho_teste.php">carrinho</a>';
                     }
                 } else {
                     // Se a variável de sessão tp_user não estiver definida, exibe apenas o link de login

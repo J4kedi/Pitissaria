@@ -7,7 +7,7 @@ CREATE DATABASE pitissariadb;
 USE pitissariadb;
 
 CREATE TABLE user_endereco_user (
-    id_user INT PRIMARY KEY AUTO_INCREMENT,
+    id_user INT AUTO_INCREMENT,
     nome VARCHAR(100),
     tp_user VARCHAR(100) DEFAULT "cliente",
     username VARCHAR(100),
@@ -44,7 +44,7 @@ CREATE TABLE pizza (
 
 CREATE TABLE pizza_compradas(
     id_pizza_compra INT AUTO_INCREMENT PRIMARY KEY,
-    id_user_endereco_user INT,
+    id_user INT,
     id_pizza INT,
     status_pizza ENUM('value_1','value_2','value_3') 
 );
@@ -78,7 +78,7 @@ ALTER TABLE pizza_compradas ADD CONSTRAINT FK_user_endereco_user
 
 ALTER TABLE pizza_compradas ADD CONSTRAINT FK_id_pizza
     FOREIGN KEY(id_pizza)
-    REFERENCES pizza (id_pizza);
+    REFERENCES pizza (id_pizza)
  
 ALTER TABLE ingrediente ADD CONSTRAINT FK_ingrediente_2
     FOREIGN KEY (fk_estoque_id_estoque)
