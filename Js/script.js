@@ -1,7 +1,7 @@
 
 
 const pizzas = [
-    { id: 2, nome: "Calabresa", imagem: "../imagens/pizza_calabresa.jpg", texto: "Calabresa, queijo, azeitona", id_ingredientes: [5,10] },
+    { id: 2, nome: "Calabresa", imagem: "../imagens/pizza_calabresa.jpg", texto: "Calabresa, queijo, azeitona", id_ingredientes: [5,7] },
     { id: 1, nome: "Pepperoni", imagem: "../imagens/portuguesa.jpg", texto: "Calabresa", id_ingredientes: [2]},
     
 ];

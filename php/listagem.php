@@ -2,7 +2,6 @@
 
 // Incluir o arquivo de conexão com o banco de dados
 include("connection.php");
-include("validacao_acesso_php.php");
 include("../geral/menu.php");
 
 // Consulta SQL para selecionar os ingredientes
@@ -17,22 +16,21 @@ $result = $conn->query($sql);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ingredientes</title>
-    <link rel="stylesheet" href="../Style/edit_pizzaiolo.css">
-    <link rel="stylesheet" href="../Style/padrao.css">
+    <link rel="stylesheet" href="../Style/lista_ingredientes.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../Style/padrao.css">  
     <link rel="shortcut icon" href="../imagens/icone/pizza.ico" type="image/x-icon">
 </head>
 
 <body>
-    <div class="add_ingrediente">
-        <a href="../../HTML/index.php"><h3>Inicio</h3></a>
-    </div>
-    <br><br>
     <div class="num_registro">
         <h3 class="texto_registro">Pizzaiolos: <?php echo $result->num_rows ?></h3>
     </div>
     <br><br>
     <div class="add_ingrediente" style="cursor: pointer;" onclick="window.location='cadastro.php'">
-        <a href="cadastro.php"><h3 class="add_ingrediente">+ Adicionar Pizzaiolo</h3></a><br><br>
+        <a href="cadastro.php" class="button-style">+ Adicionar Pizzaiolo</a>
+        <br><br>
     </div>
     <br><br>
     
@@ -72,10 +70,10 @@ $result = $conn->query($sql);
                     <td><?php echo date("d/m/Y", strtotime($row["dt_nasc"])) ?></td>
 
                     <td class="edit_css"  style="cursor: pointer;" onclick="window.location='edit.php?id=<?php echo $row['id_user']?>'">
-                        <a href="edit.php?id=<?php echo $row["id_user"]?>">Editar</a>
+                        <a class="link" href="edit.php?id=<?php echo $row["id_user"]?>">Editar</a>
                     </td>
                     <td class="delet_css" style="cursor: pointer;" onclick="window.location='delete.php?id=<?php echo $row['id_user']?>'">
-                        <a href="delete.php?id=<?php echo $row['id_user']?>">Excluir</a>
+                        <a class="link" href="delete.php?id=<?php echo $row['id_user']?>">Excluir</a>
                     </td>
                 </tr>
         <?php

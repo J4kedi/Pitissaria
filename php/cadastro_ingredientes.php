@@ -4,21 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Ingredientes</title>
-    <link rel="stylesheet" href="../../Style/cad_ingredientes.css">
-    <link rel="shortcut icon" href="../../imagens/icone/pizza.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../Style/cad_ingredientes.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../Style/padrao.css">
+    <link rel="shortcut icon" href="../imagens/icone/pizza.ico" type="image/x-icon">
 </head>
 <body>
-    <?php
-    include("../validacao_acesso_php.php");
-    include("../../geral/menu.php");
-    verificar_acesso_gerente();
-    verificarAcessoGerente();
-
+    <?php include("../geral/menu.php");?>
+    <?php 
+        include("validacao_acesso_php.php");
+        verificarAcessoGerenteEPizzaiolo();
     ?>
-
-    <a href="lista_ingredientes.php">Voltar a listagem</a>
     <main>
-        <div class="container">
+        <div class="containera">
             <h1>Cadastro de Ingredientes</h1>
             <form action="cadastro_ingredientes_php.php" id="form1" method="POST">
                 <label for="nome_ingrediente">Nome do Ingrediente:</label><br>
@@ -37,6 +36,8 @@
             </form>
         </div>
     </main>
+
+    <?php include("../geral/footer.php")?>
     <script src="../../Js/Js_ingredientes/cadastro_ingredientes.js"></script>
 </body>
 </html>

@@ -6,11 +6,14 @@
     <title>Edit Pizzaiolo</title>
     <link rel="stylesheet" href="../Style/cad_ingredientes.css">
     <link rel="stylesheet" href="../Style/padrao.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
 <?php
     include("connection.php");
     include("validacao_acesso_php.php");
+    include("../geral/menu.php")
     verificar_acesso_gerente();
     verificar_acesso_pizzaiolo();
     verificarAcessoGerenteEPizzaiolo();

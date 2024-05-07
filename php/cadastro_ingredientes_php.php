@@ -3,16 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="../../Style/cad_ingredientes.css">
+<link rel="stylesheet" href="../Style/cad_ingredientes.css">
 <title>Vericação de Insumos</title>
 </head>
 <body>
 <?php
-include("../connection.php");
-
-include("../validacao_acesso_php.php");
-verificar_acesso_gerente();
-verificarAcessoGerente();
+include("connection.php");   
+include("validacao_acesso_php.php");
+verificarAcessoGerenteEPizzaiolo();
 
 $nome = $_POST["nome_ingrediente"];
 $validade = $_POST["dt_validade"];

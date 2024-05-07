@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"> 
     <link rel="stylesheet" href="../Style/cad_ingredientes.css">
     <link rel="stylesheet" href="../Style/padrao.css">
     <title>Cadastro pizzaiolo</title>
@@ -31,7 +33,7 @@
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
-        // O insumo já existe, exibir uma mensagem de erro em outra pagina
+        // O Pizzaiolo já existe, exibir uma mensagem de erro em outra pagina
         echo '<h1>Pizzaiolo já existente.</h1>'; //aqui ele mostra a pagina com o texto em H1
         echo '<script>setTimeout(function() { history.back(); }, 2000);</script>'; // Atraso de 2 segundos 
     } else {

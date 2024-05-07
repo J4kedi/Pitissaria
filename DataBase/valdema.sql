@@ -1,13 +1,13 @@
 /* Pitissaria_logico: */
 
-DROP DATABASE pitissariadb;
+DROP DATABASE IF EXISTS pitissariadb;
 
 CREATE DATABASE pitissariadb;
 
 USE pitissariadb;
 
 CREATE TABLE user_endereco_user (
-    id_user INT PRIMARY KEY AUTO_INCREMENT,
+    id_user INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100),
     tp_user VARCHAR(100) DEFAULT "cliente",
     username VARCHAR(100),
@@ -19,7 +19,8 @@ CREATE TABLE user_endereco_user (
     estado VARCHAR(100),
     cep VARCHAR(15),
     cidade VARCHAR(100),
-    rua VARCHAR(100)
+    rua VARCHAR(100),
+    id_endereco INT -- Adicionando a coluna id_endereco
 );
 
 CREATE TABLE ingrediente (
@@ -94,20 +95,10 @@ ALTER TABLE possui ADD CONSTRAINT FK_possui_2
     FOREIGN KEY (fk_pizza_id_pizza)
     REFERENCES pizza (id_pizza)
     ON DELETE RESTRICT;
- 
-ALTER TABLE monta ADD CONSTRAINT FK_monta_1
-    FOREIGN KEY (fk_user_endereco_user_id_user, fk_user_endereco_user_id_endereco)
-    REFERENCES user_endereco_user (id_user, id_endereco)
-    ON DELETE SET NULL;
- 
+
 ALTER TABLE monta ADD CONSTRAINT FK_monta_2
     FOREIGN KEY (fk_pizza_montada_id_pizza_montada)
     REFERENCES pizza_montada (id_pizza_montada)
-    ON DELETE SET NULL;
- 
-ALTER TABLE pede ADD CONSTRAINT FK_pede_1
-    FOREIGN KEY (fk_user_endereco_user_id_user, fk_user_endereco_user_id_endereco)
-    REFERENCES user_endereco_user (id_user, id_endereco)
     ON DELETE SET NULL;
  
 ALTER TABLE pede ADD CONSTRAINT FK_pede_2

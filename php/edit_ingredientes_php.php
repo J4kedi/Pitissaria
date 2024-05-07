@@ -4,16 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Ingredientes</title>
-    <link rel="stylesheet" href="../../Style/cad_ingredientes.css">
+    <link rel="stylesheet" href="../Style/cad_ingredientes.css">
 </head>
 <body>
 <?php
-    include("../connection.php");
-    include("../validacao_acesso_php.php");
-    verificar_acesso_gerente();
-    verificar_acesso_pizzaiolo();
+    include("connection.php");
+    include("validacao_acesso_php.php");
     verificarAcessoGerenteEPizzaiolo();
-    
     
     $id = $_POST["id"];
     $nome = $_POST["nome_ingrediente"];

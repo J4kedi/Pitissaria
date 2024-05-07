@@ -3,8 +3,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <div class="menu">
       <nav>
-        <a href="index.php"><img id="logo-inicio" src="../ASSETS/logo-inicio (1).png" alt="Logo Pitissasria"></a>
-        <a href="index.php" class="links lover">inicio</a>
+        <a href="../HTML/index.php"><img id="logo-inicio" src="../ASSETS/logo-inicio (1).png" alt="Logo Pitissasria"></a>
+        <a href="../HTML/index.php" class="links lover">inicio</a>
         <div class="autenticacao">
             <?php
                 session_start(); // Inicia a sessão
@@ -13,8 +13,8 @@
                     // Se o usuário for um gerente, exibe o link de ingredientes
                     if($_SESSION['tp_user'] === 'gerente' || $_SESSION['tp_user']==='pizzaiolo') {
                         echo '<a href = "../php/listagem.php" class="links lover">pizzaiolo</a>';
-                        echo '<a href="../php/ingredientes/lista_ingredientes.php" class="links lover">ingredientes</a>';
-                        echo '<a href="logout.php" class="links lover">logout</a>';
+                        echo '<a href="../php/lista_ingredientes.php" class="links lover">ingredientes</a>';
+                        echo '<a href="../HTML/logout.php" class="links lover">logout</a>';
                         echo '<a href="carrinho_teste.php" class="links lover">Carrinho</a>';
                         echo '<a class="links">Gerente</a>';
                     }

@@ -4,18 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalhes do Ingrediente</title>
-    <link rel="stylesheet" href="../../Style/ingredientes_ingredientes.css">
-    <link rel="shortcut icon" href="../../imagens/icone/pizza.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../Style/ingredientes_ingredientes.css">
+    <link rel="shortcut icon" href="../imagens/icone/pizza.ico" type="image/x-icon">
 </head>
 <body>
     <?php
     //definir a conexão com o banco de dados
-    require_once "../connection.php";
-    include("../validacao_acesso_php.php");
-    include("../../geral/menu.php");
-    verificar_acesso_gerente();
-    verificar_acesso_pizzaiolo();
+    require_once "connection.php";
+    include("../geral/menu.php");
+    include("validacao_acesso_php.php");
     verificarAcessoGerenteEPizzaiolo();
+
     
     // Verificar se o id_ingrediente foi passado na URL
         // Obter o id do ingrediente da URL
