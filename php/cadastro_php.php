@@ -33,7 +33,7 @@
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
-        // O insumo já existe, exibir uma mensagem de erro em outra pagina
+        // O Pizzaiolo já existe, exibir uma mensagem de erro em outra pagina
         echo '<h1>Pizzaiolo já existente.</h1>'; //aqui ele mostra a pagina com o texto em H1
         echo '<script>setTimeout(function() { history.back(); }, 2000);</script>'; // Atraso de 2 segundos 
     } else {

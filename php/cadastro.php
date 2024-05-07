@@ -41,17 +41,17 @@
                 <label for="senha">Senha:</lablefone:</label>
                 <input type="password" name="num_telefone" id="num_telefone" min = 8>
                 <br>
-                <label for="estado">Estado:</label>
-                <input type="text" name="estado" id="estado">
-                <br>
-                <label for="cep">CEP:</label>
-                <input type="text" name="senha" id="senha">
-                <br>
                 <label for="dt_nasc">Data de Nascimento:</label>
                 <input type="date" name="td_nasc" id="dt_nasc" max = "2006-01-01" max ="1940-12-31">
                 <br>
                 <label for="num_telefone">Telefone:</label>
                 <input type="text" name="cep" id="cep">
+                <br>
+                <label for="estado">Estado:</label>
+                <input type="text" name="estado" id="estado">
+                <br>
+                <label for="cep">CEP:</label>
+                <input type="text" name="senha" id="senha">
                 <br>
                 <label for="cidade">Cidade:</label>
                 <input type="text" name="cidade" id="cidade">
@@ -59,7 +59,7 @@
                 <label for="rua">Rua:</label>
                 <input type="text" name="rua" id="rua">
                 <br>
-                <button type="submit" id    ="submit">Enviar</button>
+                <button type="submit" id ="submit">Enviar</button>
             </form>
         </div>
     </main>
