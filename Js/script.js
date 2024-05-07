@@ -2,7 +2,7 @@
 
 const pizzas = [
     { id: 2, nome: "Calabresa", imagem: "../imagens/pizza_calabresa.jpg", texto: "Calabresa, queijo, azeitona", id_ingredientes: [3,5] },
-    { id: 1, nome: "Pepperoni", imagem: "../imagens/portuguesa.jpg", texto: "Calabresa", id_ingredientes: [2]},
+    { id: 1, nome: "Pepperoni", imagem: "../imagens/portuguesa.jpg", texto: "Calabresa, queijo, pimentão, tomate", id_ingredientes: [3,5,6,7]},
     
 ];
 
