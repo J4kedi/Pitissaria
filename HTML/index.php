@@ -25,7 +25,7 @@
   </div>
 
   <main class="text-center container">
-
+  
     <div class="sobre-expand-md">
       <h1>Pitissaria</h1>
       <h2>Sobre nós</h2>
