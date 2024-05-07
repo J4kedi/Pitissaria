@@ -1,7 +1,7 @@
 
 
 const pizzas = [
-    { id: 2, nome: "Calabresa", imagem: "../imagens/pizza_calabresa.jpg", texto: "Calabresa, queijo, azeitona", id_ingredientes: [5,7] },
+    { id: 2, nome: "Calabresa", imagem: "../imagens/pizza_calabresa.jpg", texto: "Calabresa, queijo, azeitona", id_ingredientes: [3,5] },
     { id: 1, nome: "Pepperoni", imagem: "../imagens/portuguesa.jpg", texto: "Calabresa", id_ingredientes: [2]},
     
 ];
@@ -41,8 +41,6 @@ function criarCard(pizza) {
     return card;
 }
 
-
-
 function adicionarEventoClick(pizza) {
     const overlay = document.getElementById(pizza.nome);
 
@@ -50,15 +48,20 @@ function adicionarEventoClick(pizza) {
         criarPaginaEspecifica(pizza);
     });
 }
-async function removerIngredientes(id_ingredientes,id){
+async function removerIngredientes(id_ingredientes, id) {
     const response = await fetch("http://localhost/GitHub/CrazyCats/Pitissaria/php/remover_e_comprar_ingrediente.php", {
-        method: "PATCH", 
+        method: "PATCH",
         body: JSON.stringify({
-            id_ingredientes,id
-        }) 
+            id_ingredientes: id_ingredientes, // Corrigindo passagem de argumento
+            id: id
+        }),
+        headers: {
+            "Content-Type": "application/json"
+        }
     });
     console.log(await response.json());
 }
+
 
 function criarPaginaEspecifica(pizza) {
     const pizzaEspec = `
@@ -82,8 +85,14 @@ function criarPaginaEspecifica(pizza) {
     `;
 
     document.getElementById("grid-container").innerHTML = pizzaEspec;
-    document.getElementById("adicionar").addEventListener("click",()=>removerIngredientes(pizza.id_ingredientes, pizza.id));
-  
+    document.getElementById("adicionar").addEventListener("click", () => removerIngredientes(pizza.id_ingredientes, pizza.id));
+
+    var botao = document.getElementById('adicionar');
+    // Adiciona um evento de clique ao botão
+    botao.addEventListener('click', function() {
+        // Redireciona para a página desejada
+        window.location.href = '../HTML/pizzas_prontas.php';
+    });
     btnVoltar();
 }
 
