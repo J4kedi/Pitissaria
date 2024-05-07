@@ -61,13 +61,13 @@
                             <!-- Número de telefone input -->
                             <div class="form-outline mb-4">
                                    <label class="form-label" for="num_telefone">Telefone</label>
-                                   <input type="tel" id="num_telefone" required class="form-control"  name="telefone" maxlength="11"/>
+                                   <input id="num_telefone" required class="form-control"  name="telefone" maxlength="11"/>
                            </div>
 
                             <!-- CEP input -->
                             <div class="form-outline mb-4">
                                 <label class="form-label" for="cep">CEP</label>
-                                <input type="text" id="cep" name="cep" required class="form-control" maxlength="8"/>
+                                <input id="cep" name="cep" required class="form-control" maxlength="8"/>
                             </div>
 
                             <!-- Nome da rua input -->
