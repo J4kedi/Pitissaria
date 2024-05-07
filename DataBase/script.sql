@@ -75,6 +75,29 @@ CREATE TABLE IF NOT EXISTS montadas_cliente (
   nome VARCHAR(50),
   data_montagem DATE
 );
+------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------
+-- Tabela de pizzas prontas (pode ser excluida depois foi colocada para teste) --
+
+CREATE TABLE pizza_compradas(
+    id_pizza_compra INT AUTO_INCREMENT PRIMARY KEY,
+    id_user INT,
+    id_pizza INT,
+    status_pizza ENUM('value_1','value_2','value_3'),  
+);
+
+-- Adicionei por enquanto para o teste acredito que pode ser excluida já que não --
+-- vai influenciar muita coisa --
+
+ALTER TABLE pizza_compradas ADD CONSTRAINT FK_user
+    FOREIGN KEY (user)
+    REFERENCES user(user);
+
+ALTER TABLE pizza_compradas ADD CONSTRAINT FK_id_pizza
+    FOREIGN KEY(id_pizza)
+    REFERENCES pizza (id_pizza)
+------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------
 
 -- Criando a tabela de ingredientes das pizzas montadas pelos clientes
 CREATE TABLE IF NOT EXISTS ingredientes_pizza (
