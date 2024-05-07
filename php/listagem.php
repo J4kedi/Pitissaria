@@ -18,7 +18,6 @@ $result = $conn->query($sql);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ingredientes</title>
     <link rel="stylesheet" href="../Style/edit_pizzaiolo.css">
-    <link rel="stylesheet" href="../Style/padrao.css">
     <link rel="shortcut icon" href="../imagens/icone/pizza.ico" type="image/x-icon">
 </head>
 

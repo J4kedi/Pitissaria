@@ -7,7 +7,7 @@ CREATE DATABASE pitissariadb;
 USE pitissariadb;
 
 CREATE TABLE user_endereco_user (
-    id_user INT AUTO_INCREMENT,
+    id_user INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(100),
     tp_user VARCHAR(100) DEFAULT "cliente",
     username VARCHAR(100),

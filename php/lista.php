@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalhes do Pizzaiolo</title>
     <link rel="stylesheet" href="../Style/edit_pizzaiolo.css">
-    <link rel="stylesheet" href="../Style/padrao.css">
     <link rel="shortcut icon" href="../imagens/icone/pizza.ico" type="image/x-icon">
 </head>
 <body>
@@ -14,9 +13,6 @@
     require_once "connection.php";
     include("validacao_acesso_php.php");
     include("../geral/menu.php");
-    verificar_acesso_gerente();
-    verificar_acesso_pizzaiolo();
-    verificarAcessoGerenteEPizzaiolo();
     
 
 

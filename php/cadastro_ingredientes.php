@@ -4,15 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Ingredientes</title>
-    <link rel="stylesheet" href="../../Style/cad_ingredientes.css">
-    <link rel="shortcut icon" href="../../imagens/icone/pizza.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../Style/cad_ingredientes.css">
+    <link rel="shortcut icon" href="../imagens/icone/pizza.ico" type="image/x-icon">
 </head>
 <body>
     <?php
-    include("../validacao_acesso_php.php");
-    include("../../geral/menu.php");
-    verificar_acesso_gerente();
-    verificarAcessoGerente();
+    include("../geral/menu.php");
 
     ?>
 

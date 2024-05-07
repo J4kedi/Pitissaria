@@ -1,12 +1,8 @@
 <?php
 
 // Incluir o arquivo de conexão com o banco de dados
-include("../connection.php");
-include("../validacao_acesso_php.php");
-include("../../geral/menu.php");
-verificar_acesso_gerente();
-verificar_acesso_pizzaiolo();
-verificarAcessoGerenteEPizzaiolo();
+include("connection.php");
+include("../geral/menu.php");
 
 
 // Consulta SQL para selecionar os ingredientes
@@ -20,14 +16,14 @@ $result = $conn->query($sql);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ingredientes</title>
-    <link rel="stylesheet" href="../../Style/lista_ingredientes.css">
-    <link rel="shortcut icon" href="../../imagens/icone/pizza.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../Style/lista_ingredientes.css">
+    <link rel="shortcut icon" href="../imagens/icone/pizza.ico" type="image/x-icon">
 
 </head>
 
 <body>
     <div class="add_ingrediente">
-        <a href="../../HTML/index.php"><h3>Voltar</h3></a>
+        <a href="../HTML/index.php"><h3>Voltar</h3></a>
     </div>
     <br><br>
     <div class="num_registro">

@@ -4,17 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Ingredientes</title>
-    <link rel="stylesheet" href="../../Style/edit_ingredientes.css">
-    <link rel="shortcut icon" href="../../imagens/icone/pizza.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../Style/edit_ingredientes.css">
+    <link rel="shortcut icon" href="../imagens/icone/pizza.ico" type="image/x-icon">
 </head>
 <body>
 <?php
     include("../connection.php");
-    include("../validacao_acesso_php.php");
     include("../../geral/menu.php");
-    verificar_acesso_gerente();
-    verificar_acesso_pizzaiolo();
-    verificarAcessoGerenteEPizzaiolo();
+
     
     $id = $_GET["id"];
     $sql =  "SELECT  nome_ingrediente, dt_validade, quantidade_ingrediente, preco_compra FROM ingrediente WHERE id_ingrediente = $id";
