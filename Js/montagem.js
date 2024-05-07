@@ -6,16 +6,16 @@ document.getElementById('calcular-total').addEventListener('click', function() {
     var precoBase = 0;
     if (tamanho) {
         if (tamanho.id === 'pequena') {
-            precoBase += 10;
+            precoBase += 25;
         } else if (tamanho.id === 'media') {
-            precoBase += 15;
+            precoBase += 35;
         } else if (tamanho.id === 'grande') {
-            precoBase += 20;
+            precoBase += 69;
         }
     }
 
     if (queijo) {
-        precoBase += 2;
+        precoBase += 7;
     }
 
     if (tomate) {
