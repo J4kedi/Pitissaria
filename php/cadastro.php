@@ -27,7 +27,7 @@
                 <input type="text" name="nome" id="nome" required>
                 <br>
                 <label for="tp_user">Tipo de Usuario:</label>
-                <input type="text" name="tp_user" id="tp_user" default = "pizzaiolo" required>
+                <input type="text" name="tp_user" id="tp_user" required default = "pizzaiolo">
                 <br>
                 <label for="username">Username:</label>
                 <input type="text" name="username" id="username" required>
@@ -39,13 +39,13 @@
                 <input type="text" name="email" id="email" required>
                 <br>
                 <label for="senha">Senha:</lablefone:</label>
-                <input type="text" name="num_telefone" id="num_telefone" min = 8>
+                <input type="password" name="num_telefone" id="num_telefone" min = 8>
                 <br>
                 <label for="estado">Estado:</label>
                 <input type="text" name="estado" id="estado">
                 <br>
                 <label for="cep">CEP:</label>
-                <input type="password" name="senha" id="senha">
+                <input type="text" name="senha" id="senha">
                 <br>
                 <label for="dt_nasc">Data de Nascimento:</label>
                 <input type="date" name="td_nasc" id="dt_nasc" max = "2006-01-01" max ="1940-12-31">
@@ -59,7 +59,7 @@
                 <label for="rua">Rua:</label>
                 <input type="text" name="rua" id="rua">
                 <br>
-                <button type="submit" id="submit">Enviar</button>
+                <button type="submit" id    ="submit">Enviar</button>
             </form>
         </div>
     </main>
