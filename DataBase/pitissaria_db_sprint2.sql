@@ -1,9 +1,9 @@
 -- Derrubando banco de dados
-DROP DATABASE IF EXISTS pizzaria_db;
+DROP DATABASE IF EXISTS pitissariadb;
 
 -- Criação do banco de dados
-CREATE DATABASE IF NOT EXISTS pizzaria_db;
-USE pizzaria_db;
+CREATE DATABASE IF NOT EXISTS pitissariadb;
+USE pitissariadb;
 
 -- Tabela de ingredientes
 CREATE TABLE IF NOT EXISTS ingredientes (
@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS ingredientes (
 CREATE TABLE IF NOT EXISTS enderecos (
     id INT AUTO_INCREMENT PRIMARY KEY,
     cep VARCHAR(10) NOT NULL,
-    rua VARCHAR(100) NOT NULL,
+    rua VARCHAR(100) NOT NULL,TO
     num_res VARCHAR(4) NOT NULL,
     cidade VARCHAR(50) NOT NULL
 );
