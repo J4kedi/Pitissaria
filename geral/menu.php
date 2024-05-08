@@ -4,7 +4,8 @@
     <div class="menu">
       <nav>
         <a href="../HTML/index.php"><img id="logo-inicio" src="../ASSETS/logo-inicio (1).png" alt="Logo Pitissasria"></a>
-        <a href="../HTML/index.php" class="links lover">inicio</a>
+        <a href="../HTML/index.php" class="links lover">Inicio</a>
+        <a href="../HTML/pizzas_prontas.php" class="links lover">Cardapio</a>
         <div class="autenticacao">
             <?php
                 session_start(); // Inicia a sessão
@@ -28,8 +29,8 @@
                     }
                 } else {
                     // Se a variável de sessão tp_user não estiver definida, exibe apenas o link de login
-                    echo '<a class="links lover" href="../HTML/login.php">login</a>';
-                    echo '<a class="links lover" href="../HTML/cadastro.php">cadastro</a>';
+                    echo '<a class="links lover" href="../HTML/login.php">Login</a>';
+                    echo '<a class="links lover" href="../HTML/cadastro.php">Cadastro</a>';
                 }
             ?>
         </div>
