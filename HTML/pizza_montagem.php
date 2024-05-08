@@ -26,9 +26,11 @@
         </label>
         <input type="radio" name="tamanho" id="grande"><br>
         <label for="queijo">Queijo</label>
-        <input type="checkbox" name="queijo" id="queijo"><br>
+        <input type="checkbox" name="queijo" id="queijo">
+        <input type="number" id="quantidade_queijo" name="quantidade_queijo" min="1" max="10" value="1"><br>
         <label for="tomate">Tomate</label>
-        <input type="checkbox" name="tomate" id="tomate"><br>
+        <input type="checkbox" name="tomate" id="tomate">
+        <input type="number" id="quantidade_tomate" name="quantidade_tomate" min="1" max="10" value="1"><br>
         <button id="calcular-total" class="btn btn-primary">Calcular Total</button>
         <a href="../HTML/login.php" class="btn btn-primary">Finalizar</a>
         <p id="total"></p>
