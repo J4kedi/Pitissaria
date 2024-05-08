@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS usuarios (
 );
 
 -- Tabela de pizzas personalizadas
-CREATE TABLE IF NOT EXISTS pizzas_personalizadas (
+CREATE TABLE IF NOT EXISTS pizzas (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
     descricao TEXT,
@@ -49,12 +49,12 @@ CREATE TABLE IF NOT EXISTS pizzas_personalizadas (
 );
 
 -- Tabela de ingredientes das pizzas personalizadas
-CREATE TABLE IF NOT EXISTS ingredientes_pizzas_personalizadas (
+CREATE TABLE IF NOT EXISTS ingredientes_pizzas (
     id INT AUTO_INCREMENT PRIMARY KEY,
     id_pizza_personalizada INT,
     id_ingrediente INT,
     quantidade INT,
-    FOREIGN KEY (id_pizza_personalizada) REFERENCES pizzas_personalizadas(id), -- Restrição de chave estrangeira com a tabela pizzas_personalizadas
+    FOREIGN KEY (id_pizza_personalizada) REFERENCES pizzas(id), -- Restrição de chave estrangeira com a tabela pizzas
     FOREIGN KEY (id_ingrediente) REFERENCES ingredientes(id) -- Restrição de chave estrangeira com a tabela ingredientes
 );
 
@@ -70,14 +70,14 @@ CREATE TABLE IF NOT EXISTS pedidos (
 );
 
 -- Tabela de itens do pedido para pizzas personalizadas
-CREATE TABLE IF NOT EXISTS itens_pedido_personalizadas (
+CREATE TABLE IF NOT EXISTS itens_pedido (
     id INT AUTO_INCREMENT PRIMARY KEY,
     id_pedido INT,
     id_pizza_personalizada INT,
     quantidade INT,
     preco_unitario DECIMAL(8,2) NOT NULL,
     FOREIGN KEY (id_pedido) REFERENCES pedidos(id),
-    FOREIGN KEY (id_pizza_personalizada) REFERENCES pizzas_personalizadas(id)
+    FOREIGN KEY (id_pizza_personalizada) REFERENCES pizzas(id)
 );
 
 -- Inserção de dados de exemplo
@@ -93,7 +93,7 @@ INSERT INTO ingredientes (nome, preco, data_entrada, data_validade) VALUES
 select * from usuarios;
 delete from usuarios where id = 3;
 
-select * from pizzas_personalizadas;
-select * from ingredientes_pizzas_personalizadas;
+select * from pizzas;
+select * from ingredientes_pizzas;
 -- Select para a tabela de pedidos
 SELECT * FROM pedidos;
