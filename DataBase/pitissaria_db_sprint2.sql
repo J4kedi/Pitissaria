@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS ingredientes (
 CREATE TABLE IF NOT EXISTS enderecos (
     id INT AUTO_INCREMENT PRIMARY KEY,
     cep VARCHAR(10) NOT NULL,
-    rua VARCHAR(100) NOT NULL,TO
+    rua VARCHAR(100) NOT NULL,
     num_res VARCHAR(4) NOT NULL,
     cidade VARCHAR(50) NOT NULL
 );
@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS usuarios (
     FOREIGN KEY (endereco_id) REFERENCES enderecos(id) -- Referencia a coluna id da tabela enderecos
 );
 
--- Tabela de pizzas personalizadas
+-- Tabela de pizzas
 CREATE TABLE IF NOT EXISTS pizzas (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
@@ -48,7 +48,7 @@ CREATE TABLE IF NOT EXISTS pizzas (
     FOREIGN KEY (id_usuario) REFERENCES usuarios(id) -- Restrição de chave estrangeira com a tabela usuarios
 );
 
--- Tabela de ingredientes das pizzas personalizadas
+-- Tabela de ingredientes das pizzas
 CREATE TABLE IF NOT EXISTS ingredientes_pizzas (
     id INT AUTO_INCREMENT PRIMARY KEY,
     id_pizza_personalizada INT,
@@ -69,7 +69,7 @@ CREATE TABLE IF NOT EXISTS pedidos (
     FOREIGN KEY (endereco_entrega_id) REFERENCES enderecos(id)
 );
 
--- Tabela de itens do pedido para pizzas personalizadas
+-- Tabela de itens do pedido para pizzas
 CREATE TABLE IF NOT EXISTS itens_pedido (
     id INT AUTO_INCREMENT PRIMARY KEY,
     id_pedido INT,
