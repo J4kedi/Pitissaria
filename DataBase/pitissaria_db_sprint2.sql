@@ -91,7 +91,6 @@ INSERT INTO ingredientes (nome, preco, data_entrada, data_validade) VALUES
     ('Azeitonas', 1.50, '2022-04-01', '2022-10-01');
 
 select * from usuarios;
-delete from usuarios where id = 3;
 
 select * from pizzas;
 select * from ingredientes_pizzas;

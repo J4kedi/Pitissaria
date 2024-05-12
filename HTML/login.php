@@ -24,13 +24,13 @@
                     <!-- Username input -->
                     <div class="form-outline mb-4">
                         <input type="text" id="username" name="username" class="form-control" />
-                        <label class="form-label" for="loginName">Username</label>
+                        <label class="form-label" for="username">Username</label>
                     </div>
 
                     <!-- senha input -->
                     <div class="form-outline mb-4">
                         <input type="password" id="senha" name="senha" class="form-control" />
-                        <label class="form-label" for="loginPassword">Senha</label>
+                        <label class="form-label" for="senha">Senha</label>
                     </div>
 
                     <!-- 2 column grid layout -->
