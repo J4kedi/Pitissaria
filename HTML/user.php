@@ -18,7 +18,7 @@
             $id = $_SESSION['id_user'];
 
             // Consulta apenas os dados do usuário logado
-            $sql = "SELECT id_user, nome, username, cpf, email, dt_nasc, num_telefone, estado, cep, cidade, rua, id_user FROM user_endereco_user WHERE id_user = '$id'";
+            $sql = "SELECT id, nome, username, cpf, email, data_nascimento, celular FROM usuarios WHERE id = '$id'";
             $result = $conn->query($sql);
             // Verificar se há resultados
             if ($result && $result->num_rows > 0) {
@@ -29,15 +29,9 @@
                     echo "<tr><th>Username: </th><td>{$row['username']}</td></tr>";
                     echo "<tr><th>CPF: </th><td>{$row['cpf']}</td></tr>";
                     echo "<tr><th>Email: </th><td>{$row['email']}</td></tr>";
-                    echo "<tr><th>Data nascimento: </th><td>{$row['dt_nasc']}</td></tr>";
-                    echo "<tr><th>Numero de telefone: </th><td>{$row['num_telefone']}</td></tr>";
-                    echo "<tr><th>Estado: </th><td>{$row['estado']}</td></tr>";
-                    echo "<tr><th>CEP: </th><td>{$row['cep']}</td></tr>";
-                    echo "<tr><th>Cidade: </th><td>{$row['cidade']}</td></tr>";
-                    echo "<tr><th>Rua: </th><td>{$row['rua']}</td></tr>";
-                    echo "<tr><th><a href='useratualizar.php?id={$row['id_user']}' style= 'color:white; text-decoration:none;'>Editar</a></th></tr>";
-
-
+                    echo "<tr><th>Data nascimento: </th><td>{$row['data_nascimento']}</td></tr>";
+                    echo "<tr><th>Numero de telefone: </th><td>{$row['celular']}</td></tr>";
+                    echo "<tr><th><a href='useratualizar.php?id={$row['id']}' style= 'color:white; text-decoration:none;'>Editar</a></th></tr>";
                 }
                 echo "</table>";
             } else {
