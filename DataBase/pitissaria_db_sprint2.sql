@@ -98,7 +98,7 @@ INSERT INTO ingredientes (nome, preco, data_entrada, data_validade) VALUES
     ('Cebola', 1.00, '2022-04-01', '2022-10-01'),
     ('Azeitonas', 1.50, '2022-04-01', '2022-10-01');
 
--- Inserir alguns registros na tabela de usuários
+-- Inserção de dados de exemplo
 INSERT INTO usuarios (nome, email, senha, cpf, tipo_usuario, data_nascimento, celular, username)
 VALUES ('João', 'joao@email.com', md5('123'), '123.456.789-01', 'cliente', '1990-05-20', '999999999', 'joao123'),
        ('Maria', 'maria@email.com', md5('123'), '987.654.321-09', 'cliente', '1988-08-15', '888888888', 'maria456'),
@@ -107,7 +107,7 @@ VALUES ('João', 'joao@email.com', md5('123'), '123.456.789-01', 'cliente', '199
        ('Gerente1', 'gerente1@email.com', md5('123'), '333.333.333-33', 'gerente', '1980-07-10', '333333333', 'gerente1'),
        ('Gerente2', 'gerente2@email.com', md5('123'), '444.444.444-44', 'gerente', '1975-11-20', '444444444', 'gerente2');
 
--- Inserir alguns registros na tabela de endereços
+-- Inserção de dados de exemplo
 INSERT INTO enderecos (cep, rua, num_res, cidade, estado)
 VALUES ('12345-678', 'Rua A', '123', 'Cidade A', 'Paraná'),
        ('98765-432', 'Rua B', '456', 'Cidade B', 'Paraná');
