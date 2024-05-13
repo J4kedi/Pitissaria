@@ -14,6 +14,19 @@ CREATE TABLE IF NOT EXISTS ingredientes (
     data_validade DATE NOT NULL
 );
 
+-- Tabela de usuários
+CREATE TABLE IF NOT EXISTS usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    senha VARCHAR(32) NOT NULL,
+    cpf VARCHAR(20) NOT NULL UNIQUE,
+    tipo_usuario ENUM('cliente', 'pizzaiolo', 'gerente') DEFAULT 'cliente',
+    data_nascimento DATE,
+    celular VARCHAR(20),
+    username VARCHAR(50)
+);
+
 -- Tabela de endereços
 CREATE TABLE IF NOT EXISTS enderecos (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -23,19 +36,13 @@ CREATE TABLE IF NOT EXISTS enderecos (
     cidade VARCHAR(50) NOT NULL
 );
 
--- Tabela de usuários
-CREATE TABLE IF NOT EXISTS usuarios (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nome VARCHAR(100) NOT NULL,
-    email VARCHAR(100) NOT NULL,
-    senha VARCHAR(32) NOT NULL,
-    cpf VARCHAR(20) NOT NULL UNIQUE,
-    tipo_usuario ENUM('cliente', 'pizzaiolo', 'gerente') DEFAULT 'cliente',
+-- Tabela intermediária para a relação muitos para muitos entre usuários e endereços
+CREATE TABLE IF NOT EXISTS usuario_endereco (
+    usuario_id INT,
     endereco_id INT,
-    data_nascimento DATE,
-    celular VARCHAR(20),
-    username VARCHAR(50),
-    FOREIGN KEY (endereco_id) REFERENCES enderecos(id) -- Referencia a coluna id da tabela enderecos
+    PRIMARY KEY (usuario_id, endereco_id),
+    FOREIGN KEY (usuario_id) REFERENCES usuarios(id),
+    FOREIGN KEY (endereco_id) REFERENCES enderecos(id)
 );
 
 -- Tabela de pizzas
@@ -51,10 +58,10 @@ CREATE TABLE IF NOT EXISTS pizzas (
 -- Tabela de ingredientes das pizzas
 CREATE TABLE IF NOT EXISTS ingredientes_pizzas (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    id_pizza_personalizada INT,
+    id_pizza INT,
     id_ingrediente INT,
     quantidade INT,
-    FOREIGN KEY (id_pizza_personalizada) REFERENCES pizzas(id), -- Restrição de chave estrangeira com a tabela pizzas
+    FOREIGN KEY (id_pizza) REFERENCES pizzas(id), -- Restrição de chave estrangeira com a tabela pizzas
     FOREIGN KEY (id_ingrediente) REFERENCES ingredientes(id) -- Restrição de chave estrangeira com a tabela ingredientes
 );
 
@@ -73,11 +80,11 @@ CREATE TABLE IF NOT EXISTS pedidos (
 CREATE TABLE IF NOT EXISTS itens_pedido (
     id INT AUTO_INCREMENT PRIMARY KEY,
     id_pedido INT,
-    id_pizza_personalizada INT,
+    id_pizza INT,
     quantidade INT,
     preco_unitario DECIMAL(8,2) NOT NULL,
     FOREIGN KEY (id_pedido) REFERENCES pedidos(id),
-    FOREIGN KEY (id_pizza_personalizada) REFERENCES pizzas(id)
+    FOREIGN KEY (id_pizza) REFERENCES pizzas(id)
 );
 
 -- Inserção de dados de exemplo
