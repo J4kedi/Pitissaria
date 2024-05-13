@@ -33,7 +33,8 @@ CREATE TABLE IF NOT EXISTS enderecos (
     cep VARCHAR(10) NOT NULL,
     rua VARCHAR(100) NOT NULL,
     num_res VARCHAR(4) NOT NULL,
-    cidade VARCHAR(50) NOT NULL
+    cidade VARCHAR(50) NOT NULL,
+    estado VARCHAR(50) NOT NULL
 );
 
 -- Tabela intermediária para a relação muitos para muitos entre usuários e endereços
@@ -97,9 +98,29 @@ INSERT INTO ingredientes (nome, preco, data_entrada, data_validade) VALUES
     ('Cebola', 1.00, '2022-04-01', '2022-10-01'),
     ('Azeitonas', 1.50, '2022-04-01', '2022-10-01');
 
-select * from usuarios;
+-- Inserir alguns registros na tabela de usuários
+INSERT INTO usuarios (nome, email, senha, cpf, tipo_usuario, data_nascimento, celular, username)
+VALUES ('João', 'joao@email.com', md5('123'), '123.456.789-01', 'cliente', '1990-05-20', '999999999', 'joao123'),
+       ('Maria', 'maria@email.com', md5('123'), '987.654.321-09', 'cliente', '1988-08-15', '888888888', 'maria456'),
+       ('Pizzaiolo1', 'pizzaiolo1@email.com', md5('123'), '111.111.111-11', 'pizzaiolo', '1995-01-15', '111111111', 'pizzaiolo1'),
+       ('Pizzaiolo2', 'pizzaiolo2@email.com', md5('123'), '222.222.222-22', 'pizzaiolo', '1990-03-25', '222222222', 'pizzaiolo2'),
+       ('Gerente1', 'gerente1@email.com', md5('123'), '333.333.333-33', 'gerente', '1980-07-10', '333333333', 'gerente1'),
+       ('Gerente2', 'gerente2@email.com', md5('123'), '444.444.444-44', 'gerente', '1975-11-20', '444444444', 'gerente2');
 
-select * from pizzas;
-select * from ingredientes_pizzas;
--- Select para a tabela de pedidos
-SELECT * FROM pedidos;
+-- Inserir alguns registros na tabela de endereços
+INSERT INTO enderecos (cep, rua, num_res, cidade, estado)
+VALUES ('12345-678', 'Rua A', '123', 'Cidade A', 'Paraná'),
+       ('98765-432', 'Rua B', '456', 'Cidade B', 'Paraná');
+
+-- Associar usuários aos endereços na tabela intermediária
+INSERT INTO usuario_endereco (usuario_id, endereco_id)
+VALUES (1, 1), -- João com endereço da Rua A
+       (2, 2), -- Maria com endereço da Rua B
+       (3, 2),
+       (4, 2),
+       (5, 1),
+       (6, 1);
+
+select * from usuarios;
+select * from enderecos;
+select * from usuario_endereco;
