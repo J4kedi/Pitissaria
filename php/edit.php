@@ -17,17 +17,17 @@
     verificar_acesso_pizzaiolo();
     verificarAcessoGerenteEPizzaiolo();
     
-    $sql = "SELECT id_user, nome, tp_user, username, dt_nasc, cpf, email, senha, dt_nasc, num_telefone, estado, cep, cidade, rua FROM user_endereco_user";
+    $sql = "SELECT id, nome, tipo_usuario, username, data_nascimento, cpf, email, senha, celular, estado, cep, cidade, rua FROM usuarios";
     $result = $conn->query($sql);
 
     if ($result->num_rows>0){
         while($row = $result->fetch_assoc()){
 
-            $id_user = $row["id_user"];
+            $id = $row["id"];
 
             $nome = $row["nome"];
 
-            $tp_user = $row["tp_user"];
+            $tipo_usuario = $row["tipo_usuario"];
 
             $username = $row["username"];
 
@@ -37,9 +37,9 @@
 
             $senha = $row["senha"];
 
-            $dt_nasc = $row["dt_nasc"];
+            $data_nascimento = $row["data_nascimento"];
 
-            $num_telefone = $row["num_telefone"];
+            $celular = $row["celular"];
 
             $estado = $row["estado"];
 
@@ -61,7 +61,7 @@
             <input type="text" name="nome" id="nome" value ="<?php echo $nome?>" required>
             <br>
             <label for="tp_user">Tipo de Usuario:</label>
-            <input type="text" name="tp_user" id="tp_user" value ="<?php echo $tp_user?>" default = "pizzaiolo" required>
+            <input type="text" name="tipo_usuario" id="tipo_usuario" value ="<?php echo $tipo_usuario?>" default = "pizzaiolo" required>
             <br>
             <label for="username">Username:</label>
             <input type="text" name="username" id="username" value ="<?php echo $username?>" required>
@@ -75,8 +75,8 @@
             <label for="senha">Senha:</label>
             <input type="password" name="senha" id="senha" value ="<?php echo $senha?>">
             <br>
-            <label for="num_telefone">Numero de telefone</label>
-            <input type="text" name="num_telefone" id="num_telefone" value ="<?php echo $num_telefone?>" required>
+            <label for="celular">Numero de telefone</label>
+            <input type="text" name="celular" id="celular" value ="<?php echo $celular?>" required>
             <br>
             <label for="estado">Estado:</label>
             <input type="text" name="estado" id="estado" value ="<?php echo $estado?>" required>
@@ -85,10 +85,7 @@
             <input type="text" name="cep" id="cep" value ="<?php echo $cep?>" required>
             <br>
             <label for="dt_nasc">Data de Nascimento:</label>
-            <input type="date" name="td_nasc" id="dt_nasc" value ="<?php echo $dt_nasc?>" required>
-            <br>
-            <label for="num_telefone">Telefone:</label>
-            <input type="text" name="num_telefone" id="num_telefone" value ="<?php echo $num_telefone?>" required>
+            <input type="date" name="data_nascimento" id="data_nascimento" value ="<?php echo $data_nascimento?>" required>
             <br>
             <label for="cidade">Cidade:</label>
             <input type="text" name="cidade" id="cidade" value ="<?php echo $cidade?>" required>
@@ -97,7 +94,7 @@
             <input type="text" name="rua" id="rua" value = "<?php echo $rua?>" required>
             <br>
 
-            <input type="hidden" name="id" value="<?php echo $id_user?>" required>
+            <input type="hidden" name="id" value="<?php echo $id?>" required>
 
             <input type="submit" value="Atualizar Ingrediente" id = "submit">
         </form>

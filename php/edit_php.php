@@ -20,7 +20,7 @@
     verificarAcessoGerenteEPizzaiolo();
     
     
-    $id = $_POST["id_user"];
+    $id = $_POST["id"];
 
     $nome = $_POST["nome"];
 
@@ -32,7 +32,7 @@
 
     $senha = $POST["senha"];
 
-    $dt_nasc = $POST["dt_nasc"];
+    $data_nascimento = $POST["data_nascimento"];
 
     $num_telefone = $POST["num_telefone"];
 
@@ -44,7 +44,7 @@
 
     $rua = $POST["rua"];
 
-    $sql = "UPDATE user_endereco_user SET nome = '$nome', username = '$username', cpf = '$cpf', email = '$email', senha = '$senha', dt_nasc = '$dt_nasc', num_telefone = '$num_telefone', estado = '$estado',cep = '$cep', cidade = '$cidade', rua = '$rua' WHERE id_user = $id";
+    $sql = "UPDATE usuarios SET nome = '$nome', username = '$username', cpf = '$cpf', email = '$email', senha = '$senha', data_nascimento = '$data_nascimento', celular = '$celular', estado = '$estado',cep = '$cep', cidade = '$cidade', rua = '$rua' WHERE id = $id";
     $result =  $conn->query($sql);
 
     if ($result === TRUE) {

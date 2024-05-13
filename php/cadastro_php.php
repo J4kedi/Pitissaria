@@ -17,7 +17,7 @@
     include("validacao_acesso_php.php");
 
     $nome = $_POST["nome"];
-    $tp_user = "pizzaiolo";
+    $tipo_usuarios = "pizzaiolo";
     $username = $_POST["username"];
     $cpf = $_POST["cpf"];
     $email = $_POST["email"];
@@ -30,7 +30,7 @@
     $rua = $_POST["rua"];
 
 
-    $sql = "SELECT * FROM user_endereco_user WHERE cpf = '$cpf'";
+    $sql = "SELECT * FROM usuarios WHERE cpf = '$cpf'";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
@@ -39,7 +39,7 @@
         echo '<script>setTimeout(function() { history.back(); }, 2000);</script>'; // Atraso de 2 segundos 
     } else {
         // O insumo não existe, inserir no banco de dados 
-        $sql_insert = "INSERT INTO user_endereco_user(nome, tp_user, username, cpf, email, senha, dt_nasc, num_telefone, estado, cep, cidade, rua) VALUES('$nome','$tp_user','$username','$cpf','$email','$senha','$dt_nasc','$num_telefone,'$estado', '$cep','$cidade','$rua')";
+        $sql_insert = "INSERT INTO usuarios(nome, tipo_usuario, username, cpf, email, senha, data_nascimento, celular, estado, cep, cidade, rua) VALUES('$nome','$tipo_usuario','$username','$cpf','$email','$senha','$data_nascimento','$num_telefone,'$estado', '$cep','$cidade','$rua')";
         
         if ($conn->query($sql_insert) === TRUE) {
             echo "<h1>Pizzaiolo cadastrado.</h1>";

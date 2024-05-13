@@ -1,9 +1,9 @@
 <?php
     include("connection.php");
     
-    $id = $_GET["id_user"];
+    $id = $_GET["id"];
 
-    $sql = "DELETE FROM user_endereco_user WHERE id_user = $id";
+    $sql = "DELETE FROM usuarios WHERE id = $id";
     if ($conn->query($sql) === TRUE){
         header("location: listagem.php");
     }

@@ -5,7 +5,7 @@ include("connection.php");
 include("../geral/menu.php");
 
 // Consulta SQL para selecionar os ingredientes
-$sql =  "SELECT id_user, nome, tp_user, username, dt_nasc, cpf, email, senha, dt_nasc, num_telefone, estado, cep, cidade, rua FROM user_endereco_user WHERE tp_user = 'pizzaiolo'";
+$sql =  "SELECT id, nome, tipo_usuario, username, data_nascimento, cpf, email, senha, celular, estado, cep, cidade, rua FROM usuarios WHERE tipo_usuarios = 'pizzaiolo'";
 $result = $conn->query($sql);
 ?>
 
@@ -54,26 +54,26 @@ $result = $conn->query($sql);
             while ($row = $result->fetch_assoc()) {
         ?>  
                 <tr>
-                    <td class="id_css" onclick="window.location='lista.php?id_user=<?php echo $row["id_user"]?>';" style = "cursor: pointer;">
-                        <?php echo $row["id_user"] ?>
+                    <td class="id_css" onclick="window.location='lista.php?id_user=<?php echo $row["id"]?>';" style = "cursor: pointer;">
+                        <?php echo $row["id"] ?>
                     </td>
                     <td><?php echo $row["nome"] ?></td>
 
-                    <td><?php echo $row["tp_user"]?></td>
+                    <td><?php echo $row["tipo_usuario"]?></td>
 
                     <td><?php echo $row["username"] ?></td>
 
                     <td><?php echo $row["cpf"] ?></td>
 
-                    <td><?php echo $row["num_telefone"] ?></td>
+                    <td><?php echo $row["celular"] ?></td>
 
-                    <td><?php echo date("d/m/Y", strtotime($row["dt_nasc"])) ?></td>
+                    <td><?php echo date("d/m/Y", strtotime($row["data_nascimento"])) ?></td>
 
-                    <td class="edit_css"  style="cursor: pointer;" onclick="window.location='edit.php?id=<?php echo $row['id_user']?>'">
-                        <a class="link" href="edit.php?id=<?php echo $row["id_user"]?>">Editar</a>
+                    <td class="edit_css"  style="cursor: pointer;" onclick="window.location='edit.php?id=<?php echo $row['id']?>'">
+                        <a class="link" href="edit.php?id=<?php echo $row["id"]?>">Editar</a>
                     </td>
-                    <td class="delet_css" style="cursor: pointer;" onclick="window.location='delete.php?id=<?php echo $row['id_user']?>'">
-                        <a class="link" href="delete.php?id=<?php echo $row['id_user']?>">Excluir</a>
+                    <td class="delet_css" style="cursor: pointer;" onclick="window.location='delete.php?id=<?php echo $row['id']?>'">
+                        <a class="link" href="delete.php?id=<?php echo $row['id']?>">Excluir</a>
                     </td>
                 </tr>
         <?php

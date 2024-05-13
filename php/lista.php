@@ -20,7 +20,7 @@
 
 
         // Consulta SQL para selecionar os detalhes do pizzaiolo com o ID fornecido
-        $sql = "SELECT id_user, nome, tp_user, username, dt_nasc, cpf, email, senha, dt_nasc, num_telefone, estado, cep, cidade, rua FROM user_endereco_user";
+        $sql = "SELECT id, nome, tipo_usuario, username, data_nascimento, cpf, email, senha, celular, estado, cep, cidade, rua FROM usuarios";
 
         // Executar a consulta SQL
         $result = $conn->query($sql);
@@ -34,11 +34,11 @@
             // Exibir os detalhes do ingrediente em uma tabela
             echo "<table>";
             while ($row = $result->fetch_assoc()) {
-                echo "<tr><th>ID</th><td>{$row['id_user']}</td></tr>";
+                echo "<tr><th>ID</th><td>{$row['id']}</td></tr>";
 
                 echo "<tr><th>Nome</th><td>{$row['nome']}</td></tr>";
 
-                echo "<tr><th>Tipo de usuario</th><td>{$row['tp_user']}</td></tr>";
+                echo "<tr><th>Tipo de usuario</th><td>{$row['tipo_usuario']}</td></tr>";
 
                 echo "<tr><th>Username</th><td>{$row['username']}</td></tr>";
 
@@ -48,9 +48,9 @@
 
                 echo "<tr><th>Senha</th><td>{$row['senha']}</td></tr>";
 
-                echo "<tr><th>Data de Nascimento</th><td>" . date("d/m/Y", strtotime($row["dt_nasc"])) . "</td></tr>";
+                echo "<tr><th>Data de Nascimento</th><td>" . date("d/m/Y", strtotime($row["data_nascimento"])) . "</td></tr>";
 
-                echo "<tr><th>Numero de telefone</th><td>{$row['num_telefone']}</td></tr>";
+                echo "<tr><th>Numero de telefone</th><td>{$row['celular']}</td></tr>";
 
                 echo "<tr><th>Estado</th><td>{$row['estado']}</td></tr>";
 
@@ -62,7 +62,7 @@
             }
             echo "</table>";
         } else {
-            echo "Nenhum ingrediente encontrado com o ID fornecido.";
+            echo "Nenhum pizzaiolo encontrado com o ID fornecido.";
         }
     
 
