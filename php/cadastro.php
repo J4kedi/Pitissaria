@@ -17,7 +17,7 @@
 
     ?>
 
-    <a href="../HTML/index.php">Voltar para pagina principal</a>
+    <a href="../php/listagem.php" class="btn btn-primary">Voltar</a>
     <main>
         <div class="container">
             <h1>Cadastro de pizzaiolo</h1>
