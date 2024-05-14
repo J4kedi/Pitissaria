@@ -25,6 +25,12 @@
     $idEndereco = $result['id'];
     $endereco = "$rua, $numRes, $cep, $cidade";
 
+    function exibirEnderecos($result) {
+        if($result->num_rows > 1) {
+    
+        }
+    }
+
     // Consulta para o endereco do usuario, fazer verificacao de quantos enderecos ele tem
     // $result->num_rows > 0, para verificar o numero de linhas retornadsa, para saber quantos enderecos tem
 ?>
