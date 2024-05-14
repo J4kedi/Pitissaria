@@ -13,13 +13,13 @@
 
     
     $id = $_POST["id"];
-    $nome = $_POST["nome_ingrediente"];
+    $nome = $_POST["nome"];
     $validade = $_POST["data_validade"];
-    $data_compra = $_POST["data_compra"]
-    $quantidade = $_POST["quantidade_ingrediente"];
-    $preco_compra = $_POST["preco_compra"];
+    $data_compra = $_POST["data_entrada"]
+    $quantidade = $_POST["quantidade"];
+    $preco = $_POST["preco"];
 
-    $sql = "UPDATE ingredientes SET nome_ingrediente = '$nome', dt_validade = '$validade', data_compra = '$data_compra', quantidade_ingrediente = '$quantidade', preco_compra = '$preco_compra' WHERE id = $id";
+    $sql = "UPDATE ingredientes SET nome_ingrediente = '$nome', data_validade = '$validade', data_entrada = '$data_entrada', quantidade = '$quantidade', preco = '$preco' WHERE id = $id";
     $result =  $conn->query($sql);
 
     if ($result === TRUE) {
