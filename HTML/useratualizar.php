@@ -11,6 +11,7 @@
 <?php
     include("../php/connection.php");
 
+    
     // Supondo que você tenha uma sessão iniciada e armazenando o ID do usuário nela
     // Vou presumir que você está usando a superglobal $_SESSION para armazenar o ID do usuário logado
     session_start();
