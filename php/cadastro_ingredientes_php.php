@@ -1,47 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="../Style/cad_ingredientes.css">
-<title>Vericação de Insumos</title>
-<link rel="shortcut icon" href="../imagens/icone/pizza.ico" type="image/x-icon">
-</head>
-<body>
 <?php
-include("connection.php");   
-include("validacao_acesso_php.php");
-verificarAcessoGerenteEPizzaiolo();
+// Incluir arquivo de conexão com o banco de dados
+include("connection.php");
 
-$nome = $_POST["nome_ingrediente"];
-$validade = $_POST["dt_validade"];
-$quantidade = $_POST["quantidade_ingrediente"];
-$preco_compra = $_POST["preco_compra"];
+// Verificar se o formulário foi submetido
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Recuperar os dados do formulário
+    $nome = $_POST["nome"];
+    $validade = $_POST["data_validade"];
+    $data_entrada = $_POST["data_entrada"];
+    $quantidade = $_POST["quantidade"];
+    $preco_compra = $_POST["preco"];
 
-$sql = "SELECT * FROM ingrediente WHERE nome_ingrediente = '$nome'";
-$result = $conn->query($sql);
+    // Preparar e executar a consulta SQL para inserir os dados
+    $sql = "INSERT INTO ingredientes (nome, data_validade, data_entrada, quantidade, preco) VALUES ('$nome', '$quantidade','$validade','$data_entrada','$preco_compra')";
+    $stmt = $conn->prepare($sql);
 
-if ($result->num_rows > 0) {
-    // O insumo já existe, exibir uma mensagem de erro em outra pagina
-    echo '<h1>Insumo já cadastrado. Por favor cadastre outro insumo.</h1>'; //aqui ele mostra a pagina com o texto em H1
-    echo '<script>setTimeout(function() { history.back(); }, 1000);</script>'; // Atraso de 2 segundos 
-} else {
-    // O insumo não existe, inserir no banco de dados 
-    $sql_insert = "INSERT INTO ingredientes(nome, data_validade, quantidade, preco) VALUES('$nome', '$validade','$quantidade','$preco_compra')";
-    
-    if ($conn->query($sql_insert) === TRUE) {
-        echo "<h1>Insumo cadastrado com sucesso.</h1>";
-        echo '<script>setTimeout(function() { window.location.href = "lista_ingredientes.php"; }, 2000);</script>'; // Redireciona para lista_ingredientes.php após 5 segundos 
+    if ($stmt->execute()) {
+        // Redirecionar para a página de sucesso após o cadastro
+        header("Location: lista_ingredientes.php");
+        exit();
     } else {
+        // Exibir mensagem de erro caso a inserção falhe
         echo "Erro ao cadastrar o ingrediente: " . $conn->error;
     }
+
+    // Fechar a conexão
+    $stmt->close();
+    $conn->close();
+} else {
+    // Se o método de requisição não for POST, redirecionar para o formulário de cadastro
+    header("Location: cadastro_ingredientes.php");
+    exit();
 }
-
-// Feche a conexão após o uso, se necessário
-$conn->close();
 ?>
-
-
-</body>
-</html>
-

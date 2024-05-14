@@ -11,7 +11,8 @@ CREATE TABLE IF NOT EXISTS ingredientes (
     nome VARCHAR(50) NOT NULL,
     preco DECIMAL(8,2) NOT NULL,
     data_entrada DATE NOT NULL,
-    data_validade DATE NOT NULL
+    data_validade DATE NOT NULL,
+    quantidade INT
 );
 
 -- Tabela de usuários

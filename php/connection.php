@@ -2,7 +2,7 @@
   $username = "root";
   $password = "";
   $database = "pitissariadb"; 
-  $server = "localhost";
+  $server = "localhost:3307";
 
   $conn = new mysqli($server, $username, $password, $database);
   
