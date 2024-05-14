@@ -17,12 +17,12 @@
     include("validacao_acesso_php.php");
 
     $nome = $_POST["nome"];
-    $tipo_usuarios = "pizzaiolo";
+    $tipo_usuario = "pizzaiolo";
     $username = $_POST["username"];
     $cpf = $_POST["cpf"];
     $email = $_POST["email"];
     $senha = $_POST["senha"];
-    $dt_nasc = $_POST["dt_nasc"];
+    $data_nascimento = $_POST["data_nascimento"];
     $celular = $_POST["celular"];
     $estado = $_POST["estado"];
     $cep = $_POST["cep"];
@@ -39,10 +39,10 @@
         echo '<script>setTimeout(function() { history.back(); }, 2000);</script>'; // Atraso de 2 segundos 
     } else {
         // O insumo não existe, inserir no banco de dados 
-        $sql_insert = "INSERT INTO usuarios(nome, tipo_usuario, username, cpf, email, senha, data_nascimento, celular) VALUES('$nome','$tipo_usuario','$username','$cpf','$email','$senha','$data_nascimento','$celular)";
+        $sql_insert = "INSERT INTO usuarios(nome, tipo_usuario, username, cpf, email, senha, data_nascimento, celular) VALUES('$nome', '$tipo_usuario', '$username','$cpf', '$email', '$senha','$data_nascimento','$celular)";
         $sql_insert_endereco = "INSERT INTO usuario_endereco(usuario_id, endereco_id) VALUES ('$id','$id')";
         
-        if ($conn->query($sql_insert) === TRUE) {
+        if ($conn->query($sql_insert) === TRUE || $conn -> query($sql_insert_endereco === TRUE)) {
             echo "<h1>Pizzaiolo cadastrado.</h1>";
             echo '<script>setTimeout(function() { window.location.href = "lista_ingredientes.php"; }, 5000);</script>'; // Redireciona para lista_ingredientes.php após 5 segundos 
         } else {
