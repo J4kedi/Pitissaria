@@ -30,7 +30,7 @@ if ($result->num_rows > 0) {
     echo '<script>setTimeout(function() { history.back(); }, 2000);</script>'; // Atraso de 10 ms 
 } else {
     // O usuario não existe, inserir no banco de dados 
-    $sql_insert = "INSERT INTO user_endereco_user(nome, senha, username, cpf, email, dt_nasc, rua, cep, estado, cidade, num_telefone) VALUES('$nome', '$senha','$username','$cpf','$email', '$dt_nasc', '$rua', '$cep', '$estado', '$cidade', '$num_telefone')";
+    $sql_insert = "INSERT INTO usuarios(nome, senha, username, cpf, email, data_nascimento, rua, cep, estado, cidade, celular) VALUES('$nome', '$senha','$username','$cpf','$email', '$dt_nasc', '$rua', '$cep', '$estado', '$cidade', '$num_telefone')";
     
     if ($conn->query($sql_insert) === TRUE) {
         echo "<h1>Usuario cadastrado com sucesso.</h1>";

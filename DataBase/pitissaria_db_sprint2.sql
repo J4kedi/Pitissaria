@@ -98,7 +98,7 @@ INSERT INTO ingredientes (nome, preco, data_entrada, data_validade) VALUES
     ('Cebola', 1.00, '2022-04-01', '2022-10-01'),
     ('Azeitonas', 1.50, '2022-04-01', '2022-10-01');
 
--- Inserção de dados de exemplo
+-- Inserir alguns registros na tabela de usuários
 INSERT INTO usuarios (nome, email, senha, cpf, tipo_usuario, data_nascimento, celular, username)
 VALUES ('João', 'joao@email.com', md5('123'), '123.456.789-01', 'cliente', '1990-05-20', '999999999', 'joao123'),
        ('Maria', 'maria@email.com', md5('123'), '987.654.321-09', 'cliente', '1988-08-15', '888888888', 'maria456'),
@@ -107,7 +107,7 @@ VALUES ('João', 'joao@email.com', md5('123'), '123.456.789-01', 'cliente', '199
        ('Gerente1', 'gerente1@email.com', md5('123'), '333.333.333-33', 'gerente', '1980-07-10', '333333333', 'gerente1'),
        ('Gerente2', 'gerente2@email.com', md5('123'), '444.444.444-44', 'gerente', '1975-11-20', '444444444', 'gerente2');
 
--- Inserção de dados de exemplo
+-- Inserir alguns registros na tabela de endereços
 INSERT INTO enderecos (cep, rua, num_res, cidade, estado)
 VALUES ('12345-678', 'Rua A', '123', 'Cidade A', 'Paraná'),
        ('98765-432', 'Rua B', '456', 'Cidade B', 'Paraná');
@@ -115,6 +115,7 @@ VALUES ('12345-678', 'Rua A', '123', 'Cidade A', 'Paraná'),
 -- Associar usuários aos endereços na tabela intermediária
 INSERT INTO usuario_endereco (usuario_id, endereco_id)
 VALUES (1, 1), -- João com endereço da Rua A
+	   (1, 2),
        (2, 2), -- Maria com endereço da Rua B
        (3, 2),
        (4, 2),
@@ -124,3 +125,9 @@ VALUES (1, 1), -- João com endereço da Rua A
 select * from usuarios;
 select * from enderecos;
 select * from usuario_endereco;
+
+SELECT e.cep, e.rua, e.num_res, e.cidade, e.estado
+FROM usuarios u
+INNER JOIN usuario_endereco ue ON u.id = ue.usuario_id
+INNER JOIN enderecos e ON ue.endereco_id = e.id
+WHERE u.id = 1;

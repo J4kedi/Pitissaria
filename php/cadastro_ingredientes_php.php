@@ -27,7 +27,7 @@ if ($result->num_rows > 0) {
     echo '<script>setTimeout(function() { history.back(); }, 1000);</script>'; // Atraso de 2 segundos 
 } else {
     // O insumo não existe, inserir no banco de dados 
-    $sql_insert = "INSERT INTO ingrediente(nome_ingrediente, dt_validade, quantidade_ingrediente, preco_compra) VALUES('$nome', '$validade','$quantidade','$preco_compra')";
+    $sql_insert = "INSERT INTO ingredientes(nome, data_validade, quantidade, preco) VALUES('$nome', '$validade','$quantidade','$preco_compra')";
     
     if ($conn->query($sql_insert) === TRUE) {
         echo "<h1>Insumo cadastrado com sucesso.</h1>";
