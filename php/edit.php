@@ -17,10 +17,13 @@
     verificar_acesso_pizzaiolo();
     verificarAcessoGerenteEPizzaiolo();
     
-    $sql = "SELECT id, nome, tipo_usuario, username, data_nascimento, cpf, email, senha, celular, estado, cep, cidade, rua FROM usuarios";
+    $sql =  "SELECT u.id, u.nome, u.tipo_usuario, u.email, u.cpf, u.data_nascimento, u.celular, u.username, e.cep, e.rua, e.num_res, e.cidade, e.estado FROM usuarios u INNER JOIN usuario_endereco ue ON u.id = ue.usuario_id INNER JOIN enderecos e ON ue.endereco_id = e.id WHERE tipo_usuario = 'pizzaiolo'";
+
+
     $result = $conn->query($sql);
 
-    if ($result->num_rows>0){
+
+    if ($result->num_rows>0 || $result_endereco -> num_rows > 0){
         while($row = $result->fetch_assoc()){
 
             $id = $row["id"];
@@ -34,9 +37,7 @@
             $cpf = $row["cpf"];
 
             $email = $row["email"];
-
-            $senha = $row["senha"];
-
+            
             $data_nascimento = $row["data_nascimento"];
 
             $celular = $row["celular"];

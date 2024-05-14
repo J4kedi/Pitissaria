@@ -127,8 +127,8 @@ select * from usuarios;
 select * from enderecos;
 select * from usuario_endereco;
 
-SELECT e.cep, e.rua, e.num_res, e.cidade, e.estado
-FROM usuarios u
-INNER JOIN usuario_endereco ue ON u.id = ue.usuario_id
-INNER JOIN enderecos e ON ue.endereco_id = e.id
-WHERE u.id = 1;
+--SELECT e.cep, e.rua, e.num_res, e.cidade, e.estado
+--FROM usuarios u
+--INNER JOIN usuario_endereco ue ON u.id = ue.usuario_id
+--INNER JOIN enderecos e ON ue.endereco_id = e.id
+--WHERE u.id = 1;
