@@ -18,13 +18,14 @@
     verificarAcessoGerenteEPizzaiolo();
     
     $id = $_GET["id"];
-    $sql =  "SELECT  nome_ingrediente, dt_validade, quantidade_ingrediente, preco_compra FROM ingrediente WHERE id_ingrediente = $id";
+    $sql =  "SELECT  nome, data_compra, data_validade, quantidade, preco FROM ingredientes WHERE id = $id";
     $result = $conn->query($sql);
 
     if ($result->num_rows>0){
         while($row = $result->fetch_assoc()){
             $nome_ingrediente = $row["nome_ingrediente"];
-            $dt_validade = $row["dt_validade"];
+            $data_compra = $row["data_compra"]
+            $data_validade = $row["data_validade"];
             $quantidade_ingrediente = $row["quantidade_ingrediente"];
             $preco_compra = $row["preco_compra"];
         }
