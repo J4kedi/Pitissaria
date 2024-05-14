@@ -5,7 +5,7 @@ include("connection.php");
 include("../geral/menu.php");
 
 // Consulta SQL para selecionar os ingredientes
-$sql =  "SELECT id, nome, tipo_usuario, username, data_nascimento, cpf, email, senha, celular, estado, cep, cidade, rua FROM usuarios WHERE tipo_usuarios = 'pizzaiolo'";
+$sql =  "SELECT u.nome, u.email, u.cpf, u.data_nascimento, u.celular, u.username, e.cep, e.rua, e.num_res, e.cidade, e.estado FROM usuarios u INNER JOIN usuario_endereco ue ON u.id = ue.usuario_id INNER JOIN enderecos e ON ue.endereco_id = e.id WHERE tipo_usuarios = 'pizzaiolo'";
 $result = $conn->query($sql);
 ?>
 

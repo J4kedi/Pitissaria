@@ -23,15 +23,15 @@
     $email = $_POST["email"];
     $senha = $_POST["senha"];
     $dt_nasc = $_POST["dt_nasc"];
-    $num_telefone = $_POST["num_telefone"];
+    $celular = $_POST["celular"];
     $estado = $_POST["estado"];
     $cep = $_POST["cep"];
     $cidade = $_POST["cidade"];
     $rua = $_POST["rua"];
 
 
-    $sql = "SELECT * FROM usuarios WHERE cpf = '$cpf'";
-    $result = $conn->query($sql);
+    $sql_select = "SELECT * FROM usuarios WHERE cpf = '$cpf'";
+    $result = $conn->query($sql_select);
 
     if ($result->num_rows > 0) {
         // O Pizzaiolo já existe, exibir uma mensagem de erro em outra pagina
@@ -39,7 +39,8 @@
         echo '<script>setTimeout(function() { history.back(); }, 2000);</script>'; // Atraso de 2 segundos 
     } else {
         // O insumo não existe, inserir no banco de dados 
-        $sql_insert = "INSERT INTO usuarios(nome, tipo_usuario, username, cpf, email, senha, data_nascimento, celular, estado, cep, cidade, rua) VALUES('$nome','$tipo_usuario','$username','$cpf','$email','$senha','$data_nascimento','$num_telefone,'$estado', '$cep','$cidade','$rua')";
+        $sql_insert = "INSERT INTO usuarios(nome, tipo_usuario, username, cpf, email, senha, data_nascimento, celular) VALUES('$nome','$tipo_usuario','$username','$cpf','$email','$senha','$data_nascimento','$celular)";
+        $sql_insert_endereco = "INSERT INTO usuario_endereco(usuario_id, endereco_id) VALUES ('$id','$id')";
         
         if ($conn->query($sql_insert) === TRUE) {
             echo "<h1>Pizzaiolo cadastrado.</h1>";

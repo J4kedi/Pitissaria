@@ -44,7 +44,8 @@
 
     $rua = $POST["rua"];
 
-    $sql = "UPDATE usuarios SET nome = '$nome', username = '$username', cpf = '$cpf', email = '$email', senha = '$senha', data_nascimento = '$data_nascimento', celular = '$celular', estado = '$estado',cep = '$cep', cidade = '$cidade', rua = '$rua' WHERE id = $id";
+    $sql = "UPDATE usuarios SET nome = '$nome', username = '$username', cpf = '$cpf', email = '$email', senha = '$senha', data_nascimento = '$data_nascimento', celular = '$celular' WHERE id = $id";
+    $sql_endereco = "UPDATE usuario_endereco SET estado = '$estado',cep = '$cep', cidade = '$cidade', rua = '$rua' WHERE $id = 'id'"
     $result =  $conn->query($sql);
 
     if ($result === TRUE) {
