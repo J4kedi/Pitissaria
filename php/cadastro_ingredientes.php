@@ -21,16 +21,19 @@
             <h1>Cadastro de Ingredientes</h1>
             <form action="cadastro_ingredientes_php.php" id="form1" method="POST">
                 <label for="nome_ingrediente">Nome do Ingrediente:</label><br>
-                <input type="text" id="nome_ingrediente" name="nome_ingrediente" required><br><br>
+                <input type="text" id="nome" name="nome" required><br><br>
 
                 <label for="dt_validade">Data de Validade:</label><br>
-                <input type="date" id="dt_validade" name="dt_validade" required><br><br>
+                <input type="date" id="data_validade" name="data_validade" required><br><br>
+
+                <label for="dt_validade">Data de Entrada:</label><br>
+                <input type="date" id="data_entrada" name="data_entrada" required><br><br>
 
                 <label for="quantidade_ingrediente">Quantidade:</label><br>
-                <input type="text" id="quantidade_ingrediente" name="quantidade_ingrediente" required oninput="validarNumero(this)" placeholder="Quantidade em KG"><br><br>
+                <input type="text" id="quantidade" name="quantidade" required oninput="validarNumero(this)" placeholder="Quantidade em KG"><br><br>
 
                 <label for="preco_compra">Preço da compra:</label><br>
-                <input type="text" id="preco_compra" name="preco_compra" required oninput="validarNumero(this)"><br><br>
+                <input type="text" id="preco" name="preco" required oninput="validarNumero(this)"><br><br>
 
                 <button type="submit" id="submit">Enviar</button>
             </form>
@@ -38,6 +41,5 @@
     </main>
 
     <?php include("../geral/footer.php")?>
-    <script src="../../Js/Js_ingredientes/cadastro_ingredientes.js"></script>
 </body>
 </html>
