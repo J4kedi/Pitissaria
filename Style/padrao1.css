@@ -1,0 +1,313 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+    --cor-fundo: #5b2c3c;
+    --cor-header: #341923fa;
+    --cor-darker: #251219fa;
+    --cor-input-form: #a7818f;
+    --cor-hover: rgb(235, 208, 227);
+    --cor-desativado: rgb(139, 115, 132);
+    --cor-texto: rgb(255, 231, 200);
+    --cor-texto-header: #dc9d55;
+    --cor-footer: rgba(33, 37, 41, 1);
+    --cor-carregamento: #ffffff;
+    --fonte-texto: "Roboto", sans-serif;
+    --fonte-texto-form: "Open Sans", sans-serif;
+}
+
+body,
+html {
+    height: 100vh;
+    background: var(--cor-fundo);
+    font-family: var(--fonte-texto);
+    font-size: 16px;
+}
+
+/* CSS HEADER */
+header {
+    height: 60%;
+    background: url(../Assets/img-header-edit.jpg) center;
+    background-size: cover;
+    z-index: 2;
+}
+
+
+.menu-image {
+    height: calc(100% - 20%);
+    position: relative;
+    overflow: hidden;
+    box-shadow: rgba(172, 166, 149, 0.2) 0px 8px 24px;
+}
+
+.menu-image .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+.menu-image h1,
+.menu-image h2 {
+    margin: 0;
+}
+
+.menu-image h2 {
+    text-transform: uppercase;
+    margin-top: -.5em;
+}
+
+.menu-image hgroup {
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30%;
+    color: var(--cor-texto-header);
+    border: 5px solid var(--cor-texto-header);
+    padding: .5em 3em;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.menu-image .overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: var(--cor-header) center no-repeat;
+    background-size: cover;
+    z-index: 1;
+    opacity: 0;
+    filter: blur(4px);
+}
+
+.logo {
+    margin-right:20px
+}
+
+.menu {
+    background: var(--cor-header);
+    height: 12vh;
+    display: flex;
+    font-size: 1.6em;
+    font-weight: bolder;
+    position: sticky;
+    top: 0;
+    z-index: 3;
+}
+
+.nav-item {
+    display: flex;
+    margin: 0px 5px 0px 5px;
+
+    padding: 5px;
+
+    justify-content: center;
+    align-items: center;
+
+    text-decoration: 0;
+    color: var(--cor-texto-header);
+}
+
+#img-logo {
+    background: url('../Assets/logo/logo-inicio.png') center no-repeat;
+    background-size: contain;
+    width: 180px;
+}
+
+.logar {
+    height: 100%;
+    display: flex;
+    margin-left: auto;
+    align-items: center;
+    color: var(--cor-texto-header);
+}
+
+.logar .nav-item {
+    height: 100%;
+    padding: 0px 8px 0px 8px;
+}
+
+.barra:hover {
+    background: var(--cor-header);
+    color: var(--cor-texto-header);
+}
+
+#img-header {
+    width: 100%;
+}
+
+.nav-item:hover {
+    background-color: var(--cor-fundo);
+    color: var(--cor-carregamento);
+}
+
+.active:hover {
+    color: var(--cor-carregamento);
+    background: var(--cor-header);
+}
+
+/* Container */
+main.container {
+    height: 500px;
+    width: 100%;
+    text-align: center;
+    color: var(--cor-texto);
+}
+
+/* CSS FOOTER */
+
+footer {
+    background-color: var(--cor-footer);
+    color: var(--cor-texto-header);
+
+    width: 100%;
+    height: 30.5vh;
+
+    position: relative;
+    bottom: 0;
+}
+
+footer h1 {
+    text-align: center;
+    font-weight: bolder;
+    font-size: 1.8em;
+    padding: 10px;
+}
+
+footer .container {
+    display: flex;
+    justify-content: center;
+}
+
+footer .card {
+    height: 70%;
+    width: 30%;
+    padding: 10px;
+
+    display: flex;
+}
+
+.card i {
+    font-size: 5em;
+}
+
+.card h2 {
+    font-weight: bolder;
+    font-size: 0.8em;
+    padding: 10px;
+}
+
+.card div {
+    padding: 10px;
+}
+
+#copyright {
+    height: 20px;
+
+    font-size: 1.1em;
+
+    background-color: black;
+    color: white;
+
+    text-align: center;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+/* Media Queries */
+
+@media screen and (min-height: 900px) {
+    .menu-image {
+        height: calc(100% - 13.5%);
+    }
+
+    .menu {
+        height: 8vh;
+    }
+}
+
+@media screen and (max-width: 890px) {
+    .menu {
+        font-size: 1.2em;
+    }
+
+    footer {
+        height: 30vh;
+    }
+
+    footer h1 {
+        font-size: 1.2em;
+    }
+
+    .card {
+        width: 20%;
+    }
+
+    .card p {
+        font-size: 0.8em;
+    }
+
+    footer .card i {
+        font-size: 2em;
+    }
+
+    #copyright {
+        font-size: 0.8em;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    header {
+        height: 40%;
+    }
+
+    .menu {
+        font-size: 0.8em;
+    }
+
+    #logo-inicio {
+        width: 140px;
+    }
+
+    footer {
+        height: 20vh;
+    }
+
+    footer .container {
+        height: 60%;
+    }
+
+    .card div {
+        padding: 5px;
+    }
+
+    .card h2 {
+        font-size: 0.7em;
+        padding: 0;
+    }
+
+    .card p {
+        visibility: hidden;
+        position: absolute;
+        left: 0;
+    }
+
+    footer .card i {
+        font-size: 1.5em;
+    }
+}
