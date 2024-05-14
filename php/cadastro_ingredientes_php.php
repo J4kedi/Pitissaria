@@ -6,13 +6,13 @@ include("connection.php");
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Recuperar os dados do formulário
     $nome = $_POST["nome"];
-    $data_validade = $_POST["data_validade"];
+    $validade = $_POST["data_validade"];
     $data_entrada = $_POST["data_entrada"];
     $quantidade = $_POST["quantidade"];
     $preco_compra = $_POST["preco"];
 
     // Preparar e executar a consulta SQL para inserir os dados
-    $sql = "INSERT INTO ingredientes (nome, data_validade, data_entrada, quantidade, preco) VALUES ('$nome', '$data_validade','$data_entrada','$quantidade','$preco_compra')";
+    $sql = "INSERT INTO ingredientes (nome, data_validade, data_entrada, quantidade, preco) VALUES ('$nome', '$validade','$data_entrada','$quantidade','$preco_compra')";
     $stmt = $conn->prepare($sql);
 
     if ($stmt->execute()) {
