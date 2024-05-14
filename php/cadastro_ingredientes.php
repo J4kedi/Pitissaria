@@ -13,8 +13,6 @@
 <body>
     <?php include("../geral/menu.php");?>
     <?php 
-        include("validacao_acesso_php.php");
-        verificarAcessoGerenteEPizzaiolo();
     ?>
     <main>
         <div class="containera">

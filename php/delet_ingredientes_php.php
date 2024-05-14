@@ -1,8 +1,7 @@
 <?php
     include("connection.php");
-    include("validacao_acesso_php.php");
-    verificarAcessoGerenteEPizzaiolo();
-
+    
+    
     $id = $_GET["id"];
 
     $sql = "DELETE FROM ingredientes WHERE id = $id";

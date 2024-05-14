@@ -12,8 +12,8 @@
     //definir a conexão com o banco de dados
     require_once "connection.php";
     include("../geral/menu.php");
-    include("validacao_acesso_php.php");
-    verificarAcessoGerenteEPizzaiolo();
+
+
 
     
     // Verificar se o id_ingrediente foi passado na URL
@@ -21,7 +21,7 @@
         $id = $_GET["id_ingrediente"];
 
         // Consulta SQL para selecionar os detalhes do ingrediente com o ID fornecido
-        $sql = "SELECT id_ingrediente, nome_ingrediente, dt_validade, quantidade_ingrediente, preco_compra FROM ingrediente WHERE id_ingrediente = $id";
+        $sql = "SELECT id, nome_ingrediente, dt_validade, quantidade_ingrediente, preco_compra FROM ingrediente WHERE id_ingrediente = $id";
 
         // Executar a consulta SQL
         $result = $conn->query($sql);

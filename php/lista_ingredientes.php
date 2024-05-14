@@ -3,8 +3,6 @@
 // Incluir o arquivo de conexão com o banco de dados
 include("connection.php");
 include("../geral/menu.php");
-include("validacao_acesso_php.php");
-verificarAcessoGerenteEPizzaiolo();
 
 
 // Consulta SQL para selecionar os ingredientes
@@ -58,7 +56,7 @@ $result = $conn->query($sql);
                     <td><?php echo $row["nome"] ?></td>
                     <td><?php echo date("d/m/Y", strtotime($row["data_entrada"])) ?></td>
                     <td><?php echo $row["quantidade"] ?></td>
-                    <td class="edit_css"  style="cursor: pointer;" onclick="window.location='edit_ingredientes.php?id=<?php echo $row['id']?>'">
+                    <td class="edit_css" style="cursor: pointer;" onclick="window.location='edit_ingredientes.php?id=<?php echo $row['id']?>'">
                         <a class="link" href="edit_ingredientes.php?id=<?php echo $row["id"]?>">Editar</a>
                     </td>
                     <!-- Nessa parte do codigo ele está verificando se o usuairo é o gerente  -->
