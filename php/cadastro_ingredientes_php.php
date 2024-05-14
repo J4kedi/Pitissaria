@@ -6,7 +6,7 @@ include("connection.php");
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Recuperar os dados do formulário
     $nome = $_POST["nome"];
-    $validade = $_POST["data_validade"];
+    $data_validade = $_POST["data_validade"];
     $data_entrada = $_POST["data_entrada"];
     $quantidade = $_POST["quantidade"];
     $preco_compra = $_POST["preco"];
