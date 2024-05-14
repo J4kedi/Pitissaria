@@ -54,7 +54,7 @@ $result = $conn->query($sql);
             while ($row = $result->fetch_assoc()) {
         ?>  
                 <tr>
-                    <td class="id_css" onclick="window.location='lista.php?id_user=<?php echo $row["id"]?>';" style = "cursor: pointer;">
+                    <td class="id_css" onclick="window.location='lista.php?id_user=<?php echo $row['id']?>';" style = "cursor: pointer;">
                         <?php echo $row["id"] ?>
                     </td>
                     <td><?php echo $row["nome"] ?></td>
