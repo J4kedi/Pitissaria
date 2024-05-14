@@ -23,7 +23,7 @@
     $email = $_POST["email"];
     $senha = $_POST["senha"];
     $data_nascimento = $_POST["data_nascimento"];
-    $celular = $_POST["celular"];
+    $celular = $_POST["celular"];   
     $estado = $_POST["estado"];
     $cep = $_POST["cep"];
     $cidade = $_POST["cidade"];
