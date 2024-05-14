@@ -21,7 +21,7 @@
         $id = $_GET["id_ingrediente"];
 
         // Consulta SQL para selecionar os detalhes do ingrediente com o ID fornecido
-        $sql = "SELECT id, nome_ingrediente, dt_validade, quantidade_ingrediente, preco_compra FROM ingrediente WHERE id_ingrediente = $id";
+        $sql = "SELECT  id, nome, data_validade, data_entrada, quantidade, preco FROM ingrediente2 WHERE id = $id";
 
         // Executar a consulta SQL
         $result = $conn->query($sql);
