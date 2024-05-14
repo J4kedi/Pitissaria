@@ -27,7 +27,7 @@
                 <input type="text" name="nome" id="nome" required>
                 <br>
                 <label for="tipo_usuario">Tipo de Usuario:</label>
-                <input type="text" name="tipo_usuario" id="tipo_usuario" default = "pizzaiolo" required>
+                <input type="text" name="tipo_usuario" id="tipo_usuario" value = "pizzaiolo" required>
                 <br>
                 <label for="username">Username:</label>
                 <input type="text" name="username" id="username" required>
