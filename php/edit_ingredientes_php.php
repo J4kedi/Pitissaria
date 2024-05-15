@@ -15,7 +15,7 @@
     $id = $_POST["id"];
     $nome = $_POST["nome"];
     $validade = $_POST["data_validade"];
-    $data_compra = $_POST["data_entrada"]
+    $data_compra = $_POST["data_entrada"];
     $quantidade = $_POST["quantidade"];
     $preco = $_POST["preco"];
 

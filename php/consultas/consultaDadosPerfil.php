@@ -15,22 +15,35 @@
     $dataNascimento = $result['data_nascimento'];
     $celular = $result['celular'];
     $username = $result['username'];
-    // Salvado as consultas, para poder mostrar na página de perfil
-    $cep = $result['cep'];
-    $rua = $result['rua'];
-    $numRes = $result['num_res'];
-    $cidade = $result['cidade'];
-    $estado = $result['estado'];
 
-    $idEndereco = $result['id'];
-    $endereco = "$rua, $numRes, $cep, $cidade";
+   // Salvando os endereços para mostrar na página de perfil
+   $enderecos = [];
+   $enderecoPrincipal = "";
+   do {
+       $idEndereco = $result['id'];
+       $cep = $result['cep'];
+       $rua = $result['rua'];
+       $numRes = $result['num_res'];
+       $cidade = $result['cidade'];
+       $estado = $result['estado'];
+       
+       $endereco = "$rua, $numRes, $cep, $cidade, $estado";
+       $enderecos[] = $endereco;
 
-    function exibirEnderecos($result) {
-        if($result->num_rows > 1) {
-    
-        }
-    }
+       // Verifica se é o endereço principal
+       if ($idEndereco == $result['id']) {
+           $enderecoPrincipal = $endereco;
+       }
+   } while ($result = $stmt->fetch(PDO::FETCH_ASSOC));
 
-    // Consulta para o endereco do usuario, fazer verificacao de quantos enderecos ele tem
-    // $result->num_rows > 0, para verificar o numero de linhas retornadsa, para saber quantos enderecos tem
+   function exibirEnderecos($enderecos, $enderecoPrincipal) {
+       if (count($enderecos) > 0) {
+            $value = 0;
+           foreach ($enderecos as $endereco) {
+               echo "<option value='$value += 1'>$endereco</op>";
+           }
+       } else {
+           echo "Nenhum endereço encontrado.";
+       }
+   }
 ?>

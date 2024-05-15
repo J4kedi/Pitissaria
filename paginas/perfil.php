@@ -62,7 +62,7 @@
 
                 <label for="endereco">Selecione seu endereco:</label>
                 <select id="endereco" name="endereco">
-                    <option value="<?php echo "$idEndereco"?>"><?php echo "$endereco"?></option>
+                    <?php exibirEnderecos($enderecos, $enderecoPrincipal);?>
                 </select>
             </div>
             <!-- Botão Enviar -->
