@@ -10,7 +10,9 @@
 <body>
 <?php
     include("connection.php");
+    include("validacao_gerente_pizzaiolo.php");
 
+    verificarAcesso();
     
     $id = $_POST["id"];
     $nome = $_POST["nome"];

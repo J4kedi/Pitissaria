@@ -4,6 +4,9 @@
 include("connection.php");
 include("../geral/menu.php");
 
+include("validacao_gerente_pizzaiolo.php");
+verificarAcesso();
+
 
 // Consulta SQL para selecionar os ingredientes
 $sql =  "SELECT id, nome, preco, data_entrada, data_validade, quantidade FROM ingredientes";

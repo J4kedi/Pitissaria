@@ -13,6 +13,8 @@
 <body>
     <?php include("../geral/menu.php");?>
     <?php 
+    include("validacao_gerente.php");
+    verificarGerente();
     ?>
     <main>
         <div class="containera">

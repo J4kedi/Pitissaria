@@ -13,6 +13,8 @@
     require_once "connection.php";
     include("../geral/menu.php");
 
+    include("validacao_gerente_pizzaiolo.php");
+    verificarAcesso();
 
 
     
