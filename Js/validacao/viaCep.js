@@ -1,21 +1,21 @@
 function limpa_formulário_cep() {
     //Limpa valores do formulário de cep.
-    document.getElementById('rua').value = ("");
-    document.getElementById('cidade').value = ("");
-    document.getElementById('estado').value = ("");
+    document.getElementsByName('rua')[0].value = ("");
+    document.getElementsByName('cidade')[0].value = ("");
+    document.getElementsByName('estado')[0].value = ("");
 }
 
 function meu_callback(conteudo) {
     if (!("erro" in conteudo)) {
         //Atualiza os campos com os valores.
-        document.getElementById('rua').value = (conteudo.logradouro);
-        document.getElementById('cidade').value = (conteudo.localidade);
-        document.getElementById('estado').value = (conteudo.uf);
+        document.getElementsByName('rua')[0].value = (conteudo.logradouro);
+        document.getElementsByName('cidade')[0].value = (conteudo.localidade);
+        document.getElementsByName('estado')[0].value = (conteudo.uf);
     } else {
         //CEP não Encontrado.
         limpa_formulário_cep();
 
-        let input = document.getElementById('cep');
+        let input = document.getElementsByName('cep')[0];
         let divPai = input.parentNode;
 
         adicionarMensagem("Cep não encontrado!", divPai);

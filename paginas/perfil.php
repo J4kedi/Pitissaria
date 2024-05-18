@@ -62,7 +62,7 @@
 
                 <label for="endereco">Selecione seu endereco:</label>
                 <select id="endereco" name="endereco">
-                    <?php exibirEnderecos($enderecos, $enderecoPrincipal);?>
+                    <?php exibirEnderecos($enderecos);?>
                 </select>
             </div>
             <!-- Botão Enviar -->
@@ -71,5 +71,7 @@
     </div>
     
     <?php include('geral/footer.php');?>
+
+    <script src="../Js/paginas/perfil.js"></script>
 </body>
 </html>
