@@ -12,19 +12,21 @@
 </head>
 <body>
     <?php
-    //definir a conexão com o banco de dados
-        require_once "connection.php";
+        //definir a conexão com o banco de dados
         include("../geral/menu.php");
-        include("validacao_gerente")
-        include("validacao_gerente_pizzaiolo");
+        include("connection.php");
+        include("validacao_gerente.php");
         verificarGerente();
-        verificarAcesso();
     
     
-        $id = $_SESSION['id_user'];
+        $id = $_SESSION['id'];
 
         // Consulta SQL para selecionar os detalhes do pizzaiolo com o ID fornecido
-        $sql = "SELECT u.id, u.nome, u.tipo_usuario, u.email, u.cpf, u.data_nascimento, u.celular, u.username, e.cep, e.rua, e.num_res, e.cidade, e.estado FROM usuarios u INNER JOIN usuario_endereco ue ON u.id = ue.usuario_id INNER JOIN enderecos e ON ue.endereco_id = e.id WHERE u.id = $id";
+        $sql = "SELECT u.id, u.nome, u.tipo_usuario, u.email,
+                u.cpf, u.data_nascimento, u.celular, u.username,
+                e.cep, e.rua, e.num_res, e.cidade, e.estado
+                FROM usuarios u INNER JOIN usuario_endereco ue ON u.id = ue.usuario_id 
+                INNER JOIN enderecos e ON ue.endereco_id = e.id WHERE u.id = $id";
 
         // Executar a consulta SQL
         $result = $conn->query($sql);
@@ -59,6 +61,8 @@
                 echo "<tr><th>Estado</th><td>{$row['estado']}</td></tr>";
 
                 echo "<tr><th>CEP</th><td>{$row['cep']}</td></tr>";
+                
+                echo "<tr><th>Numero da residencia</th><td>{$row['num_res']}</td></tr>";
 
                 echo "<tr><th>Cidade</th><td>{$row['cidade']}</td></tr>";
 

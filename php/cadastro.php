@@ -12,12 +12,10 @@
 </head>
 <body>
     <?php
-    include("../geral/menu.php");
-    
-    include("validacao_gerente.php");
-    verificarGerente();
-
-
+        include("../geral/menu.php");
+        include("connection.php");
+        include("validacao_gerente.php");
+        verificarGerente();
     ?>
 
     <a href="../php/listagem.php" class="btn btn-primary">Voltar</a>
@@ -29,39 +27,55 @@
                 <label for="nome">Nome:</label>
                 <input type="text" name="nome" id="nome" required>
                 <br>
+
                 <label for="tipo_usuario">Tipo de Usuario:</label>
                 <input type="text" name="tipo_usuario" id="tipo_usuario" value = "pizzaiolo" required>
                 <br>
+
                 <label for="username">Username:</label>
                 <input type="text" name="username" id="username" required>
                 <br>
+
                 <label for="cpf">CPF:</label>
                 <input type="text" name="cpf" id="cpf" required>
                 <br>
+
                 <label for="email">Email:</label>
                 <input type="text" name="email" id="email" required>
                 <br>
+
                 <label for="senha">Senha:</lablefone:</label>
                 <input type="password" name="senha" id="senha" min = 8>
                 <br>
+
                 <label for="dt_nasc">Data de Nascimento:</label>
-                <input type="date" name="data_nascimento" id="data_nascimento" max = "2006-01-01" max ="1940-12-31">
+                <input type="date" name="data_nascimento" id="data_nascimento" max = "2006-01-01" min ="1940-12-31">
                 <br>
+
                 <label for="celular">Telefone:</label>
                 <input type="text" name="celular" id="celular">
                 <br>
-                <label for="estado">Estado:</label>
-                <input type="text" name="estado" id="estado">
-                <br>
+
                 <label for="cep">CEP:</label>
                 <input type="text" name="cep" id="cep">
                 <br>
-                <label for="cidade">Cidade:</label>
-                <input type="text" name="cidade" id="cidade">
-                <br>
+
                 <label for="rua">Rua:</label>
                 <input type="text" name="rua" id="rua">
                 <br>
+
+                <label for="num_res">Numero da Residencia:</label>
+                <input type="text" name="num_res" id="num_res" required>
+                <br>
+
+                <label for="cidade">Cidade:</label>
+                <input type="text" name="cidade" id="cidade">
+                <br>
+
+                <label for="estado">Estado:</label>
+                <input type="text" name="estado" id="estado">
+                <br>
+
                 <button type="submit" id ="submit">Enviar</button>
             </form>
         </div>
