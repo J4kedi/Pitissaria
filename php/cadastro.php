@@ -12,9 +12,11 @@
 </head>
 <body>
     <?php
-        include("../geral/menu.php");
-        include("validacao_gerente");
-        include("validacao_gerente_pizzaiolo");
+    include("../geral/menu.php");
+    
+    include("validacao_gerente.php");
+    verificarGerente();
+
 
     ?>
 
