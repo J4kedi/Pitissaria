@@ -12,12 +12,10 @@
 </head>
 <body>
 <?php
-    include("connection.php");
     include("../geral/menu.php");
-    include("validacao_gerente")
-    include("validacao_gerente_pizzaiolo");
+    include("connection.php");
+    include("validacao_gerente.php");
     verificarGerente();
-    verificarAcesso();
 
     
     
@@ -43,10 +41,12 @@
 
     $cidade = $POST["cidade"];
 
+    $num_res = $POST["num_res"];
+
     $rua = $POST["rua"];
 
     $sql = "UPDATE usuarios SET nome = '$nome', username = '$username', cpf = '$cpf', email = '$email', senha = '$senha', data_nascimento = '$data_nascimento', celular = '$celular' WHERE id = $id";
-    $sql_endereco = "UPDATE usuario_endereco SET estado = '$estado',cep = '$cep', cidade = '$cidade', rua = '$rua' WHERE $id = 'id'";
+    $sql_endereco = "UPDATE endereco SET cep = '$cep', estado = '$estado', num_res = '$num_res', cidade = '$cidade', rua = '$rua' WHERE  = 'id'";
     
     $result =  $conn->query($sql);
 

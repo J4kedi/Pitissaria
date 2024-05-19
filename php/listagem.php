@@ -1,16 +1,14 @@
 <?php
 
-// Incluir o arquivo de conexão com o banco de dados
-include("connection.php");
-include("../geral/menu.php");
-include("validacao_gerente")
-include("validacao_gerente_pizzaiolo");
-verificarGerente();
-verificarAcesso();
+    // Incluir o arquivo de conexão com o banco de dados
+    include("../geral/menu.php");
+    include("connection.php");
+    include("validacao_gerente.php");
+    verificarGerente();
 
-// Consulta SQL para selecionar os ingredientes
-$sql =  "SELECT u.id, u.nome, u.tipo_usuario, u.email, u.cpf, u.data_nascimento, u.celular, u.username, e.cep, e.rua, e.num_res, e.cidade, e.estado FROM usuarios u INNER JOIN usuario_endereco ue ON u.id = ue.usuario_id INNER JOIN enderecos e ON ue.endereco_id = e.id WHERE tipo_usuario = 'pizzaiolo'";
-$result = $conn->query($sql);
+    // Consulta SQL para selecionar os ingredientes
+    $sql =  "SELECT u.id, u.nome, u.tipo_usuario, u.email, u.cpf, u.data_nascimento, u.celular, u.username, e.cep, e.rua, e.num_res, e.cidade, e.estado FROM usuarios u INNER JOIN usuario_endereco ue ON u.id = ue.usuario_id INNER JOIN enderecos e ON ue.endereco_id = e.id WHERE tipo_usuario = 'pizzaiolo'";
+    $result = $conn->query($sql);
 ?>
 
 <!DOCTYPE html>
@@ -54,8 +52,8 @@ $result = $conn->query($sql);
         </tr>
 
         <?php
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
         ?>  
                 <tr>
                     <td class="id_css" onclick="window.location='lista.php?id=<?php echo $row['id']?>'">
@@ -81,10 +79,10 @@ $result = $conn->query($sql);
                     </td>
                 </tr>
         <?php
+                }
+            } else {
+                echo " Não há registro de ingredientes";
             }
-        } else {
-            echo " Não há registro de ingredientes";
-        }
         ?>
 
     </table>
