@@ -13,9 +13,13 @@
 <body>
     <?php
     //definir a conexão com o banco de dados
-    require_once "connection.php";
-    include("validacao_acesso_php.php");
-    include("../geral/menu.php");
+        require_once "connection.php";
+        include("../geral/menu.php");
+        include("validacao_gerente")
+        include("validacao_gerente_pizzaiolo");
+        verificarGerente();
+        verificarAcesso();
+    
     
         $id = $_SESSION['id_user'];
 

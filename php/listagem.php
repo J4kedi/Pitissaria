@@ -3,6 +3,10 @@
 // Incluir o arquivo de conexão com o banco de dados
 include("connection.php");
 include("../geral/menu.php");
+include("validacao_gerente")
+include("validacao_gerente_pizzaiolo");
+verificarGerente();
+verificarAcesso();
 
 // Consulta SQL para selecionar os ingredientes
 $sql =  "SELECT u.id, u.nome, u.tipo_usuario, u.email, u.cpf, u.data_nascimento, u.celular, u.username, e.cep, e.rua, e.num_res, e.cidade, e.estado FROM usuarios u INNER JOIN usuario_endereco ue ON u.id = ue.usuario_id INNER JOIN enderecos e ON ue.endereco_id = e.id WHERE tipo_usuario = 'pizzaiolo'";
