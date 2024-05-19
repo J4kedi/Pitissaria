@@ -16,24 +16,26 @@
         <label for="pequena">
             <img src="../imagens/4pedacos.avif" alt="Pizza Pequena" class="tamanho-img"> Pizza Pequena
         </label>
-        <input type="radio" name="tamanho" id="pequena"><br>
+        <input type="radio" name="tamanho" id="pequena" value="25"><br>
         <label for="media">
             <img src="../imagens/6pedacos.png" alt="Pizza Média" class="tamanho-img"> Pizza Média
         </label>
-        <input type="radio" name="tamanho" id="media"><br>
+        <input type="radio" name="tamanho" id="media" value="35"><br>
         <label for="grande">
             <img src="../imagens/8pedacos.png" alt="Pizza Grande" class="tamanho-img"> Pizza Grande
         </label>
-        <input type="radio" name="tamanho" id="grande"><br>
+        <input type="radio" name="tamanho" id="grande" value="69"><br>
         <label for="queijo">Queijo</label>
-        <input type="checkbox" name="queijo" id="queijo">
+        <input type="checkbox" name="queijo" id="queijo" data-id="1">
         <input type="number" id="quantidade_queijo" name="quantidade_queijo" min="1" max="10" value="1"><br>
         <label for="tomate">Tomate</label>
-        <input type="checkbox" name="tomate" id="tomate">
+        <input type="checkbox" name="tomate" id="tomate" data-id="2">
         <input type="number" id="quantidade_tomate" name="quantidade_tomate" min="1" max="10" value="1"><br>
+        
         <button id="calcular-total" class="btn btn-primary">Calcular Total</button>
         <a href="../HTML/login.php" class="btn btn-primary">Finalizar</a>
         <p id="total"></p>
+        <p id="mensagem-disponibilidade"></p>
     </main>
 
     <?php include('../geral/footer.php')?>
