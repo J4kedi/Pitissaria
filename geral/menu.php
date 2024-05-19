@@ -24,7 +24,6 @@
                     else if($_SESSION['tp_user'] === 'cliente') {
                         echo '<a class="links lover" href="../HTML/logout.php">logout</a>';
                         echo '<a class="links lover" href="../HTML/user.php">cliente</a>';
-                        echo '<a class="links lover" href="../HTML/pizzas_prontas.php">Cardapio</a>';
                         echo '<a class="links lover" href="../HTML/carrinho_teste.php">carrinho</a>';
                     }
                 } else {
