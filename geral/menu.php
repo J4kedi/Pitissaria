@@ -6,6 +6,7 @@
         <a href="../HTML/index.php"><img id="logo-inicio" src="../ASSETS/logo-inicio (1).png" alt="Logo Pitissasria"></a>
         <a href="../HTML/index.php" class="links lover">Inicio</a>
         <a href="../HTML/pizzas_prontas.php" class="links lover">Cardapio</a>
+        <a href="../HTML/pizza_montagem.php"class="links lover">Personalizado</a>
         <div class="autenticacao">
             <?php
                 session_start(); // Inicia a sessão
