@@ -23,7 +23,7 @@ function calcularTotal() {
 
     if (ingredientes.length > 0) {
         // Verifica a disponibilidade dos ingredientes e calcula o total
-        fetch('../PHP/verificar_ingredientes.php', {
+        fetch('../HTML/verificar_ingredientes.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -59,7 +59,7 @@ function calcularTotal() {
         })
         .catch(error => {
             console.error('Erro:', error);
-            document.getElementById('mensagem-disponibilidade').textContent = 'Erro ao verificar a disponibilidade dos ingredientes.';
+            document.getElementById('mensagem-disponibilidade').textContent = 'Não há disponibilidade do ingredientes.';
             document.getElementById('total').textContent = 'Total: R$ 0.00';
         });
     } else {

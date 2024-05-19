@@ -1,7 +1,6 @@
 <?php
 include('../php/conexao/connection.php'); 
 
-// Receber o corpo da requisição
 $data = json_decode(file_get_contents('php://input'), true);
 $ingredientes = $data['ingredientes'];
 
