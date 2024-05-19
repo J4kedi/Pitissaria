@@ -12,8 +12,11 @@
 </head>
 <body>
     <?php
-    include("validacao_acesso_php.php");
     include("../geral/menu.php");
+    
+    include("validacao_gerente.php");
+    verificarGerente();
+
 
     ?>
 
