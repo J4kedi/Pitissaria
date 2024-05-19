@@ -1,5 +1,5 @@
 <?php
-include('../php/conexao/connection.php'); 
+include('../php/conexao/connection.php');
 
 $data = json_decode(file_get_contents('php://input'), true);
 $ingredientes = $data['ingredientes'];
@@ -7,7 +7,6 @@ $ingredientes = $data['ingredientes'];
 try {
     $disponibilidade = [];
 
-    // Verificar disponibilidade dos ingredientes
     foreach ($ingredientes as $ingrediente) {
         $stmt = $pdo->prepare("SELECT quantidade FROM ingredientes WHERE id = :id");
         $stmt->execute(['id' => $ingrediente['id']]);
