@@ -4,7 +4,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 5% 10% 5% 10%;
+    margin: 5% 17% 5% 17%;
     border-radius: 5px;
     padding: 10px;
     color: var(--cor-texto);    
@@ -40,15 +40,23 @@
     flex-direction: column;
 }
 
+.campos {
+    display: flex; 
+    flex-direction: column;
+    padding: 10px;
+    margin: 0.1em;
+    width: 15em;
+}
+
 .form label {
-    font-size: 1.2em;
+    
+    margin: 0.1em;
 }
 
 .form input, select {
-    width: 15em;
-    height: 35px;
-    padding: 4px;
-    margin: 1em;
+    height: 30px;
+    padding: 2px;
+    margin: 0.1em;
     border-radius: 5px;
     border: none;
     font-size: 1.1em;
@@ -73,20 +81,30 @@
     color: var(--cor-fundo);
 }
 
+.form input:focus {
+    background-color: var(--cor-carregamento);
+    border-color: var(--cor-darker);
+}
+
 #btn-enviar:hover {
     background-color: var(--cor-fundo);
     color: var(--cor-carregamento);
     cursor: pointer;
 }
 
+.erro {
+    color: red;
+    font-size: 0.9em;
+}
+
 @media screen and (max-width: 890px) {
     .form input {
-        width: 20em;
+        width: 15em;
     }
 }
 
 @media screen and (max-width: 670px) {
     .form input {
-        width: 15em;
+        width: 10em;
     }
 }
