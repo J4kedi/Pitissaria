@@ -15,7 +15,8 @@
     include("validacao_gerente.php");
     verificarGerente();
 
-    $sql =  "SELECT u.id, u.nome, u.tipo_usuario, u.email, u.cpf, u.data_nascimento, u.celular, u.username, e.cep, e.rua, e.num_res, e.cidade, e.estado FROM usuarios u INNER JOIN usuario_endereco ue ON u.id = ue.usuario_id INNER JOIN enderecos e ON ue.endereco_id = e.id WHERE tipo_usuario = 'pizzaiolo'";
+    $sql =  "SELECT u.id, u.nome, u.tipo_usuario, u.email, u.cpf, u.data_nascimento, u.celular, u.username, e.cep, e.rua, e.num_res, e.cidade, e.estado
+    FROM usuarios u INNER JOIN usuario_endereco ue ON u.id = ue.usuario_id INNER JOIN enderecos e ON ue.endereco_id = e.id WHERE tipo_usuario = 'pizzaiolo'";
 
 
     $result = $conn->query($sql);
@@ -48,13 +49,15 @@
 
             $rua = $row["rua"];
 
+            $num_res = ["num_res"];
+
         }
     }
 ?>
     <a href="listagem.php"><h3>Voltar a listagem</h3></a>
     <main class = "container">
         <h2>Editar informações</h2>
-        <form action="cadastro_php.php" id="form1" method="POST">
+        <form action="edit_php.php" id="form1" method="POST">
 
             <label for="nome">Nome:</label>
             <input type="text" name="nome" id="nome" value ="<?php echo $nome?>" required>
@@ -92,7 +95,9 @@
             <label for="rua">Rua:</label>
             <input type="text" name="rua" id="rua" value = "<?php echo $rua?>" required>
             <br>
-
+            <label for="num_res">Numero da residencia:</label>
+            <input type="number" name="num_res" id="num_res" value="<?php echo $num_res?>" required>
+            <br>
             <input type="hidden" name="id" value="<?php echo $id?>" required>
 
             <input type="submit" value="Atualizar Ingrediente" id = "submit">
