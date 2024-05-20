@@ -81,7 +81,7 @@
         <?php
                 }
             } else {
-                echo " Não há registro de ingredientes";
+                echo " Não há nenhum registro de Pizzaiolo";
             }
         ?>
 
