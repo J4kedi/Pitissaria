@@ -29,33 +29,40 @@
 
     $email = $_POST["email"];
 
-    $senha = $POST["senha"];
+    $senha = $_POST["senha"];
 
-    $data_nascimento = $POST["data_nascimento"];
+    $data_nascimento = $_POST["data_nascimento"];
 
-    $num_telefone = $POST["num_telefone"];
+    $celular = $_POST["celular"];
 
-    $estado = $POST["estado"];
+    $estado = $_POST["estado"];
 
-    $cep = $POST["cep"];
+    $cep = $_POST["cep"];
 
-    $cidade = $POST["cidade"];
+    $cidade = $_POST["cidade"];
 
-    $num_res = $POST["num_res"];
+    $num_res = $_POST["num_res"];
 
-    $rua = $POST["rua"];
+    $rua = $_POST["rua"];
 
-    $sql = "UPDATE usuarios SET nome = '$nome', username = '$username', cpf = '$cpf', email = '$email', senha = '$senha', data_nascimento = '$data_nascimento', celular = '$celular' WHERE id = $id";
-    $sql_endereco = "UPDATE endereco SET cep = '$cep', estado = '$estado', num_res = '$num_res', cidade = '$cidade', rua = '$rua' WHERE  = 'id'";
+    $sqlUsuario = "UPDATE usuarios u SET u.nome = '$nome', u.email = '$email', u.cpf = '$cpf', u.data_nascimento = '$data_nascimento',
+            u.celular = '$celular', u.username = '$username' WHERE u.id = $id";
+
+    $resultUsuario = $conn -> query($sqlUsuario);
+
+    $sqlEnderecos = " UPDATE enderecos e JOIN usuario_endereco ue ON e.id = ue.endereco_id
+    SET e.cep = '$cep', e.rua = '$rua', e.num_res = '$num_res', e.cidade = '$cidade', e.estado = '$estado' WHERE ue.usuario_id = $id";
+
     
-    $result =  $conn->query($sql);
+    $resultEndereco = $conn -> query($sqlEnderecos);
 
-    if ($result === TRUE) {
+
+    if ($resultUsuario === True || $resultEndereco === True) {
         echo "<h1>Dados alterados com sucesso.</h1>";
-        echo '<script>setTimeout(function() { window.location.href = "lista_ingredientes.php"; }, 2000);</script>'; // Redireciona para lista_ingredientes.php após 2 segundos 
+        echo '<script>setTimeout(function() { window.location.href = "listagem.php"; }, 2000);</script>'; // Redireciona para lista_ingredientes.php após 2 segundos 
     }   
     else{
-        echo "Erro ao cadastrar ingrediente: " . $conn->error;
+        echo "Erro ao editar pizzaiolo: " . $conn->error;
     }
 ?>
 
