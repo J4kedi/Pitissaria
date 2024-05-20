@@ -1,4 +1,5 @@
 const select = document.getElementById('endereco');
+var enderecos = [];
 
 select.addEventListener('change', function() {
     var cep = document.getElementsByName('cep')[0];
@@ -6,22 +7,51 @@ select.addEventListener('change', function() {
     var cidade = document.getElementsByName('cidade')[0];
     var rua = document.getElementsByName('rua')[0];
     var numRes = document.getElementsByName('num-res')[0];
+        
+    var selectedIndex = select.selectedIndex;   
+    var enderecoSplit = select.options[selectedIndex].textContent.split(', ');
 
-    // Verifica se a opção selecionada é "novo"
+    var endereco = {
+        rua: enderecoSplit[0],
+        numRes: enderecoSplit[1],
+        cep: enderecoSplit[2],
+        cidade: enderecoSplit[3],
+        estado: enderecoSplit[4],
+    };
+
     if (select.value === 'novo') {
-        // Limpa os valores dos inputs
         cep.value = '';
         estado.value = '';
         cidade.value = '';
         rua.value = '';
         numRes.value = '';
 
-        // Remove o atributo disabled dos inputs
         estado.removeAttribute('disabled');
         cidade.removeAttribute('disabled');
 
-        // Remove a classe "desativado" dos inputs
         estado.classList.remove('desativado');
         cidade.classList.remove('desativado');
+    } else {
+        if(enderecos.length == 0) {
+            enderecos.push(endereco);
+        }
+
+        enderecos.forEach(enderec => {
+            if(enderec.option != endereco.option) {
+                enderecos.push(endereco);
+            } else {
+                cep.value = endereco.cep;
+                estado.value = endereco.estado;
+                cidade.value = endereco.cidade;
+                rua.value = endereco.rua;
+                numRes.value = endereco.numRes;
+
+                estado.setAttribute('disabled', 'true');
+                cidade.setAttribute('disabled', 'true');
+
+                estado.classList.add('desativado');
+                cidade.classList.add('desativado');
+            }
+        });
     }
 });

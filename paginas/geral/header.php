@@ -13,5 +13,5 @@
         <div class="overlay"></div>
     </section>
 
-    <script src="../js/header.js"></script>
+    <script src="../js/geral/header.js"></script>
 </header>

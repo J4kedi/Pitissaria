@@ -15,24 +15,37 @@
         <h1>Cadastre-se</h1>
         <form action="../PHP/forms/cadastro.php" method="post" id="form" class="form">
             <div class="divisao">
-                <!-- Nome -->
-                <label for="nome">Nome:</label>
-                <input type="text" name="nome" required>
-                <!-- Username -->
-                <label for="username">Username:</label>
-                <input type="text" name="username" required>
-                <!-- Email -->
-                <label for="email">Email:</label>
-                <input type="email" name="email" required>
-                <!-- Senha -->
-                <label for="senha">Senha:</label>
-                <input type="password" name="senha" required>
-                <!-- Confirmar Senha -->
-                <label for="confirmar-senha">Confirmar Senha:</label>
-                <input type="password" name="confirmar-senha" required>
-                <!-- CPF -->
-                <label for="cpf">CPF:</label>
-                <input type="text" name="cpf" required>
+                <div class="campos">
+                    <!-- Nome -->
+                    <label for="nome">Nome:</label>
+                    <input type="text" name="nome" required>
+                    <span class="erro">Olá, está inválido o seu nome senhor </span>
+                </div>
+                <div class="campos">
+                    <!-- Username -->
+                    <label for="username">Username:</label>
+                    <input type="text" name="username" required>
+                </div>
+                <div class="campos">
+                    <!-- Email -->
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" required>
+                </div>
+                <div class="campos">
+                    <!-- Senha -->
+                    <label for="senha">Senha:</label>
+                    <input type="password" name="senha" required>
+                </div>
+                <div class="campos">
+                    <!-- Confirmar Senha -->
+                    <label for="confirmar-senha">Confirmar Senha:</label>
+                    <input type="password" name="confirmar-senha" required>
+                </div>
+                <div class="campos">
+                    <!-- CPF -->
+                    <label for="cpf">CPF:</label>
+                    <input type="text" name="cpf" required>
+                </div>
             </div>
             
             <div class="divisao">
@@ -59,6 +72,9 @@
             <button type="submit" id="btn-enviar">Cadastrar</button>
         </form>
     </div>
+
+    <script src="../Js/novaValidacao/cadastro.js"></script>
+    <script src="../Js/novaValidacao/escuta.js"></script>
     <?php include('geral/footer.php'); ?>
 </body>
 </html>
