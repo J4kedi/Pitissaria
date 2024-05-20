@@ -61,7 +61,8 @@ function adicionarEventoClick(pizza) {
     });
 }
 async function removerIngredientes(pizza) {
-    const response = await fetch("http://localhost/GitHub/CrazyCats/Pitissaria/php/remover_e_comprar_ingrediente.php", {
+    const response = await fetch("http://localhost/GitHub/CrazyCats/Pitissaria/php/remover_e_comprar_ingrediente.php", { 
+        //http://localhost/GitHub/CrazyCats/Pitissaria/php/remover_e_comprar_ingrediente.php -> endereçamento Ricardo
         method: "PATCH",
         body: JSON.stringify(pizza),
         headers: {
