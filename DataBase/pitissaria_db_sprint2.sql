@@ -127,6 +127,10 @@ select * from usuarios;
 select * from enderecos;
 select * from usuario_endereco;
 
+-- ADICIONANDO PIZZAS (O ID É O ID DA PIZZA QUE ESTÁ NO ARQUIVO SCRIPT.JS))
+INSERT INTO pizzas(nome, descricao, preco, id_usuario) VALUES ("calabresa2", "calabresa bom", 20, 1);
+INSERT INTO pizzas(nome, descricao, preco, id_usuario) VALUES ("pepperoni", "calabresa bom", 20, 1);
+
 --SELECT e.cep, e.rua, e.num_res, e.cidade, e.estado
 --FROM usuarios u
 --INNER JOIN usuario_endereco ue ON u.id = ue.usuario_id

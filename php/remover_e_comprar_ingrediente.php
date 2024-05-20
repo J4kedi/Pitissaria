@@ -8,19 +8,29 @@
 
     $body = json_decode(file_get_contents("php://input"),true);
 
-    $id_ingredientes = $body["id_ingredientes"];
+    $idPizza = $body["id"];
+    $ingredientes = $body["ingredientes"];
+    $total = $body["total"];
+    
 
-    $id = $body["id"];
+    foreach($ingredientes as $ingrediente){
+        ["id" =>$id, "quantidade" =>$quantidade]=$ingrediente; //Estou desestruturando o array 
+        $sql = "UPDATE ingredientes SET quantidade = quantidade - $quantidade WHERE id = $id";
+        $conn->query($sql);
+    }
 
-    $lista_ingredientes = implode("," , $id_ingredientes);
+    $get_user = "SELECT e.id FROM usuario_endereco INNER JOIN enderecos e WHERE usuario_id = $id_user limit 1";
+    $enderecoId = $conn->query($get_user)->fetch_assoc()["id"];
 
-    $sql = "UPDATE ingrediente SET quantidade_ingrediente = quantidade_ingrediente -1 WHERE id_ingrediente in($lista_ingredientes)";
+    $stmt = $conn->prepare("INSERT INTO pedidos( id_usuario, data_pedido, total, endereco_entrega_id ) VALUES ($id_user, NOW(), $total, $enderecoId)");
+    $stmt->execute();
 
+    $pedidoId = $conn->insert_id;
+
+    
+
+    $sql = "INSERT INTO itens_pedido( id_pedido, id_pizza, quantidade, preco_unitario  ) VALUES ($pedidoId, $idPizza , 1, $total)";
     $conn->query($sql);
-
-    $sql = "INSERT INTO pizza_compradas(id_user_endereco_user, id_pizza, status_pizza) VALUES ($id_user,$id, 'value_1')";
-    echo $sql;
-    $conn->query($sql);
-
+    var_dump($conn->error);
 
 ?>

@@ -27,7 +27,7 @@
 
         // Consulta SQL para selecionar as pizzas no carrinho do usuário atual
         $id_user = $_SESSION['id_user'];
-        $sql = "SELECT id_pizza_compra, id_user_endereco_user, id_pizza, status_pizza FROM pizza_compradas WHERE id_user_endereco_user = $id_user";
+        $sql = "SELECT pizzas.nome, data_pedido, total, endereco_entrega_id FROM pizzas  INNER JOIN itens_pedido ON pizzas.id = itens_pedido.id_pizza INNER JOIN pedidos ON pedidos.id = itens_pedido.id_pedido WHERE pedidos.id_usuario = $id_user";
         $result = $conn->query($sql);
 
         // Exibir o carrinho de compras
@@ -38,14 +38,14 @@
                         <th>ID da Compra</th>
                         <th>ID do Usuário</th>
                         <th>ID da Pizza</th>
-                        <th>Status da Pizza</th>
+                        <th>Endereco id</th>
                     </tr>";
             while($row = $result->fetch_assoc()) {
                 echo "<tr>
-                        <td>" . $row["id_pizza_compra"] . "</td>
-                        <td>" . $row["id_user_endereco_user"] . "</td>
-                        <td>" . $row["id_pizza"] . "</td>
-                        <td>" . $row["status_pizza"] . "</td>
+                        <td>" . $row["nome"] . "</td>
+                        <td>" . $row["data_pedido"] . "</td>
+                        <td>" . $row["total"] . "</td>
+                        <td>" . $row["endereco_entrega_id"] . "</td>
                     </tr>";
             }
             echo "</table>";
