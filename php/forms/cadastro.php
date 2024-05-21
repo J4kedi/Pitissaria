@@ -39,12 +39,12 @@
         }
 
         // Obter o ID do endereço inserido
-        $enderecoId = $pdo->lastInsertId();
+        $enderecoId = $conn->lastInsertId();
         
         // Inserir dados na tabela usuarios
         $sqlUsuario = "INSERT INTO usuarios (nome, email, senha, cpf, data_nascimento, celular, username) 
                     VALUES (:nome, :email, MD5(:senha), :cpf, :data_nascimento, :celular, :username)";
-        $stmtUsuario = $pdo->prepare($sqlUsuario);
+        $stmtUsuario = $conn->prepare($sqlUsuario);
         $resultadoUsuario = $stmtUsuario->execute([
             ':nome' => $nome,
             ':email' => $email,
@@ -55,12 +55,12 @@
             ':username' => $username,
         ]);
         
-        $usuarioId = $pdo->lastInsertId();
+        $usuarioId = $conn->lastInsertId();
 
         // Inserir dados na tabela usuario_endereco
         $sqlUsuarioEndereco = "INSERT INTO usuario_endereco (usuario_id, endereco_id) 
                     VALUES (:usuarioId, :enderecoId)";
-        $stmtUsuarioEndereco = $pdo->prepare($sqlUsuarioEndereco);
+        $stmtUsuarioEndereco = $conn->prepare($sqlUsuarioEndereco);
         $resultadoUsuarioEndereco = $stmtUsuarioEndereco->execute([
             ':usuarioId' => $usuarioId,
             ':enderecoId' => $enderecoId,

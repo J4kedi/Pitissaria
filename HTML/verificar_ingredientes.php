@@ -8,7 +8,7 @@ try {
     $disponibilidade = [];
 
     foreach ($ingredientes as $ingrediente) {
-        $stmt = $pdo->prepare("SELECT quantidade FROM ingredientes WHERE id = :id");
+        $stmt = $conn->prepare("SELECT quantidade FROM ingredientes WHERE id = :id");
         $stmt->execute(['id' => $ingrediente['id']]);
         $row = $stmt->fetch();
         

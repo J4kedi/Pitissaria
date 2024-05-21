@@ -14,12 +14,12 @@
 
         if ($isEmail) {
             $sql = "SELECT email, username, senha, tipo_usuario, id, nome FROM usuarios WHERE email = :emailUsername";
-            $stmt = $pdo->prepare($sql);
+            $stmt = $conn->prepare($sql);
             $stmt->execute([':emailUsername' => $emailUsername]);
             $result = $stmt->fetch(PDO::FETCH_ASSOC);
         } else {
             $sql = "SELECT username, senha, tipo_usuario, id, nome FROM usuarios WHERE username = :emailUsername";
-            $stmt = $pdo->prepare($sql);
+            $stmt = $conn->prepare($sql);
             $stmt->execute([':emailUsername' => $emailUsername]);
             $result = $stmt->fetch(PDO::FETCH_ASSOC);
         }

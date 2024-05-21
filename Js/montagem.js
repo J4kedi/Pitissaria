@@ -1,4 +1,3 @@
-// Funcao para calcular o total
 function calcularTotal() {
     var total = 0;
     var tamanho = document.querySelector('input[name="tamanho"]:checked');
@@ -23,7 +22,7 @@ function calcularTotal() {
 
     if (ingredientes.length > 0) {
         // Verifica a disponibilidade dos ingredientes e calcula o total
-        fetch('../PHP/verificar_ingredientes.php', {
+        fetch('../HTML/verificar_ingredientes.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

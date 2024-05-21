@@ -12,14 +12,14 @@
         $dataNascimento = $_POST['data-nascimento'];
     
         $sqlEndereco = "SELECT id FROM enderecos WHERE cep = :cep AND num_res = :num_res";
-        $stmtEndereco = $pdo->prepare($sqlEndereco);
+        $stmtEndereco = $conn->prepare($sqlEndereco);
         $stmtEndereco->execute([':cep' => $cep, ':num_res' => $num_res]);
         $enderecoId = $stmtEndereco->fetchColumn();
     
         if (!$enderecoId) {
             $sqlInsertEndereco = "INSERT INTO enderecos (cep, rua, num_res, cidade, estado) 
                                   VALUES (:cep, :rua, :num_res, :cidade, :estado)";
-            $stmtInsertEndereco = $pdo->prepare($sqlInsertEndereco);
+            $stmtInsertEndereco = $conn->prepare($sqlInsertEndereco);
             $stmtInsertEndereco->execute([
                 ':cep' => $cep,
                 ':rua' => $_POST['rua'],
@@ -27,13 +27,13 @@
                 ':cidade' => $_POST['cidade'],
                 ':estado' => $_POST['estado'],
             ]);
-            $enderecoId = $pdo->lastInsertId();
+            $enderecoId = $conn->lastInsertId();
             $novoEndereco = true;
         }
     
         $sqlUpdateUsuario = "UPDATE usuarios SET nome = :nome, celular = :celular, data_nascimento = :data_nascimento 
                              WHERE id = :id";
-        $stmtUpdateUsuario = $pdo->prepare($sqlUpdateUsuario);
+        $stmtUpdateUsuario = $conn->prepare($sqlUpdateUsuario);
         $stmtUpdateUsuario->execute([
             ':nome' => $nome,
             ':celular' => $celular,
@@ -42,7 +42,7 @@
         ]);
 
         $sqlUsuario = "SELECT nome FROM usuarios where id = :id";
-        $stmtUsuario = $pdo->prepare($sqlUsuario);
+        $stmtUsuario = $conn->prepare($sqlUsuario);
         $stmtUsuario->execute([
             ':id' => $_SESSION['sessao'],
         ]);
@@ -55,7 +55,7 @@
         if ($novoEndereco) {
             $sqlInsertUsuarioEndereco = "INSERT INTO usuario_endereco (usuario_id, endereco_id) 
                                          VALUES (:usuario_id, :endereco_id)";
-            $stmtInsertUsuarioEndereco = $pdo->prepare($sqlInsertUsuarioEndereco);
+            $stmtInsertUsuarioEndereco = $conn->prepare($sqlInsertUsuarioEndereco);
             $stmtInsertUsuarioEndereco->execute([
                 ':usuario_id' => $_SESSION['sessao'],
                 ':endereco_id' => $enderecoId,

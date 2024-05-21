@@ -106,6 +106,7 @@ INSERT INTO ingredientes (nome, preco, data_entrada, data_validade, quantidade) 
 ('Gorgonzola', 15.00, '2021-05-01', '2024-12-01', 1000),
 ('Parmesão', 10.00, '2021-05-01', '2024-12-01', 1000),
 ('queijo', 4.00, '2021-05-01', '2024-12-01', 1000),
+('tomate', 4.00, '2021-05-01', '2024-12-01', 1000),
 
 -- ADICIONANDO PIZZAS (O ID É O ID DA PIZZA QUE ESTÁ NO ARQUIVO SCRIPT.JS))
 INSERT INTO pizzas(nome, descricao, preco, id_usuario) VALUES ("calabresa", "calabresa queijo azeitona ", 20, 1);
