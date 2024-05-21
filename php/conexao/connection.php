@@ -1,7 +1,7 @@
 <?php
     $host = "localhost";
     $port = "3306";
-    $dbname = "pitissariadb";
+    $dbname = "pitissaria_db";
     $username = "root";
     $password = "";
 
