@@ -1,7 +1,7 @@
 <?php
   $username = "root";
   $password = "";
-  $database = "pitissaria_db"; 
+  $database = "pitissariadb"; 
   $server = "localhost";
 
   $conn = new mysqli($server, $username, $password, $database);
