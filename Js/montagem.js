@@ -44,10 +44,10 @@ function calcularTotal() {
 
             if (podeAdicionar) {
                 if (queijo.checked) {
-                    total += 7 * quantidadeQueijo;
+                    total += 3 * quantidadeQueijo;
                 }
                 if (tomate.checked) {
-                    total += 1 * quantidadeTomate;
+                    total += 2 * quantidadeTomate;
                 }
                 document.getElementById('total').textContent = 'Total: R$ ' + total.toFixed(2);
                 document.getElementById('mensagem-disponibilidade').textContent = '';
