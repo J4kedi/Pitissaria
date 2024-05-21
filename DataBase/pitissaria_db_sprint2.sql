@@ -90,14 +90,32 @@ CREATE TABLE IF NOT EXISTS itens_pedido (
 );
 
 -- Inserção de dados de exemplo
-INSERT INTO ingredientes (nome, preco, data_entrada, data_validade) VALUES
-    ('Molho de Tomate', 2.50, '2022-04-01', '2022-10-01'),
-    ('Queijo Mussarela', 3.00, '2022-04-01', '2022-10-01'),
-    ('Pepperoni', 4.00, '2022-04-01', '2022-10-01'),
-    ('Cogumelos', 2.50, '2022-04-01', '2022-10-01'),
-    ('Pimentão', 1.50, '2022-04-01', '2022-10-01'),
-    ('Cebola', 1.00, '2022-04-01', '2022-10-01'),
-    ('Azeitonas', 1.50, '2022-04-01', '2022-10-01');
+INSERT INTO ingredientes (nome, preco, data_entrada, data_validade, quantidade) VALUES
+('Molho de tomate', 5.00, '2021-05-01', '2024-12-01', 1000),
+('mossarela', 10.00, '2021-05-01', '2024-12-01', 1000),
+('Calabresa', 15.00, '2021-05-01', '2024-12-01', 1000),
+('Catupiry', 20.00, '2021-05-01', '2024-12-01', 1000),
+('Pepperoni', 25.00, '2021-05-01', '2024-12-01', 1000),
+('Azeitona', 5.00, '2021-05-01', '2024-12-01', 1000),
+('Cebola', 5.00, '2021-05-01', '2024-12-01', 1000),
+('Tomate', 5.00, '2021-05-01', '2024-12-01', 1000),
+('Manjericao', 5.00, '2021-05-01', '2024-12-01', 1000),
+('Presunto', 10.00, '2021-05-01', '2024-12-01', 1000),
+('Ovo', 5.00, '2021-05-01', '2024-12-01', 1000),
+('Ervilha', 5.00, '2021-05-01', '2024-12-01', 1000),
+('Gorgonzola', 15.00, '2021-05-01', '2024-12-01', 1000),
+('Parmesão', 10.00, '2021-05-01', '2024-12-01', 1000),
+('queijo', 4.00, '2021-05-01', '2024-12-01', 1000),
+('tomate', 4.00, '2021-05-01', '2024-12-01', 1000),
+
+-- ADICIONANDO PIZZAS (O ID É O ID DA PIZZA QUE ESTÁ NO ARQUIVO SCRIPT.JS))
+INSERT INTO pizzas(nome, descricao, preco, id_usuario) VALUES ("calabresa", "calabresa queijo azeitona ", 20, 1);
+INSERT INTO pizzas(nome, descricao, preco, id_usuario) VALUES ("pepperoni", "tomate queijo mossarela pepperoni", 30, 1);
+INSERT INTO pizza(nome, descricao, preco, id_usuario) VALUES ("marguerita", "tomate queijo mossarela manjericao", 25, 1);
+INSERT INTO pizza(nome, descricao, preco, id_usuario) VALUES ("portuguesa", "tomate queijo mossarela presunto ovo ervilha", 35, 1);
+INSERT INTO pizza(nome, descricao, preco, id_usuario) VALUES ("quatro queijos", "tomate queijo mossarela gorgonzola parmesao catupiry", 40, 1);
+INSERT INTO pizza(nome, descricao, preco, id_usuario) VALUES ("frango catupiry", "tomate queijo mossarela frango catupiry", 35, 1);
+
 
 -- Inserir alguns registros na tabela de usuários
 INSERT INTO usuarios (nome, email, senha, cpf, tipo_usuario, data_nascimento, celular, username)
@@ -127,9 +145,6 @@ select * from usuarios;
 select * from enderecos;
 select * from usuario_endereco;
 
--- ADICIONANDO PIZZAS (O ID É O ID DA PIZZA QUE ESTÁ NO ARQUIVO SCRIPT.JS))
-INSERT INTO pizzas(nome, descricao, preco, id_usuario) VALUES ("calabresa2", "calabresa bom", 20, 1);
-INSERT INTO pizzas(nome, descricao, preco, id_usuario) VALUES ("pepperoni", "calabresa bom", 20, 1);
 
 --SELECT e.cep, e.rua, e.num_res, e.cidade, e.estado
 --FROM usuarios u

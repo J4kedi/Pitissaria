@@ -4,7 +4,7 @@ require_once('../PHP/conexao/connection.php');
 $id = $_SESSION['sessao'];
 
 $sql = "SELECT u.nome, u.email, u.cpf, u.data_nascimento, u.celular, u.username, e.id, e.cep, e.rua, e.num_res, e.cidade, e.estado FROM usuarios u INNER JOIN usuario_endereco ue ON u.id = ue.usuario_id INNER JOIN enderecos e ON ue.endereco_id = e.id WHERE u.id = :id";
-$stmt = $pdo->prepare($sql);
+$stmt = $conn->prepare($sql);
 $stmt->execute([':id' => $id]);
 $result = $stmt->fetch(PDO::FETCH_ASSOC);
 

@@ -2,9 +2,9 @@
 
 const pizzas = [
     {   //O ID 2 É O ID DA PIZZA QUE TEMOS
-        id: 2, nome: "Calabresa", imagem: "../imagens/pizza_calabresa.jpg", texto: "Calabresa, queijo, azeitona", ingredientes: [
-            { id: 8, quantidade: 10 }, // O ID É O ID DO INGREDIENTE QUE TEM NO ESTOQUE 
-            { id: 2, quantidade: 15 },
+        id: 1, nome: "Calabresa", imagem: "../imagens/pizza_calabresa.jpg", texto: "Calabresa, queijo, azeitona", ingredientes: [
+            { id: 3, quantidade: 10 }, // O ID É O ID DO INGREDIENTE QUE TEM NO ESTOQUE 
+            { id: 1, quantidade: 15 },
             { id: 3, quantidade: 20 },
         ],
         total : 20,
@@ -61,8 +61,9 @@ function adicionarEventoClick(pizza) {
     });
 }
 async function removerIngredientes(pizza) {
-    const response = await fetch("http://localhost/GitHub/CrazyCats/Pitissaria/php/remover_e_comprar_ingrediente.php", { 
+    const response = await fetch("http://127.0.0.1/Pitissaria/php/remover_e_comprar_ingrediente.php", { 
         //http://localhost/GitHub/CrazyCats/Pitissaria/php/remover_e_comprar_ingrediente.php -> endereçamento Ricardo
+        //http://127.0.0.1/Pitissaria/php/remover_e_comprar_ingrediente.php -> endereçamento Arthur //
         method: "PATCH",
         body: JSON.stringify(pizza),
         headers: {

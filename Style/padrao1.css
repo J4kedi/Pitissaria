@@ -33,6 +33,10 @@ header {
     z-index: 2;
 }
 
+main.container img{
+    width: 100px;
+    margin-right: 20px;
+}
 
 .menu-image {
     height: calc(100% - 20%);
@@ -100,8 +104,8 @@ header {
     background: var(--cor-header);
     height: 12vh;
     display: flex;
-    font-size: 1.6em;
-    font-weight: bolder;
+    font-size: 1.4em;
+    font-weight: 400;
     position: sticky;
     top: 0;
     z-index: 3;

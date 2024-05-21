@@ -1,4 +1,4 @@
-function testaCpf(strCPF) {
+function testarCpf(strCPF) {
     var Soma;
     var Resto;
 
