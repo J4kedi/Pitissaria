@@ -13,6 +13,11 @@
 
     <main class="container">
         <h1>Monte sua pizza aqui</h1>
+        <select name="" id="">
+            <option value="1"><img src="../imagens/4pedacos.avif" alt="Pizza Pequena" class="tamanho-img"></option>
+        </select>
+
+
         <label for="pequena">
             <img src="../imagens/4pedacos.avif" alt="Pizza Pequena" class="tamanho-img"> Pizza Pequena
         </label>
