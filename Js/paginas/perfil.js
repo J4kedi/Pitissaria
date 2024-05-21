@@ -2,12 +2,6 @@ const select = document.getElementById('endereco');
 var enderecos = [];
 
 select.addEventListener('change', function() {
-    var cep = document.getElementsByName('cep')[0];
-    var estado = document.getElementsByName('estado')[0];
-    var cidade = document.getElementsByName('cidade')[0];
-    var rua = document.getElementsByName('rua')[0];
-    var numRes = document.getElementsByName('num-res')[0];
-        
     var selectedIndex = select.selectedIndex;   
     var enderecoSplit = select.options[selectedIndex].textContent.split(', ');
 
@@ -26,17 +20,7 @@ select.addEventListener('change', function() {
         rua.value = '';
         numRes.value = '';
 
-        cep.removeAttribute('disabled');
-        estado.removeAttribute('disabled');
-        cidade.removeAttribute('disabled');
-        rua.removeAttribute('disabled');
-        numRes.removeAttribute('disabled');
-
-        cep.classList.remove('desativado');
-        estado.classList.remove('desativado');
-        cidade.classList.remove('desativado');
-        rua.classList.remove('desativado');
-        numRes.classList.remove('desativado');
+        tirarDisabled(elementos);
     } else {
         if(enderecos.length == 0) {
             enderecos.push(endereco);
@@ -52,18 +36,22 @@ select.addEventListener('change', function() {
                 rua.value = endereco.rua;
                 numRes.value = endereco.numRes;
 
-                cep.setAttribute('disabled', 'true');
-                estado.setAttribute('disabled', 'true');
-                cidade.setAttribute('disabled', 'true');
-                rua.setAttribute('disabled', 'true');
-                numRes.setAttribute('disabled', 'true');
-
-                cep.classList.add('desativado');
-                estado.classList.add('desativado');
-                cidade.classList.add('desativado');
-                rua.classList.add('desativado');
-                numRes.classList.add('desativado');
+                adicionarDisabled(elementos);
             }
         });
     }
 });
+
+function tirarDisabled (elementos) {
+    elementos.forEach(elemento => {
+        elemento.removeAttribute('disabled');
+        elemento.classList.remove('desativado');
+    });
+}
+
+function adicionarDisabled (elementos) {
+    elementos.forEach(elemento => {
+        elemento.setAttribute('disabled', 'true');
+        elemento.classList.add('desativado');
+    });
+}

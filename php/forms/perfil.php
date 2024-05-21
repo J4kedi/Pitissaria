@@ -3,6 +3,8 @@
     require_once('../conexao/connection.php');
     
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $novoEndereco = false;
+
         $cep = $_POST['cep'];
         $num_res = $_POST['num-res'];
         $nome = $_POST['nome'];
@@ -26,6 +28,7 @@
                 ':estado' => $_POST['estado'],
             ]);
             $enderecoId = $pdo->lastInsertId();
+            $novoEndereco = true;
         }
     
         $sqlUpdateUsuario = "UPDATE usuarios SET nome = :nome, celular = :celular, data_nascimento = :data_nascimento 
@@ -37,14 +40,27 @@
             ':data_nascimento' => $dataNascimento,
             ':id' => $_SESSION['sessao'],
         ]);
-    
-        $sqlInsertUsuarioEndereco = "INSERT INTO usuario_endereco (usuario_id, endereco_id) 
-                                     VALUES (:usuario_id, :endereco_id)";
-        $stmtInsertUsuarioEndereco = $pdo->prepare($sqlInsertUsuarioEndereco);
-        $stmtInsertUsuarioEndereco->execute([
-            ':usuario_id' => $_SESSION['sessao'],
-            ':endereco_id' => $enderecoId,
+
+        $sqlUsuario = "SELECT nome FROM usuarios where id = :id";
+        $stmtUsuario = $pdo->prepare($sqlUsuario);
+        $stmtUsuario->execute([
+            ':id' => $_SESSION['sessao'],
         ]);
+        $result = $stmtUsuario->fetch(PDO::FETCH_ASSOC);
+
+        $nomeSeparado = explode(' ', $result['nome']);
+        $_SESSION['nome'] = $result['nome'];
+        $_SESSION['primeiro_nome'] = $nomeSeparado[0];
+
+        if ($novoEndereco) {
+            $sqlInsertUsuarioEndereco = "INSERT INTO usuario_endereco (usuario_id, endereco_id) 
+                                         VALUES (:usuario_id, :endereco_id)";
+            $stmtInsertUsuarioEndereco = $pdo->prepare($sqlInsertUsuarioEndereco);
+            $stmtInsertUsuarioEndereco->execute([
+                ':usuario_id' => $_SESSION['sessao'],
+                ':endereco_id' => $enderecoId,
+            ]);
+        }
     }
     
     header('location: ../../paginas/perfil.php');

@@ -96,6 +96,7 @@
     
     <?php include('geral/footer.php');?>
 
+    <script src="../Js/paginas/camposEndereco.js"></script>
     <script src="../Js/novaValidacao/viaCep.js"></script>
     <script src="../Js/novaValidacao/cpf.js"></script>
     <script src="../Js/novaValidacao/erro.js"></script>
