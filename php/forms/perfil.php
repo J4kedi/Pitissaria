@@ -63,6 +63,9 @@
         }
     }
     
-    header('location: ../../paginas/perfil.php');
+    echo '<script>
+            window.alert("edição concluída");
+            setTimeout(function() { window.location.href = "../../paginas/perfil.php"; }, 1);
+        </script>';
     exit;    
 ?>
