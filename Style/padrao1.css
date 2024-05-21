@@ -33,6 +33,10 @@ header {
     z-index: 2;
 }
 
+main.container img{
+    width: 100px;
+    margin-right: 20px;
+}
 
 .menu-image {
     height: calc(100% - 20%);
