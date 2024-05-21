@@ -8,12 +8,12 @@
 
         $senhaHash = md5($senha);
 
-        $regexEmail = "/^[^\s@]+@[^\s@]+\.[^\s@]+$/i"; // Expressão regular para validar email
+        $regexEmail = "/^[^\s@]+@[^\s@]+\.[^\s@]+$/i";
 
         $isEmail = preg_match($regexEmail, $emailUsername);
 
         if ($isEmail) {
-            $sql = "SELECT email, senha, tipo_usuario, id, nome FROM usuarios WHERE email = :emailUsername";
+            $sql = "SELECT email, username, senha, tipo_usuario, id, nome FROM usuarios WHERE email = :emailUsername";
             $stmt = $pdo->prepare($sql);
             $stmt->execute([':emailUsername' => $emailUsername]);
             $result = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -28,10 +28,11 @@
             $nomeSeparado = explode(' ', $result['nome']);
             $_SESSION['sessao'] = $result['id'];
             $_SESSION['nome'] = $result['nome'];
+            $_SESSION['username'] = $result['username'];
             $_SESSION['primeiro_nome'] = $nomeSeparado[0];
             $_SESSION['tipo_usuario'] = $result['tipo_usuario'];
 
-            header("Location: ../../paginas/perfil.php"); // Redireciona para a página de perfil
+            header("Location: ../../paginas/perfil.php");
             exit;
         } 
 

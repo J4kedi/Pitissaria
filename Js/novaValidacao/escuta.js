@@ -2,18 +2,56 @@ const formulario = document.getElementById('form');
 
 document.addEventListener('DOMContentLoaded', function () {
     const campos = document.querySelectorAll('input, select');
-    
-    campos.forEach(campo => {
+    var senha = "1";
+
+    campos.forEach(campo => {        
         campo.addEventListener('focus', function() {
-            return;
+            removerErro(this);
         });
+
         campo.addEventListener('blur', function () {
-            if (this.name === 'telefone') {
-                formatarCelular(this);
+            const nome = this.name;
+            
+            if (nome === 'email') {
+                validarEmail(this);
+            } else if (nome === 'senha') {
+                senha = validarSenha(this);
+            } else if (nome === 'confirmar-senha') {
+                validarConfirmarSenha(this, senha);
+            } else if (nome === 'cpf') {
+                validarCpf(this);
+            } else if (nome === 'data-nascimento') {
+                validarDataNascimento(this);
+            } else if (nome === 'celular') {
+                validarCelular(this);
+            } else if (nome === 'cep') {
+                pesquisarCep(this);
+            } else {                
+                validarCampoVazio(this);
             }
         });
+
         campo.addEventListener('input', function () {
-            return;
+            const nome = this.name;
+
+            if (nome === 'confirmar-senha') {
+                if (validarConfirmarSenha(this, senha)) {
+                    removerErro(this);
+                }
+            }
+            if (nome === 'cpf' || nome === 'celular' ) {
+                apenasNumero(this);
+            };
         });
+    });
+
+    formulario.addEventListener('submit', function(event) {
+        const camposInvalidos = document.querySelectorAll('.erro');
+
+        // Se houver campos inválidos, impede o envio do formulário
+        if (camposInvalidos.length > 0) {
+            event.preventDefault();
+            alert('Corrija os campos inválidos antes de enviar o formulário.');
+        }
     });
 });

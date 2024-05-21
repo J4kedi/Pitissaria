@@ -9,16 +9,20 @@
 <body>
     <?php include('geral/menu.php');?>
 
-    <div class="form-container">
+    <div class="form-container login-container">
         <h1>Logar</h1>
         <form action="../PHP/forms/login.php" method="post" class="form">
             <div class="divisao">
-                <!-- Email ou Username -->
-                <label for="email-username">Email ou Username:</label>
-                <input type="text" name="email-username" placeholder="Digite email ou username">
-                <!-- Senha -->
-                <label for="senha">Senha:</label>
-                <input type="password" name="senha" placeholder="Digite sua senha">
+                <div class="campos">
+                    <!-- Email ou Username -->
+                    <label for="email-username">Email ou Username:</label>
+                    <input type="text" name="email-username" placeholder="Digite email ou username">
+                </div>
+                <div class="campos">
+                    <!-- Senha -->
+                    <label for="senha">Senha:</label>
+                    <input type="password" name="senha" placeholder="Digite sua senha">
+                </div>
             </div>
             <button id="btn-enviar">Logar</button>
         </form>

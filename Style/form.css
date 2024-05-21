@@ -4,7 +4,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 5% 17% 5% 17%;
+    margin: 5% 22% 5% 22%;
     border-radius: 5px;
     padding: 10px;
     color: var(--cor-texto);    
@@ -49,17 +49,16 @@
 }
 
 .form label {
-    
     margin: 0.1em;
 }
 
 .form input, select {
-    height: 30px;
+    height: 40px;
     padding: 2px;
     margin: 0.1em;
     border-radius: 5px;
     border: none;
-    font-size: 1.1em;
+    font-size: 1em;
     font-weight: 700;
     font-family: var(--fonte-texto-form);
     color: var(--cor-darker);
@@ -92,8 +91,20 @@
     cursor: pointer;
 }
 
+#num-res {
+    width: 8em;
+}
+
+.login-container {
+    margin: 5% 32% 5% 32%;
+}
+
+.login-container .campos {
+    width: 18em;
+}
+
 .erro {
-    color: red;
+    color: rgb(241, 54, 54);
     font-size: 0.9em;
 }
 

@@ -26,11 +26,17 @@ select.addEventListener('change', function() {
         rua.value = '';
         numRes.value = '';
 
+        cep.removeAttribute('disabled');
         estado.removeAttribute('disabled');
         cidade.removeAttribute('disabled');
+        rua.removeAttribute('disabled');
+        numRes.removeAttribute('disabled');
 
+        cep.classList.remove('desativado');
         estado.classList.remove('desativado');
         cidade.classList.remove('desativado');
+        rua.classList.remove('desativado');
+        numRes.classList.remove('desativado');
     } else {
         if(enderecos.length == 0) {
             enderecos.push(endereco);
@@ -46,11 +52,17 @@ select.addEventListener('change', function() {
                 rua.value = endereco.rua;
                 numRes.value = endereco.numRes;
 
+                cep.setAttribute('disabled', 'true');
                 estado.setAttribute('disabled', 'true');
                 cidade.setAttribute('disabled', 'true');
+                rua.setAttribute('disabled', 'true');
+                numRes.setAttribute('disabled', 'true');
 
+                cep.classList.add('desativado');
                 estado.classList.add('desativado');
                 cidade.classList.add('desativado');
+                rua.classList.add('desativado');
+                numRes.classList.add('desativado');
             }
         });
     }

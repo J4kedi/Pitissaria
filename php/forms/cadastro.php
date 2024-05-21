@@ -4,7 +4,7 @@
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $nome = $_POST['nome'];
-        $nome = $_POST['username'];
+        $username = $_POST['username'];
         $email = $_POST['email'];
         $senha = $_POST['senha'];
         $confirmarSenha = $_POST['confirmar-senha'];
@@ -72,6 +72,7 @@
             $nomeSeparado = explode(' ', $nome);
             $_SESSION['sessao'] = $id;
             $_SESSION['nome'] = $nome;
+            $_SESSION['username'] = $username;
             $_SESSION['primeiroNome'] = $nomeSeparado[0];
             $_SESSION['tipo_usuario'] = $resultadoUsuario['tipo_usuario'];
             header("Location: ../../paginas/perfil.php");
