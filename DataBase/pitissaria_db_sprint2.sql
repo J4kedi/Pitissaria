@@ -106,15 +106,15 @@ INSERT INTO ingredientes (nome, preco, data_entrada, data_validade, quantidade) 
 ('Gorgonzola', 15.00, '2021-05-01', '2024-12-01', 1000),
 ('Parmesão', 10.00, '2021-05-01', '2024-12-01', 1000),
 ('queijo', 4.00, '2021-05-01', '2024-12-01', 1000),
-('tomate', 4.00, '2021-05-01', '2024-12-01', 1000),
+('tomate', 4.00, '2021-05-01', '2024-12-01', 1000);
 
 -- ADICIONANDO PIZZAS (O ID É O ID DA PIZZA QUE ESTÁ NO ARQUIVO SCRIPT.JS))
 INSERT INTO pizzas(nome, descricao, preco, id_usuario) VALUES ("calabresa", "calabresa queijo azeitona ", 20, 1);
 INSERT INTO pizzas(nome, descricao, preco, id_usuario) VALUES ("pepperoni", "tomate queijo mossarela pepperoni", 30, 1);
-INSERT INTO pizza(nome, descricao, preco, id_usuario) VALUES ("marguerita", "tomate queijo mossarela manjericao", 25, 1);
-INSERT INTO pizza(nome, descricao, preco, id_usuario) VALUES ("portuguesa", "tomate queijo mossarela presunto ovo ervilha", 35, 1);
-INSERT INTO pizza(nome, descricao, preco, id_usuario) VALUES ("quatro queijos", "tomate queijo mossarela gorgonzola parmesao catupiry", 40, 1);
-INSERT INTO pizza(nome, descricao, preco, id_usuario) VALUES ("frango catupiry", "tomate queijo mossarela frango catupiry", 35, 1);
+INSERT INTO pizzas(nome, descricao, preco, id_usuario) VALUES ("marguerita", "tomate queijo mossarela manjericao", 25, 1);
+INSERT INTO pizzas(nome, descricao, preco, id_usuario) VALUES ("portuguesa", "tomate queijo mossarela presunto ovo ervilha", 35, 1);
+INSERT INTO pizzas(nome, descricao, preco, id_usuario) VALUES ("quatro queijos", "tomate queijo mossarela gorgonzola parmesao catupiry", 40, 1);
+INSERT INTO pizzas(nome, descricao, preco, id_usuario) VALUES ("frango catupiry", "tomate queijo mossarela frango catupiry", 35, 1);
 
 
 -- Inserir alguns registros na tabela de usuários
@@ -139,15 +139,16 @@ VALUES (1, 1), -- João com endereço da Rua A
        (3, 2),
        (4, 2),
        (5, 1),
-       (6, 1);
+       (6, 1),
+       (5, 2);
 
 select * from usuarios;
 select * from enderecos;
 select * from usuario_endereco;
 
-
---SELECT e.cep, e.rua, e.num_res, e.cidade, e.estado
---FROM usuarios u
---INNER JOIN usuario_endereco ue ON u.id = ue.usuario_id
---INNER JOIN enderecos e ON ue.endereco_id = e.id
---WHERE u.id = 1;
+SELECT e.cep, e.rua, e.num_res, e.cidade, e.estado
+FROM usuarios u
+INNER JOIN usuario_endereco ue ON u.id = ue.usuario_id
+INNER JOIN enderecos e ON ue.endereco_id = e.id
+WHERE u.id = 5;
+SELECT * FROM enderecos WHERE cep = "12345-678" AND num_res = 123;
