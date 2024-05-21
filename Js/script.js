@@ -74,6 +74,16 @@ const pizzas = [
             { id: 1, quantidade: 10 },
             { id: 1, quantidade: 10 },
         ]
+    },
+
+    {
+        id: 9, nome: "Chocolate com Banana", imagem: "../imagens/banana_chocolate.jpg", texto: "banana, chocolate, canela, creme de leite, mossarela", ingredientes: [
+            { id: 1, quantidade: 10 },
+            { id: 1, quantidade: 10 },
+            { id: 1, quantidade: 10 },
+            { id: 1, quantidade: 10 },
+            { id: 1, quantidade: 10 },
+        ]
     }
     
     

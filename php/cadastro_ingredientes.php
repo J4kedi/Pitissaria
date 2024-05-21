@@ -9,6 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../Style/padrao.css">
     <link rel="shortcut icon" href="../imagens/icone/pizza.ico" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
     <?php include("../geral/menu.php");?>
@@ -41,5 +42,39 @@
     </main>
 
     <?php include("../geral/footer.php")?>
+
+    <?php
+    if (isset($_GET['error'])) {
+        $error_message = $_GET['error'];
+        echo "<script>
+            Swal.fire({
+                icon: 'error',
+                title: 'Erro',
+                text: '$error_message',
+                confirmButtonText: 'OK'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = 'cadastro_ingredientes.php';
+                }
+            });
+        </script>";
+    }
+    
+    if (isset($_GET['success'])) {
+        $success_message = $_GET['success'];
+        echo "<script>
+            Swal.fire({
+                icon: 'success',
+                title: 'Sucesso',
+                text: '$success_message',
+                confirmButtonText: 'OK'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = 'lista_ingredientes.php';
+                }
+            });
+        </script>";
+    }
+    ?>
 </body>
 </html>
