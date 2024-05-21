@@ -3,8 +3,8 @@
 const pizzas = [
     {   //O ID 2 É O ID DA PIZZA QUE TEMOS
         id: 1, nome: "Calabresa", imagem: "../imagens/pizza_calabresa.jpg", texto: "Calabresa, queijo, azeitona", ingredientes: [
-            { id: 1, quantidade: 10 }, // O ID É O ID DO INGREDIENTE QUE TEM NO ESTOQUE 
-            { id: 2, quantidade: 15 },
+            { id: 3, quantidade: 10 }, // O ID É O ID DO INGREDIENTE QUE TEM NO ESTOQUE 
+            { id: 1, quantidade: 15 },
             { id: 3, quantidade: 20 },
         ],
         total : 20,
