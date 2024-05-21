@@ -37,7 +37,7 @@
                     <tr>
                         <th>ID da Compra</th>
                         <th>ID do Usuário</th>
-                        <th>ID da Pizza</th>
+                        <th>Preço pizza</th>
                         <th>Endereco id</th>
                     </tr>";
             while($row = $result->fetch_assoc()) {
