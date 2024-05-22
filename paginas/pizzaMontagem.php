@@ -30,13 +30,31 @@
             <img src="../imagens/8pedacos.png" alt="Pizza Grande" class="tamanho-img"> Pizza Grande
         </label>
         <input type="radio" name="tamanho" id="grande" value="69"><br>
+
         <label for="queijo">Queijo</label>
         <input type="checkbox" name="queijo" id="queijo" data-id="1">
         <input type="number" id="quantidade_queijo" name="quantidade_queijo" min="1" max="10" value="1"><br>
+
         <label for="tomate">Tomate</label>
         <input type="checkbox" name="tomate" id="tomate" data-id="2">
         <input type="number" id="quantidade_tomate" name="quantidade_tomate" min="1" max="10" value="1"><br>
-        
+
+        <label for="calabresa">Calabresa</label>
+        <input type="checkbox" name="calabresa" id="calabresa" data-id="4">
+        <input type="number" id="quantidade_calabresa" name="quantidade_calabresa" min="1" max="10" value="1"><br>
+
+        <label for="pepperoni">Pepperoni</label>
+        <input type="checkbox" name="pepperoni" id="pepperoni" data-id="5">
+        <input type="number" id="quantidade_pepperoni" name="quantidade_pepperoni" min="1" max="10" value="1"><br>
+
+        <label for="azeitona">Azeitona</label>
+        <input type="checkbox" name="azeitona" id="azeitona" data-id="6">
+        <input type="number" id="quantidade_azeitona" name="quantidade_azeitona" min="1" max="10" value="1"><br>
+
+        <label for="cebola">Cebola</label>
+        <input type="checkbox" name="cebola" id="cebola" data-id="7">
+        <input type="number" id="quantidade_cebola" name="quantidade_cebola" min="1" max="10" value="1"><br>
+
         <button id="calcular-total" class="btn btn-primary">Calcular Total</button>
         <a href="../HTML/login.php" class="btn btn-primary">Finalizar</a>
         <p id="total"></p>
