@@ -2,7 +2,6 @@
 // Incluir arquivo de conexão com o banco de dados
 include("connection.php");
 
-
 // Verificar se o formulário foi submetido
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Recuperar os dados do formulário
@@ -12,21 +11,39 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $quantidade = $_POST["quantidade"];
     $preco_compra = $_POST["preco"];
 
-    // Preparar e executar a consulta SQL para inserir os dados
-    $sql = "INSERT INTO ingredientes (nome, data_validade, data_entrada, quantidade, preco) VALUES ('$nome', '$validade','$data_entrada', '$quantidade','$preco_compra')";
-    $stmt = $conn->prepare($sql);
+    // Verificar se o ingrediente já existe no banco de dados
+    $sql_check = "SELECT COUNT(*) FROM ingredientes WHERE nome = ?";
+    $stmt_check = $conn->prepare($sql_check);
+    $stmt_check->bind_param("s", $nome);
+    $stmt_check->execute();
+    $stmt_check->bind_result($count);
+    $stmt_check->fetch();
+    $stmt_check->close();
 
-    if ($stmt->execute()) {
-        // Redirecionar para a página de sucesso após o cadastro
-        header("Location: lista_ingredientes.php");
+    if ($count > 0) {
+        // Redirecionar de volta para a página de cadastro com uma mensagem de erro
+        header("Location: cadastro_ingredientes.php?error=O ingrediente já está cadastrado no sistema.");
         exit();
     } else {
-        // Exibir mensagem de erro caso a inserção falhe
-        echo "Erro ao cadastrar o ingrediente: " . $conn->error;
+        // Preparar e executar a consulta SQL para inserir os dados
+        $sql_insert = "INSERT INTO ingredientes (nome, data_validade, data_entrada, quantidade, preco) VALUES (?, ?, ?, ?, ?)";
+        $stmt_insert = $conn->prepare($sql_insert);
+        $stmt_insert->bind_param("sssdi", $nome, $validade, $data_entrada, $quantidade, $preco_compra);
+
+        if ($stmt_insert->execute()) {
+            // Redirecionar para a página de cadastro com uma mensagem de sucesso
+            header("Location: cadastro_ingredientes.php?success=Ingrediente cadastrado com sucesso.");
+            exit();
+        } else {
+            // Redirecionar de volta para a página de cadastro com uma mensagem de erro
+            header("Location: cadastro_ingredientes.php?error=Erro ao cadastrar o ingrediente: " . $conn->error);
+            exit();
+        }
+
+        // Fechar a conexão
+        $stmt_insert->close();
     }
 
-    // Fechar a conexão
-    $stmt->close();
     $conn->close();
 } else {
     // Se o método de requisição não for POST, redirecionar para o formulário de cadastro

@@ -3,18 +3,92 @@
 const pizzas = [
     {   //O ID 2 É O ID DA PIZZA QUE TEMOS
         id: 1, nome: "Calabresa", imagem: "../imagens/pizza_calabresa.jpg", texto: "Calabresa, queijo, azeitona", ingredientes: [
-            { id: 1, quantidade: 10 }, // O ID É O ID DO INGREDIENTE QUE TEM NO ESTOQUE 
-            { id: 2, quantidade: 15 },
+            { id: 3, quantidade: 10 }, // O ID É O ID DO INGREDIENTE QUE TEM NO ESTOQUE 
+            { id: 1, quantidade: 15 },
             { id: 3, quantidade: 20 },
         ],
         total : 20,
     },
+
     {
-        id: 3, nome: "Pepperoni", imagem: "../imagens/portuguesa.jpg", texto: "Calabresa, queijo, pimentão, tomate", ingredientes: [
+
+        id: 2, nome: "pepperoni", imagem: "../imagens/pepperoni.png", texto: "Pepperoni, mossarela , oregano", ingredientes: [
+            { id: 10, quantidade: 10 },
+            { id: 1, quantidade: 15 },
+            { id: 1, quantidade: 20 },
+        ],
+    },
+
+    {
+        id: 3, nome: "Marguerita", imagem: "../imagens/portuguesa.jpg", texto: "Tomate, mossarela, manjericao", ingredientes: [
             { id: 8, quantidade: 5 },
         ],
         total : 30,
     },
+
+    {
+
+        id: 4, nome: "Portuguesa", imagem: "../imagens/portuguesa.jpg", texto: "Tomate, queijo, presunto, ovo, ervilha, azeitona, oregano", ingredientes: [
+            { id: 1, quantidade: 10 },
+            { id: 1, quantidade: 10 },
+            { id: 1, quantidade: 10 },
+            { id: 1, quantidade: 10 },
+            { id: 1, quantidade: 10 },
+            { id: 1, quantidade: 10 },
+            { id: 1, quantidade: 10 },
+        ]
+    },
+
+    {
+
+        id: 5, nome: "Quatro Queijos", imagem: "../imagens/quatro_queijos.jpg", texto: "Mossarela, gorgonzola, parmesao, catupiry", ingredientes: [
+            { id: 1, quantidade: 10 },
+            { id: 1, quantidade: 10 },
+            { id: 1, quantidade: 10 },
+            { id: 1, quantidade: 10 },
+        ]
+    },
+
+    {
+        id: 6, nome: "Frango com Catupiry", imagem: "../imagens/frango_catupiry.jpg", texto: "Frango, catupiry, milho, azeitona", ingredientes: [
+            { id: 1, quantidade: 10 },
+            { id: 1, quantidade: 10 },
+            { id: 1, quantidade: 10 },
+            { id: 1, quantidade: 10 },
+        ]
+    },
+
+    {
+        id: 7, nome: "Baconn", imagem: "../imagens/bacon.jpg", texto: "Bacon, azeitona, oregano, ovos, mossarela", ingredientes: [
+            { id: 1, quantidade: 10 },
+            { id: 1, quantidade: 10 },
+            { id: 1, quantidade: 10 },
+            { id: 1, quantidade: 10 },
+            { id: 1, quantidade: 10 },
+        ]
+    },
+
+    {
+        id:8, nome: "Camarão", imagem: "../imagens/camarao.jpg", texto: "Camarão mossarela oregano", ingredientes: [
+            { id: 1, quantidade: 10 },
+            { id: 1, quantidade: 10 },
+            { id: 1, quantidade: 10 },
+        ]
+    },
+
+    {
+        id: 9, nome: "Chocolate com Banana", imagem: "../imagens/banana_chocolate.jpg", texto: "banana, chocolate, canela, creme de leite, mossarela", ingredientes: [
+            { id: 1, quantidade: 10 },
+            { id: 1, quantidade: 10 },
+            { id: 1, quantidade: 10 },
+            { id: 1, quantidade: 10 },
+            { id: 1, quantidade: 10 },
+        ]
+    }
+    
+    
+    
+
 
 ];
 
@@ -61,7 +135,7 @@ function adicionarEventoClick(pizza) {
     });
 }
 async function removerIngredientes(pizza) {
-    const response = await fetch("http://127.0.0.1/Pitissaria/php/remover_e_comprar_ingrediente.php", { 
+    const response = await fetch("http://localhost/GitHub/CrazyCats/Pitissaria/php/remover_e_comprar_ingrediente.php", { 
         //http://localhost/GitHub/CrazyCats/Pitissaria/php/remover_e_comprar_ingrediente.php -> endereçamento Ricardo
         //http://127.0.0.1/Pitissaria/php/remover_e_comprar_ingrediente.php -> endereçamento Arthur //
         method: "PATCH",

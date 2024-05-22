@@ -52,6 +52,8 @@ document.addEventListener('DOMContentLoaded', function () {
         if (camposInvalidos.length > 0) {
             event.preventDefault();
             alert('Corrija os campos inválidos antes de enviar o formulário.');
+        } else {
+            tirarDisabled(elementos);
         }
     });
 });
