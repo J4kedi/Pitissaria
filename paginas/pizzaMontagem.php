@@ -51,13 +51,9 @@
         <input type="checkbox" name="azeitona" id="azeitona" data-id="6">
         <input type="number" id="quantidade_azeitona" name="quantidade_azeitona" min="1" max="10" value="1"><br>
 
-        <label for="cebola">Cebola</label>
-        <input type="checkbox" name="cebola" id="cebola" data-id="7">
-        <input type="number" id="quantidade_cebola" name="quantidade_cebola" min="1" max="10" value="1"><br>
-
-        <button id="calcular-total" class="btn btn-primary">Calcular Total</button>
+        <br><p id="total"></p> <br>
         <a href="../HTML/login.php" class="btn btn-primary">Finalizar</a>
-        <p id="total"></p>
+
         <p id="mensagem-disponibilidade"></p>
     </main>
 
