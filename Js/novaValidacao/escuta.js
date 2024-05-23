@@ -26,6 +26,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 validarCelular(this);
             } else if (nome === 'cep') {
                 pesquisarCep(this);
+            } else if (nome === 'quantidade') {
+                apenasNumero(this);
+            } else if (this.type === 'checkbox') {
+                return;                
             } else {                
                 validarCampoVazio(this);
             }
@@ -39,21 +43,23 @@ document.addEventListener('DOMContentLoaded', function () {
                     removerErro(this);
                 }
             }
-            if (nome === 'cpf' || nome === 'celular' ) {
+            if (nome === 'cpf' || nome === 'celular' || nome === 'quantidade') {
                 apenasNumero(this);
             };
         });
     });
 
-    formulario.addEventListener('submit', function(event) {
-        const camposInvalidos = document.querySelectorAll('.erro');
-
-        // Se houver campos inválidos, impede o envio do formulário
-        if (camposInvalidos.length > 0) {
-            event.preventDefault();
-            alert('Corrija os campos inválidos antes de enviar o formulário.');
-        } else {
-            tirarDisabled(elementos);
-        }
-    });
+    if (formulario != null) {
+        formulario.addEventListener('submit', function(event) {
+            const camposInvalidos = document.querySelectorAll('.erro');
+    
+            // Se houver campos inválidos, impede o envio do formulário
+            if (camposInvalidos.length > 0) {
+                event.preventDefault();
+                alert('Corrija os campos inválidos antes de enviar o formulário.');
+            } else {
+                tirarDisabled(elementos);
+            }
+        });
+    }
 });
