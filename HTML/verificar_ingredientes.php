@@ -19,7 +19,6 @@ try {
         }
     }
 
-    // Enviar resposta JSON
     header('Content-Type: application/json');
     echo json_encode($disponibilidade);
 
