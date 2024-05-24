@@ -105,21 +105,15 @@ INSERT INTO ingredientes (nome, preco, data_entrada, data_validade, quantidade) 
 ('Ervilha', 5.00, '2021-05-01', '2024-12-01', 1000),
 ('Gorgonzola', 15.00, '2021-05-01', '2024-12-01', 1000),
 ('Parmesão', 10.00, '2021-05-01', '2024-12-01', 1000),
-('queijo', 4.00, '2021-05-01', '2024-12-01', 1000),
-('tomate', 4.00, '2021-05-01', '2024-12-01', 1000),
+('Queijo', 4.00, '2021-05-01', '2024-12-01', 1000),
 ('Bacon', 3.00, '2024-05-01', '2024-12-01', 1000),
 ('Camarão', 8.00, '2024-05-01', '2024-12-01', 1000),
 ('Chocolate', 8.00, '2024-05-01', '2024-12-01', 1000),
 ('Banana', 8.00, '2024-05-01', '2024-12-01', 1000),
-('oregano', 8.00, '2024-05-01', '2024-12-01', 1000),
-('canela', 8.00, '2024-05-01', '2024-12-01', 1000),
-('creme de leite', 8.00, '2024-05-01', '2024-12-01', 1000),
-('milho', 2.00, '2024-05-01', '2024-12-01', 1000)
-
-;
-
-
-
+('Orégano', 8.00, '2024-05-01', '2024-12-01', 1000),
+('Canela', 8.00, '2024-05-01', '2024-12-01', 1000),
+('Creme de leite', 8.00, '2024-05-01', '2024-12-01', 1000),
+('Milho', 2.00, '2024-05-01', '2024-12-01', 1000);
 
 -- Inserir alguns registros na tabela de usuários
 INSERT INTO usuarios (nome, email, senha, cpf, tipo_usuario, data_nascimento, celular, username)
@@ -147,15 +141,15 @@ VALUES (1, 1), -- João com endereço da Rua A
        (5, 2);
 
 -- ADICIONANDO PIZZAS (O ID É O ID DA PIZZA QUE ESTÁ NO ARQUIVO SCRIPT.JS))
-INSERT INTO pizzas(nome, descricao, preco, id_usuario) VALUES ("calabresa", "calabresa queijo azeitona ", 20, 1);
-INSERT INTO pizzas(nome, descricao, preco, id_usuario) VALUES ("pepperoni", "tomate queijo mossarela pepperoni", 30, 1);
-INSERT INTO pizzas(nome, descricao, preco, id_usuario) VALUES ("marguerita", "tomate queijo mossarela manjericao", 25, 1);
-INSERT INTO pizzas(nome, descricao, preco, id_usuario) VALUES ("portuguesa", "tomate queijo mossarela presunto ovo ervilha", 35, 1);
-INSERT INTO pizzas(nome, descricao, preco, id_usuario) VALUES ("quatro queijos", "tomate queijo mossarela gorgonzola parmesao catupiry", 40, 1);
-INSERT INTO pizzas(nome, descricao, preco, id_usuario) VALUES ("frango catupiry", "tomate queijo mossarela frango catupiry", 35, 1);
-INSERT INTO pizzas(nome, descricao, preco, id_usuario) VALUES ("bacon", "azeitona oregano ovos bacon queijo mossarela ", 25, 1);
-INSERT INTO pizzas(nome, descricao, preco, id_usuario) VALUES ("camarao", "camarao mossarela oregano", 45, 1);
-INSERT INTO pizzas(nome, descricao, preco, id_usuario) VALUES ('banana com chocolate', 'banana chocolate canela creme de leite mossarela', 40, 1);
+INSERT INTO pizzas(nome, descricao, preco, id_usuario) VALUES ("Calabresa", "calabresa queijo azeitona ", 20, 1);
+INSERT INTO pizzas(nome, descricao, preco, id_usuario) VALUES ("Pepperoni", "tomate queijo mossarela pepperoni", 30, 1);
+INSERT INTO pizzas(nome, descricao, preco, id_usuario) VALUES ("Marguerita", "tomate queijo mossarela manjericao", 25, 1);
+INSERT INTO pizzas(nome, descricao, preco, id_usuario) VALUES ("Portuguesa", "tomate queijo mossarela presunto ovo ervilha", 35, 1);
+INSERT INTO pizzas(nome, descricao, preco, id_usuario) VALUES ("Quatro queijos", "tomate queijo mossarela gorgonzola parmesao catupiry", 40, 1);
+INSERT INTO pizzas(nome, descricao, preco, id_usuario) VALUES ("Frango catupiry", "tomate queijo mossarela frango catupiry", 35, 1);
+INSERT INTO pizzas(nome, descricao, preco, id_usuario) VALUES ("Bacon", "azeitona oregano ovos bacon queijo mossarela ", 25, 1);
+INSERT INTO pizzas(nome, descricao, preco, id_usuario) VALUES ("Camarao", "camarao mossarela oregano", 45, 1);
+INSERT INTO pizzas(nome, descricao, preco, id_usuario) VALUES ('Banana com chocolate', 'banana chocolate canela creme de leite mossarela', 40, 1);
 
 select * from usuarios;
 select * from enderecos;

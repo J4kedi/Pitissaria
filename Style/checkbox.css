@@ -63,8 +63,8 @@
 :root {
     /* -- Colors: */
     --body-bg-color: hsl(221deg 16% 12%);
-    --checkbox-color-hue: 216;
-    --checkbox-color-saturation: 17;
+    --checkbox-color-hue: 331;
+    --checkbox-color-saturation: 80;
     --checkbox-color-lightness: 15;
     --checkbox-color: hsl(
         calc(var(--checkbox-color-hue) * 1deg) /**/
@@ -138,9 +138,9 @@ label[for*=checkbox]:hover:after {
 }
 
 label[for*=checkbox]:hover input[type=checkbox] {
-    --checkbox-color-hue: 216;
-    --checkbox-color-saturation: 14;
-    --checkbox-color-lightness: 18;
+    --checkbox-color-hue: 331;
+    --checkbox-color-saturation: 80;
+    --checkbox-color-lightness: 25;
     --checkbox-color: hsl(
       calc(var(--checkbox-color-hue) * 1deg)
       calc(var(--checkbox-color-saturation) * 1%)
@@ -193,9 +193,9 @@ label[for*=checkbox] input[type=checkbox] {
 }
 
 label[for*=checkbox] input[type=checkbox]:active, label[for*=checkbox] input[type=checkbox]:checked {
-    --checkbox-color-hue: 264;
-    --checkbox-color-saturation: 56;
-    --checkbox-color-lightness: 49;
+    --checkbox-color-hue: 331;
+    --checkbox-color-saturation: 80;
+    --checkbox-color-lightness: 25;
     --checkbox-color: hsl(
       calc(var(--checkbox-color-hue) * 1deg) /**/
       calc(var(--checkbox-color-saturation) * 1%) /**/

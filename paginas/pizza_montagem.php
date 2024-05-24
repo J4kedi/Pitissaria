@@ -9,34 +9,38 @@
 <body>
     <?php include("geral/menu.php")?>
 
+    <?php 
+        include("../php/consultas/consultaDadosPerfil.php");
+    ?>
+
     <main class="container">
         <h1>Monte sua Pizza aqui</h1>
 
-        <div class="container-checkbox">
+        <div class="container-checkbox" id="tamanhos">
             <div class="card">
                 <img class="img-pizza" src="../imagens/4pedacos.avif" alt="pizza-pequena">
                 <label for="checkbox-1">
-                    <input type="checkbox" id="checkbox-1" name="checkbox-1" max-length="1">
+                    <input type="checkbox" id="checkbox-1" name="checkbox-1" value="25.99" max-length="1" checked>
                     <p>Pequena</p>
                 </label>
             </div>
             <div class="card">
                 <img class="img-pizza" src="../imagens/6pedacos.png" alt="pizza-média">
                 <label for="checkbox-2">
-                    <input type="checkbox" id="checkbox-2" name="checkbox-2" max-length="1">
+                    <input type="checkbox" id="checkbox-2" name="checkbox-2" value="35.99" max-length="1">
                     <p>Média</p>
                 </label>
             </div>
             <div class="card">
                 <img class="img-pizza" src="../imagens/8pedacos.png" alt="pizza-grande">
                 <label for="checkbox-3">
-                    <input type="checkbox" id="checkbox-3" name="checkbox-3" max-length="1">
+                    <input type="checkbox" id="checkbox-3" name="checkbox-3" value="69.99" max-length="1">
                     <p>Grande</p>
                 </label>
             </div>
         </div>
 
-        <div class="container-checkbox">
+        <div class="container-checkbox container-ingredientes">
             <div class="card">
                 <label for="checkbox-4">
                     <input type="checkbox" id="checkbox-4" name="checkbox-4" max-length="1"/>
@@ -62,32 +66,151 @@
                 <p class="checkbox-p">qtd.</p>
             </div>
             <div class="card">
-                <label for="checkbox-6">
-                    <input type="checkbox" id="checkbox-6" name="checkbox-6" max-length="1"/>
+                <label for="checkbox-7">
+                    <input type="checkbox" id="checkbox-7" name="checkbox-7" max-length="1"/>
                     <p>Pepperoni</p>
                 </label>
                 <input type="text" class="input-checkbox" name="quantidade">
                 <p class="checkbox-p">qtd.</p>
             </div>
             <div class="card">
-                <label for="checkbox-6">
-                    <input type="checkbox" id="checkbox-6" name="checkbox-6" max-length="1"/>
+                <label for="checkbox-8">
+                    <input type="checkbox" id="checkbox-8" name="checkbox-8" max-length="1"/>
                     <p>Azeitona</p>
                 </label>
                 <input type="text" class="input-checkbox" name="quantidade">
                 <p class="checkbox-p">qtd.</p>
             </div>
-            <div class="card" style="margin: 20px;">
-                <button type="submit" style="width: 100px; height: 40px;">Finalizar</button>
-                <p style="align-self: center; margin: 10px;">calcular total R$ 0,00</p>
+            <div class="card">
+                <label for="checkbox-8">
+                    <input type="checkbox" id="checkbox-8" name="checkbox-8" max-length="1"/>
+                    <p>Azeitona</p>
+                </label>
+                <input type="text" class="input-checkbox" name="quantidade">
+                <p class="checkbox-p">qtd.</p>
             </div>
+            <div class="card">
+                <label for="checkbox-8">
+                    <input type="checkbox" id="checkbox-8" name="checkbox-8" max-length="1"/>
+                    <p>Azeitona</p>
+                </label>
+                <input type="text" class="input-checkbox" name="quantidade">
+                <p class="checkbox-p">qtd.</p>
+            </div>
+            <div class="card">
+                <label for="checkbox-8">
+                    <input type="checkbox" id="checkbox-8" name="checkbox-8" max-length="1"/>
+                    <p>Azeitona</p>
+                </label>
+                <input type="text" class="input-checkbox" name="quantidade">
+                <p class="checkbox-p">qtd.</p>
+            </div>
+            <div class="card">
+                <label for="checkbox-8">
+                    <input type="checkbox" id="checkbox-8" name="checkbox-8" max-length="1"/>
+                    <p>Azeitona</p>
+                </label>
+                <input type="text" class="input-checkbox" name="quantidade">
+                <p class="checkbox-p">qtd.</p>
+            </div>
+            <div class="card">
+                <label for="checkbox-8">
+                    <input type="checkbox" id="checkbox-8" name="checkbox-8" max-length="1"/>
+                    <p>Azeitona</p>
+                </label>
+                <input type="text" class="input-checkbox" name="quantidade">
+                <p class="checkbox-p">qtd.</p>
+            </div>
+            <div class="card">
+                <label for="checkbox-8">
+                    <input type="checkbox" id="checkbox-8" name="checkbox-8" max-length="1"/>
+                    <p>Azeitona</p>
+                </label>
+                <input type="text" class="input-checkbox" name="quantidade">
+                <p class="checkbox-p">qtd.</p>
+            </div>
+            <div class="card">
+                <label for="checkbox-8">
+                    <input type="checkbox" id="checkbox-8" name="checkbox-8" max-length="1"/>
+                    <p>Azeitona</p>
+                </label>
+                <input type="text" class="input-checkbox" name="quantidade">
+                <p class="checkbox-p">qtd.</p>
+            </div>
+            <div class="card">
+                <label for="checkbox-8">
+                    <input type="checkbox" id="checkbox-8" name="checkbox-8" max-length="1"/>
+                    <p>Azeitona</p>
+                </label>
+                <input type="text" class="input-checkbox" name="quantidade">
+                <p class="checkbox-p">qtd.</p>
+            </div>
+            <div class="card">
+                <label for="checkbox-8">
+                    <input type="checkbox" id="checkbox-8" name="checkbox-8" max-length="1"/>
+                    <p>Azeitona</p>
+                </label>
+                <input type="text" class="input-checkbox" name="quantidade">
+                <p class="checkbox-p">qtd.</p>
+            </div>
+            <div class="card">
+                <label for="checkbox-8">
+                    <input type="checkbox" id="checkbox-8" name="checkbox-8" max-length="1"/>
+                    <p>Azeitona</p>
+                </label>
+                <input type="text" class="input-checkbox" name="quantidade">
+                <p class="checkbox-p">qtd.</p>
+            </div>
+            <div class="card">
+                <label for="checkbox-8">
+                    <input type="checkbox" id="checkbox-8" name="checkbox-8" max-length="1"/>
+                    <p>Azeitona</p>
+                </label>
+                <input type="text" class="input-checkbox" name="quantidade">
+                <p class="checkbox-p">qtd.</p>
+            </div>
+            <div class="card">
+                <label for="checkbox-8">
+                    <input type="checkbox" id="checkbox-8" name="checkbox-8" max-length="1"/>
+                    <p>Azeitona</p>
+                </label>
+                <input type="text" class="input-checkbox" name="quantidade">
+                <p class="checkbox-p">qtd.</p>
+            </div>
+            <div class="card">
+                <label for="checkbox-8">
+                    <input type="checkbox" id="checkbox-8" name="checkbox-8" max-length="1"/>
+                    <p>Azeitona</p>
+                </label>
+                <input type="text" class="input-checkbox" name="quantidade">
+                <p class="checkbox-p">qtd.</p>
+            </div>
+            <div class="card">
+                <label for="checkbox-8">
+                    <input type="checkbox" id="checkbox-8" name="checkbox-8" max-length="1"/>
+                    <p>Azeitona</p>
+                </label>
+                <input type="text" class="input-checkbox" name="quantidade">
+                <p class="checkbox-p">qtd.</p>
+            </div>
+            <div class="card">
+                <label for="checkbox-8">
+                    <input type="checkbox" id="checkbox-8" name="checkbox-8" max-length="1"/>
+                    <p>Azeitona</p>
+                </label>
+                <input type="text" class="input-checkbox" name="quantidade">
+                <p class="checkbox-p">qtd.</p>
+            </div>
+        </div>
+        <div class="card" style="margin: 20px;">
+            <button type="submit" style="width: 100px; height: 40px;">Finalizar</button>
+            <p style="align-self: center; margin: 10px;">calcular total R$ 0,00</p>
         </div>
 
     </main>
 
     <?php include("geral/footer.php")?>
     <script src="../Js/novaValidacao/erro.js"></script>
-    <script src="../Js/novaValidacao/escuta.js"></script>
     <script src="../Js/paginas/montagem.js"></script>
 </body>
 </html>
