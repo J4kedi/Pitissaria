@@ -178,6 +178,24 @@ main.container h1 {
     text-align: center;
 }
 
+.preco {
+    margin: 20px;
+}
+
+.preco button {
+    width: 100px;
+    height: 40px;
+}
+
+.preco p {
+    align-self: center; 
+    margin: 10px;
+}
+
+.container-pizza {
+    flex-direction: row;
+}
+
 .container-ingredientes {
     flex-wrap: wrap;
     width: 80%;
@@ -186,7 +204,7 @@ main.container h1 {
     border-radius: 5px;
     padding: 20px;
     background: var(--cor-darker);
-    height: 600px;
+    height: 700px;
 }
 
 .container-checkbox .card {

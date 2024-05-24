@@ -1,22 +1,22 @@
 <?php
-require_once('../PHP/conexao/connection.php');
+function exibirIngredientes() {
+    require_once('../PHP/conexao/connection.php');
+    
+    $sql = "SELECT id, nome, preco, quantidade FROM ingredientes";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-$sql = "SELECT nome, preco, quantidade FROM ingredientes";
-$stmt = $conn->prepare($sql);
-$stmt->execute();
-$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-function exibirIngredientes($result) {
     $initialValue = 4;
 
     foreach ($result as $ingrediente) {
         echo "
         <div class='card' id='". $ingrediente['id'] ."'>
-            <label for='checkbox-$initialValue'>
+            <label for='checkbox-$initialValue' class='1'>
                 <input type='checkbox' id='checkbox-$initialValue' name='checkbox-$initialValue' max-length='1'/>
                 <p>". $ingrediente['nome'] ."</p>
             </label>
-            <input type='text' class='input-checkbox' name='quantidade'>
+            <input type='number' value='1' class='input-checkbox' name='quantidade'>
             <p class='checkbox-p'>qtd.</p>
         </div>
         ";
