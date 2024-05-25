@@ -114,6 +114,7 @@ INSERT INTO ingredientes (nome, preco, data_entrada, data_validade, quantidade) 
 ('Canela', 8.00, '2024-05-01', '2024-12-01', 1000),
 ('Creme de leite', 8.00, '2024-05-01', '2024-12-01', 1000),
 ('Milho', 2.00, '2024-05-01', '2024-12-01', 1000);
+('Frango', 8.00, '2024-05-01', '2024-12-01', 1000);
 
 -- Inserir alguns registros na tabela de usuários
 INSERT INTO usuarios (nome, email, senha, cpf, tipo_usuario, data_nascimento, celular, username)
