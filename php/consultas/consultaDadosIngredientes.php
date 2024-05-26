@@ -13,7 +13,7 @@ function exibirIngredientes() {
         echo "
         <div class='card' id='". $ingrediente['id'] ."'>
             <label for='checkbox-$initialValue' class='1'>
-                <input type='checkbox' id='checkbox-$initialValue' name='checkbox-$initialValue' max-length='1'/>
+                <input type='checkbox' id='checkbox-$initialValue' name='checkbox-$initialValue' max-length='1' value='". $ingrediente['preco'] ."'/>
                 <p>". $ingrediente['nome'] ."</p>
             </label>
             <input type='number' value='1' class='input-checkbox' name='quantidade'>

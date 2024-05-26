@@ -30,24 +30,22 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     
     inputIngredientes.forEach(input => {
-        input.addEventListener('change', function () {
+        input.addEventListener('input', function () {
             total = calcularTotal(input, total);
             mensagemTotal.textContent = mensagem + total;
-
-            resetarQuantidade(input);
         });
     });
     
     quantidades.forEach(quantidade => {
         quantidade.addEventListener('input', function () {
             apenasNumero(this);
+            total = calcularTotal(quantidade, total);
+            mensagemTotal.textContent = mensagem + total;
         });
-
+        
         quantidade.addEventListener('blur', function () {
             total = calcularTotal(quantidade, total);
             mensagemTotal.textContent = mensagem + total;
-
-            resetarQuantidade(quantidade);
         });
     });
 });
