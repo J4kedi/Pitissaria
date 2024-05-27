@@ -5,3 +5,10 @@ var rua = document.getElementsByName('rua')[0];
 var numRes = document.getElementsByName('num-res')[0];
     
 elementos = [cep, estado, cidade, rua, numRes];
+
+function tirarDisabled (elementos) {
+    elementos.forEach(elemento => {
+        elemento.removeAttribute('disabled');
+        elemento.classList.remove('desativado');
+    });
+}

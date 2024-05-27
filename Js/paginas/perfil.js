@@ -42,13 +42,6 @@ select.addEventListener('change', function() {
     }
 });
 
-function tirarDisabled (elementos) {
-    elementos.forEach(elemento => {
-        elemento.removeAttribute('disabled');
-        elemento.classList.remove('desativado');
-    });
-}
-
 function adicionarDisabled (elementos) {
     elementos.forEach(elemento => {
         elemento.setAttribute('disabled', 'true');

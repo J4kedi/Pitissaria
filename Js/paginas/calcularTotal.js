@@ -5,6 +5,7 @@ function calcularTotal(campo, total) {
     const divPai = campo.closest('.card');
     const quantidade = divPai.querySelector('input[name="quantidade"]');
     const checkbox = divPai.querySelector('input[name^="checkbox-"]');
+    const nome = divPai.querySelector('p[name="nome"]').textContent;
     const precoIngrediente = parseFloat(checkbox.value);
     const idIngrediente = divPai.id;
 
@@ -26,7 +27,7 @@ function calcularTotal(campo, total) {
                 total -= precoIngrediente * diferenca;
             }
         } else {
-            ingredientes.set(idIngrediente, { quantidade: quantidade.value });
+            ingredientes.set(idIngrediente, { quantidade: quantidade.value, nome: nome});
 
             total += precoIngrediente * quantidade.value;
         }

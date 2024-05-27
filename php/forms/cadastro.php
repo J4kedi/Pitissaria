@@ -13,6 +13,7 @@
         $celular = $_POST['celular'];
         $cep = $_POST['cep'];
         $cidade = $_POST['cidade'];
+        $estado = $_POST['estado'];
         $rua = $_POST['rua'];
         $num_res = $_POST['num-res'];
 
@@ -24,7 +25,7 @@
         // Inserir dados na tabela enderecos
         $sqlEndereco = "INSERT INTO enderecos (cep, rua, num_res, cidade, estado) 
                         VALUES (:cep, :rua, :num_res, :cidade, :estado)";
-        $stmtEndereco = $pdo->prepare($sqlEndereco);
+        $stmtEndereco = $conn->prepare($sqlEndereco);
         $resultadoEndereco = $stmtEndereco->execute([
             ':cep' => $cep,
             ':rua' => $rua,

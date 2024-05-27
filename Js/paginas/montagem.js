@@ -2,7 +2,6 @@ const tamanhos = document.getElementById('tamanhos').querySelectorAll('input');
 const quantidades = document.getElementsByName('quantidade');
 const inputIngredientes = document.querySelectorAll('label[class*="1"] input');
 const botaoEnviar = document.querySelector('.preco button');
-var mensagemTotal = document.querySelector('.preco p');
 const mensagem = mensagemTotal.textContent;
 var tamanhoAtual = document.getElementById('tamanhos').querySelector('input:checked');
 
@@ -11,6 +10,8 @@ total += parseFloat(tamanhoAtual.value);
 mensagemTotal.textContent = mensagem + total;
 
 document.addEventListener('DOMContentLoaded', function () {
+    var isChecked = new Map();
+
     tamanhos.forEach(tamanho => {
         tamanho.addEventListener('change', function () {
             if (tamanhoAtual != tamanho && tamanho.checked) {
@@ -32,9 +33,15 @@ document.addEventListener('DOMContentLoaded', function () {
     
     inputIngredientes.forEach(input => {
         input.addEventListener('change', function () {
-            if (input.checked) {
-
-            }
+            if (isChecked.has(input)) {
+                if (input.checked) {
+                    isChecked.get(input).checked = true;
+                } else {
+                    isChecked.get(input).checked = false;
+                };
+            } else if (input.checked) {
+                isChecked.set(input, {checked : true});
+            };
 
             total = calcularTotal(input, total);
             mensagemTotal.textContent = mensagem + total.toFixed(2);
@@ -49,8 +56,14 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     botaoEnviar.addEventListener('click', function (event) {
-        if (total == 0) {
+        let checked = null; 
+        isChecked.forEach((v, k) => {checked = checked != null ? checked : (v.checked ? k : null)});
+
+        if (checked) {
+            enviarDadosIngredientes(ingredientes);
+        } else {
             event.preventDefault();
+            console.log("não enviou :(")
         }
     });
 });

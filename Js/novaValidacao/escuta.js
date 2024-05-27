@@ -53,7 +53,6 @@ document.addEventListener('DOMContentLoaded', function () {
         formulario.addEventListener('submit', function(event) {
             const camposInvalidos = document.querySelectorAll('.erro');
     
-            // Se houver campos inválidos, impede o envio do formulário
             if (camposInvalidos.length > 0) {
                 event.preventDefault();
                 alert('Corrija os campos inválidos antes de enviar o formulário.');

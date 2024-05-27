@@ -51,6 +51,7 @@
     </main>
 
     <?php include("geral/footer.php")?>
+    <script src="../Js/paginas/enviarIngredientes.js"></script>
     <script src="../Js/paginas/calcularTotal.js"></script>
     <script src="../Js/paginas/montagem.js"></script>
 </body>
