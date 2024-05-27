@@ -1,6 +1,7 @@
 const tamanhos = document.getElementById('tamanhos').querySelectorAll('input');
 const quantidades = document.getElementsByName('quantidade');
 const inputIngredientes = document.querySelectorAll('label[class*="1"] input');
+const botaoEnviar = document.querySelector('.preco button');
 var mensagemTotal = document.querySelector('.preco p');
 const mensagem = mensagemTotal.textContent;
 var tamanhoAtual = document.getElementById('tamanhos').querySelector('input:checked');
@@ -25,27 +26,31 @@ document.addEventListener('DOMContentLoaded', function () {
                 tamanhoAtual.checked = true;
             }
         
-            mensagemTotal.textContent = mensagem + total;
+            mensagemTotal.textContent = mensagem + total.toFixed(2);
         });
     });
     
     inputIngredientes.forEach(input => {
-        input.addEventListener('input', function () {
+        input.addEventListener('change', function () {
+            if (input.checked) {
+
+            }
+
             total = calcularTotal(input, total);
-            mensagemTotal.textContent = mensagem + total;
+            mensagemTotal.textContent = mensagem + total.toFixed(2);
         });
     });
     
     quantidades.forEach(quantidade => {
         quantidade.addEventListener('input', function () {
-            apenasNumero(this);
             total = calcularTotal(quantidade, total);
-            mensagemTotal.textContent = mensagem + total;
+            mensagemTotal.textContent = mensagem + total.toFixed(2);
         });
-        
-        quantidade.addEventListener('blur', function () {
-            total = calcularTotal(quantidade, total);
-            mensagemTotal.textContent = mensagem + total;
-        });
+    });
+
+    botaoEnviar.addEventListener('click', function (event) {
+        if (total == 0) {
+            event.preventDefault();
+        }
     });
 });

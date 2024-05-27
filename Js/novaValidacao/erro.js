@@ -3,9 +3,6 @@ function apenasNumero(campo) {
     const regex = /\D/g;
 
     campo.value = valor.replace(regex, '');
-    if (campo.name === 'quantidade' && valor > 9) {
-        campo.value = 10;
-    };
 }
 
 function adicionarMensagem(mensagem, campo) {

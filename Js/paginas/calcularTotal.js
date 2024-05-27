@@ -1,25 +1,40 @@
+var ingredientes = new Map();
+
 function calcularTotal(campo, total) {
-    if (campo.name != quantidade) {
-        var divPai = campo.parentNode.parentNode;
+    total = parseFloat(total);
+    const divPai = campo.closest('.card');
+    const quantidade = divPai.querySelector('input[name="quantidade"]');
+    const checkbox = divPai.querySelector('input[name^="checkbox-"]');
+    const precoIngrediente = parseFloat(checkbox.value);
+    const idIngrediente = divPai.id;
+
+    if (checkbox.checked) {
+        quantidade.value = Math.min(quantidade.value, 10);
+
+        if (ingredientes.has(idIngrediente)) {
+            const ingrediente = ingredientes.get(idIngrediente);
+            const quantidadeAnterior = parseInt(ingrediente.quantidade);
+            const novaQuantidade = parseInt(quantidade.value);
+            const diferenca = Math.abs(novaQuantidade - quantidadeAnterior);
+
+            if (quantidadeAnterior < novaQuantidade) {
+                ingrediente.quantidade = novaQuantidade;
+
+                total += precoIngrediente * diferenca;
+            } else {
+                ingrediente.quantidade = novaQuantidade;
+                total -= precoIngrediente * diferenca;
+            }
+        } else {
+            ingredientes.set(idIngrediente, { quantidade: quantidade.value });
+
+            total += precoIngrediente * quantidade.value;
+        }
     } else {
-        var divPai = campo.parentNode;
+        quantidade.value = 1;
+        total -= precoIngrediente * ingredientes.get(idIngrediente).quantidade;
+        ingredientes.delete(idIngrediente);
     }
 
-    var quantidade = divPai.querySelector('input[name="quantidade"]');
-    var checkbox = divPai.querySelector('input[name^="checkbox-"]');
-    var valor = quantidade.value;
-    var precoIngrediente = checkbox.value;
-    
-    console.log(precoIngrediente)
-
-    if (!checkbox.checked) {
-        let valorInicial = precoIngrediente * valor;
-        quantidade.value = 1;
-        total -= valorInicial;
-        return total.toFixed(2);
-    } else {
-        let valorFinal = precoIngrediente * valor;
-        total += valorFinal;
-        return parseFloat(total).toFixed(2);
-    };
+    return total;
 }

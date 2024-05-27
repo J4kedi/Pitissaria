@@ -16,7 +16,7 @@ function exibirIngredientes() {
                 <input type='checkbox' id='checkbox-$initialValue' name='checkbox-$initialValue' max-length='1' value='". $ingrediente['preco'] ."'/>
                 <p>". $ingrediente['nome'] ."</p>
             </label>
-            <input type='number' value='1' class='input-checkbox' name='quantidade'>
+            <input type='number' value='1' class='input-checkbox' min='1' max='10' name='quantidade'>
             <p class='checkbox-p'>qtd.</p>
         </div>
         ";
