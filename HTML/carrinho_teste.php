@@ -11,7 +11,7 @@
     <title>Document</title>
 </head>
 <body>
-    <?php include('../geral/menu.php')?>
+    <?php include('../paginas/geral/menu.php')?>
     <?php include '../php/connection.php'; ?>
     <?php
 

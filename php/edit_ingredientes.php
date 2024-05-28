@@ -15,8 +15,7 @@
     include("connection.php");
     include("../geral/menu.php");
     
-    include("validacao_gerente_pizzaiolo.php");
-    verificarAcesso();
+
     
     $id = $_GET["id"];
     $sql =  "SELECT  nome, data_entrada, data_validade, quantidade, preco FROM ingredientes WHERE id = $id";

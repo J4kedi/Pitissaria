@@ -2,10 +2,8 @@
 
 // Incluir o arquivo de conexão com o banco de dados
 include("connection.php");
-include("../geral/menu.php");
+include("../paginas/geral/menu.php");
 
-include("validacao_gerente_pizzaiolo.php");
-verificarAcesso();
 
 
 // Consulta SQL para selecionar os ingredientes
@@ -53,7 +51,7 @@ $result = $conn->query($sql);
             while ($row = $result->fetch_assoc()) {
         ?>  
                 <tr>
-                    <td class="id_css" onclick="window.location='ingredientes_ingrediente.php?id_ingrediente=<?php echo $row["id"]?>';" style = "cursor: pointer;">
+                    <td class="id_css" onclick="window.location='ingredientes_ingrediente.php?id_ingrediente=<?php echo $row["id"]?>';" style="cursor: pointer;">
                         <?php echo $row["id"] ?>
                     </td>
                     <td><?php echo $row["nome"] ?></td>
@@ -62,14 +60,8 @@ $result = $conn->query($sql);
                     <td class="edit_css" style="cursor: pointer;" onclick="window.location='edit_ingredientes.php?id=<?php echo $row['id']?>'">
                         <a class="link" href="edit_ingredientes.php?id=<?php echo $row["id"]?>">Editar</a>
                     </td>
-                    <!-- Nessa parte do codigo ele está verificando se o usuairo é o gerente  -->
-                    <td class="delet_css"> 
-                        <?php if($_SESSION['tp_user'] == 'gerente'): ?>
-                            <a class="link" href="delet_ingredientes_php.php?id=<?php echo $row['id']?>">Excluir</a>
-                            <!-- logo apos caso ele não seja gerente ele deixa bloqueado o botão de excluir  -->
-                        <?php else: ?>
-                            <span style="color: gray; cursor: not-allowed;">Excluir</span>
-                        <?php endif; ?>
+                    <td class="delet_css">
+                        <a class="link" href="delet_ingredientes_php.php?id=<?php echo $row['id']?>">Excluir</a>
                     </td>
                 </tr>
         <?php

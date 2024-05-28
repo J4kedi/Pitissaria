@@ -12,12 +12,13 @@
 </head>
 <body>
     
-    <?php include('../paginas/geral/menu.php')?>
+    <?php include("geral/menu.php")?>
+
 
     <main id="grid-container"></main>
     
 
-    <?php include('../geral/footer.php')?>
+    <?php include("geral/footer.php")?>
 
     <script src="../Js/script.js"></script>
 </body>

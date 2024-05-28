@@ -3,6 +3,6 @@
 <link rel="stylesheet" href="../style/padrao1.css">
 <nav class="menu">
     <a href="index.php"class="nav-item" id="img-logo"></a>
-    <a href="index.php" class="nav-item">inicio</a>
+
     <?php include('../PHP/sessao/session.php');?>
 </nav>
