@@ -3,8 +3,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <div class="menu">
       <nav>
-        <a href="../HTML/index.php"><img id="logo-inicio" src="../ASSETS/logo-inicio (1).png" alt="Logo Pitissasria"></a>
-        <a href="../HTML/index.php" class="links lover">Inicio</a>
+        <a href="../paginas/index.php"><img id="logo-inicio" src="../ASSETS/logo-inicio (1).png" alt="Logo Pitissasria"></a>
+        <a href="../paginas/index.php" class="links lover">Inicio</a>
         <a href="../paginas/pizzas_prontas.php" class="links lover">Cardapio</a>
         <a href="../paginas/pizza_montagem.php"class="links lover">Personalizado</a>
         <div class="autenticacao">
