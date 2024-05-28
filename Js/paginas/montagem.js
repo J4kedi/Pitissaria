@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
     inputIngredientes.forEach(input => {
         input.addEventListener('change', function () {
+<<<<<<< Updated upstream
             if (isChecked.has(input)) {
                 if (input.checked) {
                     isChecked.get(input).checked = true;
@@ -43,6 +44,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 isChecked.set(input, {checked : true});
             };
 
+=======
+>>>>>>> Stashed changes
             total = calcularTotal(input, total);
             mensagemTotal.textContent = mensagem + total.toFixed(2);
         });
