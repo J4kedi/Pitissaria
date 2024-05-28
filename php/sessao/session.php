@@ -4,7 +4,7 @@
     if (isset($_SESSION['sessao'])) {
         echo "
             <a href = '../HTML/pizzas_prontas.php' class='nav-item'>cardapio</a>
-            <a href = 'pizza_montagem.php' class='nav-item'>personalizado</a>
+            <a href = '../paginas/pizza_montagem.php' class='nav-item'>personalizado</a>
         ";
 
         if ($_SESSION['tipo_usuario'] == 'gerente') {

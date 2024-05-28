@@ -12,7 +12,7 @@
 </head>
 <body>
     
-    <?php include('../geral/menu.php')?>
+    <?php include('../paginas/geral/menu.php')?>
 
     <main id="grid-container"></main>
     
