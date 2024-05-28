@@ -15,7 +15,7 @@
                 <div class='logar'>
                     <a href = '../php/lista_ingredientes.php' class='nav-item'>Ingredientes</a>
                     <a href = '../HTML/carrinho_teste.php' class='nav-item'>carrinho</a>
-                    <a href='perfil.php' class='nav-item'>" . $_SESSION['username'] . "</a>
+                    <a href='../paginas/perfil.php' class='nav-item'>" . $_SESSION['username'] . "</a>
                     <span class='barra'>/</span>
                     <a href='../PHP/logout.php' class='nav-item'>logout</a>
                 </div>
