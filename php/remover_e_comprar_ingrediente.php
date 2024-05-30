@@ -3,8 +3,9 @@
     include("connection.php");
 
     session_start(); 
+    var_dump($_SESSION);
     
-    $id_user = $_SESSION['id_user'];
+    $id_user = $_SESSION['sessao'];
 
     $body = json_decode(file_get_contents("php://input"),true);
 
