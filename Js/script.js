@@ -1,5 +1,3 @@
-
-
 const pizzas = [
     {   //O ID 2 É O ID DA PIZZA QUE TEMOS
         id: 1, nome: "Calabresa", preco:"R$20,00", imagem: "../imagens/pizza_calabresa.jpg", texto: "Calabresa, queijo, azeitona", ingredientes: [
