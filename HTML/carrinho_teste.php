@@ -13,10 +13,10 @@
 <body>
     <?php
     session_start(); // Iniciar a sessão
-    include('../paginas/geral/menu.php');
-    include '../php/connection.php';
+    include('../paginas/geral/menu.php');   
+    include ('../php/connection.php');
 
-    if (!isset($_SESSION['id_user'])) {
+    if (!isset($_SESSION['sessao'])) {
         // Se não estiver logado, redirecione-o para a página de login
         header("Location: ../paginas/login.php");
         exit();
@@ -27,7 +27,7 @@
     }
 
     // Consulta SQL para selecionar as pizzas no carrinho do usuário atual
-    $id_user = $_SESSION['id_user'];
+    $id_user = $_SESSION['sessao'];
     $sql = "SELECT pizzas.nome, data_pedido, total, endereco_entrega_id, usuarios.nome AS nome_usuario,
         (SELECT SUM(total) FROM pedidos) AS total_pedidos FROM pizzas
         INNER JOIN itens_pedido ON pizzas.id = itens_pedido.id_pizza
