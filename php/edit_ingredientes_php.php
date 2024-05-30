@@ -19,12 +19,12 @@
     $quantidade = $_POST["quantidade"];
     $preco = $_POST["preco"];
 
-    $sql = "UPDATE ingredientes SET nome_ingrediente = '$nome', data_validade = '$validade', data_entrada = '$data_entrada', quantidade = '$quantidade', preco = '$preco' WHERE id = $id";
+    $sql = "UPDATE ingredientes SET nome = '$nome', data_validade = '$validade', data_entrada = '$data_entrada', quantidade = '$quantidade', preco = '$preco' WHERE id = $id";
     $result =  $conn->query($sql);
 
     if ($result === TRUE) {
         echo "<h1>Dados alterados com sucesso.</h1>";
-        echo '<script>setTimeout(function() { window.location.href = "lista_ingredientes.php"; }, 3000);</script>'; // Redireciona para lista_ingredientes.php após 3 segundos 
+        echo '<script>setTimeout(function() { window.location.href = "lista_ingredientes.php"; }, 30000);</script>'; // Redireciona para lista_ingredientes.php após 3 segundos 
     }   
     else{
         echo "Erro ao cadastrar ingrediente: " . $conn->error;
