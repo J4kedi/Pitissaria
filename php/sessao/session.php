@@ -6,6 +6,7 @@
             <a href = '../paginas/index.php' class='nav-item'>inicio</a>
             <a href = '../paginas/pizza_montagem.php' class='nav-item'>personalizado</a>
             <a href = '../paginas/pizzas_prontas.php' class='nav-item'>Cardapio</a>
+            <a href='../PHP/logout.php' class='nav-item'>logout</a>
 
         ";
 
