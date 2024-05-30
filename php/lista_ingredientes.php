@@ -3,8 +3,9 @@
 // Incluir o arquivo de conexão com o banco de dados
 include("connection.php");
 include("../paginas/geral/menu.php");
-include("validacao_gerente.php");
- verificarGerente();
+include("validacao_gerente_pizzaiolo.php");
+verificarAcesso();
+
 
 
 // Consulta SQL para selecionar os ingredientes
@@ -52,7 +53,7 @@ $result = $conn->query($sql);
             while ($row = $result->fetch_assoc()) {
         ?>  
                 <tr>
-                    <td class="id_css" onclick="window.location='ingredientes_ingrediente.php?id_ingrediente=<?php echo $row["id"]?>';" style="cursor: pointer;">
+                    <td class="id_css" onclick="window.location='ingredientes_ingrediente.php?id=<?php echo $row["id"]?>';" style="cursor: pointer;">
                         <?php echo $row["id"] ?>
                     </td>
                     <td><?php echo $row["nome"] ?></td>

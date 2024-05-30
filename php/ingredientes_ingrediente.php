@@ -13,15 +13,13 @@
     require_once "connection.php";
     include("../geral/menu.php");
 
-
-
     
     // Verificar se o id_ingrediente foi passado na URL
         // Obter o id do ingrediente da URL
-        $id = $_GET["id_ingrediente"];
+        $id = $_GET["id"];
 
         // Consulta SQL para selecionar os detalhes do ingrediente com o ID fornecido
-        $sql = "SELECT  id, nome, data_validade, data_entrada, quantidade, preco FROM ingrediente2 WHERE id = $id";
+        $sql = "SELECT  id, nome, preco, data_entrada, data_validade, quantidade FROM ingredientes WHERE id = $id";
 
         // Executar a consulta SQL
         $result = $conn->query($sql);
@@ -35,11 +33,13 @@
             // Exibir os detalhes do ingrediente em uma tabela
             echo "<table>";
             while ($row = $result->fetch_assoc()) {
-                echo "<tr><th>ID</th><td>{$row['id_ingrediente']}</td></tr>";
-                echo "<tr><th>Ingrediente</th><td>{$row['nome_ingrediente']}</td></tr>";
-                echo "<tr><th>Data de Validade</th><td>" . date("d/m/Y", strtotime($row["dt_validade"])) . "</td></tr>";
-                echo "<tr><th>Quantidade</th><td>{$row['quantidade_ingrediente']} Kg</td></tr>";
-                echo "<tr><th>Preço da Compra</th><td>R$ {$row['preco_compra']}</td></tr>";
+                echo "<tr><th>ID</th><td>{$row['id']}</td></tr>";
+                echo "<tr><th>Ingrediente</th><td>{$row['nome']}</td></tr>";
+                echo "<tr><th>Preço da Compra</th><td>R$ {$row['preco']}</td></tr>";
+                echo "<tr><th>Data de Entrada</th><td>" . date("d/m/Y", strtotime($row["data_entrada"])) . "</td></tr>";
+                echo "<tr><th>Data de Validade</th><td>" . date("d/m/Y", strtotime($row["data_validade"])) . "</td></tr>";
+                echo "<tr><th>Quantidade</th><td>{$row['quantidade']} Kg</td></tr>";
+
             }
             echo "</table>";
         } else {
