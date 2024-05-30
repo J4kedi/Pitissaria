@@ -18,7 +18,7 @@
     
     // Verificar se o id_ingrediente foi passado na URL
         // Obter o id do ingrediente da URL
-        $id = $_GET["id_ingrediente"];
+        $id = $_GET["id"];
 
         // Consulta SQL para selecionar os detalhes do ingrediente com o ID fornecido
         $sql = "SELECT  id, nome, data_validade, data_entrada, quantidade, preco FROM ingrediente2 WHERE id = $id";
