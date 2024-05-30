@@ -3,7 +3,8 @@
 // Incluir o arquivo de conexão com o banco de dados
 include("connection.php");
 include("../paginas/geral/menu.php");
-
+include("validacao_gerente.php");
+ verificarGerente();
 
 
 // Consulta SQL para selecionar os ingredientes
