@@ -1,6 +1,5 @@
 <?php 
     session_start();
-
     if (isset($_SESSION['sessao'])) {
         echo "
             <a href = '../paginas/index.php' class='nav-item'>inicio</a>

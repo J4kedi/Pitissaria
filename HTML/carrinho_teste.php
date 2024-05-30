@@ -12,7 +12,7 @@
 </head>
 <body>
     <?php
-    session_start(); // Iniciar a sessão
+
     include('../paginas/geral/menu.php');   
     include ('../php/connection.php');
 
