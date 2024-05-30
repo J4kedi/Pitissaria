@@ -12,7 +12,6 @@
 </head>
 <body>
     <?php
-
     include('../paginas/geral/menu.php');   
     include ('../php/connection.php');
 
