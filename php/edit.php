@@ -100,7 +100,7 @@
             <br>
             <input type="hidden" name="id" value="<?php echo $id?>" required>
 
-            <input type="submit" value="Atualizar Ingrediente" id = "submit">
+            <input type="submit" value="Atualizar pizzaiolo" id = "submit">
         </form>
         
         
