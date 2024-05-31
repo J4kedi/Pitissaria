@@ -6,8 +6,6 @@ include("../paginas/geral/menu.php");
 include("validacao_gerente_pizzaiolo.php");
 verificarAcesso();
 
-
-
 // Consulta SQL para selecionar os ingredientes
 $sql =  "SELECT id, nome, preco, data_entrada, data_validade, quantidade FROM ingredientes";
 $result = $conn->query($sql);
@@ -24,6 +22,7 @@ $result = $conn->query($sql);
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../Style/padrao.css">
     <link rel="shortcut icon" href="../imagens/icone/pizza.ico" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
@@ -33,7 +32,7 @@ $result = $conn->query($sql);
     <br><br>
 
     <div class="add_ingrediente">
-        <a href="cadastro_ingredientes.php" class="button-style"> +Adicionar Ingrediente </a>
+        <a href="cadastro_ingredientes.php" class="button-style add-link"> +Adicionar Ingrediente </a>
         <br><br>
     </div>
 
@@ -59,11 +58,11 @@ $result = $conn->query($sql);
                     <td><?php echo $row["nome"] ?></td>
                     <td><?php echo date("d/m/Y", strtotime($row["data_entrada"])) ?></td>
                     <td><?php echo $row["quantidade"] ?></td>
-                    <td class="edit_css" style="cursor: pointer;" onclick="window.location='edit_ingredientes.php?id=<?php echo $row['id']?>'">
-                        <a class="link" href="edit_ingredientes.php?id=<?php echo $row["id"]?>">Editar</a>
+                    <td class="edit_css" style="cursor: pointer;">
+                        <a class="link edit-link" href="edit_ingredientes.php?id=<?php echo $row["id"]?>">Editar</a>
                     </td>
-                    <td class="delet_css">
-                        <a class="link" href="delet_ingredientes_php.php?id=<?php echo $row['id']?>">Excluir</a>
+                    <td class="delet_css" style="cursor: pointer;">
+                        <a class="link delete-link" href="delet_ingredientes_php.php?id=<?php echo $row['id']?>">Excluir</a>
                     </td>
                 </tr>
         <?php
@@ -76,6 +75,79 @@ $result = $conn->query($sql);
     </table>
 
     <?php include("../geral/footer.php")?>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var addLink = document.querySelector('.add-link');
+            var editLinks = document.querySelectorAll('.edit-link');
+            var deleteLinks = document.querySelectorAll('.delete-link');
+            
+            addLink.addEventListener('click', function(event) {
+                event.preventDefault(); // Prevent the default link behavior
+                var url = this.href;
+                
+                Swal.fire({
+                    title: 'Adicioanar Ingrediente',
+                    text: "Você deseja adicionar um novo ingrediente?",
+                    icon: 'question',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Sim, adicionar!',
+                    cancelButtonText: 'Cancelar'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = url;
+                    }
+                });
+            });
+
+            editLinks.forEach(function(link) {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault(); // Prevent the default link behavior
+                    var url = this.href;
+                    
+                    Swal.fire({
+                        title: 'Editar Ingrediente',
+                        text: "Você deseja editar este ingrediente?",
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonColor: '#3085d6',
+                        cancelButtonColor: '#d33',
+                        confirmButtonText: 'Sim, editar!',
+                        cancelButtonText: 'Cancelar'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.href = url;
+                        }
+                    });
+                });
+            });
+
+            deleteLinks.forEach(function(link) {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault(); // Prevent the default link behavior
+                    var url = this.href;
+                    
+                    Swal.fire({
+                        title: 'Tem certeza?',
+                        text: "Você não poderá reverter esta ação!",
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonColor: '#3085d6',
+                        cancelButtonColor: '#d33',
+                        confirmButtonText: 'Sim, excluir!',
+                        cancelButtonText: 'Cancelar'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.href = url;
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+
 </body>
 
 </html>
