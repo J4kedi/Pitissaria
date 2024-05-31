@@ -6,12 +6,12 @@
     <title>Edit Ingredientes</title>
     <link rel="stylesheet" href="../Style/cad_ingredientes.css">
     <link rel="shortcut icon" href="../imagens/icone/pizza.ico" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
 <?php
     include("connection.php");
 
-    
     $id = $_POST["id"];
     $nome = $_POST["nome"];
     $validade = $_POST["data_validade"];
@@ -23,14 +23,34 @@
     $result =  $conn->query($sql);
 
     if ($result === TRUE) {
-        echo "<h1>Dados alterados com sucesso.</h1>";
-        echo '<script>setTimeout(function() { window.location.href = "lista_ingredientes.php"; }, 3000);</script>'; // Redireciona para lista_ingredientes.php após 3 segundos 
+        $success_message = "Dados alterados com sucesso.";
+        echo "<script>
+            Swal.fire({
+                icon: 'success',
+                title: 'Sucesso',
+                text: '$success_message',
+                timer: 3000,
+                showConfirmButton: false
+            }).then(() => {
+                window.location.href = 'lista_ingredientes.php';
+            });
+        </script>";
     }   
     else{
-        echo "Erro ao cadastrar ingrediente: " . $conn->error;
+        $error_message = "Erro ao cadastrar ingrediente: " . $conn->error;
+        echo "<script>
+            Swal.fire({
+                icon: 'error',
+                title: 'Erro',
+                text: '$error_message',
+                timer: 3000,
+                showConfirmButton: false
+            }).then(() => {
+                window.location.href = 'cadastro_ingredientes.php';
+            });
+        </script>";
     }
 ?>
 
 </body>
 </html>
-

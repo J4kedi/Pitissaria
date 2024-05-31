@@ -13,8 +13,10 @@
 <body>
 <?php
     include("connection.php");
-    include("../geral/menu.php");
-    
+
+    include("../paginas/geral/menu.php");
+    include("validacao_gerente_pizzaiolo.php");
+    verificarAcesso();
 
     
     $id = $_GET["id"];
