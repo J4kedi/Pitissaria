@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Pizzaiolo</title>
     <link rel="stylesheet" href="../Style/edit_pizzaiolo.css">
-    <link rel="stylesheet" href="../Style/padrao.css">
     <link rel="shortcut icon" href="../imagens/icone/pizza.ico" type="image/x-icon">
 </head>
 <body>
 <?php
-    include("../geral/menu.php");
     include("connection.php");
-    include("validacao_gerente.php");
-    verificarGerente();
+    include("../paginas/geral/menu.php");
+    require_once("sessao/verificaUsuario.php");
+    verificaSessaoPizzaiolo();
+    verificaSessaoCliente();
 
     $sql =  "SELECT u.id, u.nome, u.tipo_usuario, u.email, u.cpf, u.data_nascimento, u.celular, u.username, e.cep, e.rua, e.num_res, e.cidade, e.estado
     FROM usuarios u INNER JOIN usuario_endereco ue ON u.id = ue.usuario_id INNER JOIN enderecos e ON ue.endereco_id = e.id WHERE tipo_usuario = 'pizzaiolo'";

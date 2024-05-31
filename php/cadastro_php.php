@@ -12,10 +12,11 @@
 </head>
 <body>
     <?php
-        include("../geral/menu.php");
         include("connection.php");
-        include("validacao_gerente.php");
-        verificarGerente();
+        include("../paginas/geral/menu.php");
+        require_once("sessao/verificaUsuario.php");
+        verificaSessaoPizzaiolo();
+        verificaSessaoCliente();
 
         $nome = $_POST["nome"];
         $tipo_usuario = "pizzaiolo";
@@ -40,7 +41,7 @@
             echo '<script>setTimeout(function() { history.back(); }, 2000);</script>'; // Atraso de 2 segundos 
         } else {
             // O pizzaiolo não existe, inserir no banco de dados 
-            $sql_usuario = "INSERT INTO usuarios(nome, tipo_usuario, username, cpf, email, senha, data_nascimento, celular) VALUES('$nome', '$tipo_usuario', '$username','$cpf', '$email', '$senha','$data_nascimento','$celular)";
+            $sql_usuario = "INSERT INTO usuarios(nome, email, senha, cpf, tipo_usuario, data_nascimento, celular, username) VALUES('$nome', '$email','$senha','$cpf', '$tipo_usuario', '$data_nascimento', '$celular', '$username')";
             $result_usuario = $conn -> query($sql_usuario);
             $usuarioID = $conn -> insert_id;
 
@@ -48,13 +49,13 @@
             $result_endereco = $conn -> query($sql_endereco);
             $enderecoID = $conn -> insert_id;
 
-            $sql_Usuario_Endereco = "INSERT INTO usuarui_endereco(usuario_id, endereco_id) VALUES ($usuarioID, $enderecoID)";
+            $sql_Usuario_Endereco = "INSERT INTO usuario_endereco(usuario_id, endereco_id) VALUES ($usuarioID, $enderecoID)";
             $resultUsuarioEndereco = $conn -> query($sql_Usuario_Endereco);
 
             
             if ($result_usuario === True and $result_endereco === True and $resultUsuarioEndereco === True) {
                 echo "<h1>Pizzaiolo cadastrado com sucesso.</h1>";
-                echo '<script>setTimeout(function() { window.location.href = "listagem.php"; }, 5000);</script>'; // Redireciona para listagem após 5 segundos 
+                echo '<script>setTimeout(function() { window.location.href = "listagem.php"; }, 3000);</script>'; // Redireciona para listagem após 5 segundos 
             } else {
                 echo "Erro ao cadastrar o ingrediente: " . $conn->error;
             }
