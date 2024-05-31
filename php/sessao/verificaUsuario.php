@@ -21,4 +21,12 @@
             header('location: ../paginas/index.php');
         }
     }
+
+    function verificaSessaoGerente() {
+        if(verificaSessao()) {
+            return;
+        } else if ($_SESSION['tipo_usuario'] == "gerente"){
+            header('location:../paginas/index.php');
+        }
+    }
 ?>
