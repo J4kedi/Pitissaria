@@ -16,7 +16,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ingredientes</title>
+    <title>Listagem de Pizzaiolo</title>
     <link rel="stylesheet" href="../Style/lista_ingredientes.css">
     <link rel="shortcut icon" href="../imagens/icone/pizza.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -85,6 +85,8 @@
         ?>
 
     </table>
+    
+    <?php include("../geral/footer.php")?>
 
 </body>
 

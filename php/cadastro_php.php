@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../Style/padrao.css">
     <link rel="shortcut icon" href="../imagens/icone/pizza.ico" type="image/x-icon">
     <title>Cadastro pizzaiolo</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
     <?php
@@ -34,11 +35,20 @@
 
         $sql_select = "SELECT * FROM usuarios WHERE cpf = '$cpf'";
         $result = $conn->query($sql_select);
-
         if ($result->num_rows > 0) {
-            // O Pizzaiolo já existe, exibir uma mensagem de erro em outra pagina
-            echo '<h1>Pizzaiolo já existente.</h1>'; //aqui ele mostra a pagina com o texto em H1
-            echo '<script>setTimeout(function() { history.back(); }, 2000);</script>'; // Atraso de 2 segundos 
+        ?>
+        <script>
+            swal.fire({
+                title: 'Pizzaiolo já existente.',
+                icon:'error',
+                text: 'Por favor, tente novamente.',
+                timer: 3000,
+            }).then(function() {
+                    window.location.href = "../php/cadastro.php";
+                });
+        </script>
+    <?php
+         
         } else {
             // O pizzaiolo não existe, inserir no banco de dados 
             $sql_usuario = "INSERT INTO usuarios(nome, email, senha, cpf, tipo_usuario, data_nascimento, celular, username) VALUES('$nome', '$email','$senha','$cpf', '$tipo_usuario', '$data_nascimento', '$celular', '$username')";
@@ -51,14 +61,20 @@
 
             $sql_Usuario_Endereco = "INSERT INTO usuario_endereco(usuario_id, endereco_id) VALUES ($usuarioID, $enderecoID)";
             $resultUsuarioEndereco = $conn -> query($sql_Usuario_Endereco);
+            ?>
 
-            
-            if ($result_usuario === True and $result_endereco === True and $resultUsuarioEndereco === True) {
-                echo "<h1>Pizzaiolo cadastrado com sucesso.</h1>";
-                echo '<script>setTimeout(function() { window.location.href = "listagem.php"; }, 3000);</script>'; // Redireciona para listagem após 5 segundos 
-            } else {
-                echo "Erro ao cadastrar o ingrediente: " . $conn->error;
-            }
+            <script>
+                swal.fire({
+                    title: 'Pizzaiolo cadastrado com sucesso.',
+                    icon:'success',
+                    text: 'Redirecionando para a listagem de pizzaiolos.',
+                    timer: 3000,
+                }).then(function() {
+                    window.location.href = "../php/listagem.php";
+                });
+            </script>
+            <?php
+
         }
 
         // Feche a conexão após o uso, se necessário

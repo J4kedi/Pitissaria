@@ -9,6 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="shortcut icon" href="../imagens/icone/pizza.ico" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
 <?php
@@ -59,11 +60,31 @@
 
 
     if ($resultUsuario === True || $resultEndereco === True) {
-        echo "<h1>Dados alterados com sucesso.</h1>";
-        echo '<script>setTimeout(function() { window.location.href = "listagem.php"; }, 2000);</script>'; // Redireciona para lista_ingredientes.php após 2 segundos 
+        ?>
+
+        <script>
+            swal.fire({
+                title: 'Dados atualizados com sucesso.',
+                icon:'success',
+                text: 'Redirecionando para a listagem de pizzaiolos.',
+                timer: 3000,
+            }).then(function() {
+                window.location.href = "../php/listagem.php";
+            });
+        </script>
+        <?php
     }   
     else{
-        echo "Erro ao editar pizzaiolo: " . $conn->error;
+        <script>
+        swal.fire({
+            title: 'Erro ao editar dados.',
+            icon:'error',
+            text: 'Por favor, tente novamente.',
+            timer: 3000,
+        }).then(function() {
+                window.location.href = "../php/edit.php";
+            });
+    </script>
     }
 ?>
 

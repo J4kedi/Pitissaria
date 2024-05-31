@@ -76,7 +76,7 @@
                 <input type="text" name="estado" id="estado">
                 <br>
 
-                <button type="submit" id ="submit">Enviar</button>
+                <button type="submit" id ="submit" onclick="validar()">Enviar</button>
             </form>
         </div>
     </main>
