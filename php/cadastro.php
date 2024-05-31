@@ -12,10 +12,10 @@
 </head>
 <body>
     <?php
-        include("../geral/menu.php");
-        include("connection.php");
-        include("validacao_gerente.php");
-        verificarGerente();
+        include("../paginas/geral/menu.php");
+        require_once("sessao/verificaUsuario.php");
+        verificaSessaoPizzaiolo();
+        verificaSessaoCliente();
     ?>
 
     <a href="../php/listagem.php" class="btn btn-primary">Voltar</a>
