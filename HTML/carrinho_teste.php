@@ -8,15 +8,19 @@
     <link rel="stylesheet" href="../Style/index.css">
     <link rel="stylesheet" href="../Style/padrao.css">
 
-    <title>Document</title>
+    <style>
+        /* Adicionei um estilo para mudar a cor do texto para branco */
+        body, th, td {
+            color: white;
+        }
+    </style>
 </head>
 <body>
     <?php
-    include('../paginas/geral/menu.php');   
-    include ('../php/connection.php');
+    include('../paginas/geral/menu.php');
+    include('../php/connection.php');
 
     if (!isset($_SESSION['sessao'])) {
-        // Se não estiver logado, redirecione-o para a página de login
         header("Location: ../paginas/login.php");
         exit();
     }
@@ -27,12 +31,12 @@
 
     // Consulta SQL para selecionar as pizzas no carrinho do usuário atual
     $id_user = $_SESSION['sessao'];
-    $sql = "SELECT pizzas.nome, data_pedido, total, endereco_entrega_id, usuarios.nome AS nome_usuario,
-        (SELECT SUM(total) FROM pedidos) AS total_pedidos FROM pizzas
-        INNER JOIN itens_pedido ON pizzas.id = itens_pedido.id_pizza
-        INNER JOIN pedidos ON pedidos.id = itens_pedido.id_pedido
-        INNER JOIN usuarios ON pedidos.id_usuario = usuarios.id
-        WHERE pedidos.id_usuario = $id_user";
+    $sql = "SELECT pizzas.nome, data_pedido, total, endereco_entrega_id, usuarios.nome AS nome_usuario, itens_pedido.id AS id_item
+            FROM pizzas
+            INNER JOIN itens_pedido ON pizzas.id = itens_pedido.id_pizza
+            INNER JOIN pedidos ON pedidos.id = itens_pedido.id_pedido
+            INNER JOIN usuarios ON pedidos.id_usuario = usuarios.id
+            WHERE pedidos.id_usuario = $id_user";
 
     $result = $conn->query($sql);
 
@@ -40,13 +44,16 @@
     $total_pedido_total = 0;
 
     if ($result->num_rows > 0) {
+        echo "<br>";
         echo "<h1>Seu Carrinho de Compras</h1>";
-        echo "<table>
+        echo "<br>";
+        echo "<table class='table'>
                 <tr>
                     <th>Nome da pizza</th>
                     <th>Data da compra</th>
                     <th>Nome do usuário</th>
                     <th>Preço</th>
+                    <th>Ações</th>
                 </tr>";
         while ($row = $result->fetch_assoc()) {
             echo "<tr>
@@ -54,6 +61,12 @@
                     <td>" . $row["data_pedido"] . "</td>
                     <td>" . $row["nome_usuario"] . "</td>
                     <td>" . $row["total"] . "</td>
+                    <td>
+                        <form action='deletar_pedido.php' method='post' onsubmit='return confirm(\"Tem certeza que deseja excluir este item?\");'>
+                            <input type='hidden' name='id_item' value='" . $row["id_item"] . "'>
+                            <button type='submit' name='delete_item' class='btn btn-danger'>Excluir</button>
+                        </form>
+                    </td>
                 </tr>";
 
             // Adiciona o total do pedido atual à soma total
