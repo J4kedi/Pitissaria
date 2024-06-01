@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="../Style/padrao.css">
 
     <style>
-        /* Adicionei um estilo para mudar a cor do texto para branco */
         body, th, td {
             color: white;
         }
@@ -31,7 +30,7 @@
 
     // Consulta SQL para selecionar as pizzas no carrinho do usuário atual
     $id_user = $_SESSION['sessao'];
-    $sql = "SELECT pizzas.nome, data_pedido, total, endereco_entrega_id, usuarios.nome AS nome_usuario, itens_pedido.id AS id_item
+    $sql = "SELECT pizzas.nome, data_pedido, total, endereco_entrega_id, usuarios.nome AS nome_usuario, itens_pedido.id AS id_item, pedidos.status_pedido
             FROM pizzas
             INNER JOIN itens_pedido ON pizzas.id = itens_pedido.id_pizza
             INNER JOIN pedidos ON pedidos.id = itens_pedido.id_pedido
@@ -53,14 +52,16 @@
                     <th>Data da compra</th>
                     <th>Nome do usuário</th>
                     <th>Preço</th>
+                    <th>Status do Pedido</th>
                     <th>Ações</th>
                 </tr>";
         while ($row = $result->fetch_assoc()) {
             echo "<tr>
                     <td>" . $row["nome"] . "</td>
-                    <td>" . $row["data_pedido"] . "</td>
+                    <td>" . date("d/m/Y", strtotime($row["data_pedido"])) . "</td>
                     <td>" . $row["nome_usuario"] . "</td>
                     <td>" . $row["total"] . "</td>
+                    <td>" . $row["status_pedido"] . "</td>
                     <td>
                         <form action='deletar_pedido.php' method='post' onsubmit='return confirm(\"Tem certeza que deseja excluir este item?\");'>
                             <input type='hidden' name='id_item' value='" . $row["id_item"] . "'>
