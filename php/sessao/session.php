@@ -36,6 +36,7 @@
         if ($_SESSION['tipo_usuario'] == 'pizzaiolo') {
             echo "
                 <div class='logar'>
+                    <a href = '../php/lista_ingredientes.php' class='nav-item'>Ingredientes</a>
                     <a href = '../HTML/pedidos_pizzaiolo.php' class='nav-item'>Pedidos</a>
                     <a href='../paginas/perfil.php' class='nav-item'>" . $_SESSION['username'] . "</a>
                     <span class='barra'>/</span>
