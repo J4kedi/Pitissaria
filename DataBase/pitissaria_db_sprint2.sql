@@ -28,6 +28,8 @@ CREATE TABLE IF NOT EXISTS usuarios (
     username VARCHAR(50)
 );
 
+-- ALTER TABLE usuarios ADD cor VARCHAR(50);
+
 -- Tabela de endereços
 CREATE TABLE IF NOT EXISTS enderecos (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -37,6 +39,8 @@ CREATE TABLE IF NOT EXISTS enderecos (
     cidade VARCHAR(50) NOT NULL,
     estado VARCHAR(50) NOT NULL
 );
+
+-- ALTER TABLE nome_da_tabela MODIFY COLUMN nome_da_coluna novo_tipo;
 
 -- Tabela intermediária para a relação muitos para muitos entre usuários e endereços
 CREATE TABLE IF NOT EXISTS usuario_endereco (
@@ -56,6 +60,8 @@ CREATE TABLE IF NOT EXISTS pizzas (
     id_usuario INT,
     FOREIGN KEY (id_usuario) REFERENCES usuarios(id) -- Restrição de chave estrangeira com a tabela usuarios
 );
+
+--  ALTER TABLE nome_da_tabela CHANGE COLUMN nome_antigo novo_nome novo_tipo;
 
 -- Tabela de ingredientes das pizzas
 CREATE TABLE IF NOT EXISTS ingredientes_pizzas (
