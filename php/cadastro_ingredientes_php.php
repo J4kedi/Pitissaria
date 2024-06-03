@@ -1,7 +1,6 @@
 <?php
 // Incluir arquivo de conexão com o banco de dados
 include("connection.php");
-
 // Verificar se o formulário foi submetido
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Recuperar os dados do formulário
