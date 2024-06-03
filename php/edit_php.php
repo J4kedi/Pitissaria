@@ -75,16 +75,18 @@
         <?php
     }   
     else{
+        ?>
         <script>
-        swal.fire({
-            title: 'Erro ao editar dados.',
-            icon:'error',
-            text: 'Por favor, tente novamente.',
-            timer: 3000,
-        }).then(function() {
-                window.location.href = "../php/edit.php";
-            });
-    </script>
+            swal.fire({
+                title: 'Erro ao editar dados.',
+                icon:'error',
+                text: 'Por favor, tente novamente.',
+                timer: 3000,
+            }).then(function() {
+                    window.location.href = "../php/edit.php";
+                });
+        </script>
+        <?php
     }
 ?>
 
