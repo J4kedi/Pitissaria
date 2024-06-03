@@ -12,13 +12,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $preco_compra = $_POST["preco"];
 
     // Verificar se o ingrediente já existe no banco de dados
-    $sql_check = "SELECT COUNT(*) FROM ingredientes WHERE nome = ?";
-    $stmt_check = $conn->prepare($sql_check);
-    $stmt_check->bind_param("s", $nome);
-    $stmt_check->execute();
-    $stmt_check->bind_result($count);
-    $stmt_check->fetch();
-    $stmt_check->close();
+    $sql_check = "SELECT COUNT(*) FROM ingredientes WHERE nome = '$nome'";
+    $result_check = $conn->query($sql_check);
+    $count = $result_check->fetch_row()[0];
 
     if ($count > 0) {
         // Redirecionar de volta para a página de cadastro com uma mensagem de erro
@@ -26,11 +22,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     } else {
         // Preparar e executar a consulta SQL para inserir os dados
-        $sql_insert = "INSERT INTO ingredientes (nome, data_validade, data_entrada, quantidade, preco) VALUES (?, ?, ?, ?, ?)";
-        $stmt_insert = $conn->prepare($sql_insert);
-        $stmt_insert->bind_param("sssdi", $nome, $validade, $data_entrada, $quantidade, $preco_compra);
+        $sql_insert = "INSERT INTO ingredientes (nome, data_validade, data_entrada, quantidade, preco) VALUES ('$nome', '$validade', '$data_entrada', $quantidade, $preco_compra)";
 
-        if ($stmt_insert->execute()) {
+        if ($conn->query($sql_insert) === TRUE) {
             // Redirecionar para a página de cadastro com uma mensagem de sucesso
             header("Location: cadastro_ingredientes.php?success=Ingrediente cadastrado com sucesso.");
             exit();
@@ -39,9 +33,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header("Location: cadastro_ingredientes.php?error=Erro ao cadastrar o ingrediente: " . $conn->error);
             exit();
         }
-
-        // Fechar a conexão
-        $stmt_insert->close();
     }
 
     $conn->close();
