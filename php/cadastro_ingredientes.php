@@ -13,7 +13,7 @@
 </head>
 <body>
     <?php include("../geral/menu.php");?>
-
+    <a href="../php/lista_ingredientes.php" class="btn btn-primary">Voltar</a>
     <main>
         <div class="containera">
             <h1>Cadastro de Ingredientes</h1>
@@ -34,6 +34,7 @@
                 <input type="text" id="preco" name="preco" required oninput="validarNumero(this)"><br><br>
 
                 <button type="submit" id="submit">Enviar</button>
+                
             </form>
         </div>
     </main>
