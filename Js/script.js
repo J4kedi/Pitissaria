@@ -13,14 +13,14 @@ const pizzas = [
         id: 2, nome: "pepperoni", preco:"R$25,00", imagem: "../imagens/pepperoni.png", texto: "Pepperoni, mossarela , oregano", ingredientes: [
             { id: 5, quantidade: 10 },
             { id: 2, quantidade: 15 },
-            { id: 21, quantidade: 2 },
+            { id: 20, quantidade: 2 },
         ],
         total : 25,
     },
 
     {
         id: 3, nome: "Marguerita", preco:"R$25,00", imagem: "../imagens/portuguesa.jpg", texto: "Tomate, mossarela, manjericao", ingredientes: [
-            { id: 16, quantidade: 10 },
+            { id: 1, quantidade: 10 },
             { id: 2, quantidade: 15 },
             { id: 9, quantidade: 2 },
         ],
@@ -30,13 +30,13 @@ const pizzas = [
     {
 
         id: 4, nome: "Portuguesa", preco:"R$35,00", imagem: "../imagens/portuguesa.jpg", texto: "Tomate, queijo, presunto, ovo, ervilha, azeitona, oregano", ingredientes: [
-            { id: 16, quantidade: 20 },
+            { id: 1, quantidade: 20 },
             { id: 15, quantidade: 15 },
             { id: 10, quantidade: 10 },
             { id: 11, quantidade: 7 },
             { id: 12, quantidade: 15 },
             { id: 6, quantidade: 10 },
-            { id: 21, quantidade: 3 },
+            { id: 20, quantidade: 3 },
         ],
         total : 35,
     },
@@ -54,9 +54,9 @@ const pizzas = [
 
     {
         id: 6, nome: "Frango com Catupiry", preco:"R$25,00", imagem: "../imagens/frango_catupiry.jpg", texto: "Frango, catupiry, milho, azeitona", ingredientes: [
-            { id: 29, quantidade: 40 },
+            { id: 24, quantidade: 40 },
             { id: 4, quantidade: 15 },
-            { id: 24, quantidade: 15 },
+            { id: 23, quantidade: 15 },
             { id: 6, quantidade: 10 },
         ],
         total : 25,
@@ -64,9 +64,9 @@ const pizzas = [
 
     {
         id: 7, nome: "Baconn", preco:"R$30,00", imagem: "../imagens/bacon.jpg", texto: "Bacon, azeitona, oregano, ovos, mossarela", ingredientes: [
-            { id: 17, quantidade: 50 },
+            { id: 16, quantidade: 50 },
             { id: 6, quantidade: 10 },
-            { id: 21, quantidade: 5 },
+            { id: 20, quantidade: 5 },
             { id: 11, quantidade: 15 },
             { id: 2, quantidade: 20 },
         ],
@@ -74,20 +74,20 @@ const pizzas = [
     },
 
     {
-        id:8, nome: "Camarão", preco:"R$60,00", imagem: "../imagens/camarao.jpg", texto: "Camarão mossarela oregano", ingredientes: [
-            { id: 18, quantidade: 50 },
+        id:8, nome: "Camarão", preco:"R$60,00", imagem: "../imagens/camarao.jpg", texto: "Camarão, mossarela, oregano", ingredientes: [
+            { id: 17, quantidade: 50 },
             { id: 2, quantidade: 20 },
-            { id: 21, quantidade: 5 },
+            { id: 20, quantidade: 5 },
         ],
         total : 60,
     },
 
     {
         id: 9, nome: "Chocolate com Banana", preco:"R$60,00", imagem: "../imagens/banana_chocolate.jpg", texto: "banana, chocolate, canela, creme de leite, mossarela", ingredientes: [
-            { id: 20, quantidade: 25 },
             { id: 19, quantidade: 25 },
-            { id: 22, quantidade: 10 },
-            { id: 23, quantidade: 20 },
+            { id: 18, quantidade: 25 },
+            { id: 21, quantidade: 10 },
+            { id: 22, quantidade: 20 },
             { id: 2, quantidade: 15 },
         ],
         total : 60,
@@ -142,7 +142,7 @@ function adicionarEventoClick(pizza) {
     });
 }
 async function removerIngredientes(pizza) {
-    const response = await fetch("http://localhost/GitHub/CrazyCats/Pitissaria/php/remover_e_comprar_ingrediente.php", { 
+    const response = await fetch("http://127.0.0.1/Pitissaria/php/remover_e_comprar_ingrediente.php", { 
         //http://localhost/GitHub/CrazyCats/Pitissaria/php/remover_e_comprar_ingrediente.php -> endereçamento Ricardo
         //http://127.0.0.1/Pitissaria/php/remover_e_comprar_ingrediente.php -> endereçamento Arthur //
         method: "PATCH",
