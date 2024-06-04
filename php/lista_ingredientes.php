@@ -18,6 +18,7 @@ $result = $conn->query($sql);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ingredientes</title>
     <link rel="stylesheet" href="../Style/lista_ingredientes.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="shortcut icon" href="../imagens/icone/pizza.ico" type="image/x-icon">
 </head>
 
@@ -48,7 +49,7 @@ $result = $conn->query($sql);
             while ($row = $result->fetch_assoc()) {
         ?>  
                 <tr>
-                    <td class="id_css" onclick="window.location='ingredientes_ingrediente.php?id=<?php echo $row["id"]?>';" style="cursor: pointer;">
+                    <td class="id_css" onclick="window.location='ingredientes_ingrediente.php?id=<?php echo $row['id']?>';" style="cursor: pointer;">
                         <?php echo $row["id"] ?>
                     </td>
                     <td><?php echo $row["nome"] ?></td>

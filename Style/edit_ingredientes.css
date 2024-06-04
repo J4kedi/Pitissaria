@@ -1,16 +1,17 @@
-:root{
+:root {
     --azul:#202D40;
     --vermelho: #5b2c3c;
     --laranja: #E68A00;
 }
 
-body{
+body {
     background-color: white;
     text-align: center;
     background-color: var(--vermelho);
 
 }
-main{
+
+main {
     position: absolute;
     top: 50%;
     left: 50%;
