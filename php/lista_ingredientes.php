@@ -18,11 +18,8 @@ $result = $conn->query($sql);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ingredientes</title>
     <link rel="stylesheet" href="../Style/lista_ingredientes.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../Style/padrao.css">
-    <link rel="shortcut icon" href="../imagens/icone/pizza.ico" type="image/x-icon">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="shortcut icon" href="../imagens/icone/pizza.ico" type="image/x-icon">
 </head>
 
 <body>
@@ -52,7 +49,7 @@ $result = $conn->query($sql);
             while ($row = $result->fetch_assoc()) {
         ?>  
                 <tr>
-                    <td class="id_css" onclick="window.location='ingredientes_ingrediente.php?id=<?php echo $row["id"]?>';" style="cursor: pointer;">
+                    <td class="id_css" onclick="window.location='ingredientes_ingrediente.php?id=<?php echo $row['id']?>';" style="cursor: pointer;">
                         <?php echo $row["id"] ?>
                     </td>
                     <td><?php echo $row["nome"] ?></td>
@@ -74,7 +71,7 @@ $result = $conn->query($sql);
 
     </table>
 
-    <?php include("../geral/footer.php")?>
+    <?php include("../paginas/geral/footer.php")?>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {

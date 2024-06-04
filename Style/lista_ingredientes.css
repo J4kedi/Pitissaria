@@ -9,7 +9,7 @@ table {
 
 th, tr, td {
     padding: 8px;
-    border: 5px solid #dc9d55;
+    border: 5px solid #aaaaaa;
     color:  rgb(255, 231, 200);
 }
 
@@ -69,5 +69,3 @@ table td {
     background-color: #aaaaaa;
     color: #202D40;
 }
-
-

@@ -19,9 +19,6 @@
     <title>Listagem de Pizzaiolo</title>
     <link rel="stylesheet" href="../Style/lista_ingredientes.css">
     <link rel="shortcut icon" href="../imagens/icone/pizza.ico" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../Style/padrao.css">  
 </head>
 
 <body>
@@ -86,7 +83,7 @@
 
     </table>
     
-    <?php include("../geral/footer.php")?>
+    <?php include("../paginas/geral/footer.php")?>
 
 </body>
 
