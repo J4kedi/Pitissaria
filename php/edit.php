@@ -61,6 +61,7 @@
     <main>
         <h2>Editar informações</h2>
         <div class = "containera">
+
             <form action="edit_php.php" id="form1" method="POST">
 
                 <label for="nome">Nome:</label>
@@ -106,6 +107,7 @@
 
                 <input type="submit" value="Atualizar pizzaiolo" id = "submit">
             </form>
+            <a href="listagem.php" class="btn btn-primary">Voltar</a>
         
         </div>
     </main>
