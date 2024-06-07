@@ -61,6 +61,15 @@ CREATE TABLE IF NOT EXISTS pizzas (
     FOREIGN KEY (id_usuario) REFERENCES usuarios(id) -- Restrição de chave estrangeira com a tabela usuarios
 );
 
+-- tabela de montagem de pizzas
+CREATE TABLE IF NOT EXISTS pizza_montagem (
+    id_ingrediente INT,
+    id_pizza AUTO_INCREMENT PRIMARY KEY,
+    preco DECIMAL(8,2) NOT NULL,
+    id_usuario INT,
+);
+
+
 --  ALTER TABLE nome_da_tabela CHANGE COLUMN nome_antigo novo_nome novo_tipo;
 
 -- Tabela de ingredientes das pizzas
