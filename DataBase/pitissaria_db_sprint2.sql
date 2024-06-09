@@ -66,7 +66,7 @@ CREATE TABLE IF NOT EXISTS pizza_montagem (
     id_ingrediente INT,
     id_pizza AUTO_INCREMENT PRIMARY KEY,
     preco DECIMAL(8,2) NOT NULL,
-    id_usuario INT,
+    id_usuario INT
 );
 
 

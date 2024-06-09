@@ -19,6 +19,7 @@
     <title>Listagem de Pizzaiolo</title>
     <link rel="stylesheet" href="../Style/lista_ingredientes.css">
     <link rel="shortcut icon" href="../imagens/icone/pizza.ico" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
@@ -34,7 +35,6 @@
     
     <table>
         <tr class="opcao_css">
-
             <th>ID</th>
             <th>Nome</th>
             <th>Tipo de Usuario</th>
@@ -42,9 +42,7 @@
             <th>CPF</th>
             <th>Telefone</th>
             <th>Data de Nascimento</th>
-
             <th colspan="2">Ações</th>
-            
         </tr>
 
         <?php
@@ -56,34 +54,61 @@
                         <?php echo $row["id"] ?>
                     </td>
                     <td><?php echo $row["nome"] ?></td>
-
                     <td><?php echo $row["tipo_usuario"]?></td>
-
                     <td><?php echo $row["username"] ?></td>
-
                     <td><?php echo $row["cpf"] ?></td>
-
                     <td><?php echo $row["celular"] ?></td>
-
                     <td><?php echo date("d/m/Y", strtotime($row["data_nascimento"])) ?></td>
-
-                    <td class="edit_css"  style="cursor: pointer;" onclick="window.location='edit.php?id=<?php echo $row['id']?>'">
-                        <a class="link" href="edit.php?id=<?php echo $row["id"]?>">Editar</a>
+                    <td class="edit_css" style="cursor: pointer;" onclick="editar(<?php echo $row['id']?>)">
+                        <a class="link" href="#">Editar</a>
                     </td>
-                    <td class="delet_css" style="cursor: pointer;" onclick="window.location='delete.php?id=<?php echo $row['id']?>'">
-                        <a class="link" href="delete.php?id=<?php echo $row['id']?>">Excluir</a>
+                    <td class="delet_css" style="cursor: pointer;" onclick="deletar(<?php echo $row['id']?>)">
+                        <a class="link" href="#">Excluir</a>
                     </td>
                 </tr>
         <?php
                 }
             } else {
-                echo " Não há nenhum registro de Pizzaiolo";
+                echo "Não há nenhum registro de Pizzaiolo";
             }
         ?>
-
     </table>
-    
+
     <?php include("../paginas/geral/footer.php")?>
+
+    <script>
+        
+        function editar(id){
+            Swal.fire({
+                title: 'Editar',
+                icon: 'warning',
+                text: 'Deseja editar este pizzaiolo?',
+                showCancelButton: true,
+                confirmButtonText: 'Sim',
+                cancelButtonText: 'Não'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = `edit.php?id=${id}`;
+                }
+            });
+        }
+
+
+        function deletar(id){
+            Swal.fire({
+                title: 'Excluir',
+                icon: 'warning',
+                text: 'Deseja excluir este pizzaiolo?',
+                showCancelButton: true,
+                confirmButtonText: 'Sim',
+                cancelButtonText: 'Não'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = `delete.php?id=${id}`;
+                }
+            });
+        }
+    </script>
 
 </body>
 
