@@ -20,3 +20,16 @@ function validarNumero(input) {
     // Remover caracteres que não sejam números (0-9)
     input.value = input.value.replace(/[^\d]/g, '');
 }
+
+
+function validarData() {
+    var dataEntrada = new Date(document.getElementById("data_entrada").value);
+    var dataValidade = new Date(document.getElementById("data_validade").value);
+    
+    if (dataValidade < dataEntrada) {
+        alert("A data de validade não pode ser anterior à data de entrada.");
+        return false; // Impede o envio do formulário
+    }
+    
+    return true; // Permite o envio do formulário
+}
