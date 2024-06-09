@@ -84,7 +84,7 @@ $result = $conn->query($sql);
                 var url = this.href;
                 
                 Swal.fire({
-                    title: 'Adicioanar Ingrediente',
+                    title: 'Adicionar Ingrediente',
                     text: "Você deseja adicionar um novo ingrediente?",
                     icon: 'question',
                     showCancelButton: true,
