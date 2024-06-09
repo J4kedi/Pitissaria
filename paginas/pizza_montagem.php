@@ -45,14 +45,37 @@
         </div>
         
         <div class="card preco">
-            <button type="submit">Finalizar</button>
+            <button type="submit" id="finalizar" >Finalizar</button>
             <p>Valor total: R$</p>
         </div>
     </main>
 
     <?php include("geral/footer.php")?>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../Js/paginas/enviarIngredientes.js"></script>
     <script src="../Js/paginas/calcularTotal.js"></script>
     <script src="../Js/paginas/montagem.js"></script>
+    <script>
+        document.getElementById('finalizar').addEventListener('click', function(e) {
+            e.preventDefault();
+            Swal.fire({
+                title: 'Deseja confirmar o pedido?',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sim, confirmar!',
+                cancelButtonText: 'Não, cancelar!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire(
+                        'Finalizado!',
+                        'Seu pedido foi finalizado.',
+                        'success'
+                    )
+                }
+            })
+        });
+    </script>
 </body>
 </html>
