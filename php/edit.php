@@ -37,7 +37,7 @@
             $estado = $row["estado"];
             $cep = $row["cep"];
             $cidade = $row["cidade"];
-            $num_res = $row["num_res"]; // Corrigido para atribuir o valor corretamente
+            $num_res = $row["num_res"];
             $rua = $row["rua"];
         }
     }
@@ -48,43 +48,67 @@
         <div class="container">
             <form action="edit_php.php" id="form1" method="POST">
                 <div class="coluna1">
-                    <label for="nome">Nome:</label>
-                    <input type="text" name="nome" id="nome" value="<?php echo $nome?>" required>
+                    <div class = "campo">
+                        <label for="nome">Nome:</label>
+                        <input type="text" name="nome" id="nome" value="<?php echo $nome?>" required>
+                    </div>
                     <br>
-                    <label for="tp_user">Tipo de Usuario:</label>
-                    <input type="text" name="tipo_usuario" id="tipo_usuario" value="<?php echo $tipo_usuario?>" default="pizzaiolo" required>
+                    <div class = "campo">
+                        <label for="tp_user">Tipo de Usuario:</label>
+                        <input type="text" name="tipo_usuario" id="tipo_usuario" value="<?php echo $tipo_usuario?>" default="pizzaiolo" required>
+                    </div>
                     <br>
-                    <label for="username">Username:</label>
-                    <input type="text" name="username" id="username" value="<?php echo $username?>" required>
+                    <div class = "campo">
+                        <label for="username">Username:</label>
+                        <input type="text" name="username" id="username" value="<?php echo $username?>" required>
+                    </div>
                     <br>
-                    <label for="cpf">CPF:</label>
-                    <input type="text" name="cpf" id="cpf" value="<?php echo $cpf?>" required>
+                    <div class = "campo">
+                        <label for="cpf">CPF:</label>
+                        <input type="text" name="cpf" id="cpf" value="<?php echo $cpf?>" required>
+                    </div>
                     <br>
-                    <label for="email">Email:</label>
-                    <input type="text" name="email" id="email" value="<?php echo $email?>" required>
+                    <div class = "campo">
+                        <label for="email">Email:</label>
+                        <input type="text" name="email" id="email" value="<?php echo $email?>" required>
+                    </div>
                     <br>
-                    <label for="celular">Numero de telefone:</label>
-                    <input type="text" name="celular" id="celular" value="<?php echo $celular?>" required>
+                    <div class = "campo">
+                        <label for="celular">Numero de telefone:</label>
+                        <input type="text" name="celular" id="celular" value="<?php echo $celular?>" required>
+                    </div>
                     <br>
                 </div>
                 <div class="coluna2">
-                    <label for="estado">Estado:</label>
-                    <input type="text" name="estado" id="estado" value="<?php echo $estado?>" required>
+                    <div class = "campo">
+                        <label for="estado">Estado:</label>
+                        <input type="text" name="estado" id="estado" value="<?php echo $estado?>" required>
+                    </div>
                     <br>
-                    <label for="cep">CEP:</label>
-                    <input type="text" name="cep" id="cep" value="<?php echo $cep?>" required>
+                    <div class = "campo">
+                        <label for="cep">CEP:</label>
+                        <input type="text" name="cep" id="cep" value="<?php echo $cep?>" required>
+                    </div>
                     <br>
-                    <label for="dt_nasc">Data de Nascimento:</label>
-                    <input type="date" name="data_nascimento" id="data_nascimento" value="<?php echo $data_nascimento?>" required>
+                    <div class = "campo">
+                        <label for="dt_nasc">Data de Nascimento:</label>
+                        <input type="date" name="data_nascimento" id="data_nascimento" value="<?php echo $data_nascimento?>" required>
+                    </div>
                     <br>
-                    <label for="cidade">Cidade:</label>
-                    <input type="text" name="cidade" id="cidade" value="<?php echo $cidade?>" required>
+                    <div class = "campo">
+                        <label for="cidade">Cidade:</label>
+                        <input type="text" name="cidade" id="cidade" value="<?php echo $cidade?>" required>
+                    </div>
                     <br>
-                    <label for="rua">Rua:</label>
-                    <input type="text" name="rua" id="rua" value="<?php echo $rua?>" required>
+                    <div class = "campo">
+                        <label for="rua">Rua:</label>
+                        <input type="text" name="rua" id="rua" value="<?php echo $rua?>" required>
+                    </div>
                     <br>
-                    <label for="num_res">Numero da residencia:</label>
-                    <input type="number" name="num_res" id="num_res" value="<?php echo $num_res?>" required>
+                    <div class = "campo">
+                        <label for="num_res">Numero da residencia:</label>
+                        <input type="number" name="num_res" id="num_res" value="<?php echo $num_res?>" required>
+                    </div>
                     <br>
                     <input type="submit" value="Atualizar pizzaiolo" id="submit">
                     <br>
@@ -93,5 +117,12 @@
             </form>
         </div>
     </main>
+    <script src="../Js/paginas/camposEndereco.js"></script>
+    <script src="../Js/novaValidacao/viaCep.js"></script>
+    <script src="../Js/novaValidacao/cpf.js"></script>
+    <script src="../Js/novaValidacao/erro.js"></script>
+    <script src="../Js/novaValidacao/cadastro.js"></script>
+    <script src="../Js/novaValidacao/escuta.js"></script>
+
 </body>
 </html>
