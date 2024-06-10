@@ -18,7 +18,7 @@
 
     <div class="form-container">
         <?php 
-            echo "<h2>Olá, ". $_SESSION['primeiro_nome'] ."!</h2>";
+            echo "<h2>Olá, ". $_SESSION['primeiroNome'] ."!</h2>";
         ?>
 
         <form action="../PHP/forms/perfil.php" class="form" id="form" method="POST">

@@ -50,7 +50,7 @@
 
         $nomeSeparado = explode(' ', $result['nome']);
         $_SESSION['nome'] = $result['nome'];
-        $_SESSION['primeiro_nome'] = $nomeSeparado[0];
+        $_SESSION['primeiroNome'] = $nomeSeparado[0];
 
         if ($novoEndereco) {
             $sqlInsertUsuarioEndereco = "INSERT INTO usuario_endereco (usuario_id, endereco_id) 
