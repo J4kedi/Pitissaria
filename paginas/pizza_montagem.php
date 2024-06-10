@@ -57,7 +57,6 @@
     </main>
 
     <?php include("geral/footer.php")?>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../Js/paginas/enviarIngredientes.js"></script>
     <script src="../Js/paginas/calcularTotal.js"></script>
     <script src="../Js/paginas/enviarPizzas.js"></script>
