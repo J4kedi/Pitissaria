@@ -87,6 +87,12 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         } else {
             event.preventDefault();
+            Swal.fire({
+                title: "Escolha ao menos um ingrediente",
+                icon: 'warning',
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: 'Confirmar!',
+            })
             console.log("Selecione pelo menos uma opção para continuar.");
         }
     });
