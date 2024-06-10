@@ -2,35 +2,42 @@ const mensagemTotal = document.querySelector('.preco p')
 const divPai = mensagemTotal.parentNode;
 var indisponiveis = [];
 
-function enviarDadosIngredientes(ingredientes) {
-    fetch('../PHP/consultas/verificaIngredientes.php', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ ingredientes: Object.fromEntries(ingredientes) })
-    })
-    .then(response => response.json())
-    .then(data => {
-        ingredientes.forEach(ingrediente => {
-            if (!data[ingrediente.id] && data.length != 0) {
-                indisponiveis.push(ingrediente.id);
-            };
+async function enviarDadosIngredientes(ingredientes) {
+    indisponiveis = [];
+    try {
+        const response = await fetch('../PHP/consultas/verificaIngredientes.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ ingredientes: Object.fromEntries(ingredientes) })
         });
 
-        if (typeof indisponiveis[0] !== 'undefined') {
+        const data = await response.json();
+
+        ingredientes.forEach((ingrediente, id) => {
+            if (!data[id] && data.length !== 0) {
+                indisponiveis.push(id);
+            }
+        });
+
+        if (indisponiveis.length > 0) {
             let p = document.createElement('p');
-            p.textContent = `Ingrediente indisponíveis: `;
+            p.textContent = 'Ingredientes indisponíveis: ';
 
             indisponiveis.forEach(id => {
                 let ingrediente = ingredientes.get(id);
-                p.textContent += `${ingrediente.nome} `;
+                if (ingrediente) {
+                    p.textContent += `${ingrediente.nome} `;
+                }
             });
 
             divPai.appendChild(p);
+            return false;
+        } else {
+            return true;
         }
-    })
-    .catch(error => {
+    } catch (error) {
         console.error('Erro:', error);
         if (document.getElementsByClassName('erro')[0] == null) {
             let p = document.createElement('p');
@@ -39,5 +46,6 @@ function enviarDadosIngredientes(ingredientes) {
             divPai.appendChild(p);
         }
         mensagemTotal.textContent = 'Total: R$ 0.00';
-    });
+        return false;
+    }
 }

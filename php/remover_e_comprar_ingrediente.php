@@ -11,7 +11,6 @@
     $idPizza = $body["id"];
     $ingredientes = $body["ingredientes"];
     $total = $body["total"];
-    
 
     foreach($ingredientes as $ingrediente){
         ["id" =>$id, "quantidade" =>$quantidade]=$ingrediente; //Estou desestruturando o array 
@@ -26,8 +25,6 @@
     $stmt->execute();
 
     $pedidoId = $conn->insert_id;
-
-    
 
     $sql = "INSERT INTO itens_pedido( id_pedido, id_pizza, quantidade, preco_unitario  ) VALUES ($pedidoId, $idPizza , 1, $total)";
     $conn->query($sql);

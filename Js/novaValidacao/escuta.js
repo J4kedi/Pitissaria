@@ -25,11 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
             } else if (nome === 'celular') {
                 validarCelular(this);
             } else if (nome === 'cep') {
-                pesquisarCep(this);
-            } else if (nome === 'quantidade') {
-                apenasNumero(this);
-            } else if (this.type === 'checkbox') {
-                return;                
+                pesquisarCep(this);       
             } else {                
                 validarCampoVazio(this);
             }

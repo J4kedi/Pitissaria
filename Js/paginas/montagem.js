@@ -56,14 +56,36 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     botaoEnviar.addEventListener('click', function (event) {
-        let checked = null; 
-        isChecked.forEach((v, k) => {checked = checked != null ? checked : (v.checked ? k : null)});
-
+        let checked = null;
+        isChecked.forEach((v, k) => { checked = checked != null ? checked : (v.checked ? k : null) });
+    
         if (checked) {
-            enviarDadosIngredientes(ingredientes);
+            if (enviarDadosIngredientes(ingredientes)) {
+                Swal.fire({
+                    title: 'Deseja confirmar o pedido?',
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Sim, confirmar!',
+                    cancelButtonText: 'Não, cancelar!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        enviarPizzas(tamanhoAtual.nextElementSibling.textContent, total);
+                        Swal.fire(
+                            'Finalizado!',
+                            'Seu pedido foi finalizado.',
+                            'success'
+                        )
+                        console.log("Pedido confirmado e enviado com sucesso!");
+                    }
+                })
+            } else {
+                console.log("Erro ao enviar pedido devido a ingredientes indisponíveis.");
+            }
         } else {
             event.preventDefault();
-            console.log("não enviou :(")
+            console.log("Selecione pelo menos uma opção para continuar.");
         }
     });
 });

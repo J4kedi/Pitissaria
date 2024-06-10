@@ -44,9 +44,15 @@
             <?php exibirIngredientes();?>
         </div>
         
-        <div class="card preco">
-            <button type="submit" id="finalizar" >Finalizar</button>
-            <p>Valor total: R$</p>
+        <div class="botoes card">
+            <div class="card preco2">
+                <button type="submit" id="add">Adicionar</button>
+                <p>Total de pizzas: 0</p>
+            </div>
+            <div class="card preco">
+                <button type="submit" id="finalizar" >Finalizar</button>
+                <p>Valor total: R$</p>
+            </div>
         </div>
     </main>
 
@@ -54,28 +60,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../Js/paginas/enviarIngredientes.js"></script>
     <script src="../Js/paginas/calcularTotal.js"></script>
+    <script src="../Js/paginas/enviarPizzas.js"></script>
     <script src="../Js/paginas/montagem.js"></script>
-    <script>
-        document.getElementById('finalizar').addEventListener('click', function(e) {
-            e.preventDefault();
-            Swal.fire({
-                title: 'Deseja confirmar o pedido?',
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Sim, confirmar!',
-                cancelButtonText: 'Não, cancelar!'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    Swal.fire(
-                        'Finalizado!',
-                        'Seu pedido foi finalizado.',
-                        'success'
-                    )
-                }
-            })
-        });
-    </script>
 </body>
 </html>
