@@ -40,8 +40,6 @@ CREATE TABLE IF NOT EXISTS enderecos (
     estado VARCHAR(50) NOT NULL
 );
 
--- ALTER TABLE nome_da_tabela MODIFY COLUMN nome_da_coluna novo_tipo;
-
 -- Tabela intermediária para a relação muitos para muitos entre usuários e endereços
 CREATE TABLE IF NOT EXISTS usuario_endereco (
     usuario_id INT,
@@ -55,31 +53,23 @@ CREATE TABLE IF NOT EXISTS usuario_endereco (
 CREATE TABLE IF NOT EXISTS pizzas (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
+    tamanho VARCHAR(50) DEFAULT 'Pequena',
     descricao TEXT,
     preco DECIMAL(8,2) NOT NULL,
     id_usuario INT,
     FOREIGN KEY (id_usuario) REFERENCES usuarios(id) -- Restrição de chave estrangeira com a tabela usuarios
 );
 
--- tabela de montagem de pizzas
-CREATE TABLE IF NOT EXISTS pizza_montagem (
-    id_ingrediente INT,
-    id_pizza AUTO_INCREMENT PRIMARY KEY,
-    preco DECIMAL(8,2) NOT NULL,
-    id_usuario INT
-);
-
-
---  ALTER TABLE nome_da_tabela CHANGE COLUMN nome_antigo novo_nome novo_tipo;
-
 -- Tabela de ingredientes das pizzas
 CREATE TABLE IF NOT EXISTS ingredientes_pizzas (
     id INT AUTO_INCREMENT PRIMARY KEY,
     id_pizza INT,
     id_ingrediente INT,
+    id_usuario INT,
     quantidade INT,
     FOREIGN KEY (id_pizza) REFERENCES pizzas(id), -- Restrição de chave estrangeira com a tabela pizzas
-    FOREIGN KEY (id_ingrediente) REFERENCES ingredientes(id) -- Restrição de chave estrangeira com a tabela ingredientes
+    FOREIGN KEY (id_ingrediente) REFERENCES ingredientes(id), -- Restrição de chave estrangeira com a tabela ingredientes
+	FOREIGN KEY (id_usuario) REFERENCES usuarios(id)
 );
 
 -- Tabela de pedidos
@@ -89,7 +79,7 @@ CREATE TABLE IF NOT EXISTS pedidos (
     data_pedido DATE,
     total DECIMAL(8,2) NOT NULL,
     endereco_entrega_id INT,
-    status_pedido VARCHAR(50) DEFAULT 'Recebido',
+    status_pedido VARCHAR(50) DEFAULT 'Preparando',
     FOREIGN KEY (id_usuario) REFERENCES usuarios(id),
     FOREIGN KEY (endereco_entrega_id) REFERENCES enderecos(id)
 );
@@ -100,7 +90,7 @@ CREATE TABLE IF NOT EXISTS itens_pedido (
     id_pedido INT,
     id_pizza INT,
     quantidade INT,
-    preco_unitario DECIMAL(8,2) NOT NULL,
+    preco_unitario DECIMAL(8, 2) NOT NULL,
     FOREIGN KEY (id_pedido) REFERENCES pedidos(id),
     FOREIGN KEY (id_pizza) REFERENCES pizzas(id)
 );
@@ -173,6 +163,11 @@ select * from enderecos;
 select * from usuario_endereco;
 select * from pizzas;
 select * from ingredientes;
+select * from ingredientes_pizzas;
+select * from pedidos;
+select * from itens_pedido;
+
+SELECT e.id FROM usuario_endereco INNER JOIN enderecos e WHERE usuario_id = 3 limit 1;
 
 SELECT e.cep, e.rua, e.num_res, e.cidade, e.estado
 FROM usuarios u
