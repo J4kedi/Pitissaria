@@ -142,7 +142,7 @@ function adicionarEventoClick(pizza) {
     });
 }
 async function removerIngredientes(pizza) {
-    const response = await fetch("http://127.0.0.1/Pitissaria/php/remover_e_comprar_ingrediente.php", { 
+    const response = await fetch("http://localhost/GitHub/CrazyCats/Pitissaria/php/remover_e_comprar_ingrediente.php", { 
         //http://localhost/GitHub/CrazyCats/Pitissaria/php/remover_e_comprar_ingrediente.php -> endereçamento Ricardo
         //http://127.0.0.1/Pitissaria/php/remover_e_comprar_ingrediente.php -> endereçamento Arthur //
         method: "PATCH",
@@ -159,7 +159,6 @@ function criarPaginaEspecifica(pizza) {
     const pizzaEspec = `
         <div class="site">
             <div class="divisao">
-            <!-- <img src="${pizza.imagem}" alt="${pizza.nome}" class="pizza"> -->
                 <div class="nome_txt"> 
                     <h2>${pizza.nome} Ingredientes</h2>
                     <div class="texto">
@@ -172,20 +171,34 @@ function criarPaginaEspecifica(pizza) {
                 <button class="voltar" id="voltar">Voltar</button>
             </div>
             <div>
-                <button class="adicionar" id="adicionar">comprar</button>
+                <button class="adicionar" id="adicionar">Comprar</button>
             </div>
         </div>
     `;
 
     document.getElementById("grid-container").innerHTML = pizzaEspec;
-    document.getElementById("adicionar").addEventListener("click", () => removerIngredientes(pizza));
-
-    var botao = document.getElementById('adicionar');
-    // Adiciona um evento de clique ao botão
-    botao.addEventListener('click', function () {
-        // Redireciona para a página desejada
-        //window.location.href = '../HTML/pizzas_prontas.php';
+    
+    // Adicione um evento de clique ao botão "Comprar"
+    document.getElementById("adicionar").addEventListener("click", () => {
+        // Use o SweetAlert para confirmar a compra
+        Swal.fire({
+            icon: 'question',
+            title: 'Confirmar compra',
+            text: 'Deseja realmente adicionar esta pizza ao carrinho?',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Sim',
+            cancelButtonText: 'Cancelar'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Se o usuário confirmar a compra, remova os ingredientes
+                removerIngredientes(pizza);
+            }
+        });
     });
+
+    // Adicione o evento de clique ao botão "Voltar"
     btnVoltar();
 }
 
@@ -193,7 +206,21 @@ function btnVoltar() {
     const btnVoltar = document.getElementById("voltar")
 
     btnVoltar.addEventListener("click", () => {
-        document.getElementById("grid-container").innerHTML = "";
-        criarCardsDePizza();
+        // Use o SweetAlert para confirmar a ação do usuário
+        Swal.fire({
+            icon: 'warning',
+            title: 'Tem certeza?',
+            text: 'Você realmente deseja voltar para a seleção de pizzas?',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Sim, voltar!',
+            cancelButtonText: 'Cancelar'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                document.getElementById("grid-container").innerHTML = "";
+                criarCardsDePizza();
+            }
+        });
     });
 }

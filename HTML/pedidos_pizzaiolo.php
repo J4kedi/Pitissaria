@@ -36,6 +36,7 @@
             <th>Data do Pedido</th>
             <th>Total</th>
             <th>Status do Pedido</th>
+            <th>Ações</th>
         </tr>
         <?php
         if ($result->num_rows > 0) {
@@ -52,6 +53,9 @@
                         <option value="Preparando" <?php echo $row["status_pedido"] == "Preparando" ? 'selected' : ''; ?>>Preparando</option>
                         <option value="Finalizado" <?php echo $row["status_pedido"] == "Finalizado" ? 'selected' : ''; ?>>Finalizado</option>
                     </select>
+                </td>
+                <td>
+                    <button class="delete-btn" data-id="<?php echo $row['id']; ?>">Excluir</button>
                 </td>
             </tr>
         <?php
@@ -92,9 +96,37 @@
                 }
             });
         });
+
+        $('.delete-btn').click(function() {
+            var id = $(this).data('id');
+
+            if(confirm('Tem certeza que deseja excluir este pedido?')) {
+                $.ajax({
+                    url: 'excluir_pedido.php',
+                    type: 'POST',
+                    data: { id: id },
+                    success: function(response) {
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Pedido excluído com sucesso!',
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
+                        location.reload();
+                    },
+                    error: function() {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Erro ao excluir pedido.',
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
+                    }
+                });
+            }
+        });
     });
 </script>
-
 
 </body>
 </html>

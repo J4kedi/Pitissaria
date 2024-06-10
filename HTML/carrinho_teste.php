@@ -56,6 +56,7 @@
                     <th>Ações</th>
                 </tr>";
         while ($row = $result->fetch_assoc()) {
+            $disabled = $row["status_pedido"] != "Recebido" ? "disabled" : "";
             echo "<tr>
                     <td>" . $row["nome"] . "</td>
                     <td>" . date("d/m/Y", strtotime($row["data_pedido"])) . "</td>
@@ -65,7 +66,7 @@
                     <td>
                         <form action='deletar_pedido.php' method='post' onsubmit='return confirm(\"Tem certeza que deseja excluir este item?\");'>
                             <input type='hidden' name='id_item' value='" . $row["id_item"] . "'>
-                            <button type='submit' name='delete_item' class='btn btn-danger'>Excluir</button>
+                            <button type='submit' name='delete_item' class='btn btn-danger' $disabled>Excluir</button>
                         </form>
                     </td>
                 </tr>";

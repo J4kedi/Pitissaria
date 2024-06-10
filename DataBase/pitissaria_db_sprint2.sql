@@ -89,7 +89,7 @@ CREATE TABLE IF NOT EXISTS pedidos (
     data_pedido DATE,
     total DECIMAL(8,2) NOT NULL,
     endereco_entrega_id INT,
-    status_pedido VARCHAR(50) DEFAULT 'Preparando',
+    status_pedido VARCHAR(50) DEFAULT 'Recebido',
     FOREIGN KEY (id_usuario) REFERENCES usuarios(id),
     FOREIGN KEY (endereco_entrega_id) REFERENCES enderecos(id)
 );
