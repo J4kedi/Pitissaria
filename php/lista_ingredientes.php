@@ -29,7 +29,7 @@ $result = $conn->query($sql);
     <br><br>
 
     <div class="add_ingrediente">
-        <a href="cadastro_ingredientes.php" class="button-style add-link"> +Adicionar Ingrediente </a>
+        <a href="../paginas/cadastro_ingredientes.php" class="button-style add-link"> +Adicionar Ingrediente </a>
         <br><br>
     </div>
 

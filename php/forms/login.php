@@ -29,7 +29,7 @@
             $_SESSION['sessao'] = $result['id'];
             $_SESSION['nome'] = $result['nome'];
             $_SESSION['username'] = $result['username'];
-            $_SESSION['primeiro_nome'] = $nomeSeparado[0];
+            $_SESSION['primeiroNome'] = $nomeSeparado[0];
             $_SESSION['tipo_usuario'] = $result['tipo_usuario'];
 
             header("Location: ../../paginas/index.php");
