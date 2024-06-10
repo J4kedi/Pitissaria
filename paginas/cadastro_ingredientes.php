@@ -8,7 +8,12 @@
     <title>Cadastro de Ingredientes</title>
 </head>
 <body>
-    <?php include('geral/menu.php');?>
+    <?php 
+        include('geral/menu.php');
+        require_once('../php/sessao/verificaUsuario.php');
+
+        verificaSessaoCliente();
+    ?>
 
     <div class="form-container login-container">
         <h1>Cadastro de Ingredientes</h1>
