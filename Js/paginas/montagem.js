@@ -77,6 +77,8 @@ document.addEventListener('DOMContentLoaded', function () {
                             'Seu pedido foi finalizado.',
                             'success'
                         )
+
+                        window.location.replace('../HTML/carrinho_teste.php');
                         console.log("Pedido confirmado e enviado com sucesso!");
                     }
                 })

@@ -6,12 +6,62 @@ function validarCampoVazio(campo) {
     }
 }
 
+function validarUsername(campo) {
+    const valor = campo.value;
+
+    fetch('../PHP/consultas/consultaUsername.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ username: valor })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            console.log(data.message);
+        } else {
+            console.error(data.message);
+        }
+
+        if (data.existe) {
+            adicionarMensagem('Username já existente no sistema!', campo);
+        }
+    })
+    .catch(error => {
+        console.error(`Erro na requisição: `, error);
+    })
+}
+
 function validarEmail(campo) {
     const valor = campo.value;
     const regexEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
     if (!regexEmail.test(valor)) {
         adicionarMensagem('Email inválido!', campo);
+    } else {
+        fetch('../PHP/consultas/consultaEmail.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ email: valor })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                console.log(data.message);
+            } else {
+                console.error(data.message);
+            }
+    
+            if (data.existe) {
+                adicionarMensagem('Email já existente no sistema!', campo);
+            }
+        })
+        .catch(error => {
+            console.error(`Erro na requisição: `, error);
+        })
     }
 }
 
@@ -44,6 +94,29 @@ function validarCpf(campo) {
     
     if (!testarCpf(valor)) {
         adicionarMensagem('CPF inválido!', campo);
+    } else {
+        fetch('../PHP/consultas/consultaCpf.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ cpf: valor })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                console.log(data.message);
+            } else {
+                console.error(data.message);
+            }
+
+            if (data.existe) {
+                adicionarMensagem('CPF já existente no sistema!', campo);
+            }
+        })
+        .catch(error => {
+            console.error(`Erro na requisição: `, error);
+        })
     }
 }
 

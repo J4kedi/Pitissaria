@@ -3,7 +3,7 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <link rel="stylesheet" href="../style/padrao1.css">
 <nav class="menu">
-    <a href="index.php"class="nav-item" id="img-logo"></a>
+    <a href="../paginas/index.php"class="nav-item" id="img-logo"></a>
 
     <?php include('../PHP/sessao/session.php');?>
 </nav>

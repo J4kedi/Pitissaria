@@ -71,12 +71,12 @@
             echo "Cadastro realizado com sucesso!";
 
             $nomeSeparado = explode(' ', $nome);
-            $_SESSION['sessao'] = $id;
+            $_SESSION['sessao'] = $usuarioId;
             $_SESSION['nome'] = $nome;
             $_SESSION['username'] = $username;
             $_SESSION['primeiroNome'] = $nomeSeparado[0];
-            $_SESSION['tipo_usuario'] = $resultadoUsuario['tipo_usuario'];
-            header("Location: ../../paginas/perfil.php");
+            $_SESSION['tipo_usuario'] = 'cliente';
+            header("Location: ../../paginas/index.php");
             exit;
         }
 

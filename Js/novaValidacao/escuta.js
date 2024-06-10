@@ -12,7 +12,9 @@ document.addEventListener('DOMContentLoaded', function () {
         campo.addEventListener('blur', function () {
             const nome = this.name;
             
-            if (nome === 'email') {
+            if (nome === 'username') {
+                validarUsername(this);
+            } else if (nome === 'email') {
                 validarEmail(this);
             } else if (nome === 'senha') {
                 senha = validarSenha(this);
