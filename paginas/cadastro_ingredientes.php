@@ -15,7 +15,7 @@
         verificaSessaoCliente();
     ?>
 
-    <div class="form-container login-container">
+    <div class="form-container">
         <h1>Cadastro de Ingredientes</h1>
         <form action="../php/cadastro_ingredientes_php.php" method="post" class="form">
             <div class="divisao">
@@ -39,8 +39,8 @@
                     <label for="preco_compra">Preço da compra:</label>
                     <input type="text" id="preco" name="preco" required oninput="validarNumero(this)">
                 </div>
-                <button type="submit" id="btn-enviar">Enviar</button>
             </div>
+            <button type="submit" id="btn-enviar">Enviar</button>
         </form>
     </div>
     
