@@ -57,7 +57,7 @@
                 confirmButtonText: 'OK'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    window.location.href = 'cadastro_ingredientes.php';
+                    window.location.href = '../paginas/cadastro_ingredientes.php';
                 }
             });
         </script>";
@@ -73,7 +73,7 @@
                 confirmButtonText: 'OK'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    window.location.href = 'lista_ingredientes.php';
+                    window.location.href = '../php/lista_ingredientes.php';
                 }
             });
         </script>";

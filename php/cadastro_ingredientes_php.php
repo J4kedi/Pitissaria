@@ -11,13 +11,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $preco_compra = $_POST["preco"];
 
     // Verificar se o ingrediente já existe no banco de dados
-    $sql_check = "SELECT COUNT(*) FROM ingredientes WHERE nome = '$nome'";
+    $sql_check = "SELECT * FROM ingredientes WHERE nome = '$nome'";
     $result_check = $conn->query($sql_check);
     $count = $result_check->fetch_row()[0];
 
     if ($count > 0) {
         // Redirecionar de volta para a página de cadastro com uma mensagem de erro
-        header("Location: cadastro_ingredientes.php?error=O ingrediente já está cadastrado no sistema.");
+        header("Location: ../paginas/cadastro_ingredientes.php?error=O ingrediente já está cadastrado no sistema.");
         exit();
     } else {
         // Preparar e executar a consulta SQL para inserir os dados
@@ -25,11 +25,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ($conn->query($sql_insert) === TRUE) {
             // Redirecionar para a página de cadastro com uma mensagem de sucesso
-            header("Location: cadastro_ingredientes.php?success=Ingrediente cadastrado com sucesso.");
+            header("Location: ../paginas/cadastro_ingredientes.php?success=Ingrediente cadastrado com sucesso.");
             exit();
         } else {
             // Redirecionar de volta para a página de cadastro com uma mensagem de erro
-            header("Location: cadastro_ingredientes.php?error=Erro ao cadastrar o ingrediente: " . $conn->error);
+            header("Location: ../paginas/cadastro_ingredientes.php?error=Erro ao cadastrar o ingrediente: " . $conn->error);
             exit();
         }
     }
