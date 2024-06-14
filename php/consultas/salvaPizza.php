@@ -11,9 +11,9 @@ try {
         throw new Exception('Invalid JSON input');
     }
 
-    $nome = "Donzela";
+    $nome = "Pizza personalizada";
     $tamanho = $data['tamanho'];
-    $descricao = "Descricao da Donzela";
+    $descricao = "Personalizada";
     $preco = $data['total'];
     $id_usuario = $_SESSION['sessao'];
 
