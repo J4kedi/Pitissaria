@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Style/checkbox.css">
     <title>Montagem da Pizza</title>
+    <script src="teste_script.js"></script>
+
 </head>
 <body>
     <?php include("geral/menu.php")?>
@@ -39,6 +41,25 @@
                 </label>
             </div>
         </div>
+
+        <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Seleciona todos os checkboxes dentro do container com id "tamanhos"
+        const checkboxes = document.querySelectorAll("#tamanhos input[type='checkbox']");
+
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener("change", function() {
+                // Desmarcar todos os outros checkboxes quando um for marcado
+                checkboxes.forEach(item => {
+                    if (item !== this) {
+                        item.checked = false;
+                    }
+                });
+            });
+        });
+    });
+</script>
+
 
         <div class="container-checkbox container-ingredientes">
             <?php exibirIngredientes();?>
