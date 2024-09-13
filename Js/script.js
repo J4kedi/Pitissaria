@@ -91,10 +91,9 @@ const pizzas = [
             { id: 2, quantidade: 15 },
         ],
         total : 60,
-    }
+    },
     
-    
-    
+
 
 
 ];
